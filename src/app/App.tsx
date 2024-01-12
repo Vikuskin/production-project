@@ -6,11 +6,10 @@ import { getClassNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/navbar';
 
 const App: FC = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={getClassNames('app', {}, [theme])}>
-      <button onClick={toggleTheme}>Toggle theme</button>
       <Navbar/>
       <AppRouter/>
     </div>
