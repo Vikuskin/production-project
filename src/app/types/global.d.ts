@@ -13,3 +13,4 @@ declare module '*.svg' {
     const SVG:  React.FunctionComponent<React.SVGAttributes<SVGAElement>>;
     export default SVG;
 };
+declare const IS_DEV: boolean;
