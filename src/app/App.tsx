@@ -4,8 +4,8 @@ import { useTheme } from 'app/providers/theme';
 import 'app/styles/index.scss';
 import { FC, Suspense } from 'react';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { Navbar } from 'widgets/navbar';
-import { Sidebar } from 'widgets/sidebar';
+import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
 
 const App: FC = () => {
   const { theme } = useTheme();

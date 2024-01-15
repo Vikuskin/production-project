@@ -1,7 +1,7 @@
 import { Themes, useTheme } from 'app/providers/theme';
 import { FC } from 'react';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AppButton, ButtonVariants } from 'shared/ui/button';
+import { AppButton, ButtonVariants } from 'shared/ui/AppButton';
 import DarkThemeIcon from '../../../assets/icons/theme-dark.svg';
 import LigntThemeIcon from '../../../assets/icons/theme-light.svg';
 
@@ -14,7 +14,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }: ThemeSwitch
 
   return (
     <AppButton className={getClassNames('', [className ?? ''])} variant={ButtonVariants.Clear} onClick={toggleTheme}>
-      {theme === Themes.Light ? <DarkThemeIcon /> : <LigntThemeIcon />}
+      {theme === Themes.Light ? <LigntThemeIcon /> : <DarkThemeIcon />}
     </AppButton>
   );
 };
