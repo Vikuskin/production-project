@@ -1,4 +1,7 @@
 {
-    "Language": "English",
-    "Loading": "Загрузка..."
+  "About": "О сайте",
+  "Language": "English",
+  "Loading": "Загрузка...",
+  "Main": "Основное",
+  "Sidebar": "Сайдбар"
 }

@@ -1,13 +1,12 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 input,
 button,
-textarea,
-select {
+textarea, select {
   margin: 0;
   font: inherit;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }

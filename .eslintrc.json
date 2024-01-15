@@ -12,7 +12,8 @@
     "prettier",
     "plugin:prettier/recommended",
     "plugin:import/recommended",
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "plugin:i18next/recommended"
   ],
   "overrides": [
     {
@@ -31,7 +32,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "import", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "import", "prettier", "i18next"],
   "ignorePatterns": ["build", "coverage", ".husky", "node_modules", ".idea", ".github", "jest.config.ts"],
   "settings": {
     "import/resolver": {
