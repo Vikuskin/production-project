@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, FC } from 'react';
-import { getClassNames } from 'shared/lib/classNames/classNames';
+import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import * as styles from './AppButton.module.scss';
 
 export enum ButtonVariants {

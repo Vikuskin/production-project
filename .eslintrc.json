@@ -54,6 +54,23 @@
     "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
     "react/jsx-props-no-spreading": "warn",
     "react/button-has-type": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "never", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] }
+    ],
+    "@typescript-eslint/member-ordering": "error",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+        "allowSeparatedGroups": true
+      }
+    ]
   }
 }

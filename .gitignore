@@ -2,3 +2,4 @@
 /node_modules
 /extractedTranslations
 .DS_Store
+/coverage
