@@ -3,24 +3,21 @@ import { getClassNames } from 'shared/lib/classNames/classNames';
 import * as styles from './AppButton.module.scss';
 
 export enum ButtonVariants {
-    Clear = 'clear',
+  Clear = 'clear',
 }
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    className?: string;
-    variant: ButtonVariants;
-    children?: React.ReactNode;
+  variant: ButtonVariants;
+  className?: string;
+  children?: React.ReactNode;
 }
 
-export const AppButton:FC<AppButtonProps> = (props: AppButtonProps) => {
-    const {className, children, variant, ...otherProps} = props;
+export const AppButton: FC<AppButtonProps> = (props: AppButtonProps) => {
+  const { className, children, variant, type, ...otherProps } = props;
 
-   return (
-       <button
-            className={getClassNames(styles.button, {}, [className ?? '', styles[variant]])}
-            {...otherProps}
-        >
-            {children}
-        </button>
-   )
-}
+  return (
+    <button className={getClassNames(styles.button, [className ?? '', styles[variant]])} {...otherProps}>
+      {children}
+    </button>
+  );
+};

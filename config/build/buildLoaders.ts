@@ -19,9 +19,7 @@ export function buildLoaders(isDev: boolean): webpack.RuleSetRule[] {
           esModule: true,
           modules: {
             auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-            localIdentName: isDev
-              ? '[path][name]__[local]--[hash:base64:8]'
-              : '[hash:base64:8]',
+            localIdentName: isDev ? '[path][name]__[local]--[hash:base64:8]' : '[hash:base64:8]',
             namedExport: true,
           },
         },
@@ -49,18 +47,11 @@ export function buildLoaders(isDev: boolean): webpack.RuleSetRule[] {
     use: {
       loader: 'babel-loader',
       options: {
-        presets: [
-          ['@babel/preset-env', { targets: "defaults" }]
-        ],
-        plugins: [
-          [
-            "i18next-extract",
-            { locales: ['en', 'ru'], keyAsDefaultValue: true }
-          ],
-        ]
-      }
-    }
-  }
+        presets: [['@babel/preset-env', { targets: 'defaults' }]],
+        plugins: [['i18next-extract', { locales: ['en', 'ru'], keyAsDefaultValue: true }]],
+      },
+    },
+  };
 
   return [cssLoader, svgLoader, fileLoader, babelLoader, typescriptLoader];
 }

@@ -7,19 +7,19 @@ import LigntThemeIcon from '../../../assets/icons/theme-light.svg';
 import * as styles from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
-   className?: string;
+  className?: string;
 }
 
-export const ThemeSwitcher:FC<ThemeSwitcherProps> = ({className}: ThemeSwitcherProps) => {
-   const { theme, toggleTheme } = useTheme();
+export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }: ThemeSwitcherProps) => {
+  const { theme, toggleTheme } = useTheme();
 
-   return (
-      <AppButton
-         className={getClassNames(styles.themeSwitcher, {}, [className ?? ''])}
-         variant={ButtonVariants.Clear}
-         onClick={toggleTheme}
-      >
-         {theme === Themes.Light ? <DarkThemeIcon /> : <LigntThemeIcon/>}
-      </AppButton>
-   )
-}
+  return (
+    <AppButton
+      className={getClassNames(styles.themeSwitcher, [className ?? ''])}
+      variant={ButtonVariants.Clear}
+      onClick={toggleTheme}
+    >
+      {theme === Themes.Light ? <DarkThemeIcon /> : <LigntThemeIcon />}
+    </AppButton>
+  );
+};

@@ -3,16 +3,20 @@ import { AppLink, AppLinkThemes } from 'shared/ui/appLink/AppLink';
 import * as styles from './Navbar.module.scss';
 
 interface NavbarProps {
-    className?: string
+  className?: string;
 }
 
-export const Navbar = ({className}: NavbarProps) => {
-    return (
-        <div className={getClassNames(styles.navbar, {}, [className ?? ''])}>
-            <div className={styles.links}>
-                <AppLink theme={AppLinkThemes.Secondary} to={'/'}>Main</AppLink>
-                <AppLink theme={AppLinkThemes.Secondary} to={'/about'}>About</AppLink>
-            </div>
+export const Navbar = ({ className }: NavbarProps) => {
+  return (
+    <div className={getClassNames(styles.navbar, [className ?? ''])}>
+      <div className={styles.links}>
+        <AppLink theme={AppLinkThemes.Secondary} to="/">
+          Main
+        </AppLink>
+        <AppLink theme={AppLinkThemes.Secondary} to="/about">
+          About
+        </AppLink>
       </div>
-    )
-}
+    </div>
+  );
+};

@@ -4,23 +4,19 @@ import { useTranslation } from 'react-i18next';
 import { Route, Routes } from 'react-router-dom';
 
 const AppRouter: FC = () => {
-    const {t} = useTranslation();
+  const { t } = useTranslation();
 
-    return (
-        <div className='page-wrapper'>
-        <Suspense fallback={<div>{t('Loading')}</div>}>
-            <Routes>
-                {routeConfig.map(route => (
-                    <Route
-                        key={route.path}
-                        path={route.path}
-                        element={route.element}
-                    />
-                ))}
-            </Routes>
-        </Suspense>
-        </div>
-    )
-}
+  return (
+    <div className="page-wrapper">
+      <Suspense fallback={<div>{t('Loading')}</div>}>
+        <Routes>
+          {routeConfig.map((route) => (
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
+        </Routes>
+      </Suspense>
+    </div>
+  );
+};
 
-export default AppRouter
+export default AppRouter;

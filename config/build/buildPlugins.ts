@@ -17,13 +17,13 @@ export function buildPlugins(paths: BuildPaths, isDev: boolean): webpack.Webpack
       chunkFilename: 'css/[name].[contenthash:8].css',
     }),
     new webpack.DefinePlugin({
-      IS_DEV: JSON.stringify(isDev)
+      IS_DEV: JSON.stringify(isDev),
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   );
 
   if (isDev) {
-    plugins.push(new ReactRefreshWebpackPlugin(), new webpack.HotModuleReplacementPlugin())
+    plugins.push(new ReactRefreshWebpackPlugin(), new webpack.HotModuleReplacementPlugin());
   }
 
   return plugins;

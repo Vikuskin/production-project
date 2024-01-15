@@ -14,16 +14,15 @@ i18n
   .init({
     lng: choosedLanguage || 'en',
     fallbackLng: choosedLanguage || 'en',
-    debug: IS_DEV ? true : false,
+    debug: IS_DEV,
 
     interpolation: {
       escapeValue: false,
     },
 
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json'
-    }
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
+    },
   });
-
 
 export default i18n;

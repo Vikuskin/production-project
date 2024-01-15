@@ -8,8 +8,7 @@ interface UseThemeResult {
 
 const LOCAL_STORAGE_THEME_KEY = 'theme';
 
-export const DEFAULT_TEAM: Themes =
-  (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Themes) ?? Themes.Light;
+export const DEFAULT_TEAM: Themes = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Themes) ?? Themes.Light;
 
 export function useTheme(): UseThemeResult {
   const { theme, setTheme } = useContext(ThemeContext);

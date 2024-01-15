@@ -5,20 +5,20 @@ import { ThemeSwitcher } from 'shared/ui/themeSwitcher';
 import * as styles from './Sidebar.module.scss';
 
 interface SidebarProps {
-    className?: string
+  className?: string;
 }
 
-export const Sidebar:FC<SidebarProps> = ({className}: SidebarProps) => {
-    const [collapsed, setCollapsed] = useState(false);
-    const toggleCollapsed = () => setCollapsed(prev =>!prev);
+export const Sidebar: FC<SidebarProps> = ({ className }) => {
+  const [collapsed, setCollapsed] = useState(false);
+  const toggleCollapsed = () => setCollapsed((prev) => !prev);
 
-    return (
-        <div className={getClassNames(styles.sidebar, {[styles.collapsed]: collapsed}, [className ?? ''])}>
-            <button onClick={toggleCollapsed }>Sidebar</button>
-            <div className={styles.switchers}>
-                <ThemeSwitcher/>
-                <LangSwitcher/>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className={getClassNames(styles.sidebar, [className ?? ''], { [styles.collapsed]: collapsed })}>
+      <button onClick={toggleCollapsed}>Sidebar</button>
+      <div className={styles.switchers}>
+        <ThemeSwitcher />
+        <LangSwitcher />
+      </div>
+    </div>
+  );
+};

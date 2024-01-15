@@ -3,27 +3,23 @@ import { useTranslation } from 'react-i18next';
 import { AppButton, ButtonVariants } from 'shared/ui/button';
 
 interface LangSwitcherProps {
-    className?: string
+  className?: string;
 }
 
 export const LOCAL_STORAGE_KEY_LANG = 'lang';
 
-export const LangSwitcher: FC<LangSwitcherProps> = ({className}: LangSwitcherProps) => {
-    const {t, i18n} = useTranslation();
-    const toggleTranslate = () => {
-      const choosedLanguage = i18n.language === 'ru' ? 'en' : 'ru';
+export const LangSwitcher: FC<LangSwitcherProps> = ({ className }: LangSwitcherProps) => {
+  const { t, i18n } = useTranslation();
+  const toggleTranslate = () => {
+    const choosedLanguage = i18n.language === 'ru' ? 'en' : 'ru';
 
-      i18n.changeLanguage(choosedLanguage);
-      localStorage.setItem(LOCAL_STORAGE_KEY_LANG, choosedLanguage)
-    }
+    i18n.changeLanguage(choosedLanguage);
+    localStorage.setItem(LOCAL_STORAGE_KEY_LANG, choosedLanguage);
+  };
 
-    return (
-      <>
-        <AppButton
-            className={className}
-            variant={ButtonVariants.Clear}
-            onClick={toggleTranslate}>{t('Language')}
-        </AppButton>
-      </>
-    )
-}
+  return (
+    <AppButton className={className} variant={ButtonVariants.Clear} onClick={toggleTranslate}>
+      {t('Language')}
+    </AppButton>
+  );
+};
