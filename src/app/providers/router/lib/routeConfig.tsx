@@ -1,7 +1,7 @@
 import { AboutPage } from 'pages/AboutPage';
 import { MainPage } from 'pages/MainPage';
 import { RouteProps } from 'react-router-dom';
-import { NotFoundPage } from 'pages/NotFoundPage';
+import { ErrorPage } from 'pages/ErrorPage';
 
 enum AppRoutes {
   Main = 'main',
@@ -26,6 +26,6 @@ export const routeConfig: RouteProps[] = [
   },
   {
     path: routePaths[AppRoutes.NotFound],
-    element: <NotFoundPage />,
+    element: <ErrorPage text="Page not found" />,
   },
 ];

@@ -23,7 +23,12 @@ export function buildPlugins(paths: BuildPaths, isDev: boolean): webpack.Webpack
   );
 
   if (isDev) {
-    plugins.push(new ReactRefreshWebpackPlugin(), new webpack.HotModuleReplacementPlugin());
+    plugins.push(
+      new ReactRefreshWebpackPlugin({
+        overlay: false,
+      }),
+      new webpack.HotModuleReplacementPlugin(),
+    );
   }
 
   return plugins;

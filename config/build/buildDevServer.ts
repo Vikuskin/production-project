@@ -6,5 +6,8 @@ export function buildDevServer(port: number): DevServerConfiguration {
     open: true,
     historyApiFallback: true,
     hot: true,
+    client: {
+      overlay: false,
+    },
   };
 }
