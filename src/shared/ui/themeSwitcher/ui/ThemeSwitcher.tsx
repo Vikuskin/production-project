@@ -13,8 +13,13 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }: ThemeSwitch
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <AppButton className={getClassNames('', [className ?? ''])} variant={ButtonVariants.Clear} onClick={toggleTheme}>
-      {theme === Themes.Light ? <LigntThemeIcon /> : <DarkThemeIcon />}
+    <AppButton
+      data-testid="theme-switcher"
+      className={getClassNames('', [className ?? ''])}
+      variant={ButtonVariants.Clear}
+      onClick={toggleTheme}
+    >
+      {theme === Themes.Light ? <LigntThemeIcon data-testid="light-icon" /> : <DarkThemeIcon data-testid="dark-icon" />}
     </AppButton>
   );
 };

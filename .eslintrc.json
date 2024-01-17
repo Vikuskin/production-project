@@ -20,6 +20,12 @@
         "project": ["tsconfig.json"],
         "createDefaultProgram": true
       }
+    },
+    {
+      "files": ["src/**/*.test.{ts,tsx}"],
+      "rules": {
+        "i18next/no-literal-string": "off"
+      }
     }
   ],
   "parser": "@typescript-eslint/parser",
@@ -31,7 +37,7 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint", "import", "prettier", "i18next"],
-  "ignorePatterns": ["build", "coverage", ".husky", "node_modules", ".idea", ".github", "jest.config.ts"],
+  "ignorePatterns": ["build", "coverage", ".husky", "node_modules", ".github", "*.config.ts", "config/jest/**/*"],
   "settings": {
     "import/resolver": {
       "typescript": {

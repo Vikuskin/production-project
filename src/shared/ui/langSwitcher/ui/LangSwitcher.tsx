@@ -18,7 +18,12 @@ export const LangSwitcher: FC<LangSwitcherProps> = ({ className }: LangSwitcherP
   };
 
   return (
-    <AppButton className={className} variant={ButtonVariants.Clear} onClick={toggleTranslate}>
+    <AppButton
+      data-testid="lang-switcher"
+      className={className}
+      variant={ButtonVariants.Clear}
+      onClick={toggleTranslate}
+    >
       {t('Language')}
     </AppButton>
   );

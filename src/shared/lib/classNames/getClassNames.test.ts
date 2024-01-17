@@ -30,4 +30,10 @@ describe('getClassNames', () => {
 
     expect(result).toBe('baseClass scrollable');
   });
+
+  it('should remove undefined typeof string from passed additional classes', () => {
+    const result = getClassNames('btn', ['undefined', 'clear']);
+
+    expect(result).toBe('btn clear');
+  });
 });

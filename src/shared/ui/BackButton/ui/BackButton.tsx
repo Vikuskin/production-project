@@ -11,7 +11,7 @@ export const BackButton: FC<BackButtonProps> = ({ className }) => {
   };
 
   return (
-    <AppButton className={className} variant={ButtonVariants.Clear} onClick={back}>
+    <AppButton data-testid="back-button" className={className} variant={ButtonVariants.Clear} onClick={back}>
       <BackSvg />
     </AppButton>
   );
