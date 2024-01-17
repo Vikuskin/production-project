@@ -1,6 +1,8 @@
 import { FC, PropsWithChildren } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
+
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
+
 import * as styles from './AppLink.module.scss';
 
 export enum AppLinkThemes {

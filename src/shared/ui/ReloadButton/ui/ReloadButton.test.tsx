@@ -1,6 +1,8 @@
 import { fireEvent, render } from '@testing-library/react';
-import { ReloadButton } from './ReloadButton';
+
 import { ButtonVariants } from 'shared/ui/AppButton';
+
+import { ReloadButton } from './ReloadButton';
 
 describe('ReloadButton', () => {
   it('renders with default props', () => {

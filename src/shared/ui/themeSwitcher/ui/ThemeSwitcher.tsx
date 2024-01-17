@@ -1,7 +1,9 @@
-import { Themes, useTheme } from 'app/providers/theme';
 import { FC } from 'react';
+
+import { Themes, useTheme } from 'app/providers/theme';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { AppButton, ButtonVariants } from 'shared/ui/AppButton';
+
 import DarkThemeIcon from '../../../assets/icons/theme-dark.svg';
 import LigntThemeIcon from '../../../assets/icons/theme-light.svg';
 

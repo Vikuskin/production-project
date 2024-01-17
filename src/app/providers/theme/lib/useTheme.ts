@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+
 import { ThemeContext, Themes } from './ThemeContext';
 
 interface UseThemeResult {

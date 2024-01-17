@@ -1,8 +1,9 @@
 import { render } from '@testing-library/react';
-import { AppLink, AppLinkThemes } from './AppLink';
-import { BrowserRouter, Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
 import { userEvent } from '@testing-library/user-event';
+import { createMemoryHistory } from 'history';
+import { BrowserRouter, Router } from 'react-router-dom';
+
+import { AppLink, AppLinkThemes } from './AppLink';
 
 describe('AppLink', () => {
   it('renders with default props', () => {

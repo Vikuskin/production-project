@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next';
+
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { AppLink, AppLinkThemes } from 'shared/ui/AppLink/ui/AppLink';
-import { useTranslation } from 'react-i18next';
+
 import * as styles from './Navbar.module.scss';
 
 interface NavbarProps {

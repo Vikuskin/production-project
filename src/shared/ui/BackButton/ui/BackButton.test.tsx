@@ -1,6 +1,8 @@
 import { fireEvent, render } from '@testing-library/react';
-import { BackButton } from './BackButton';
+
 import { ButtonVariants } from 'shared/ui/AppButton';
+
+import { BackButton } from './BackButton';
 
 describe('BackButton', () => {
   it('renders with default props', () => {

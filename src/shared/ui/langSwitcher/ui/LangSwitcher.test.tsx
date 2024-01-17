@@ -1,8 +1,10 @@
 import { fireEvent, render } from '@testing-library/react';
-import { LangSwitcher } from './LangSwitcher';
+
+import i18n from 'app/providers/i18n/i18nForTests';
 import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation';
 import { ButtonVariants } from 'shared/ui/AppButton';
-import i18n from 'app/providers/i18n/i18nForTests';
+
+import { LangSwitcher } from './LangSwitcher';
 
 describe('LangSwitcher', () => {
   it('renders without crashing', () => {

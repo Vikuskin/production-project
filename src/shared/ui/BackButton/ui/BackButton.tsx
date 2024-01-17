@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import { AppButton, ButtonVariants } from '../../AppButton';
+
 import BackSvg from '../../../assets/icons/back.svg';
+import { AppButton, ButtonVariants } from '../../AppButton';
 
 interface BackButtonProps {
   className?: string;

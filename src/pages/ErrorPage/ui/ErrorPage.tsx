@@ -1,8 +1,10 @@
 import { FC } from 'react';
-import * as styles from './ErrorPage.module.scss';
 import { useTranslation } from 'react-i18next';
-import { ReloadButton } from 'shared/ui/ReloadButton';
+
 import { BackButton } from 'shared/ui/BackButton';
+import { ReloadButton } from 'shared/ui/ReloadButton';
+
+import * as styles from './ErrorPage.module.scss';
 
 interface ErrorPageProps {
   text: string;

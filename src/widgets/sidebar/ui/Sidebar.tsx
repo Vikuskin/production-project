@@ -1,8 +1,10 @@
 import { FC, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
-import { useTranslation } from 'react-i18next';
+
 import * as styles from './Sidebar.module.scss';
 
 interface SidebarProps {

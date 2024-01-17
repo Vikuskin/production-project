@@ -1,9 +1,11 @@
 import { render, within } from '@testing-library/react';
 import { UserEvent, userEvent } from '@testing-library/user-event';
-import { Navbar } from './Navbar';
-import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation';
-import { BrowserRouter, Router } from 'react-router-dom';
 import { MemoryHistory, createMemoryHistory } from 'history';
+import { BrowserRouter, Router } from 'react-router-dom';
+
+import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation';
+
+import { Navbar } from './Navbar';
 
 describe('Navbar', () => {
   it('renders without crashing', () => {

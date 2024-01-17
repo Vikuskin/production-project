@@ -1,6 +1,8 @@
 import { fireEvent, render, within } from '@testing-library/react';
-import { Sidebar } from './Sidebar';
+
 import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation';
+
+import { Sidebar } from './Sidebar';
 
 describe('Sidebar', () => {
   it('renders without crashing', () => {

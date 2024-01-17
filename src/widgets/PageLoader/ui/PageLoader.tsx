@@ -1,7 +1,9 @@
 import { FC } from 'react';
-import * as styles from './PageLoader.module.scss';
+
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { Spinner } from 'shared/ui/Spinner';
+
+import * as styles from './PageLoader.module.scss';
 
 export const PageLoader: FC = () => {
   return (

@@ -1,7 +1,9 @@
 import { fireEvent, render } from '@testing-library/react';
+
 import { Themes, useTheme } from 'app/providers/theme';
-import { ThemeSwitcher } from './ThemeSwitcher';
 import { ButtonVariants } from 'shared/ui/AppButton';
+
+import { ThemeSwitcher } from './ThemeSwitcher';
 
 jest.mock('app/providers/theme', () => ({
   ...jest.requireActual('app/providers/theme'),

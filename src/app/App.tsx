@@ -1,7 +1,8 @@
 import 'app/providers/i18n/i18n';
+import { FC, Suspense } from 'react';
+
 import { AppRouter } from 'app/providers/router';
 import { useTheme } from 'app/providers/theme';
-import { FC, Suspense } from 'react';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';

@@ -6,7 +6,7 @@ import { BuildPaths } from './types/config';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 export function buildPlugins(paths: BuildPaths, isDev: boolean): webpack.WebpackPluginInstance[] {
-  const plugins = [];
+  const plugins: webpack.WebpackPluginInstance[] = [];
 
   plugins.push(
     new HTMLWebpackPlugin({

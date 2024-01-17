@@ -1,4 +1,5 @@
 import { fireEvent, render } from '@testing-library/react';
+
 import { AppButton, ButtonVariants } from './AppButton';
 
 describe('AppButton', () => {
