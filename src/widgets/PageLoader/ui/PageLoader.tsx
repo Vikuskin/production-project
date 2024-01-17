@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { Spinner } from 'shared/ui/Spinner';

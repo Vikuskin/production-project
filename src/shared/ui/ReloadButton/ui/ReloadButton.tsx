@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 import { AppButton, ButtonVariants } from 'shared/ui/AppButton';
 

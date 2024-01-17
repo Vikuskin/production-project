@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 import { Themes, useTheme } from 'app/providers/theme';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';

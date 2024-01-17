@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 import BackSvg from '../../../assets/icons/back.svg';
 import { AppButton, ButtonVariants } from '../../AppButton';

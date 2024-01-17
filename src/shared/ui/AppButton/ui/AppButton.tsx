@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC } from 'react';
+import React, { ButtonHTMLAttributes, FC } from 'react';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 
@@ -6,6 +6,7 @@ import * as styles from './AppButton.module.scss';
 
 export enum ButtonVariants {
   Clear = 'clear',
+  Outline = 'outline',
 }
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
