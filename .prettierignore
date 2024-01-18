@@ -1,0 +1,10 @@
+.husky
+.loki
+build
+coverage
+node_modules
+.DS_Store
+.gitignore
+.prettierignore
+.github
+*.svg

@@ -46,7 +46,8 @@
     ".github",
     "*.config.ts",
     "config/**/*",
-    "themeDecorator.tsx"
+    "storybook-static",
+    "themeDecorator.tsx" // TODO: delete this file from ignore
   ],
   "settings": {
     "import/resolver": {

@@ -1,6 +1,11 @@
 @keyframes ldio-0bcft87nyrb6 {
-  0% { transform: translate(-50%,-50%) rotate(0deg); }
-  100% { transform: translate(-50%,-50%) rotate(360deg); }
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .ldio-0bcft87nyrb6 div {
@@ -29,6 +34,6 @@
   width: 100%;
   height: 100%;
   transform: translateZ(0) scale(1);
-  transform-origin: 0 0; /* see note above */
+  transform-origin: 0 0;
   backface-visibility: hidden;
 }
