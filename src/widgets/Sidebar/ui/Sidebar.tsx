@@ -1,7 +1,8 @@
 import React, { FC, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
+import ExpandSvg from 'shared/assets/icons/expand.svg';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
+import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 
@@ -14,20 +15,24 @@ interface SidebarProps {
 export const Sidebar: FC<SidebarProps> = ({ className }) => {
   const [collapsed, setCollapsed] = useState(false);
   const toggleCollapsed = () => setCollapsed((prev) => !prev);
-  const { t } = useTranslation();
 
   return (
     <div
       data-testid="sidebar"
       className={getClassNames(styles.sidebar, [className ?? ''], { [styles.collapsed]: collapsed })}
     >
-      <button data-testid="sideber-toggle-btn" onClick={toggleCollapsed}>
-        {t('Sidebar')}
-      </button>
       <div data-testid="sidebar-switchers" className={styles.switchers}>
-        <ThemeSwitcher />
-        <LangSwitcher />
+        <ThemeSwitcher className={getClassNames(styles.switcher)} />
+        <LangSwitcher className={getClassNames(styles.switcher)} />
       </div>
+      <AppButton
+        className={styles.btnCollapse}
+        variant={AppButtonVariants.Clear}
+        data-testid="sidebar-toggle-btn"
+        onClick={toggleCollapsed}
+      >
+        <ExpandSvg />
+      </AppButton>
     </div>
   );
 };

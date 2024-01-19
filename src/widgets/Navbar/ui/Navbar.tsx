@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { AppRoutes, routePaths } from 'app/providers/router';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { AppLink, AppLinkThemes } from 'shared/ui/AppLink/ui/AppLink';
 
@@ -16,11 +17,11 @@ export const Navbar = ({ className }: NavbarProps) => {
   return (
     <div data-testid="navbar" className={getClassNames(styles.navbar, [className ?? ''])}>
       <div className={styles.links}>
-        <AppLink data-testid="main-link" theme={AppLinkThemes.Secondary} to="/">
-          {t('Main')}
-        </AppLink>
-        <AppLink data-testid="about-link" theme={AppLinkThemes.Secondary} to="/about">
+        <AppLink data-testid="about-link" theme={AppLinkThemes.Secondary} to={routePaths[AppRoutes.About]}>
           {t('About')}
+        </AppLink>
+        <AppLink data-testid="main-link" theme={AppLinkThemes.Primary} to={routePaths[AppRoutes.Main]}>
+          {t('Main')}
         </AppLink>
       </div>
     </div>

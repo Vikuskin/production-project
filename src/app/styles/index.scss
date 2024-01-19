@@ -14,6 +14,7 @@
 
 .app {
   min-height: 100vh;
+  overflow: hidden;
   color: var(--primary-color);
   font: var(--font-m);
   background: var(--primary-bg-color);

@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 
 import { Themes, useTheme } from 'app/providers/theme';
-import { ButtonVariants } from 'shared/ui/AppButton';
+import { AppButtonVariants } from 'shared/ui/AppButton';
 
 import { ThemeSwitcher } from './ThemeSwitcher';
 
@@ -20,7 +20,7 @@ describe('ThemeSwitcher', () => {
     const themeSwitcher = getByTestId('theme-switcher');
 
     expect(themeSwitcher).toBeInTheDocument();
-    expect(themeSwitcher).toHaveClass(ButtonVariants.Clear);
+    expect(themeSwitcher).toHaveClass(AppButtonVariants.Clear);
   });
 
   it('calls toggleTheme function on click', () => {

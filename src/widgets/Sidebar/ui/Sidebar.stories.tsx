@@ -15,6 +15,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
+  parameters: {
+    backgrounds: { disable: true },
+  },
   decorators: [themeDecorator(Themes.Light)],
 };
 

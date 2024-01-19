@@ -2,7 +2,7 @@ import { fireEvent, render } from '@testing-library/react';
 
 import i18n from 'app/providers/i18n/i18nForTests';
 import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation';
-import { ButtonVariants } from 'shared/ui/AppButton';
+import { AppButtonVariants } from 'shared/ui/AppButton';
 
 import { LangSwitcher } from './LangSwitcher';
 
@@ -17,7 +17,7 @@ describe('LangSwitcher', () => {
     const langSwitcher = getByTestId('lang-switcher');
 
     expect(langSwitcher).toBeInTheDocument();
-    expect(langSwitcher).toHaveClass(mockClassName, ButtonVariants.Clear);
+    expect(langSwitcher).toHaveClass(mockClassName, AppButtonVariants.Clear);
   });
 
   describe('toggle language', () => {

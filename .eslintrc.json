@@ -47,6 +47,7 @@
     "*.config.ts",
     "config/**/*",
     "storybook-static",
+    "scripts/**/*",
     "themeDecorator.tsx" // TODO: delete this file from ignore
   ],
   "settings": {
