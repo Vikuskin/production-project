@@ -5,12 +5,12 @@
 
 body {
   overflow: hidden;
+  color: var(--primary-color);
   font: var(--font-m);
 }
 
 .app {
   min-height: 100vh;
-  color: var(--primary-color);
   background: var(--primary-bg-color);
 }
 

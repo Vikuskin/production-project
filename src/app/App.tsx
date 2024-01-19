@@ -2,16 +2,13 @@ import 'app/providers/i18n/i18n';
 import { FC, Suspense } from 'react';
 
 import { AppRouter } from 'app/providers/router';
-import { useTheme } from 'app/providers/theme';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 
 const App: FC = () => {
-  const { theme } = useTheme();
-
   return (
-    <div className={getClassNames('app', [theme])}>
+    <div className={getClassNames('app')}>
       <Suspense fallback="">
         <Navbar />
         <div className="content-page">

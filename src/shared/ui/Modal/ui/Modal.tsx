@@ -1,6 +1,5 @@
 import React, { FC, PropsWithChildren, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 
-import { useTheme } from 'app/providers/theme';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { Portal } from 'shared/ui/Portal/ui/Portal';
 
@@ -15,7 +14,6 @@ interface ModalProps {
 }
 
 export const Modal: FC<PropsWithChildren<ModalProps>> = (props) => {
-  const { theme } = useTheme(); //TODO: refactor
   const { children, className, isOpen, onClose } = props;
   const [isClosing, setIsClosing] = useState(false);
   const mods: Record<string, boolean> = {
@@ -55,7 +53,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = (props) => {
 
   return (
     <Portal>
-      <div data-testid="modal" className={getClassNames(styles.modal, [className ?? '', theme], mods)}>
+      <div data-testid="modal" className={getClassNames(styles.modal, [className ?? ''], mods)}>
         <div data-testid="overlay" className={styles.overlay} onClick={closeHandler}>
           <div data-testid="content" className={styles.content} onClick={onContentClick}>
             {children}
