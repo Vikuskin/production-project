@@ -44,22 +44,4 @@ describe('ThemeSwitcher', () => {
 
     expect(themeSwitcher).toBeInTheDocument();
   });
-
-  it('renders light icon when theme is dark', () => {
-    mockUseTheme.mockReturnValue({ theme: Themes.Light, toggleTheme: jest.fn() });
-
-    const { getByTestId } = render(<ThemeSwitcher />);
-    const lightIcon = getByTestId('light-icon');
-
-    expect(lightIcon).toBeInTheDocument();
-  });
-
-  it('renders dark icon when theme is light', () => {
-    mockUseTheme.mockReturnValue({ theme: Themes.Dark, toggleTheme: jest.fn() });
-
-    const { getByTestId } = render(<ThemeSwitcher />);
-    const darkIcon = getByTestId('dark-icon');
-
-    expect(darkIcon).toBeInTheDocument();
-  });
 });

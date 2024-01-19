@@ -9,15 +9,6 @@ const meta = {
   title: 'shared/LangSwitcher',
   component: LangSwitcher,
   tags: ['autodocs'],
-  parameters: {
-    backgrounds: {
-      default: 'twitter',
-      values: [
-        { name: 'twitter', value: '#00aced' },
-        { name: 'facebook', value: '#3b5998' },
-      ],
-    },
-  },
 } satisfies Meta<typeof LangSwitcher>;
 
 export default meta;

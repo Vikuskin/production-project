@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 
+import ReloadSvg from 'shared/assets/icons/reload.svg';
 import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
-
-import ReloadSvg from '../../../assets/icons/reload.svg';
 
 interface ReloadButtonProps {
   className?: string;
