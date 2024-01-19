@@ -1,10 +1,14 @@
-import { FC, PropsWithChildren, useMemo, useState } from 'react';
+import React, { FC, PropsWithChildren, useMemo, useState } from 'react';
 
-import { ThemeContext } from '../lib/ThemeContext';
+import { ThemeContext, Themes } from '../lib/ThemeContext';
 import { DEFAULT_TEAM } from '../lib/useTheme';
 
-const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [theme, setTheme] = useState(DEFAULT_TEAM);
+interface ThemeProviderProps {
+  initialTheme?: Themes;
+}
+
+const ThemeProvider: FC<PropsWithChildren<ThemeProviderProps>> = ({ children, initialTheme }) => {
+  const [theme, setTheme] = useState(initialTheme || DEFAULT_TEAM);
   const defaultProps = useMemo(
     () => ({
       theme,

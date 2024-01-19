@@ -3,6 +3,17 @@
 @import './variables/global';
 @import './reset';
 
+body {
+  overflow: hidden;
+  font: var(--font-m);
+}
+
+.app {
+  min-height: 100vh;
+  color: var(--primary-color);
+  background: var(--primary-bg-color);
+}
+
 .content-page {
   display: flex;
 }
@@ -10,12 +21,4 @@
 .page-wrapper {
   flex-grow: 1;
   padding: 20px;
-}
-
-.app {
-  min-height: 100vh;
-  overflow: hidden;
-  color: var(--primary-color);
-  font: var(--font-m);
-  background: var(--primary-bg-color);
 }

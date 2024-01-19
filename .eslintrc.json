@@ -23,7 +23,7 @@
       }
     },
     {
-      "files": ["src/**/*.test.{ts,tsx}"],
+      "files": ["src/**/*.{test,stories}.{ts,tsx}"],
       "rules": {
         "i18next/no-literal-string": "off"
       }
@@ -37,7 +37,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "import", "prettier", "i18next"],
+  "plugins": ["react", "@typescript-eslint", "import", "prettier", "i18next", "react-hooks"],
   "ignorePatterns": [
     "build",
     "coverage",
@@ -101,6 +101,8 @@
       }
     ],
     "no-unused-vars": ["off"],
-    "@typescript-eslint/no-unused-vars": ["error", { "varsIgnorePattern": "React" }]
+    "@typescript-eslint/no-unused-vars": ["error", { "varsIgnorePattern": "React" }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error"
   }
 }
