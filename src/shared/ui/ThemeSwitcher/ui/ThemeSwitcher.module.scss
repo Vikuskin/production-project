@@ -1,0 +1,11 @@
+.theme-switcher {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+}
+
+.theme-icon {
+  fill: var(--primary-color);
+}

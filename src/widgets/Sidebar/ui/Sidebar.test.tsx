@@ -22,7 +22,7 @@ describe('Sidebar', () => {
     const mockClassName = 'custom-class';
     const { getByTestId } = render(<Sidebar className={mockClassName} />);
     const sidebar = getByTestId('sidebar');
-    const button = within(sidebar).getByTestId('sideber-toggle-btn');
+    const button = within(sidebar).getByTestId('sidebar-toggle-btn');
 
     fireEvent.click(button);
 

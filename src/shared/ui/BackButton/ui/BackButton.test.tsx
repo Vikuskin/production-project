@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import { ButtonVariants } from 'shared/ui/AppButton';
+import { AppButtonVariants } from 'shared/ui/AppButton';
 
 import { BackButton } from './BackButton';
 
@@ -10,7 +10,7 @@ describe('BackButton', () => {
     const backButton = getByTestId('back-button');
 
     expect(backButton).toBeInTheDocument();
-    expect(backButton).toHaveClass(ButtonVariants.Clear);
+    expect(backButton).toHaveClass(AppButtonVariants.Clear);
   });
 
   it('calls window.history.back() on click', () => {

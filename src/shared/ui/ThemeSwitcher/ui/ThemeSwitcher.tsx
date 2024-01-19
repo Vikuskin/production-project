@@ -1,27 +1,30 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { Themes, useTheme } from 'app/providers/theme';
+import { useTheme } from 'app/providers/theme';
+import ThemeSvg from 'shared/assets/icons/theme.svg';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AppButton, ButtonVariants } from 'shared/ui/AppButton';
+import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
 
-import DarkThemeIcon from '../../../assets/icons/theme-dark.svg';
-import LigntThemeIcon from '../../../assets/icons/theme-light.svg';
+import * as styles from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
   className?: string;
 }
 
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }: ThemeSwitcherProps) => {
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
+  const { t } = useTranslation();
 
   return (
     <AppButton
       data-testid="theme-switcher"
-      className={getClassNames('', [className ?? ''])}
-      variant={ButtonVariants.Clear}
+      className={getClassNames(styles.themeSwitcher, [className ?? ''])}
+      variant={AppButtonVariants.Clear}
       onClick={toggleTheme}
     >
-      {theme === Themes.Light ? <LigntThemeIcon data-testid="light-icon" /> : <DarkThemeIcon data-testid="dark-icon" />}
+      <ThemeSvg className={styles.themeIcon} />
+      <span>{t('Theme')}</span>
     </AppButton>
   );
 };

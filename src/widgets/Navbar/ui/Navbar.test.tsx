@@ -3,6 +3,7 @@ import { UserEvent, userEvent } from '@testing-library/user-event';
 import { MemoryHistory, createMemoryHistory } from 'history';
 import { BrowserRouter, Router } from 'react-router-dom';
 
+import { AppRoutes, routePaths } from 'app/providers/router/lib/routeConfig';
 import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation';
 
 import { Navbar } from './Navbar';
@@ -43,7 +44,7 @@ describe('Navbar', () => {
 
       await user.click(aboutLink);
 
-      expect(history.location.pathname).toEqual('/about');
+      expect(history.location.pathname).toEqual(routePaths[AppRoutes.About]);
     });
 
     it('routes to the main page by click on the main link', async () => {
@@ -51,7 +52,7 @@ describe('Navbar', () => {
 
       await userEvent.click(mainLink);
 
-      expect(history.location.pathname).toEqual('/');
+      expect(history.location.pathname).toEqual(routePaths[AppRoutes.Main]);
     });
   });
 });

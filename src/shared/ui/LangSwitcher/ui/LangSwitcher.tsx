@@ -1,7 +1,11 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AppButton, ButtonVariants } from 'shared/ui/AppButton';
+import TranslationSvg from 'shared/assets/icons/translation.svg';
+import { getClassNames } from 'shared/lib/classNames/getClassNames';
+import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
+
+import * as styles from './LangSwitcher.module.scss';
 
 interface LangSwitcherProps {
   className?: string;
@@ -9,7 +13,7 @@ interface LangSwitcherProps {
 
 export const LOCAL_STORAGE_KEY_LANG = 'lang';
 
-export const LangSwitcher: FC<LangSwitcherProps> = ({ className }: LangSwitcherProps) => {
+export const LangSwitcher: FC<LangSwitcherProps> = ({ className }) => {
   const { t, i18n } = useTranslation();
   const toggleTranslate = () => {
     const choosedLanguage = i18n.language === 'ru' ? 'en' : 'ru';
@@ -20,12 +24,13 @@ export const LangSwitcher: FC<LangSwitcherProps> = ({ className }: LangSwitcherP
 
   return (
     <AppButton
+      className={getClassNames(styles.langSwitcher, [className ?? ''])}
       data-testid="lang-switcher"
-      className={className}
-      variant={ButtonVariants.Clear}
+      variant={AppButtonVariants.Clear}
       onClick={toggleTranslate}
     >
-      {t('Language')}
+      <TranslationSvg className={styles.langIcon} />
+      <span>{t('Language')}</span>
     </AppButton>
   );
 };

@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 
 import { Themes, useTheme } from 'app/providers/theme';
-import { ButtonVariants } from 'shared/ui/AppButton';
+import { AppButtonVariants } from 'shared/ui/AppButton';
 
 import { ThemeSwitcher } from './ThemeSwitcher';
 
@@ -20,7 +20,7 @@ describe('ThemeSwitcher', () => {
     const themeSwitcher = getByTestId('theme-switcher');
 
     expect(themeSwitcher).toBeInTheDocument();
-    expect(themeSwitcher).toHaveClass(ButtonVariants.Clear);
+    expect(themeSwitcher).toHaveClass(AppButtonVariants.Clear);
   });
 
   it('calls toggleTheme function on click', () => {
@@ -43,23 +43,5 @@ describe('ThemeSwitcher', () => {
     const themeSwitcher = container.querySelector('.custom-class');
 
     expect(themeSwitcher).toBeInTheDocument();
-  });
-
-  it('renders light icon when theme is dark', () => {
-    mockUseTheme.mockReturnValue({ theme: Themes.Light, toggleTheme: jest.fn() });
-
-    const { getByTestId } = render(<ThemeSwitcher />);
-    const lightIcon = getByTestId('light-icon');
-
-    expect(lightIcon).toBeInTheDocument();
-  });
-
-  it('renders dark icon when theme is light', () => {
-    mockUseTheme.mockReturnValue({ theme: Themes.Dark, toggleTheme: jest.fn() });
-
-    const { getByTestId } = render(<ThemeSwitcher />);
-    const darkIcon = getByTestId('dark-icon');
-
-    expect(darkIcon).toBeInTheDocument();
   });
 });

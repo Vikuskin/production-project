@@ -4,26 +4,38 @@ import { getClassNames } from 'shared/lib/classNames/getClassNames';
 
 import * as styles from './AppButton.module.scss';
 
-export enum ButtonVariants {
+export enum AppButtonVariants {
   Clear = 'clear',
   Outline = 'outline',
+  Background = 'background',
+  BackgroundInverted = 'backgroundInverted',
+}
+
+export enum AppButtonSizes {
+  SizeM = 'sizeM',
+  SizeL = 'sizeL',
+  SizeXl = 'sizeXl',
 }
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: ButtonVariants;
+  variant: AppButtonVariants;
+  square?: boolean;
+  size?: AppButtonSizes;
   className?: string;
   children?: React.ReactNode;
 }
 
 export const AppButton: FC<AppButtonProps> = (props: AppButtonProps) => {
-  const { className, children, variant, ...otherProps } = props;
+  const { className, children, variant, square, size, ...otherProps } = props;
+  const additionalClasses = [className ?? '', styles[variant]];
+  let mods: Record<string, boolean> = {
+    [styles.square]: !!square,
+  };
+
+  mods = size ? { ...mods, [styles[size]]: !!size } : mods;
 
   return (
-    <button
-      data-testid="button"
-      className={getClassNames(styles.button, [className ?? '', styles[variant]])}
-      {...otherProps}
-    >
+    <button data-testid="button" className={getClassNames(styles.button, additionalClasses, mods)} {...otherProps}>
       {children}
     </button>
   );

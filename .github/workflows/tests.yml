@@ -21,10 +21,12 @@ jobs:
         npm run test:unit
         echo "Unit tests finished"
     - name: Storybook build
+      if: always()
       run: |
         npm run storybook:build
         echo "Storybook build finished"
     - name: Screenshot tests
+      if: always()
       run: |
         npm run test:ui:ci 
         echo "Screnshot tests finished"
