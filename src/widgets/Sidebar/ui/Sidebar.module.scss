@@ -3,7 +3,7 @@
   width: var(--sidebar-width);
   height: calc(100vh - var(--navbar-height) - 30px);
   margin: 15px;
-  padding: 25px 0 0 3px;
+  padding: 25px 0 0 20px;
   background: var(--secondary-bg-color);
   border-radius: 16px;
   transition: width 0.5s;
@@ -39,9 +39,5 @@
   align-items: start;
   justify-content: start;
   width: 100%;
-  margin-left: 20px;
-}
-
-.switcher {
-  transition: width 0.9s;
+  margin: auto;
 }

@@ -3,9 +3,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import Backend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 
-import { LOCAL_STORAGE_KEY_LANG } from 'shared/ui/LangSwitcher';
-
-const choosedLanguage = localStorage.getItem(LOCAL_STORAGE_KEY_LANG);
+const choosedLanguage = localStorage.getItem('i18nextLng');
 
 i18n
   .use(Backend)

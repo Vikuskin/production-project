@@ -1,15 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
 import { Themes } from 'app/providers/theme';
+import TranslationSvg from 'shared/assets/icons/translation.svg';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
-import { LangSwitcher } from './LangSwitcher';
+import { SidebarSwitcher } from './SidebarSwitcher';
 
 const meta = {
-  title: 'shared/LangSwitcher',
-  component: LangSwitcher,
+  title: 'shared/SidebarSwitcher',
+  component: SidebarSwitcher,
   tags: ['autodocs'],
-} satisfies Meta<typeof LangSwitcher>;
+  args: {
+    children: (
+      <>
+        <TranslationSvg />
+        <span>Text</span>
+      </>
+    ),
+  },
+} satisfies Meta<typeof SidebarSwitcher>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
