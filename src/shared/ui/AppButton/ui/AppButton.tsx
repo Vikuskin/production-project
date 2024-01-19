@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, FC } from 'react';
+import React, { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 
@@ -22,10 +22,9 @@ interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   square?: boolean;
   size?: AppButtonSizes;
   className?: string;
-  children?: React.ReactNode;
 }
 
-export const AppButton: FC<AppButtonProps> = (props: AppButtonProps) => {
+export const AppButton: FC<PropsWithChildren<AppButtonProps>> = (props) => {
   const { className, children, variant, square, size, ...otherProps } = props;
   const additionalClasses = [className ?? '', styles[variant]];
   let mods: Record<string, boolean> = {

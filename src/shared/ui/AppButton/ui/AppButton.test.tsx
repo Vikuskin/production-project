@@ -8,10 +8,10 @@ describe('AppButton', () => {
   });
 
   it('renders with the correct variant', () => {
-    const { getByTestId } = render(<AppButton variant={AppButtonVariants.Clear}>Test Button</AppButton>);
+    const { getByTestId } = render(<AppButton variant={AppButtonVariants.Outline}>Test Button</AppButton>);
     const button = getByTestId('button');
 
-    expect(button).toHaveClass(AppButtonVariants.Clear);
+    expect(button).toHaveClass(AppButtonVariants.Outline);
   });
 
   it('renders additional className when provided', () => {
