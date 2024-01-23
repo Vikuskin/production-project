@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import React, { FC, PropsWithChildren, useCallback, useEffect, useRef, useState } from 'react';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { Portal } from 'shared/ui/Portal/ui/Portal';
@@ -7,25 +7,48 @@ import * as styles from './Modal.module.scss';
 
 export const ANIMATION_DELAY = 200;
 
-interface ModalProps {
+interface IModalProps {
   isOpen?: boolean;
   onClose?: () => void;
   className?: string;
+  lazy?: boolean;
 }
 
-export const Modal: FC<PropsWithChildren<ModalProps>> = (props) => {
-  const { children, className, isOpen, onClose } = props;
+export const Modal: FC<PropsWithChildren<IModalProps>> = (props) => {
+  const { children, className, isOpen, onClose, lazy } = props;
+  const [isOpening, setIsOpening] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const mods: Record<string, boolean> = {
-    [styles.opened]: !!isOpen,
+    [styles.isOpening]: isOpening,
+    [styles.opened]: isMounted,
     [styles.isClosing]: isClosing,
   };
+  const openingTimerRef = useRef<ReturnType<typeof setTimeout>>();
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsOpening(true);
+      openingTimerRef.current = setTimeout(() => {
+        setIsMounted(true);
+        setIsOpening(false);
+      }, ANIMATION_DELAY);
+    }
+
+    return () => {
+      clearTimeout(openingTimerRef.current);
+    };
+  }, [isOpen]);
+
+  const closingTimerRef = useRef<ReturnType<typeof setTimeout>>();
   const closeHandler = useCallback(() => {
+    console.log('click on OVERLAY');
     if (onClose) {
       setIsClosing(true);
-      timerRef.current = setTimeout(() => {
+      closingTimerRef.current = setTimeout(() => {
         onClose();
         setIsClosing(false);
+        setIsMounted(false);
       }, ANIMATION_DELAY);
     }
   }, [onClose]);
@@ -38,7 +61,6 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = (props) => {
     },
     [closeHandler],
   );
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
     if (isOpen) {
@@ -46,10 +68,14 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = (props) => {
     }
 
     return () => {
-      clearTimeout(timerRef.current);
+      clearTimeout(closingTimerRef.current);
       window.removeEventListener('keydown', onKeyDown);
     };
   }, [isOpen, onKeyDown]);
+
+  if (lazy && !isMounted && !isOpening) {
+    return null;
+  }
 
   return (
     <Portal>

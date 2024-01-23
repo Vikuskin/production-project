@@ -4,13 +4,13 @@ import { MemoryHistory, createMemoryHistory } from 'history';
 import { BrowserRouter, Router } from 'react-router-dom';
 
 import { AppRoutes, routePaths } from 'app/providers/router/lib/routeConfig';
-import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation';
+import { componentRender } from 'shared/lib/tests/componentRender';
 
 import { Navbar } from './Navbar';
 
 describe('Navbar', () => {
   it('renders without crashing', () => {
-    renderWithTranslation(<Navbar />, { wrapper: BrowserRouter });
+    componentRender(<Navbar />, { wrapper: BrowserRouter });
   });
 
   it('renders with the correct passed className', () => {

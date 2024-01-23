@@ -3,10 +3,10 @@ import React, { FC } from 'react';
 import BackSvg from '../../../assets/icons/back.svg';
 import { AppButton, AppButtonVariants } from '../../AppButton';
 
-interface BackButtonProps {
+interface IBackButtonProps {
   className?: string;
 }
-export const BackButton: FC<BackButtonProps> = ({ className }) => {
+export const BackButton: FC<IBackButtonProps> = ({ className }) => {
   const back = () => {
     window.history.back();
   };

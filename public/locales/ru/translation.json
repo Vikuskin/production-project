@@ -3,5 +3,7 @@
   "Language": "English",
   "Main": "Основное",
   "Theme": "Тема",
-  "Login": "Войти"
+  "Login": "Войти",
+  "Username": "Имя",
+  "Password": "Пароль"
 }

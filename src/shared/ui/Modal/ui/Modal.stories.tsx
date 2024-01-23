@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
 import { Themes } from 'app/providers/theme';
+import { delayCaptureDecorator } from 'shared/lib/storybook/delayCaptureDecorator';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
 import { Modal } from './Modal';
@@ -20,9 +21,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-  decorators: [themeDecorator(Themes.Light)],
+  decorators: [themeDecorator(Themes.Light), delayCaptureDecorator()],
 };
 
 export const Dark: Story = {
-  decorators: [themeDecorator(Themes.Dark)],
+  decorators: [themeDecorator(Themes.Dark), delayCaptureDecorator()],
 };

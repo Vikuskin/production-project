@@ -5,9 +5,9 @@ export enum Themes {
   Light = 'app-light-theme',
 }
 
-export interface ThemeContextProps {
+export interface IThemeContextProps {
   theme?: Themes;
   setTheme?: React.Dispatch<React.SetStateAction<Themes>>;
 }
 
-export const ThemeContext = createContext<ThemeContextProps>({});
+export const ThemeContext = createContext<IThemeContextProps>({});

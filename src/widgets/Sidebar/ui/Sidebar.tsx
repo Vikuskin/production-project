@@ -11,11 +11,11 @@ import { SidebarSwitcher } from 'shared/ui/SidebarSwitcher';
 
 import * as styles from './Sidebar.module.scss';
 
-interface SidebarProps {
+interface ISidebarProps {
   className?: string;
 }
 
-export const Sidebar: FC<SidebarProps> = ({ className }) => {
+export const Sidebar: FC<ISidebarProps> = ({ className }) => {
   const [collapsed, setCollapsed] = useState(false);
   const toggleCollapsed = () => setCollapsed((prev) => !prev);
   const { toggleTheme } = useTheme();

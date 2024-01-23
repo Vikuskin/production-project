@@ -3,5 +3,7 @@
   "Language": "Русский",
   "Main": "Main",
   "Theme": "Theme",
-  "Login": "Login"
+  "Login": "Login",
+  "Username": "Username",
+  "Password": "Password"
 }

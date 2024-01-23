@@ -2,21 +2,22 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { AppRoutes, routePaths } from 'app/providers/router';
+import { LoginModal } from 'features/AuthByUserName';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
 import { AppLink, AppLinkThemes } from 'shared/ui/AppLink/ui/AppLink';
-import { Modal } from 'shared/ui/Modal';
 
 import * as styles from './Navbar.module.scss';
 
-interface NavbarProps {
+interface INavbarProps {
   className?: string;
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = ({ className }: INavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
-  const onToggleModal = () => setIsAuthModal((prev) => !prev);
+  const onCloseModal = () => setIsAuthModal(false);
+  const onShowModal = () => setIsAuthModal(true);
 
   return (
     <div data-testid="navbar" className={getClassNames(styles.navbar, [className ?? ''])}>
@@ -31,14 +32,11 @@ export const Navbar = ({ className }: NavbarProps) => {
           data-testid="login-btn"
           className={styles.loginBtn}
           variant={AppButtonVariants.Clear}
-          onClick={onToggleModal}
+          onClick={onShowModal}
         >
           {t('Login')}
         </AppButton>
-        {/* eslint-disable-next-line i18next/no-literal-string */}
-        <Modal data-testid="login-modal" isOpen={isAuthModal} onClose={onToggleModal}>
-          Qui duis sit ex dolor cillum nulla pariatur.
-        </Modal>
+        <LoginModal data-testid="login-modal" isOpen={isAuthModal} onClose={onCloseModal} />
       </div>
     </div>
   );

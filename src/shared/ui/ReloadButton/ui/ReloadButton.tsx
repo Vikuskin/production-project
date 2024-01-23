@@ -3,10 +3,10 @@ import React, { FC } from 'react';
 import ReloadSvg from 'shared/assets/icons/reload.svg';
 import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
 
-interface ReloadButtonProps {
+interface IReloadButtonProps {
   className?: string;
 }
-export const ReloadButton: FC<ReloadButtonProps> = ({ className }) => {
+export const ReloadButton: FC<IReloadButtonProps> = ({ className }) => {
   const reloadPage = () => {
     location.reload();
   };

@@ -2,7 +2,7 @@ import { fireEvent, render, within } from '@testing-library/react';
 
 import i18n from 'app/providers/i18n/i18nForTests';
 import { Themes, useTheme } from 'app/providers/theme';
-import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation';
+import { componentRender } from 'shared/lib/tests/componentRender';
 
 import { Sidebar } from './Sidebar';
 
@@ -20,7 +20,7 @@ describe('Sidebar', () => {
   });
 
   it('renders without crashing', () => {
-    renderWithTranslation(<Sidebar />);
+    componentRender(<Sidebar />);
   });
 
   it('renders with the correct class and passed className', () => {

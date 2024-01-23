@@ -6,11 +6,11 @@ import { ReloadButton } from 'shared/ui/ReloadButton';
 
 import * as styles from './ErrorPage.module.scss';
 
-interface ErrorPageProps {
+interface IErrorPageProps {
   text: string;
 }
 
-const ErrorPage: FC<ErrorPageProps> = ({ text }) => {
+const ErrorPage: FC<IErrorPageProps> = ({ text }) => {
   const { t } = useTranslation('errorPage');
 
   return (

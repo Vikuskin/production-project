@@ -2,16 +2,16 @@ import { Component, ErrorInfo, ReactNode, Suspense } from 'react';
 
 import { ErrorPage } from 'pages/ErrorPage';
 
-interface ErrorBoundaryProps {
+interface IErrorBoundaryProps {
   children: ReactNode;
 }
 
-interface ErrorBoudaryState {
+interface IErrorBoudaryState {
   hasError: boolean;
 }
 
-class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoudaryState> {
-  constructor(props: ErrorBoundaryProps) {
+class ErrorBoundary extends Component<IErrorBoundaryProps, IErrorBoudaryState> {
+  constructor(props: IErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false };
   }

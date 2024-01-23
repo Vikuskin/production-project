@@ -2,16 +2,25 @@ import { useContext } from 'react';
 
 import { ThemeContext, Themes } from './ThemeContext';
 
-interface UseThemeResult {
+interface IUseThemeResult {
   theme: Themes;
   toggleTheme: () => void;
 }
 
 const LOCAL_STORAGE_THEME_KEY = 'theme';
+const getLocalStorageTheme = (): Themes | null => {
+  const localStorageTheme: Themes | null = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Themes;
 
-export const DEFAULT_TEAM: Themes = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Themes) ?? Themes.Light;
+  if (localStorageTheme && Object.values(Themes).includes(localStorageTheme)) {
+    return localStorageTheme;
+  }
 
-export function useTheme(): UseThemeResult {
+  return null;
+};
+
+export const DEFAULT_TEAM: Themes = getLocalStorageTheme() ?? Themes.Light;
+
+export function useTheme(): IUseThemeResult {
   const { theme, setTheme } = useContext(ThemeContext);
   const toggleTheme = (): void => {
     const newTheme = theme === Themes.Light ? Themes.Dark : Themes.Light;
