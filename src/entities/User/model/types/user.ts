@@ -1,8 +1,8 @@
 export interface IUser {
-  authData?: IAuthData;
+  authData: IAuthData | null;
 }
 
 export interface IAuthData {
   id: string;
-  userName: string;
+  username: string;
 }

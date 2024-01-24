@@ -5,5 +5,13 @@
   "Theme": "Theme",
   "Login": "Login",
   "Username": "Username",
-  "Password": "Password"
+  "Password": "Password",
+  "Authentication error": "Authentication error",
+  "Error": "Error",
+  "400_error": "Bad request",
+  "404_error": "Not found",
+  "500_error": "Internal server error",
+  "Incorrect authentication data": "Incorrect authentication data",
+  "The server cannot find the requested resource": "The server cannot find the requested resource",
+  "Internal server error": "Something went wrong"
 }

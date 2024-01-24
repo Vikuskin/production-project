@@ -4,6 +4,7 @@ import { RouteProps } from 'react-router-dom';
 import { AboutPage } from 'pages/AboutPage';
 import { ErrorPage } from 'pages/ErrorPage';
 import { MainPage } from 'pages/MainPage';
+import { ErrorStatusCodes } from 'shared/enums/errorStatusCode';
 
 export enum AppRoutes {
   Main = 'main',
@@ -28,6 +29,6 @@ export const routeConfig: RouteProps[] = [
   },
   {
     path: routePaths[AppRoutes.NotFound],
-    element: <ErrorPage text="Page not found" />,
+    element: <ErrorPage errorCode={ErrorStatusCodes.NotFound} text="Page not found" />,
   },
 ];

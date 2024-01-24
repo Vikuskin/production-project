@@ -1,6 +1,8 @@
 import { act, fireEvent, render } from '@testing-library/react';
 
-import { ANIMATION_DELAY, Modal } from './Modal';
+import { ANIMATION_DELAY } from 'shared/constants/constants';
+
+import { Modal } from './Modal';
 
 describe('Modal', () => {
   const onCloseMock = jest.fn();

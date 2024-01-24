@@ -68,3 +68,11 @@ export const OutlineSizeXl: Story = {
   },
   decorators: [themeDecorator(Themes.Dark)],
 };
+
+export const OutlineDisabled: Story = {
+  args: {
+    variant: AppButtonVariants.Outline,
+    disabled: true,
+  },
+  decorators: [themeDecorator(Themes.Dark)],
+};

@@ -1,4 +1,4 @@
-import webpack, { RuleSetRule } from 'webpack';
+import webpack, { DefinePlugin, RuleSetRule } from 'webpack';
 import { IBuildPaths } from '../build/types/config';
 import path from 'path';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
@@ -24,6 +24,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
   config.resolve!.alias = {
     entities: path.resolve(__dirname, '..', '..', 'src', 'entities'),
   };
+  config.plugins?.push(new DefinePlugin({ IS_DEV: true }));
 
   return config;
 };

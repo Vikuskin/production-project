@@ -25,10 +25,11 @@ interface IAppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const AppButton: FC<PropsWithChildren<IAppButtonProps>> = (props) => {
-  const { className, children, variant, square, size, ...otherProps } = props;
+  const { className, children, variant, square, size, disabled, ...otherProps } = props;
   const additionalClasses = [className ?? '', styles[variant]];
   let mods: Record<string, boolean> = {
     [styles.square]: !!square,
+    [styles.disabled]: !!disabled,
   };
 
   mods = size ? { ...mods, [styles[size]]: !!size } : mods;

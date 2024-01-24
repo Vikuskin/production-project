@@ -1,8 +1,8 @@
 import React, { FC, PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
 
-import { IState } from '../config/State';
 import { createStore } from '../config/store';
+import { IState } from '../types/state';
 
 interface IStoreProvider {
   initialState?: IState;

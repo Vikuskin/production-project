@@ -1,11 +1,10 @@
 import React, { FC, PropsWithChildren, useCallback, useEffect, useRef, useState } from 'react';
 
+import { ANIMATION_DELAY } from 'shared/constants/constants';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { Portal } from 'shared/ui/Portal/ui/Portal';
 
 import * as styles from './Modal.module.scss';
-
-export const ANIMATION_DELAY = 200;
 
 interface IModalProps {
   isOpen?: boolean;
@@ -42,7 +41,6 @@ export const Modal: FC<PropsWithChildren<IModalProps>> = (props) => {
 
   const closingTimerRef = useRef<ReturnType<typeof setTimeout>>();
   const closeHandler = useCallback(() => {
-    console.log('click on OVERLAY');
     if (onClose) {
       setIsClosing(true);
       closingTimerRef.current = setTimeout(() => {

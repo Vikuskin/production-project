@@ -10,6 +10,7 @@ const meta = {
   component: ErrorPage,
   tags: ['autodocs'],
   args: {
+    errorCode: 500,
     text: 'Error page',
   },
 } satisfies Meta<typeof ErrorPage>;

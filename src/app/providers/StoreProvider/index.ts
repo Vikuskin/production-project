@@ -1,5 +1,5 @@
-import type { IState } from './config/State';
-import { createStore } from './config/store';
+import { createStore, useAppDispatch } from './config/store';
+import type { IState } from './types/state';
 import { StoreProvider } from './ui/StoreProvider';
 
-export { StoreProvider, createStore, IState };
+export { StoreProvider, createStore, IState, useAppDispatch };

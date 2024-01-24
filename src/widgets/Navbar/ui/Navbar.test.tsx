@@ -1,4 +1,4 @@
-import { render, within } from '@testing-library/react';
+import { within } from '@testing-library/react';
 import { UserEvent, userEvent } from '@testing-library/user-event';
 import { MemoryHistory, createMemoryHistory } from 'history';
 import { BrowserRouter, Router } from 'react-router-dom';
@@ -15,11 +15,31 @@ describe('Navbar', () => {
 
   it('renders with the correct passed className', () => {
     const mockClassName = 'custom-class';
-    const { getByTestId } = render(<Navbar className={mockClassName} />, { wrapper: BrowserRouter });
+    const { getByTestId } = componentRender(<Navbar className={mockClassName} />, { wrapper: BrowserRouter });
     const navbar = getByTestId('navbar');
 
     expect(navbar).toBeInTheDocument();
     expect(navbar).toHaveClass('navbar', mockClassName);
+  });
+
+  it('renders login button when auth data is not exist', () => {
+    const { getByTestId } = componentRender(<Navbar />, {
+      wrapper: BrowserRouter,
+      initialState: { user: { authData: null } },
+    });
+    const loginBtn = getByTestId('login-btn');
+
+    expect(loginBtn).toBeInTheDocument();
+  });
+
+  it('renders logout button when auth data is exist', () => {
+    const { getByTestId } = componentRender(<Navbar />, {
+      wrapper: BrowserRouter,
+      initialState: { user: { authData: { id: '1', username: 'test' } } },
+    });
+    const loginBtn = getByTestId('logout-btn');
+
+    expect(loginBtn).toBeInTheDocument();
   });
 
   describe('links', () => {
@@ -29,7 +49,7 @@ describe('Navbar', () => {
 
     beforeEach(() => {
       history = createMemoryHistory();
-      const { getByTestId } = render(
+      const { getByTestId } = componentRender(
         <Router location={history.location} navigator={history}>
           <Navbar />
         </Router>,
