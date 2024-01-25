@@ -1,14 +1,17 @@
-import { Dispatch } from '@reduxjs/toolkit';
+import { EnhancedStore } from '@reduxjs/toolkit';
 
 import { IUser } from 'entities/User';
 import { ILoginForm } from 'features/AuthByUserName';
 
+import { createReducerManager } from '../config/createReducerManager';
+
 export interface IState {
   user: IUser;
-  loginForm: ILoginForm;
+  loginForm?: ILoginForm;
 }
 
-export interface IStore {
-  dispatch: Dispatch;
-  getState: () => IState;
+export type StateKey = keyof IState;
+export type ReducerManager = ReturnType<typeof createReducerManager>;
+export interface IStoreWithManager extends EnhancedStore<IState> {
+  reducerManager: ReducerManager;
 }

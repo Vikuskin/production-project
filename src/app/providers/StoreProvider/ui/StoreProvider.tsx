@@ -1,3 +1,4 @@
+import { ReducersMapObject } from '@reduxjs/toolkit';
 import React, { FC, PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
 
@@ -6,10 +7,12 @@ import { IState } from '../types/state';
 
 interface IStoreProvider {
   initialState?: IState;
+  asyncReducers?: ReducersMapObject<IState>;
 }
 
-export const StoreProvider: FC<PropsWithChildren<IStoreProvider>> = ({ children, initialState }) => {
-  const store = createStore(initialState);
+export const StoreProvider: FC<PropsWithChildren<IStoreProvider>> = (props) => {
+  const { asyncReducers, children, initialState } = props;
+  const store = createStore(initialState, asyncReducers);
 
   return <Provider store={store}>{children}</Provider>;
 };

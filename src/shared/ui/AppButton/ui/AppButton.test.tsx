@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
-import { AppButton, AppButtonVariants } from './AppButton';
+import { AppButton, AppButtonSizes, AppButtonVariants } from './AppButton';
 
 describe('AppButton', () => {
   it('renders without crashing', () => {
@@ -50,5 +50,12 @@ describe('AppButton', () => {
     const button = getByTestId('button');
 
     expect(button).toHaveClass('disabled');
+  });
+
+  it('renders with size class when size is passed', () => {
+    const { getByTestId } = render(<AppButton variant={AppButtonVariants.Clear} size={AppButtonSizes.SizeM} />);
+    const button = getByTestId('button');
+
+    expect(button).toHaveClass('sizeM');
   });
 });

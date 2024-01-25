@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { useAppDispatch, useAppSelector } from 'app/providers/StoreProvider';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
 import { AppInput } from 'shared/ui/AppInput';
 import { Text, TextVariants } from 'shared/ui/Text';
@@ -16,12 +17,15 @@ import {
   selectLoginPassword,
 } from '../../model/selectors/selectLoginForm';
 import { loginByUsername } from '../../model/services/loginByUsername';
-import { loginFormActions } from '../../model/slices/loginFormSlice';
+import { loginFormActions, loginFormReducer } from '../../model/slices/loginFormSlice';
 
 interface LoginFormProps {
   className?: string;
 }
 
+const initialReducers: ReducersList = {
+  loginForm: loginFormReducer,
+};
 const LoginForm: FC<LoginFormProps> = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
   const username = useAppSelector(selectLoginName);
@@ -31,38 +35,40 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }: LoginFormProps) => {
   const dispatch = useAppDispatch();
   const onChangeUsername = useCallback((value: string) => dispatch(loginFormActions.setUsername(value)), [dispatch]);
   const onChangePassword = useCallback((value: string) => dispatch(loginFormActions.setPassword(value)), [dispatch]);
-  const onLoginClick = useCallback(
-    () => dispatch(loginByUsername({ username, password })),
-    [dispatch, password, username],
-  );
+  const onLoginClick = useCallback(() => {
+    // @ts-expect-error problem with types in StoreProvider
+    dispatch(loginByUsername({ username, password }));
+  }, [dispatch, password, username]);
 
   return (
-    <div className={getClassNames(styles.loginForm, [className ?? ''])}>
-      {error && <Text title={t(`${error.status}_error`)} text={t(error.message)} variant={TextVariants.Error} />}
-      <AppInput
-        data-testid="username-input"
-        className={styles.loginInput}
-        value={username}
-        onChange={onChangeUsername}
-        placeholder={t('Username')}
-        autoFocus={true}
-      />
-      <AppInput
-        data-testid="password-input"
-        className={styles.loginInput}
-        value={password}
-        onChange={onChangePassword}
-        placeholder={t('Password')}
-      />
-      <AppButton
-        onClick={onLoginClick}
-        className={styles.loginBtn}
-        variant={AppButtonVariants.Clear}
-        disabled={isLoading}
-      >
-        {t('Login')}
-      </AppButton>
-    </div>
+    <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={true}>
+      <div className={getClassNames(styles.loginForm, [className ?? ''])}>
+        {error && <Text title={t(`${error.status}_error`)} text={t(error.message)} variant={TextVariants.Error} />}
+        <AppInput
+          data-testid="username-input"
+          className={styles.loginInput}
+          value={username}
+          onChange={onChangeUsername}
+          placeholder={t('Username')}
+          autoFocus={true}
+        />
+        <AppInput
+          data-testid="password-input"
+          className={styles.loginInput}
+          value={password}
+          onChange={onChangePassword}
+          placeholder={t('Password')}
+        />
+        <AppButton
+          onClick={onLoginClick}
+          className={styles.loginBtn}
+          variant={AppButtonVariants.Clear}
+          disabled={isLoading}
+        >
+          {t('Login')}
+        </AppButton>
+      </div>
+    </DynamicModuleLoader>
   );
 });
 

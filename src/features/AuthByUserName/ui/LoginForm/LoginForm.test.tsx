@@ -1,11 +1,14 @@
 import '@testing-library/jest-dom';
+import { ReducersMapObject } from '@reduxjs/toolkit';
 import { userEvent } from '@testing-library/user-event';
 
+import { IState } from 'app/providers/StoreProvider';
 import { componentRender } from 'shared/lib/tests/componentRender';
 
 import LoginForm from './LoginForm';
 
 import { INTERNAL_SERVER_ERROR } from '../../model/services/loginByUsername';
+import { loginFormReducer } from '../../model/slices/loginFormSlice';
 
 describe('LoginForm', () => {
   const user = userEvent.setup();
@@ -49,6 +52,7 @@ describe('LoginForm', () => {
   it('renders disabled button when state has isLoading true', () => {
     const { getByText } = componentRender(<LoginForm />, {
       initialState: { loginForm: { error: null, isLoading: true, password: '', username: '' } },
+      asyncReducers: { loginForm: loginFormReducer } as ReducersMapObject<IState>,
     });
     const loginButton = getByText('Login');
 
@@ -58,6 +62,7 @@ describe('LoginForm', () => {
   it('renders error when state has error', () => {
     const { getByText } = componentRender(<LoginForm />, {
       initialState: { loginForm: { error: INTERNAL_SERVER_ERROR, isLoading: false, password: '', username: '' } },
+      asyncReducers: { loginForm: loginFormReducer } as ReducersMapObject<IState>,
     });
     const errorTitle = getByText(`${INTERNAL_SERVER_ERROR.status}_error`);
     const errorText = getByText(INTERNAL_SERVER_ERROR.message);

@@ -11,7 +11,7 @@ import 'app/styles/index.scss';
 const root = createRoot(document.getElementById('root')!);
 
 root.render(
-  <React.StrictMode>
+  <>
     <StoreProvider>
       <BrowserRouter>
         <ErrorBoundary>
@@ -21,5 +21,5 @@ root.render(
         </ErrorBoundary>
       </BrowserRouter>
     </StoreProvider>
-  </React.StrictMode>,
+  </>,
 );
