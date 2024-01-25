@@ -5,7 +5,7 @@ import { delayCaptureDecorator } from 'shared/lib/storybook/delayCaptureDecorato
 import { storeDecorator } from 'shared/lib/storybook/storeDecorator';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
-import { LoginForm } from './LoginForm';
+import LoginForm from './LoginForm';
 
 import { loginFormInitialState } from '../../model/slices/loginFormSlice';
 

@@ -22,7 +22,7 @@ interface LoginFormProps {
   className?: string;
 }
 
-export const LoginForm: FC<LoginFormProps> = memo(({ className }: LoginFormProps) => {
+const LoginForm: FC<LoginFormProps> = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
   const username = useAppSelector(selectLoginName);
   const password = useAppSelector(selectLoginPassword);
@@ -65,3 +65,5 @@ export const LoginForm: FC<LoginFormProps> = memo(({ className }: LoginFormProps
     </div>
   );
 });
+
+export default LoginForm;

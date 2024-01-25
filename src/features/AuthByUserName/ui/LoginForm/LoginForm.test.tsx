@@ -3,7 +3,7 @@ import { userEvent } from '@testing-library/user-event';
 
 import { componentRender } from 'shared/lib/tests/componentRender';
 
-import { LoginForm } from './LoginForm';
+import LoginForm from './LoginForm';
 
 import { INTERNAL_SERVER_ERROR } from '../../model/services/loginByUsername';
 
