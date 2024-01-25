@@ -1,8 +1,7 @@
 import React, { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 
-import { useAppDispatch } from 'app/providers/StoreProvider';
+import { useAppDispatch, useAppSelector } from 'app/providers/StoreProvider';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
 import { AppInput } from 'shared/ui/AppInput';
@@ -25,10 +24,10 @@ interface LoginFormProps {
 
 export const LoginForm: FC<LoginFormProps> = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
-  const username = useSelector(selectLoginName);
-  const password = useSelector(selectLoginPassword);
-  const isLoading = useSelector(selectLoginIsLoading);
-  const error = useSelector(selectLoginError);
+  const username = useAppSelector(selectLoginName);
+  const password = useAppSelector(selectLoginPassword);
+  const isLoading = useAppSelector(selectLoginIsLoading);
+  const error = useAppSelector(selectLoginError);
   const dispatch = useAppDispatch();
   const onChangeUsername = useCallback((value: string) => dispatch(loginFormActions.setUsername(value)), [dispatch]);
   const onChangePassword = useCallback((value: string) => dispatch(loginFormActions.setPassword(value)), [dispatch]);

@@ -2,6 +2,7 @@ import { Component, ErrorInfo, ReactNode, Suspense } from 'react';
 
 import { ErrorPage } from 'pages/ErrorPage';
 import { ErrorStatusCodes } from 'shared/enums/errorStatusCode';
+import { PageLoader } from 'widgets/PageLoader';
 
 interface IErrorBoundaryProps {
   children: ReactNode;
@@ -28,7 +29,7 @@ class ErrorBoundary extends Component<IErrorBoundaryProps, IErrorBoudaryState> {
   render() {
     if (this.state.hasError) {
       return (
-        <Suspense fallback="">
+        <Suspense fallback={<PageLoader />}>
           <ErrorPage errorCode={ErrorStatusCodes.InternalServerError} text="Unexpected error" />
         </Suspense>
       );
