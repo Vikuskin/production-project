@@ -1,19 +1,19 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 
-import BackSvg from '../../../assets/icons/back.svg';
-import { AppButton, AppButtonVariants } from '../../AppButton';
+import BackSvg from 'shared/assets/icons/back.svg';
+import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
 
 interface IBackButtonProps {
   className?: string;
 }
-export const BackButton: FC<IBackButtonProps> = ({ className }) => {
+export const BackButton: FC<IBackButtonProps> = memo(({ className }: IBackButtonProps) => {
   const back = () => {
     window.history.back();
   };
 
   return (
-    <AppButton data-testid="back-button" className={className} variant={AppButtonVariants.Clear} onClick={back}>
+    <AppButton data-testid="back-button" className={className} variant={AppButtonVariant.Clear} onClick={back}>
       <BackSvg />
     </AppButton>
   );
-};
+});

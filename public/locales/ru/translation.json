@@ -13,5 +13,7 @@
   "500_error": "Непредвиденная ошибка сервера",
   "Incorrect authentication data": "Неправильные данные для авторизации",
   "The server cannot find the requested resource": "Сервер не может найти запрашиваемый ресурс",
-  "Internal server error": "Что-то пошло не так"
+  "Internal server error": "Что-то пошло не так",
+  "Profile": "Профиль",
+  "Logout": "Выйти"
 }

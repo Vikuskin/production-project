@@ -1,0 +1,61 @@
+.item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-color);
+
+  svg {
+    max-width: 40px;
+    fill: var(--primary-color);
+  }
+
+  p {
+    width: 40px;
+    height: 40px;
+  }
+
+  span {
+    animation-name: titleAnimation;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+  }
+}
+
+.collapsed {
+  span {
+    display: none;
+  }
+}
+
+@keyframes titleAnimation {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  20% {
+    transform: translateX(-40px);
+    opacity: 0.2;
+  }
+
+  40% {
+    transform: translateX(-30px);
+    opacity: 0.4;
+  }
+
+  60% {
+    transform: translateX(-20px);
+    opacity: 0.6;
+  }
+
+  80% {
+    transform: translateX(-10px);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

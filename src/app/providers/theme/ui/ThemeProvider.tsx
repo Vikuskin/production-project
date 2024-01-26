@@ -1,10 +1,10 @@
 import React, { FC, PropsWithChildren, useMemo, useState } from 'react';
 
-import { ThemeContext, Themes } from '../lib/ThemeContext';
+import { Theme, ThemeContext } from '../lib/ThemeContext';
 import { DEFAULT_TEAM } from '../lib/useTheme';
 
 interface IThemeProviderProps {
-  initialTheme?: Themes;
+  initialTheme?: Theme;
 }
 
 const ThemeProvider: FC<PropsWithChildren<IThemeProviderProps>> = ({ children, initialTheme }) => {

@@ -1,12 +1,13 @@
 import React, { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { useAppDispatch, useAppSelector } from 'app/providers/StoreProvider';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
-import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
+import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
 import { AppInput } from 'shared/ui/AppInput';
-import { Text, TextVariants } from 'shared/ui/Text';
+import { Text, TextVariant } from 'shared/ui/Text';
 
 import * as styles from './LoginForm.module.scss';
 
@@ -20,13 +21,14 @@ import { loginByUsername } from '../../model/services/loginByUsername';
 import { loginFormActions, loginFormReducer } from '../../model/slices/loginFormSlice';
 
 interface LoginFormProps {
+  onClose: () => void;
   className?: string;
 }
 
 const initialReducers: ReducersList = {
   loginForm: loginFormReducer,
 };
-const LoginForm: FC<LoginFormProps> = memo(({ className }: LoginFormProps) => {
+const LoginForm: FC<LoginFormProps> = memo(({ className, onClose }: LoginFormProps) => {
   const { t } = useTranslation();
   const username = useAppSelector(selectLoginName);
   const password = useAppSelector(selectLoginPassword);
@@ -35,15 +37,16 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }: LoginFormProps) => {
   const dispatch = useAppDispatch();
   const onChangeUsername = useCallback((value: string) => dispatch(loginFormActions.setUsername(value)), [dispatch]);
   const onChangePassword = useCallback((value: string) => dispatch(loginFormActions.setPassword(value)), [dispatch]);
-  const onLoginClick = useCallback(() => {
-    // @ts-expect-error problem with types in StoreProvider
-    dispatch(loginByUsername({ username, password }));
-  }, [dispatch, password, username]);
+  const onLoginClick = useCallback(async () => {
+    const res = await dispatch(loginByUsername({ username, password }));
+
+    res.meta.requestStatus === 'fulfilled' && onClose();
+  }, [dispatch, onClose, password, username]);
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={true}>
       <div className={getClassNames(styles.loginForm, [className ?? ''])}>
-        {error && <Text title={t(`${error.status}_error`)} text={t(error.message)} variant={TextVariants.Error} />}
+        {error && <Text title={t(`${error.status}_error`)} text={t(error.message)} variant={TextVariant.Error} />}
         <AppInput
           data-testid="username-input"
           className={styles.loginInput}
@@ -62,7 +65,7 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }: LoginFormProps) => {
         <AppButton
           onClick={onLoginClick}
           className={styles.loginBtn}
-          variant={AppButtonVariants.Clear}
+          variant={AppButtonVariant.Clear}
           disabled={isLoading}
         >
           {t('Login')}

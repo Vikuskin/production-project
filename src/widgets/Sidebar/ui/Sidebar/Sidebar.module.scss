@@ -1,0 +1,43 @@
+.sidebar {
+  position: relative;
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height) - 30px);
+  margin: 15px;
+  padding-top: 25px;
+  background: var(--secondary-bg-color);
+  border-radius: 16px;
+  transition: width 0.5s ease-in-out;
+}
+
+.collapse-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 40px;
+  height: 40px;
+  transform: rotate(90deg);
+  fill: var(--primary-color);
+}
+
+hr {
+  margin: 15px 20px;
+  opacity: 0.5;
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+
+  .collapse-btn {
+    transform: rotate(-90deg);
+  }
+}
+
+.items-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: start;
+  justify-content: start;
+  width: var(--sidebar-width);
+  padding-left: 20px;
+}

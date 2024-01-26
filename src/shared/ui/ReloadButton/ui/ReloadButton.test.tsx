@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import { AppButtonVariants } from 'shared/ui/AppButton';
+import { AppButtonVariant } from 'shared/ui/AppButton';
 
 import { ReloadButton } from './ReloadButton';
 
@@ -10,7 +10,7 @@ describe('ReloadButton', () => {
     const reloadButton = getByTestId('reload-button');
 
     expect(reloadButton).toBeInTheDocument();
-    expect(reloadButton).toHaveClass(AppButtonVariants.Clear);
+    expect(reloadButton).toHaveClass(AppButtonVariant.Clear);
   });
 
   it('calls loaction.reload() on click', () => {

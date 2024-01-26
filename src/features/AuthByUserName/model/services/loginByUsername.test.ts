@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
 import { userActions } from 'entities/User';
-import { ErrorStatusCodes } from 'shared/enums/errorStatusCode';
+import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk';
 
 import { INTERNAL_SERVER_ERROR, loginByUsername } from './loginByUsername';
@@ -55,7 +55,7 @@ describe('loginByUsername', () => {
   it('handles 400 bad request error from server', async () => {
     const error = new AxiosError();
 
-    error.response = { status: ErrorStatusCodes.BadRequest } as AxiosResponse;
+    error.response = { status: ErrorStatusCode.BadRequest } as AxiosResponse;
 
     mockedAxios.post.mockRejectedValue(error);
 
@@ -65,14 +65,14 @@ describe('loginByUsername', () => {
     expect(mockedAxios.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
-    expect(result.payload).toEqual({ message: 'Incorrect authentication data', status: ErrorStatusCodes.BadRequest });
+    expect(result.payload).toEqual({ message: 'Incorrect authentication data', status: ErrorStatusCode.BadRequest });
     expect(thunk.dispatch).not.toHaveBeenCalledWith(userActions.login);
   });
 
   it('handles 404 not found error from server', async () => {
     const error = new AxiosError();
 
-    error.response = { status: ErrorStatusCodes.NotFound } as AxiosResponse;
+    error.response = { status: ErrorStatusCode.NotFound } as AxiosResponse;
 
     mockedAxios.post.mockRejectedValue(error);
 
@@ -84,7 +84,7 @@ describe('loginByUsername', () => {
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(result.payload).toEqual({
       message: 'The server cannot find the requested resource',
-      status: ErrorStatusCodes.NotFound,
+      status: ErrorStatusCode.NotFound,
     });
     expect(thunk.dispatch).not.toHaveBeenCalledWith(userActions.login);
   });

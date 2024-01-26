@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Themes } from 'app/providers/theme';
+import { Theme } from 'app/providers/theme';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
-import { Text, TextVariants } from './Text';
+import { Text, TextVariant } from './Text';
 
 const meta = {
   title: 'shared/Text',
@@ -18,39 +18,39 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const NormalLightOnlyText: Story = {
-  decorators: [themeDecorator(Themes.Light)],
+  decorators: [themeDecorator(Theme.Light)],
 };
 
 export const NormalDarkOnlyText: Story = {
-  decorators: [themeDecorator(Themes.Dark)],
+  decorators: [themeDecorator(Theme.Dark)],
 };
 
 export const NormalLightWithTitle: Story = {
   args: { title: 'Title' },
-  decorators: [themeDecorator(Themes.Light)],
+  decorators: [themeDecorator(Theme.Light)],
 };
 
 export const NormalDarkWithTitle: Story = {
   args: { title: 'Title' },
-  decorators: [themeDecorator(Themes.Dark)],
+  decorators: [themeDecorator(Theme.Dark)],
 };
 
 export const ErrorLightOnlyText: Story = {
-  args: { variant: TextVariants.Error },
-  decorators: [themeDecorator(Themes.Light)],
+  args: { variant: TextVariant.Error },
+  decorators: [themeDecorator(Theme.Light)],
 };
 
 export const ErrorDarkOnlyText: Story = {
-  args: { variant: TextVariants.Error },
-  decorators: [themeDecorator(Themes.Dark)],
+  args: { variant: TextVariant.Error },
+  decorators: [themeDecorator(Theme.Dark)],
 };
 
 export const ErrorLightWithTitle: Story = {
-  args: { title: 'Title', variant: TextVariants.Error },
-  decorators: [themeDecorator(Themes.Light)],
+  args: { title: 'Title', variant: TextVariant.Error },
+  decorators: [themeDecorator(Theme.Light)],
 };
 
 export const ErrorDarkWithTitle: Story = {
-  args: { title: 'Title', variant: TextVariants.Error },
-  decorators: [themeDecorator(Themes.Dark)],
+  args: { title: 'Title', variant: TextVariant.Error },
+  decorators: [themeDecorator(Theme.Dark)],
 };

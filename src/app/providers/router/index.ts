@@ -1,4 +1,4 @@
-import { AppRoutes, routePaths } from './lib/routeConfig';
+import { AppRoute, routePaths } from './lib/routeConfig';
 import AppRouter from './ui/AppRouter';
 
-export { AppRouter, routePaths, AppRoutes };
+export { AppRouter, routePaths, AppRoute };

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Themes } from 'app/providers/theme';
+import { Theme } from 'app/providers/theme';
 import { delayCaptureDecorator } from 'shared/lib/storybook/delayCaptureDecorator';
 import { storeDecorator } from 'shared/lib/storybook/storeDecorator';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
@@ -22,9 +22,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-  decorators: [themeDecorator(Themes.Light)],
+  decorators: [themeDecorator(Theme.Light)],
 };
 
 export const Dark: Story = {
-  decorators: [themeDecorator(Themes.Dark)],
+  decorators: [themeDecorator(Theme.Dark)],
 };

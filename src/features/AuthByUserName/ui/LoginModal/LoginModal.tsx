@@ -17,7 +17,7 @@ export const LoginModal: FC<LoginModalProps> = (props) => {
   return (
     <Modal data-testid="modal" isOpen={isOpen} onClose={onClose} className={className} lazy>
       <Suspense fallback={<Spinner />}>
-        <LoginFormAsync data-testid="login-form" />
+        <LoginFormAsync data-testid="login-form" onClose={onClose} />
       </Suspense>
     </Modal>
   );

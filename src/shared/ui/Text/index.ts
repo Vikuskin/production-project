@@ -1,1 +1,1 @@
-export { Text, TextVariants } from './ui/Text';
+export { Text, TextVariant } from './ui/Text';

@@ -3,12 +3,12 @@ import axios, { AxiosError } from 'axios';
 
 import { IState } from 'app/providers/StoreProvider';
 import { IAuthData, userActions } from 'entities/User';
-import { ErrorStatusCodes } from 'shared/enums/errorStatusCode';
+import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 
 import { ILoginFormError } from '../types/loginForm';
 
 export const INTERNAL_SERVER_ERROR: ILoginFormError = {
-  status: ErrorStatusCodes.InternalServerError,
+  status: ErrorStatusCode.InternalServerError,
   message: 'Internal server error',
 };
 interface ILoginByUsernameProps {
@@ -36,9 +36,9 @@ export const loginByUsername = createAsyncThunk<
 
     if (e instanceof AxiosError && e.response?.status) {
       switch (e.response.status) {
-        case ErrorStatusCodes.BadRequest:
+        case ErrorStatusCode.BadRequest:
           return rejectWithValue({ status: e.response.status, message: 'Incorrect authentication data' });
-        case ErrorStatusCodes.NotFound:
+        case ErrorStatusCode.NotFound:
           return rejectWithValue({
             status: e.response.status,
             message: 'The server cannot find the requested resource',

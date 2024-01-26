@@ -1,24 +1,24 @@
 import { render } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
-import { AppButton, AppButtonSizes, AppButtonVariants } from './AppButton';
+import { AppButton, AppButtonSize, AppButtonVariant } from './AppButton';
 
 describe('AppButton', () => {
   it('renders without crashing', () => {
-    render(<AppButton variant={AppButtonVariants.Clear}>Test Button</AppButton>);
+    render(<AppButton variant={AppButtonVariant.Clear}>Test Button</AppButton>);
   });
 
   it('renders with the correct variant', () => {
-    const { getByTestId } = render(<AppButton variant={AppButtonVariants.Outline}>Test Button</AppButton>);
+    const { getByTestId } = render(<AppButton variant={AppButtonVariant.Outline}>Test Button</AppButton>);
     const button = getByTestId('button');
 
-    expect(button).toHaveClass(AppButtonVariants.Outline);
+    expect(button).toHaveClass(AppButtonVariant.Outline);
   });
 
   it('renders additional className when provided', () => {
     const mockClassName = 'custom-class';
     const { getByTestId } = render(
-      <AppButton variant={AppButtonVariants.Clear} className={mockClassName}>
+      <AppButton variant={AppButtonVariant.Clear} className={mockClassName}>
         Test Button
       </AppButton>,
     );
@@ -31,7 +31,7 @@ describe('AppButton', () => {
     const user = userEvent.setup();
     const onClickMock = jest.fn();
     const { getByTestId } = render(
-      <AppButton variant={AppButtonVariants.Clear} onClick={onClickMock}>
+      <AppButton variant={AppButtonVariant.Clear} onClick={onClickMock}>
         Click Me
       </AppButton>,
     );
@@ -43,7 +43,7 @@ describe('AppButton', () => {
 
   it('renders disabled button', async () => {
     const { getByTestId } = render(
-      <AppButton variant={AppButtonVariants.Clear} disabled>
+      <AppButton variant={AppButtonVariant.Clear} disabled>
         Click Me
       </AppButton>,
     );
@@ -53,7 +53,7 @@ describe('AppButton', () => {
   });
 
   it('renders with size class when size is passed', () => {
-    const { getByTestId } = render(<AppButton variant={AppButtonVariants.Clear} size={AppButtonSizes.SizeM} />);
+    const { getByTestId } = render(<AppButton variant={AppButtonVariant.Clear} size={AppButtonSize.SizeM} />);
     const button = getByTestId('button');
 
     expect(button).toHaveClass('sizeM');

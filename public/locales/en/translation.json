@@ -13,5 +13,7 @@
   "500_error": "Internal server error",
   "Incorrect authentication data": "Incorrect authentication data",
   "The server cannot find the requested resource": "The server cannot find the requested resource",
-  "Internal server error": "Something went wrong"
+  "Internal server error": "Something went wrong",
+  "Profile": "Profile",
+  "Logout": "Logout"
 }

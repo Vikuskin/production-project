@@ -1,6 +1,7 @@
+import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
+
 import { loginFormActions, loginFormInitialState, loginFormReducer } from './loginFormSlice';
 
-import { ErrorStatusCodes } from '../../../../shared/enums/errorStatusCode';
 import { INTERNAL_SERVER_ERROR, loginByUsername } from '../services/loginByUsername';
 
 describe('loginFormSlice', () => {
@@ -58,7 +59,7 @@ describe('loginFormSlice', () => {
     });
 
     it('should set loading false and add payload error in state when loginByUsername is rejected with error', () => {
-      const error = { message: 'error', status: ErrorStatusCodes.BadRequest };
+      const error = { message: 'error', status: ErrorStatusCode.BadRequest };
 
       expect(
         loginFormReducer(

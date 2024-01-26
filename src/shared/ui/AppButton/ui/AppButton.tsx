@@ -1,30 +1,30 @@
-import React, { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
+import React, { ButtonHTMLAttributes, FC, PropsWithChildren, memo } from 'react';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 
 import * as styles from './AppButton.module.scss';
 
-export enum AppButtonVariants {
+export enum AppButtonVariant {
   Clear = 'clear',
   Outline = 'outline',
   Background = 'background',
   BackgroundInverted = 'backgroundInverted',
 }
 
-export enum AppButtonSizes {
+export enum AppButtonSize {
   SizeM = 'sizeM',
   SizeL = 'sizeL',
   SizeXl = 'sizeXl',
 }
 
 interface IAppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: AppButtonVariants;
+  variant: AppButtonVariant;
   square?: boolean;
-  size?: AppButtonSizes;
+  size?: AppButtonSize;
   className?: string;
 }
 
-export const AppButton: FC<PropsWithChildren<IAppButtonProps>> = (props) => {
+export const AppButton: FC<PropsWithChildren<IAppButtonProps>> = memo((props: PropsWithChildren<IAppButtonProps>) => {
   const { className, children, variant, square, size, disabled, ...otherProps } = props;
   const additionalClasses = [className ?? '', styles[variant]];
   let mods: Record<string, boolean> = {
@@ -39,4 +39,4 @@ export const AppButton: FC<PropsWithChildren<IAppButtonProps>> = (props) => {
       {children}
     </button>
   );
-};
+});
