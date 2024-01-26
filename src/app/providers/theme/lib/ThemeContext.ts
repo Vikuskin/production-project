@@ -1,13 +1,13 @@
 import { createContext } from 'react';
 
-export enum Themes {
+export enum Theme {
   Dark = 'app-dark-theme',
   Light = 'app-light-theme',
 }
 
-export interface ThemeContextProps {
-  theme?: Themes;
-  setTheme?: React.Dispatch<React.SetStateAction<Themes>>;
+export interface IThemeContextProps {
+  theme?: Theme;
+  setTheme?: React.Dispatch<React.SetStateAction<Theme>>;
 }
 
-export const ThemeContext = createContext<ThemeContextProps>({});
+export const ThemeContext = createContext<IThemeContextProps>({});

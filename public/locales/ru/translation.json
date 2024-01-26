@@ -3,5 +3,17 @@
   "Language": "English",
   "Main": "Основное",
   "Theme": "Тема",
-  "Login": "Войти"
+  "Login": "Войти",
+  "Username": "Имя",
+  "Password": "Пароль",
+  "Authentication error": "Ошибка авторизации",
+  "Error": "Ошибка",
+  "400_error": "Неправильный запрос",
+  "404_error": "Не найдено",
+  "500_error": "Непредвиденная ошибка сервера",
+  "Incorrect authentication data": "Неправильные данные для авторизации",
+  "The server cannot find the requested resource": "Сервер не может найти запрашиваемый ресурс",
+  "Internal server error": "Что-то пошло не так",
+  "Profile": "Профиль",
+  "Logout": "Выйти"
 }

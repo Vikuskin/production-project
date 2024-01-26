@@ -3,7 +3,7 @@
   width: 100%;
   height: 100vh;
   font: var(--font-size-m) var(--font-family-main) !important;
-  background-color: var(--main-bg-color);
+  background-color: var(--error-page-bg-color);
   inset: 0;
 }
 
@@ -17,9 +17,10 @@
 
 .text {
   margin: 0;
-  color: var(--main-primary-color);
+  color: var(--error-page-primary-color);
   font-size: var(--font-size-l);
   letter-spacing: 0.2px;
+  text-align: left;
 }
 
 .handle {

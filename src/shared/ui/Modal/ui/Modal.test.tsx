@@ -1,6 +1,8 @@
-import { fireEvent, render } from '@testing-library/react';
+import { act, fireEvent, render } from '@testing-library/react';
 
-import { ANIMATION_DELAY, Modal } from './Modal';
+import { ANIMATION_DELAY } from 'shared/constants/constants';
+
+import { Modal } from './Modal';
 
 describe('Modal', () => {
   const onCloseMock = jest.fn();
@@ -14,18 +16,22 @@ describe('Modal', () => {
     jest.useRealTimers();
   });
 
-  it('renders correctly when isOpen is true', () => {
+  it('renders with correct isOpening class', () => {
     const { getByTestId } = render(<Modal isOpen={true} onClose={() => {}} />);
     const modal = getByTestId('modal');
 
-    expect(modal).toHaveClass('opened');
+    expect(modal).toHaveClass('isOpening');
   });
 
-  it('renders correctly when isOpen is false', () => {
-    const { getByTestId } = render(<Modal isOpen={false} onClose={() => {}} />);
+  it('change class to opened after animation delay', () => {
+    const { getByTestId } = render(<Modal isOpen={true} onClose={onCloseMock} />);
     const modal = getByTestId('modal');
 
-    expect(modal).not.toHaveClass('opened');
+    expect(setTimeout).toHaveBeenCalledTimes(1);
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), ANIMATION_DELAY);
+
+    act(() => jest.runOnlyPendingTimers());
+    expect(modal).toHaveClass('opened');
   });
 
   it('calls onClose when overlay is clicked', () => {
@@ -33,10 +39,10 @@ describe('Modal', () => {
     const overlay = getByTestId('overlay');
 
     fireEvent.click(overlay);
-    expect(setTimeout).toHaveBeenCalledTimes(1);
+    expect(setTimeout).toHaveBeenCalledTimes(2);
     expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), ANIMATION_DELAY);
 
-    jest.runOnlyPendingTimers();
+    act(() => jest.runOnlyPendingTimers());
     expect(onCloseMock).toHaveBeenCalled();
   });
 
@@ -47,6 +53,7 @@ describe('Modal', () => {
 
     fireEvent.click(overlay);
 
+    act(() => jest.runOnlyPendingTimers());
     expect(onCloseMock).not.toHaveBeenCalled();
     expect(modal).toHaveClass('opened');
   });
@@ -55,7 +62,7 @@ describe('Modal', () => {
     const { container } = render(<Modal isOpen={true} onClose={onCloseMock} />);
 
     fireEvent.keyDown(container, { key: 'Escape' });
-    jest.runOnlyPendingTimers();
+    act(() => jest.runOnlyPendingTimers());
     expect(onCloseMock).toHaveBeenCalled();
   });
 
@@ -63,7 +70,7 @@ describe('Modal', () => {
     const { container } = render(<Modal isOpen={false} onClose={onCloseMock} />);
 
     fireEvent.keyDown(container, { key: 'Escape' });
-    jest.runOnlyPendingTimers();
+    act(() => jest.runOnlyPendingTimers());
     expect(onCloseMock).not.toHaveBeenCalled();
   });
 });

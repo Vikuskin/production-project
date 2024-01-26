@@ -6,17 +6,20 @@ import { ReloadButton } from 'shared/ui/ReloadButton';
 
 import * as styles from './ErrorPage.module.scss';
 
-interface ErrorPageProps {
+interface IErrorPageProps {
   text: string;
+  errorCode: number;
 }
 
-const ErrorPage: FC<ErrorPageProps> = ({ text }) => {
+const ErrorPage: FC<IErrorPageProps> = ({ text, errorCode }) => {
   const { t } = useTranslation('errorPage');
 
   return (
     <div className={styles.pageError}>
       <div className={styles.container}>
-        <p className={styles.text}>{t(text)}</p>
+        <p className={styles.text}>
+          {errorCode} {t(text)}
+        </p>
 
         <span className={styles.handle}></span>
       </div>

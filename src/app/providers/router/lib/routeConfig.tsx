@@ -4,30 +4,38 @@ import { RouteProps } from 'react-router-dom';
 import { AboutPage } from 'pages/AboutPage';
 import { ErrorPage } from 'pages/ErrorPage';
 import { MainPage } from 'pages/MainPage';
+import { ProfilePage } from 'pages/ProfilePage';
+import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 
-export enum AppRoutes {
+export enum AppRoute {
   Main = 'main',
   About = 'about',
+  Profile = 'profile',
   NotFound = 'not_found',
 }
 
-export const routePaths: Record<AppRoutes, string> = {
-  [AppRoutes.Main]: '/',
-  [AppRoutes.About]: '/about',
-  [AppRoutes.NotFound]: '*',
+export const routePaths: Record<AppRoute, string> = {
+  [AppRoute.Main]: '/',
+  [AppRoute.About]: '/about',
+  [AppRoute.Profile]: '/profile',
+  [AppRoute.NotFound]: '*',
 };
 
 export const routeConfig: RouteProps[] = [
   {
-    path: routePaths[AppRoutes.Main],
+    path: routePaths[AppRoute.Main],
     element: <MainPage />,
   },
   {
-    path: routePaths[AppRoutes.About],
+    path: routePaths[AppRoute.About],
     element: <AboutPage />,
   },
   {
-    path: routePaths[AppRoutes.NotFound],
-    element: <ErrorPage text="Page not found" />,
+    path: routePaths[AppRoute.NotFound],
+    element: <ErrorPage errorCode={ErrorStatusCode.NotFound} text="Page not found" />,
+  },
+  {
+    path: routePaths[AppRoute.Profile],
+    element: <ProfilePage />,
   },
 ];

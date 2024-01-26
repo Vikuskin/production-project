@@ -1,10 +1,11 @@
+/* eslint-disable indent */
 import type { StoryFn } from '@storybook/react';
 import React from 'react';
 
-import { ThemeProvider, Themes } from 'app/providers/theme';
+import { Theme, ThemeProvider } from 'app/providers/theme';
 
 export const themeDecorator =
-  (theme: Themes = Themes.Light) =>
+  (theme: Theme = Theme.Light) =>
   (Story: StoryFn) => (
     <ThemeProvider initialTheme={theme}>
       <div className={`app ${theme}`}>

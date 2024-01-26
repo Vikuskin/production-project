@@ -35,7 +35,8 @@
   }
 }
 
-.is-closing {
+.is-closing,
+.is-opening {
   .content {
     transform: scale(0.5);
   }

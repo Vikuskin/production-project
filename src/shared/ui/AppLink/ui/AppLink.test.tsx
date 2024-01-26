@@ -3,26 +3,26 @@ import { userEvent } from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
 import { BrowserRouter, Router } from 'react-router-dom';
 
-import { AppLink, AppLinkThemes } from './AppLink';
+import { AppLink, AppLinkVariant } from './AppLink';
 
 describe('AppLink', () => {
   it('renders with default props', () => {
     const { getByText } = render(<AppLink to="/example">Link Text</AppLink>, { wrapper: BrowserRouter });
 
     expect(getByText('Link Text')).toBeInTheDocument();
-    expect(getByText('Link Text')).toHaveClass(AppLinkThemes.Primary);
+    expect(getByText('Link Text')).toHaveClass(AppLinkVariant.Primary);
   });
 
-  it('renders with custom class name and passed theme', () => {
+  it('renders with custom class name and passed variant', () => {
     const mockClassName = 'custom-class';
     const { getByText } = render(
-      <AppLink to="/example" className={mockClassName} theme={AppLinkThemes.Secondary}>
+      <AppLink to="/example" className={mockClassName} variant={AppLinkVariant.Secondary}>
         Link Text
       </AppLink>,
       { wrapper: BrowserRouter },
     );
 
-    expect(getByText('Link Text')).toHaveClass(mockClassName, AppLinkThemes.Secondary);
+    expect(getByText('Link Text')).toHaveClass(mockClassName, AppLinkVariant.Secondary);
   });
 
   it('routes to page by passed path', async () => {

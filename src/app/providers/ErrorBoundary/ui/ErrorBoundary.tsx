@@ -1,17 +1,19 @@
 import { Component, ErrorInfo, ReactNode, Suspense } from 'react';
 
 import { ErrorPage } from 'pages/ErrorPage';
+import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
+import { PageLoader } from 'widgets/PageLoader';
 
-interface ErrorBoundaryProps {
+interface IErrorBoundaryProps {
   children: ReactNode;
 }
 
-interface ErrorBoudaryState {
+interface IErrorBoudaryState {
   hasError: boolean;
 }
 
-class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoudaryState> {
-  constructor(props: ErrorBoundaryProps) {
+class ErrorBoundary extends Component<IErrorBoundaryProps, IErrorBoudaryState> {
+  constructor(props: IErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false };
   }
@@ -27,8 +29,8 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoudaryState> {
   render() {
     if (this.state.hasError) {
       return (
-        <Suspense fallback="">
-          <ErrorPage text="Unexpected error" />
+        <Suspense fallback={<PageLoader />}>
+          <ErrorPage errorCode={ErrorStatusCode.InternalServerError} text="Unexpected error" />
         </Suspense>
       );
     }

@@ -12,10 +12,12 @@
   --font-line-xl: 40px;
   --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
   --navbar-height: 50px;
-  --sidebar-width: 160px;
+  --sidebar-width: 170px;
   --sidebar-width-collapsed: 80px;
-  --main-bg-color: #1d1d1d;
-  --main-primary-color: #d5cfe0;
+  --error-page-bg-color: #1d1d1d;
+  --error-page-primary-color: #d5cfe0;
+  --red-dark: #800303;
+  --red-light: #f00;
   --modal-z-index: 10;
   --overlay: rgb(0 0 0 / 60%);
 }

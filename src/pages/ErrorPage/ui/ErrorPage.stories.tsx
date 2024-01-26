@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Themes } from 'app/providers/theme';
+import { Theme } from 'app/providers/theme';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
 import ErrorPage from './ErrorPage';
@@ -10,6 +10,7 @@ const meta = {
   component: ErrorPage,
   tags: ['autodocs'],
   args: {
+    errorCode: 500,
     text: 'Error page',
   },
 } satisfies Meta<typeof ErrorPage>;
@@ -18,9 +19,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-  decorators: [themeDecorator(Themes.Light)],
+  decorators: [themeDecorator(Theme.Light)],
 };
 
 export const Dark: Story = {
-  decorators: [themeDecorator(Themes.Dark)],
+  decorators: [themeDecorator(Theme.Dark)],
 };
