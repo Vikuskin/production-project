@@ -19,9 +19,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const LightNormal: Story = {
-  decorators: [themeDecorator(Theme.Light)],
-};
+export const LightNormal: Story = {};
 
 export const DarkNormal: Story = {
   decorators: [themeDecorator(Theme.Dark)],
@@ -29,9 +27,8 @@ export const DarkNormal: Story = {
 
 export const LightError: Story = {
   decorators: [
-    themeDecorator(Theme.Light),
     storeDecorator({
-      loginForm: { ...loginFormInitialState, error: { status: 500, message: 'Internal server error' } },
+      loginForm: { error: { status: 500, message: 'Internal server error' } },
     }),
   ],
 };
@@ -40,21 +37,15 @@ export const DarkError: Story = {
   decorators: [
     themeDecorator(Theme.Dark),
     storeDecorator({
-      loginForm: { ...loginFormInitialState, error: { status: 500, message: 'Internal server error' } },
+      loginForm: { error: { status: 500, message: 'Internal server error' } },
     }),
   ],
 };
 
 export const LightLoading: Story = {
-  decorators: [
-    themeDecorator(Theme.Light),
-    storeDecorator({ loginForm: { ...loginFormInitialState, isLoading: true } }),
-  ],
+  decorators: [storeDecorator({ loginForm: { isLoading: true } })],
 };
 
 export const DarkLoading: Story = {
-  decorators: [
-    themeDecorator(Theme.Dark),
-    storeDecorator({ loginForm: { ...loginFormInitialState, isLoading: true } }),
-  ],
+  decorators: [themeDecorator(Theme.Dark), storeDecorator({ loginForm: { isLoading: true } })],
 };

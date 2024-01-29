@@ -20,9 +20,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const PrimaryLight: Story = {
-  decorators: [themeDecorator(Theme.Light)],
-};
+export const PrimaryLight: Story = {};
 
 export const PrimaryDark: Story = {
   decorators: [themeDecorator(Theme.Dark)],
@@ -30,7 +28,6 @@ export const PrimaryDark: Story = {
 
 export const SecondaryLight: Story = {
   args: { variant: AppLinkVariant.Secondary },
-  decorators: [themeDecorator(Theme.Light)],
 };
 
 export const SecondaryDark: Story = {

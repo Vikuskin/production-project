@@ -22,9 +22,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const LightWithLogin: Story = {
-  decorators: [themeDecorator(Theme.Light)],
-};
+export const LightWithLogin: Story = {};
 
 export const DarkWithLogin: Story = {
   decorators: [themeDecorator(Theme.Dark)],

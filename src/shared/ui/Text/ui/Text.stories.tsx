@@ -17,9 +17,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const NormalLightOnlyText: Story = {
-  decorators: [themeDecorator(Theme.Light)],
-};
+export const NormalLightOnlyText: Story = {};
 
 export const NormalDarkOnlyText: Story = {
   decorators: [themeDecorator(Theme.Dark)],
@@ -27,7 +25,6 @@ export const NormalDarkOnlyText: Story = {
 
 export const NormalLightWithTitle: Story = {
   args: { title: 'Title' },
-  decorators: [themeDecorator(Theme.Light)],
 };
 
 export const NormalDarkWithTitle: Story = {
@@ -37,7 +34,6 @@ export const NormalDarkWithTitle: Story = {
 
 export const ErrorLightOnlyText: Story = {
   args: { variant: TextVariant.Error },
-  decorators: [themeDecorator(Theme.Light)],
 };
 
 export const ErrorDarkOnlyText: Story = {
@@ -47,7 +43,6 @@ export const ErrorDarkOnlyText: Story = {
 
 export const ErrorLightWithTitle: Story = {
   args: { title: 'Title', variant: TextVariant.Error },
-  decorators: [themeDecorator(Theme.Light)],
 };
 
 export const ErrorDarkWithTitle: Story = {

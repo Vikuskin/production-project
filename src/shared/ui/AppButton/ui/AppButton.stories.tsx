@@ -21,7 +21,6 @@ export const ClearLight: Story = {
   args: {
     variant: AppButtonVariant.Clear,
   },
-  decorators: [themeDecorator(Theme.Light)],
 };
 
 export const ClearDark: Story = {
@@ -35,7 +34,6 @@ export const OutlineLight: Story = {
   args: {
     variant: AppButtonVariant.Outline,
   },
-  decorators: [themeDecorator(Theme.Light)],
 };
 
 export const OutlineDark: Story = {
@@ -69,7 +67,14 @@ export const OutlineSizeXl: Story = {
   decorators: [themeDecorator(Theme.Dark)],
 };
 
-export const OutlineDisabled: Story = {
+export const OutlineLightDisabled: Story = {
+  args: {
+    variant: AppButtonVariant.Outline,
+    disabled: true,
+  },
+};
+
+export const OutlineDarkDisabled: Story = {
   args: {
     variant: AppButtonVariant.Outline,
     disabled: true,
