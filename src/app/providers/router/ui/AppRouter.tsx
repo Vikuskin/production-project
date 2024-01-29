@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { routeConfig } from 'app/providers/router/lib/routeConfig';
 import { PageLoader } from 'widgets/PageLoader';
 
-const AppRouter: FC = () => {
+export const AppRouter: FC = () => {
   return (
     <div className="page-wrapper">
       <Suspense fallback={<PageLoader />}>
@@ -17,5 +17,3 @@ const AppRouter: FC = () => {
     </div>
   );
 };
-
-export default AppRouter;

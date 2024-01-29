@@ -1,3 +1,1 @@
-import { Spinner } from './ui/Spinner';
-
-export { Spinner };
+export { Spinner } from './ui/Spinner';

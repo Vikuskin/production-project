@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/theme';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
-import ErrorPage from './ErrorPage';
+import { ErrorPage } from './ErrorPage';
 
 const meta = {
   title: 'pages/ErrorPage',

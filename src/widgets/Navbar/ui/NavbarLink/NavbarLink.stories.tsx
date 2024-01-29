@@ -6,7 +6,7 @@ import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
 import { NavbarLink } from './NavbarLink';
 
-import { navbarLinks } from '../../models/navbarLinks';
+import { navbarLinks } from '../../model/navbarLinks';
 
 const meta = {
   title: 'widgets/NavbarLink',

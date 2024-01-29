@@ -1,13 +1,14 @@
 import React, { FC, PropsWithChildren, useMemo, useState } from 'react';
 
-import { Theme, ThemeContext } from '../lib/ThemeContext';
+import { ThemeContext } from '../lib/ThemeContext';
 import { DEFAULT_TEAM } from '../lib/useTheme';
+import { Theme } from '../types/Theme';
 
 interface IThemeProviderProps {
   initialTheme?: Theme;
 }
 
-const ThemeProvider: FC<PropsWithChildren<IThemeProviderProps>> = ({ children, initialTheme }) => {
+export const ThemeProvider: FC<PropsWithChildren<IThemeProviderProps>> = ({ children, initialTheme }) => {
   const [theme, setTheme] = useState(initialTheme || DEFAULT_TEAM);
   const defaultProps = useMemo(
     () => ({
@@ -21,5 +22,3 @@ const ThemeProvider: FC<PropsWithChildren<IThemeProviderProps>> = ({ children, i
 
   return <ThemeContext.Provider value={defaultProps}>{children}</ThemeContext.Provider>;
 };
-
-export default ThemeProvider;

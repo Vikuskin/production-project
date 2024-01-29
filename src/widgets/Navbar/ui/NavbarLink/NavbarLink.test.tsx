@@ -5,7 +5,7 @@ import { componentRender } from 'shared/lib/tests/componentRender';
 
 import { NavbarLink } from './NavbarLink';
 
-import { navbarLinks } from '../../models/navbarLinks';
+import { navbarLinks } from '../../model/navbarLinks';
 
 describe('NavbarLink', () => {
   it('renders with passed props and routes to the correct page by the click', async () => {

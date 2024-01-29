@@ -2,7 +2,7 @@ import { componentRender } from 'shared/lib/tests/componentRender';
 
 import { Navbar } from './Navbar';
 
-import { navbarLinks } from '../../models/navbarLinks';
+import { navbarLinks } from '../../model/navbarLinks';
 
 describe('Navbar', () => {
   it('renders without crashing', () => {

@@ -1,3 +1,1 @@
-import { Portal } from './ui/Portal';
-
-export { Portal };
+export { Portal } from './ui/Portal';

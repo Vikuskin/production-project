@@ -4,11 +4,11 @@ import { useTranslation } from 'react-i18next';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { AppLink } from 'shared/ui/AppLink';
 
-import { INavBarLink } from '../../models/navbarLinks';
+import { INavbarLink } from '../../model/types/navbarLink';
 
 interface INavbarLinkProps {
   className?: string;
-  link: INavBarLink;
+  link: INavbarLink;
 }
 
 export const NavbarLink: FC<INavbarLinkProps> = memo(({ className, link }: INavbarLinkProps) => {

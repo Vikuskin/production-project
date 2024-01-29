@@ -5,16 +5,16 @@ import { IThunkConfig } from 'app/providers/StoreProvider';
 import { INTERNAL_SERVER_ERROR, LOCAL_STORAGE_KEYS } from 'shared/constants/constants';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 
-import { IProfile } from '../types/profile';
+import { IProfileData } from '../types/profile';
 
-export const fetchProfileData = createAsyncThunk<IProfile, void, IThunkConfig>(
+export const fetchProfileData = createAsyncThunk<IProfileData, void, IThunkConfig>(
   'profile/fetchProfileData',
   async (_, thunkApi) => {
     const { rejectWithValue, extra } = thunkApi;
 
     try {
       console.log('auth', localStorage.getItem(LOCAL_STORAGE_KEYS.Auth));
-      const response = await extra.api.get<IProfile>('/profile');
+      const response = await extra.api.get<IProfileData>('/profile');
 
       if (!response.data) {
         throw new Error('No data from server');

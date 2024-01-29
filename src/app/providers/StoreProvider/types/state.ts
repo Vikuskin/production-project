@@ -2,7 +2,7 @@ import { EnhancedStore, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router-dom';
 
-import { IProfileSchema } from 'entities/Profile';
+import { IProfile } from 'entities/Profile';
 import { IUser } from 'entities/User';
 import { ILoginForm } from 'features/AuthByUserName';
 import { ICustomError } from 'shared/types/customError';
@@ -13,7 +13,7 @@ export type AppDispatch = ThunkDispatch<IState, IThunkExtraArg, UnknownAction>;
 export interface IState {
   user: IUser;
   loginForm?: ILoginForm;
-  profile?: IProfileSchema;
+  profile?: IProfile;
 }
 export type StateKey = keyof IState;
 export type ReducerManager = ReturnType<typeof createReducerManager>;

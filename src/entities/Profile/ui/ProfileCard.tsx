@@ -8,10 +8,10 @@ import { Text } from 'shared/ui/Text';
 
 import * as styles from './ProfileCard.module.scss';
 
-import { IProfile } from '../models/types/profile';
+import { IProfileData } from '../models/types/profile';
 
 interface ProfileCardProps {
-  profileData: IProfile;
+  profileData: IProfileData;
   className?: string;
 }
 

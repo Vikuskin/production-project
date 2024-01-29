@@ -7,12 +7,7 @@ import { MainPage } from 'pages/MainPage';
 import { ProfilePage } from 'pages/ProfilePage';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 
-export enum AppRoute {
-  Main = 'main',
-  About = 'about',
-  Profile = 'profile',
-  NotFound = 'not_found',
-}
+import { AppRoute } from '../types/AppRoute';
 
 export const routePaths: Record<AppRoute, string> = {
   [AppRoute.Main]: '/',
