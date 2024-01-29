@@ -16,18 +16,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const LightWithLogin: Story = {
-  decorators: [themeDecorator(Theme.Light)],
-};
+export const LightWithLogin: Story = {};
 
 export const DarkWithLogin: Story = {
   decorators: [themeDecorator(Theme.Dark)],
 };
 
-// export const LightWithLogut: Story = {
-//   decorators: [themeDecorator(Theme.Light), storeDecorator({ user: { authData: { id: '1', username: 'test' } } })],
-// };
+export const LightWithLogut: Story = {
+  decorators: [storeDecorator({ user: { authData: { id: '1', username: 'test' } } })],
+};
 
-// export const DarkWithLogut: Story = {
-//   decorators: [themeDecorator(Theme.Dark), storeDecorator({ user: { authData: { id: '1', username: 'test' } } })],
-// };
+export const DarkWithLogut: Story = {
+  decorators: [themeDecorator(Theme.Dark), storeDecorator({ user: { authData: { id: '1', username: 'test' } } })],
+};

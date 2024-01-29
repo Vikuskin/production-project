@@ -15,15 +15,14 @@ const meta = {
     isOpen: true,
     children: <p>Occaecat pariatur ea veniam et ex do ipsum in commodo sunt esse.</p>,
   },
+  decorators: [delayCaptureDecorator()],
 } satisfies Meta<typeof Modal>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {
-  decorators: [themeDecorator(Theme.Light), delayCaptureDecorator()],
-};
+export const Light: Story = {};
 
 export const Dark: Story = {
-  decorators: [themeDecorator(Theme.Dark), delayCaptureDecorator()],
+  decorators: [themeDecorator(Theme.Dark)],
 };
