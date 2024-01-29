@@ -2,9 +2,9 @@ import { EnhancedStore, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router-dom';
 
-import { IProfile } from 'entities/Profile';
 import { IUser } from 'entities/User';
 import { ILoginForm } from 'features/AuthByUserName';
+import { IProfile } from 'features/EditableProfileCard';
 import { ICustomError } from 'shared/types/customError';
 
 import { createReducerManager } from '../config/createReducerManager';

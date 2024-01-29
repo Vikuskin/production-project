@@ -8,7 +8,7 @@ import { Text } from 'shared/ui/Text';
 
 import * as styles from './ProfileCard.module.scss';
 
-import { IProfileData } from '../models/types/profile';
+import { IProfileData } from '../../../features/EditableProfileCard/models/types/profile';
 
 interface ProfileCardProps {
   profileData: IProfileData;

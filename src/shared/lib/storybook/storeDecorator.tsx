@@ -2,8 +2,8 @@ import type { StoryFn } from '@storybook/react';
 import React from 'react';
 
 import { IState, StoreProvider } from 'app/providers/StoreProvider';
-import { profileReducer } from 'entities/Profile';
 import { loginFormReducer } from 'features/AuthByUserName/model/slices/loginFormSlice';
+import { profileReducer } from 'features/EditableProfileCard';
 import { ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 
 const defaultAsyncReducers: ReducersList = {
