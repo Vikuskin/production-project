@@ -3,11 +3,11 @@ import { ReducersMapObject } from '@reduxjs/toolkit';
 import { userEvent } from '@testing-library/user-event';
 
 import { IState } from 'app/providers/StoreProvider';
+import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 import { componentRender } from 'shared/lib/tests/componentRender';
 
 import LoginForm from './LoginForm';
 
-import { INTERNAL_SERVER_ERROR } from '../../model/services/loginByUsername';
 import { loginFormReducer } from '../../model/slices/loginFormSlice';
 
 describe('LoginForm', () => {

@@ -1,6 +1,5 @@
 import { userEvent } from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
-import { Router } from 'react-router-dom';
 
 import { componentRender } from 'shared/lib/tests/componentRender';
 
@@ -12,11 +11,9 @@ describe('NavbarLink', () => {
   it('renders with passed props and routes to the correct page by the click', async () => {
     const history = createMemoryHistory();
     const testLink = navbarLinks[0];
-    const { getByTestId } = componentRender(
-      <Router location={history.location} navigator={history}>
-        <NavbarLink link={testLink} />
-      </Router>,
-    );
+    const { getByTestId } = componentRender(<NavbarLink link={testLink} />, {
+      routerProps: { history, location: history.location },
+    });
     const link = getByTestId('navbar-link');
     const user = userEvent.setup();
 

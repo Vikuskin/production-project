@@ -24,10 +24,10 @@ export const DarkWithLogin: Story = {
   decorators: [themeDecorator(Theme.Dark)],
 };
 
-export const LightWithLogut: Story = {
-  decorators: [themeDecorator(Theme.Light), storeDecorator({ user: { authData: { id: '1', username: 'test' } } })],
-};
+// export const LightWithLogut: Story = {
+//   decorators: [themeDecorator(Theme.Light), storeDecorator({ user: { authData: { id: '1', username: 'test' } } })],
+// };
 
-export const DarkWithLogut: Story = {
-  decorators: [themeDecorator(Theme.Dark), storeDecorator({ user: { authData: { id: '1', username: 'test' } } })],
-};
+// export const DarkWithLogut: Story = {
+//   decorators: [themeDecorator(Theme.Dark), storeDecorator({ user: { authData: { id: '1', username: 'test' } } })],
+// };

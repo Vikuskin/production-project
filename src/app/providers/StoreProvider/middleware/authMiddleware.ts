@@ -4,9 +4,9 @@ import { userActions } from 'entities/User';
 import { loginByUsername } from 'features/AuthByUserName/model/services/loginByUsername';
 import { LOCAL_STORAGE_KEYS } from 'shared/constants/constants';
 
-export const authMiddleware: Middleware<(action: UnknownAction) => void> = (storeApi) => (next) => (action) => {
+export const authMiddleware: Middleware<(action: UnknownAction) => void> = () => (next) => (action) => {
   if (userActions.login.match(action) && isFulfilled(loginByUsername)) {
-    const authData = storeApi.getState().user.authData;
+    const authData = action.payload;
 
     authData && localStorage.setItem(LOCAL_STORAGE_KEYS.Auth, JSON.stringify(authData));
   }

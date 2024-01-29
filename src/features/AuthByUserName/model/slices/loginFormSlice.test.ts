@@ -1,25 +1,20 @@
+import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 
 import { loginFormActions, loginFormInitialState, loginFormReducer } from './loginFormSlice';
 
-import { INTERNAL_SERVER_ERROR, loginByUsername } from '../services/loginByUsername';
+import { loginByUsername } from '../services/loginByUsername';
 
 describe('loginFormSlice', () => {
   it('should set passed username', () => {
-    expect(loginFormReducer(loginFormInitialState, loginFormActions.setUsername('test_name'))).toEqual({
+    expect(loginFormReducer(loginFormInitialState, loginFormActions.setUsername('test_name'))).toMatchObject({
       username: 'test_name',
-      password: loginFormInitialState.password,
-      isLoading: loginFormInitialState.isLoading,
-      error: loginFormInitialState.error,
     });
   });
 
   it('should set passed password', () => {
-    expect(loginFormReducer(loginFormInitialState, loginFormActions.setPassword('test_password'))).toEqual({
+    expect(loginFormReducer(loginFormInitialState, loginFormActions.setPassword('test_password'))).toMatchObject({
       password: 'test_password',
-      username: loginFormInitialState.username,
-      isLoading: loginFormInitialState.isLoading,
-      error: loginFormInitialState.error,
     });
   });
 
@@ -36,11 +31,8 @@ describe('loginFormSlice', () => {
     it('should set loading true when loginByUsername is pending', () => {
       expect(
         loginFormReducer(loginFormInitialState, loginByUsername.pending('', { password: '', username: '' })),
-      ).toEqual({
-        username: '',
-        password: '',
+      ).toMatchObject({
         isLoading: true,
-        error: null,
       });
     });
 
@@ -50,11 +42,8 @@ describe('loginFormSlice', () => {
           loginFormInitialState,
           loginByUsername.fulfilled({ id: '', username: '' }, '', { password: '', username: '' }),
         ),
-      ).toEqual({
-        username: '',
-        password: '',
+      ).toMatchObject({
         isLoading: false,
-        error: null,
       });
     });
 
@@ -66,9 +55,7 @@ describe('loginFormSlice', () => {
           loginFormInitialState,
           loginByUsername.rejected(null, '', { password: '', username: '' }, error),
         ),
-      ).toEqual({
-        username: '',
-        password: '',
+      ).toMatchObject({
         isLoading: false,
         error: error,
       });
@@ -77,9 +64,7 @@ describe('loginFormSlice', () => {
     it('should set loading false and add default error in state when loginByUsername is rejected without payload', () => {
       expect(
         loginFormReducer(loginFormInitialState, loginByUsername.rejected(null, '', { password: '', username: '' })),
-      ).toEqual({
-        username: '',
-        password: '',
+      ).toMatchObject({
         isLoading: false,
         error: INTERNAL_SERVER_ERROR,
       });

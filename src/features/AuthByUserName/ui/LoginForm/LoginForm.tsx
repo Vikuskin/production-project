@@ -25,7 +25,7 @@ interface LoginFormProps {
   className?: string;
 }
 
-const initialReducers: ReducersList = {
+const loginAsyncReducers: ReducersList = {
   loginForm: loginFormReducer,
 };
 const LoginForm: FC<LoginFormProps> = memo(({ className, onClose }: LoginFormProps) => {
@@ -44,7 +44,7 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onClose }: LoginFormPro
   }, [dispatch, onClose, password, username]);
 
   return (
-    <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={true}>
+    <DynamicModuleLoader reducers={loginAsyncReducers} removeAfterUnmount>
       <div className={getClassNames(styles.loginForm, [className ?? ''])}>
         {error && <Text title={t(`${error.status}_error`)} text={t(error.message)} variant={TextVariant.Error} />}
         <AppInput

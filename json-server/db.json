@@ -9,8 +9,8 @@
   ],
   "users": [{ "id": "1", "username": "admin", "password": "123" }],
   "profile": {
-    "firstName": "First name",
-    "lastName": "Last name",
+    "firstName": "TEST First name",
+    "lastName": "TEST Last name",
     "age": "24",
     "currency": "RUB",
     "country": "Russia",

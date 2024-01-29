@@ -1,25 +1,22 @@
-import axios, { AxiosError, AxiosResponse } from 'axios';
+import { AxiosError, AxiosResponse } from 'axios';
 
 import { userActions } from 'entities/User';
+import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk';
 
-import { INTERNAL_SERVER_ERROR, loginByUsername } from './loginByUsername';
-
-jest.mock('axios');
-
-const mockedAxios = jest.mocked(axios);
+import { loginByUsername } from './loginByUsername';
 
 describe('loginByUsername', () => {
   it('handles success response from server', async () => {
     const mockUserData = { username: 'test', id: '1' };
-
-    mockedAxios.post.mockResolvedValue({ data: mockUserData });
-
     const thunk = new TestAsyncThunk(loginByUsername);
+
+    thunk.api.post.mockResolvedValue({ data: mockUserData });
+
     const result = await thunk.callThunk({ username: 'test', password: '123' });
 
-    expect(mockedAxios.post).toHaveBeenCalled();
+    expect(thunk.api.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('fulfilled');
     expect(thunk.dispatch).toHaveBeenCalledTimes(3);
     expect(thunk.dispatch).toHaveBeenCalledWith(userActions.login(mockUserData));
@@ -27,12 +24,13 @@ describe('loginByUsername', () => {
   });
 
   it('handles response with no data from server', async () => {
-    mockedAxios.post.mockResolvedValue({ data: null });
-
     const thunk = new TestAsyncThunk(loginByUsername);
+
+    thunk.api.post.mockResolvedValue({ data: null });
+
     const result = await thunk.callThunk({ username: 'test', password: '123' });
 
-    expect(mockedAxios.post).toHaveBeenCalled();
+    expect(thunk.api.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(thunk.dispatch).not.toHaveBeenCalledWith(userActions.login);
@@ -40,12 +38,13 @@ describe('loginByUsername', () => {
   });
 
   it('handles interval error from server', async () => {
-    mockedAxios.post.mockRejectedValue({ response: { status: 403 } });
-
     const thunk = new TestAsyncThunk(loginByUsername);
+
+    thunk.api.post.mockRejectedValue({ response: { status: 403 } });
+
     const result = await thunk.callThunk({ username: 'test', password: '123' });
 
-    expect(mockedAxios.post).toHaveBeenCalled();
+    expect(thunk.api.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(result.payload).toEqual(INTERNAL_SERVER_ERROR);
@@ -57,12 +56,13 @@ describe('loginByUsername', () => {
 
     error.response = { status: ErrorStatusCode.BadRequest } as AxiosResponse;
 
-    mockedAxios.post.mockRejectedValue(error);
-
     const thunk = new TestAsyncThunk(loginByUsername);
+
+    thunk.api.post.mockRejectedValue(error);
+
     const result = await thunk.callThunk({ username: 'test', password: '123' });
 
-    expect(mockedAxios.post).toHaveBeenCalled();
+    expect(thunk.api.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(result.payload).toEqual({ message: 'Incorrect authentication data', status: ErrorStatusCode.BadRequest });
@@ -74,12 +74,13 @@ describe('loginByUsername', () => {
 
     error.response = { status: ErrorStatusCode.NotFound } as AxiosResponse;
 
-    mockedAxios.post.mockRejectedValue(error);
-
     const thunk = new TestAsyncThunk(loginByUsername);
+
+    thunk.api.post.mockRejectedValue(error);
+
     const result = await thunk.callThunk({ username: 'test', password: '123' });
 
-    expect(mockedAxios.post).toHaveBeenCalled();
+    expect(thunk.api.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(result.payload).toEqual({

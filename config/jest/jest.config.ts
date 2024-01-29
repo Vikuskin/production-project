@@ -5,6 +5,7 @@ const config: Config = {
   // A set of global variables that need to be available in all test environments
   globals: {
     IS_DEV: true,
+    API_URL: '',
   },
 
   // Automatically clear mock calls, instances, contexts and results before every test

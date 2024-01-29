@@ -1,18 +1,42 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
+import {
+  ProfileCard,
+  fetchProfileData,
+  profileReducer,
+  selectProfileData,
+  selectProfileError,
+  selectProfileLoading,
+} from 'entities/Profile';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
+import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/useAppDispatch';
+import { Text, TextVariant } from 'shared/ui/Text';
+import { PageLoader } from 'widgets/PageLoader';
 
-import * as styles from './ProfilePage.module.scss';
-
-interface ProfilePageProps {
-  className?: string;
-}
-
-const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
+const profileAsyncReducers: ReducersList = {
+  profile: profileReducer,
+};
+const ProfilePage: FC = () => {
   const { t } = useTranslation();
+  const dispatch = useAppDispatch();
+  const profileError = useAppSelector(selectProfileError);
+  const profileIsLoading = useAppSelector(selectProfileLoading);
+  const profileData = useAppSelector(selectProfileData);
 
-  return <div className={getClassNames(styles.profilePage, [className ?? ''])}>{t('Profile')}</div>;
+  useEffect(() => {
+    dispatch(fetchProfileData());
+  }, [dispatch]);
+
+  return (
+    <DynamicModuleLoader reducers={profileAsyncReducers} removeAfterUnmount>
+      {profileIsLoading && <PageLoader />}
+      {profileError && (
+        <Text title={t(`${profileError.status}_error`)} text={t(profileError.message)} variant={TextVariant.Error} />
+      )}
+      {profileData && <ProfileCard profileData={profileData} />}
+    </DynamicModuleLoader>
+  );
 };
 
 export default ProfilePage;

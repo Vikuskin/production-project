@@ -15,5 +15,11 @@ declare module '*.svg' {
   export default SVG;
 }
 declare const IS_DEV: boolean;
+declare const API_URL: string;
 declare module '@loki/is-loki-running';
 declare module '@loki/create-async-callback';
+type DeepPartial<T> = T extends object
+  ? {
+      [P in keyof T]?: DeepPartial<T[P]>;
+    }
+  : T;

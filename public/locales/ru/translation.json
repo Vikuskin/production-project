@@ -9,11 +9,12 @@
   "Authentication error": "Ошибка авторизации",
   "Error": "Ошибка",
   "400_error": "Неправильный запрос",
+  "403_error": "Запрещено",
   "404_error": "Не найдено",
   "500_error": "Непредвиденная ошибка сервера",
   "Incorrect authentication data": "Неправильные данные для авторизации",
+  "Authentication error, you are not authorized": "Ошибка авторизации, вы не авторизованы",
   "The server cannot find the requested resource": "Сервер не может найти запрашиваемый ресурс",
   "Internal server error": "Что-то пошло не так",
-  "Profile": "Профиль",
   "Logout": "Выйти"
 }
