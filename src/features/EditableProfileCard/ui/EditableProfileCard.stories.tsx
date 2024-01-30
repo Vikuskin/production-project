@@ -9,6 +9,8 @@ import AvatarImg from 'shared/ui/Avatar/ui/storybook-avatar.jpeg';
 
 import { EditableProfileCard } from './EditableProfileCard';
 
+import { ValidateProfileError } from '../models/types/validateProfileError';
+
 const profileForm = {
   age: '24',
   avatar: AvatarImg,
@@ -47,4 +49,27 @@ export const LightReadonly: Story = {
 
 export const DarkReadonly: Story = {
   decorators: [themeDecorator(Theme.Dark), storeDecorator({ profile: { readonly: true, form: profileForm } })],
+};
+
+export const LightWithValidationError: Story = {
+  decorators: [
+    storeDecorator({
+      profile: {
+        validationErrors: [ValidateProfileError.IncorrectAge, ValidateProfileError.IncorrectCity],
+        form: profileForm,
+      },
+    }),
+  ],
+};
+
+export const DarkWithValidationError: Story = {
+  decorators: [
+    themeDecorator(Theme.Dark),
+    storeDecorator({
+      profile: {
+        validationErrors: [ValidateProfileError.IncorrectAge, ValidateProfileError.IncorrectCity],
+        form: profileForm,
+      },
+    }),
+  ],
 };

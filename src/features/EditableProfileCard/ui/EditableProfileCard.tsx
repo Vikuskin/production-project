@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect } from 'react';
+import React, { FC, useCallback, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Country } from 'entities/Country';
@@ -8,11 +8,15 @@ import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/useAppDispatch';
 import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
 import { Avatar } from 'shared/ui/Avatar';
-import { Text } from 'shared/ui/Text';
+import { Text, TextVariant } from 'shared/ui/Text';
 
 import * as styles from './EditableProfileCard.module.scss';
 
-import { selectProfileForm, selectProfileReadonly } from '../models/selectors/selectProfile';
+import {
+  selectProfileForm,
+  selectProfileReadonly,
+  selectProfileValidationErrors,
+} from '../models/selectors/selectProfile';
 import { fetchProfileData } from '../models/services/fetchProfileData';
 import { updateProfileData } from '../models/services/updateProfileData';
 import { profileActions } from '../models/slices/profileSlice';
@@ -26,8 +30,15 @@ export const EditableProfileCard: FC<EditableProfileCardProps> = ({ className })
   const dispatch = useAppDispatch();
   const profileForm = useAppSelector(selectProfileForm);
   const profileReadonly = useAppSelector(selectProfileReadonly);
+  const profileValidationErrors = useAppSelector(selectProfileValidationErrors);
   const onEdit = useCallback(() => dispatch(profileActions.setReadonly(false)), [dispatch]);
   const onCancelEdit = useCallback(() => dispatch(profileActions.cancelEdit()), [dispatch]);
+  const validationErrors = useMemo(
+    () =>
+      profileValidationErrors &&
+      profileValidationErrors.map((error) => <Text variant={TextVariant.Error} key={error} text={t(error)} />),
+    [profileValidationErrors, t],
+  );
 
   useEffect(() => {
     dispatch(fetchProfileData());
@@ -97,6 +108,7 @@ export const EditableProfileCard: FC<EditableProfileCardProps> = ({ className })
             </>
           )}
         </div>
+        {validationErrors}
         <ProfileCard
           className={styles.form}
           profileData={profileForm}

@@ -13,6 +13,7 @@ export const profileInitialState: IProfile = {
   error: null,
   data: null,
   form: null,
+  validationErrors: null,
 };
 
 export const profileSlice = createSlice({
@@ -23,12 +24,11 @@ export const profileSlice = createSlice({
       state.readonly = action.payload;
     },
     updateProfile: (state, action: PayloadAction<Partial<IProfileData>>) => {
-      console.log('action: ', action);
       state.form = { ...state.form, ...action.payload };
-      console.log('state.form: ', state.form);
     },
     cancelEdit: (state) => {
-      state.readonly = false;
+      state.readonly = true;
+      state.validationErrors = null;
       state.form = { ...state.data };
     },
   },
@@ -49,6 +49,7 @@ export const profileSlice = createSlice({
       })
       .addCase(updateProfileData.pending, (state) => {
         state.error = null;
+        state.validationErrors = null;
         state.isLoading = true;
       })
       .addCase(updateProfileData.fulfilled, (state, action: PayloadAction<IProfileData>) => {
@@ -59,7 +60,11 @@ export const profileSlice = createSlice({
       })
       .addCase(updateProfileData.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.payload || INTERNAL_SERVER_ERROR;
+        if (Array.isArray(action.payload)) {
+          state.validationErrors = action.payload;
+        } else {
+          state.error = action.payload || INTERNAL_SERVER_ERROR;
+        }
       });
   },
 });

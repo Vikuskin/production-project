@@ -5,7 +5,6 @@ import { NavigateOptions, To } from 'react-router-dom';
 import { IUser } from 'entities/User';
 import { ILoginForm } from 'features/AuthByUserName';
 import { IProfile } from 'features/EditableProfileCard';
-import { ICustomError } from 'shared/types/customError';
 
 import { createReducerManager } from '../config/createReducerManager';
 
@@ -25,8 +24,8 @@ export interface IThunkExtraArg {
   api: AxiosInstance;
   navigate: (to: To, options?: NavigateOptions) => void;
 }
-export interface IThunkConfig {
-  rejectValue: ICustomError;
+export interface IThunkConfig<T> {
+  rejectValue: T;
   extra: IThunkExtraArg;
   state: IState;
 }

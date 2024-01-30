@@ -9,5 +9,10 @@
   "First name": "First name",
   "Last name": "Last name",
   "Username": "Username",
-  "Age": "Age"
+  "Age": "Age",
+  "No data from server": "No data from server",
+  "Incorrect user data": "Incorrect user data",
+  "Incorrect age": "Incorrect age",
+  "Incorrect city": "Incorrect city",
+  "No data": "No data"
 }

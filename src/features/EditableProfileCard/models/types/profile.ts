@@ -7,4 +7,5 @@ export interface IProfile {
   isLoading: boolean;
   error: ICustomError | null;
   readonly: boolean;
+  validationErrors: string[] | null;
 }

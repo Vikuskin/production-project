@@ -5,8 +5,9 @@ import { IThunkConfig } from 'app/providers/StoreProvider';
 import { IProfileData } from 'entities/Profile';
 import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
+import { ICustomError } from 'shared/types/customError';
 
-export const fetchProfileData = createAsyncThunk<IProfileData, void, IThunkConfig>(
+export const fetchProfileData = createAsyncThunk<IProfileData, void, IThunkConfig<ICustomError>>(
   'profile/fetchProfileData',
   async (_, thunkApi) => {
     const { rejectWithValue, extra } = thunkApi;
@@ -15,7 +16,7 @@ export const fetchProfileData = createAsyncThunk<IProfileData, void, IThunkConfi
       const response = await extra.api.get<IProfileData>('/profile');
 
       if (!response.data) {
-        throw new Error('No data from server');
+        rejectWithValue({ status: ErrorStatusCode.BadRequest, message: 'No data from server' });
       }
 
       return response.data;

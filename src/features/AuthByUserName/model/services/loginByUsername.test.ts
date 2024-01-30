@@ -34,7 +34,7 @@ describe('loginByUsername', () => {
     expect(result.meta.requestStatus).toBe('rejected');
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(thunk.dispatch).not.toHaveBeenCalledWith(userActions.login);
-    expect(result.payload).toEqual(INTERNAL_SERVER_ERROR);
+    expect(result.payload).toEqual({ status: ErrorStatusCode.BadRequest, message: 'No data from server' });
   });
 
   it('handles interval error from server', async () => {
