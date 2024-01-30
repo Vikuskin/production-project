@@ -16,5 +16,6 @@
   "Authentication error, you are not authorized": "Ошибка авторизации, вы не авторизованы",
   "The server cannot find the requested resource": "Сервер не может найти запрашиваемый ресурс",
   "Internal server error": "Что-то пошло не так",
-  "Logout": "Выйти"
+  "Logout": "Выйти",
+  "Profile": "Профиль"
 }

@@ -1,10 +1,13 @@
 {
   "Profile": "Profile",
   "Edit": "Edit",
+  "Save": "Save",
+  "Cancel": "Cancel",
   "City": "City",
   "Country": "Country",
   "Currency": "Currency",
   "First name": "First name",
   "Last name": "Last name",
-  "Username": "Username"
+  "Username": "Username",
+  "Age": "Age"
 }

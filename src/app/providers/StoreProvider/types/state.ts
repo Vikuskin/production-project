@@ -28,4 +28,5 @@ export interface IThunkExtraArg {
 export interface IThunkConfig {
   rejectValue: ICustomError;
   extra: IThunkExtraArg;
+  state: IState;
 }

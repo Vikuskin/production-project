@@ -22,6 +22,6 @@ describe('Navbar', () => {
     const { findAllByTestId } = componentRender(<Navbar />);
     const links = await findAllByTestId('navbar-link');
 
-    expect(links.length).toBe(navbarLinks.length);
+    expect(links.length).toBe(navbarLinks.filter((link) => !link.authOnly).length);
   });
 });

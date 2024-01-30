@@ -15,13 +15,15 @@ export const NavbarLink: FC<INavbarLinkProps> = memo(({ className, link }: INavb
   const { t } = useTranslation();
 
   return (
-    <AppLink
-      data-testid="navbar-link"
-      className={getClassNames('', [className ?? ''])}
-      variant={link.variant}
-      to={link.path}
-    >
-      {t(link.text)}
-    </AppLink>
+    !link.authOnly && (
+      <AppLink
+        data-testid="navbar-link"
+        className={getClassNames('', [className ?? ''])}
+        variant={link.variant}
+        to={link.path}
+      >
+        {t(link.text)}
+      </AppLink>
+    )
   );
 });

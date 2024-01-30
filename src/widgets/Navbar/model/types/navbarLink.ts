@@ -4,4 +4,5 @@ export interface INavbarLink {
   path: string;
   text: string;
   variant: AppLinkVariant;
+  authOnly?: boolean;
 }

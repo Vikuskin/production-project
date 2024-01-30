@@ -8,9 +8,10 @@ import { NavbarLink } from './NavbarLink';
 import { navbarLinks } from '../../model/navbarLinks';
 
 describe('NavbarLink', () => {
+  const testLink = navbarLinks[0];
+
   it('renders with passed props and routes to the correct page by the click', async () => {
     const history = createMemoryHistory();
-    const testLink = navbarLinks[0];
     const { getByTestId } = componentRender(<NavbarLink link={testLink} />, {
       routerProps: { history, location: history.location },
     });
@@ -22,5 +23,11 @@ describe('NavbarLink', () => {
     expect(history.location.pathname).toEqual(testLink.path);
     expect(link).toHaveClass(testLink.variant);
     expect(link).toHaveTextContent(testLink.text);
+  });
+
+  it('does not render link when flag authOnly true', async () => {
+    const { container } = componentRender(<NavbarLink link={{ ...testLink, authOnly: true }} />);
+
+    expect(container.childElementCount).toBe(0);
   });
 });

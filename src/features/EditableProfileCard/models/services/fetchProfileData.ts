@@ -2,10 +2,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosError } from 'axios';
 
 import { IThunkConfig } from 'app/providers/StoreProvider';
-import { INTERNAL_SERVER_ERROR, LOCAL_STORAGE_KEYS } from 'shared/constants/constants';
+import { IProfileData } from 'entities/Profile';
+import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-
-import { IProfileData } from '../types/profile';
 
 export const fetchProfileData = createAsyncThunk<IProfileData, void, IThunkConfig>(
   'profile/fetchProfileData',
@@ -13,7 +12,6 @@ export const fetchProfileData = createAsyncThunk<IProfileData, void, IThunkConfi
     const { rejectWithValue, extra } = thunkApi;
 
     try {
-      console.log('auth', localStorage.getItem(LOCAL_STORAGE_KEYS.Auth));
       const response = await extra.api.get<IProfileData>('/profile');
 
       if (!response.data) {
@@ -26,7 +24,7 @@ export const fetchProfileData = createAsyncThunk<IProfileData, void, IThunkConfi
 
       if (e instanceof AxiosError && e.response?.status) {
         switch (e.response.status) {
-          case ErrorStatusCode.Forbiden:
+          case ErrorStatusCode.Forbidden:
             return rejectWithValue({
               status: e.response.status,
               message: 'Authentication error, you are not authorized',

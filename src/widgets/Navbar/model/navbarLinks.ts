@@ -18,5 +18,6 @@ export const navbarLinks: INavbarLink[] = [
     path: routePaths.profile,
     text: 'Profile',
     variant: AppLinkVariant.Primary,
+    authOnly: true,
   },
 ];

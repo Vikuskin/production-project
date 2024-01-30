@@ -1,5 +1,4 @@
 import React from 'react';
-import { RouteProps } from 'react-router-dom';
 
 import { AboutPage } from 'pages/AboutPage';
 import { ErrorPage } from 'pages/ErrorPage';
@@ -7,7 +6,7 @@ import { MainPage } from 'pages/MainPage';
 import { ProfilePage } from 'pages/ProfilePage';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 
-import { AppRoute } from '../types/AppRoute';
+import { AppRoute, AppRouteProps } from '../types/AppRoute';
 
 export const routePaths: Record<AppRoute, string> = {
   [AppRoute.Main]: '/',
@@ -16,7 +15,7 @@ export const routePaths: Record<AppRoute, string> = {
   [AppRoute.NotFound]: '*',
 };
 
-export const routeConfig: RouteProps[] = [
+export const routeConfig: AppRouteProps[] = [
   {
     path: routePaths[AppRoute.Main],
     element: <MainPage />,
@@ -32,5 +31,6 @@ export const routeConfig: RouteProps[] = [
   {
     path: routePaths[AppRoute.Profile],
     element: <ProfilePage />,
+    authOnly: true,
   },
 ];

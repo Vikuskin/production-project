@@ -8,3 +8,4 @@ node_modules
 .prettierignore
 .github
 *.svg
+*.jpeg

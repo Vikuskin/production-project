@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  align-items: center;
+
+  button {
+    margin-left: auto;
+  }
+
+  .edit-btn {
+    margin-left: 10px;
+  }
+
+  .avatar-wrapper {
+    margin-right: 15px;
+  }
+}
+
+.form {
+  margin-top: 20px;
+}

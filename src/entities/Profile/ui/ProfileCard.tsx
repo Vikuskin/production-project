@@ -1,38 +1,80 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { Country, SelectCountry } from 'entities/Country';
+import { Currency, SelectCurrency } from 'entities/Currency';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
 import { AppInput } from 'shared/ui/AppInput';
-import { Text } from 'shared/ui/Text';
 
 import * as styles from './ProfileCard.module.scss';
 
-import { IProfileData } from '../../../features/EditableProfileCard/models/types/profile';
+import { IProfileData } from '../model/types/profileData';
 
 interface ProfileCardProps {
-  profileData: IProfileData;
+  profileData: Partial<IProfileData>;
+  onChangeFirstName: (value: string) => void;
+  onChangeLastName: (value: string) => void;
+  onChangeCity: (value: string) => void;
+  onChangeAge: (value: string) => void;
+  onChangeUsername: (value: string) => void;
+  onChangeAvatar: (value: string) => void;
+  onChangeCurrency: (value: Currency) => void;
+  onChangeCountry: (value: Country) => void;
+  readonly?: boolean;
   className?: string;
 }
 
-export const ProfileCard: FC<ProfileCardProps> = ({ className, profileData }) => {
+export const ProfileCard: FC<ProfileCardProps> = (props) => {
+  const {
+    profileData,
+    onChangeFirstName,
+    onChangeLastName,
+    onChangeAge,
+    onChangeCity,
+    onChangeAvatar,
+    onChangeUsername,
+    onChangeCurrency,
+    onChangeCountry,
+    className,
+    readonly,
+  } = props;
   const { t } = useTranslation('profile');
 
   return (
-    <div className={getClassNames(styles.card, [className ?? ''])}>
-      <div className={styles.header}>
-        <Text title={t('Profile')} text="" />
-        <AppButton variant={AppButtonVariant.Outline}>{t('Edit')}</AppButton>
-      </div>
-      <div className={styles.form}>
-        <AppInput value={profileData?.firstName} placeholder={t('First name')} />
-        <AppInput value={profileData?.lastName} placeholder={t('Last name')} />
-        <AppInput value={profileData?.username} placeholder={t('Username')} />
-        <AppInput value={profileData?.age} placeholder={t('Age')} />
-        <AppInput value={profileData?.currency} placeholder={t('Currency')} />
-        <AppInput value={profileData?.country} placeholder={t('Country')} />
-        <AppInput value={profileData?.city} placeholder={t('City')} />
-      </div>
+    <div className={getClassNames(styles.profileForm, [className ?? ''])}>
+      <AppInput
+        value={profileData.firstName!}
+        placeholder={t('First name')}
+        onChange={onChangeFirstName}
+        readonly={readonly}
+      />
+      <AppInput
+        value={profileData.lastName!}
+        placeholder={t('Last name')}
+        onChange={onChangeLastName}
+        readonly={readonly}
+      />
+      <AppInput
+        onChange={onChangeUsername}
+        value={profileData.username!}
+        placeholder={t('Username')}
+        readonly={readonly}
+      />
+      <AppInput onChange={onChangeAvatar} value={profileData.avatar!} placeholder={t('Avatar')} readonly={readonly} />
+      <AppInput onChange={onChangeAge} value={profileData.age!} placeholder={t('Age')} readonly={readonly} />
+      <SelectCurrency
+        className={styles.input}
+        value={profileData.currency!}
+        onChange={onChangeCurrency}
+        readonly={readonly}
+      />
+      <SelectCountry
+        className={styles.input}
+        value={profileData.country!}
+        onChange={onChangeCountry}
+        readonly={readonly}
+      />
+      <AppInput onChange={onChangeCity} value={profileData.city!} placeholder={t('City')} readonly={readonly} />
     </div>
   );
 };

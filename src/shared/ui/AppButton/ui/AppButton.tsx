@@ -7,6 +7,7 @@ import * as styles from './AppButton.module.scss';
 export enum AppButtonVariant {
   Clear = 'clear',
   Outline = 'outline',
+  OutlineDanger = 'outlineDanger',
   Background = 'background',
   BackgroundInverted = 'backgroundInverted',
 }
