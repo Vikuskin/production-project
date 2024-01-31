@@ -37,7 +37,7 @@ describe('loginByUsername', () => {
     expect(result.payload).toEqual({ status: ErrorStatusCode.BadRequest, message: 'No data from server' });
   });
 
-  it('handles interval error from server', async () => {
+  it('handles intenval error from server', async () => {
     const thunk = new TestAsyncThunk(loginByUsername);
 
     thunk.api.post.mockRejectedValue({ response: { status: 403 } });

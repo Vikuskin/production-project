@@ -25,7 +25,9 @@ export default ({ config }: { config: webpack.Configuration }) => {
   config.resolve!.alias = {
     entities: path.resolve(__dirname, '..', '..', 'src', 'entities'),
   };
-  config.plugins?.push(new DefinePlugin({ IS_DEV: true, API_URL: JSON.stringify('') }));
+  config.plugins?.push(
+    new DefinePlugin({ IS_DEV: true, API_URL: JSON.stringify(''), PROJECT: JSON.stringify('storybook') }),
+  );
 
   return config;
 };

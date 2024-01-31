@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { AxiosError } from 'axios';
 
 import { IThunkConfig } from 'app/providers/StoreProvider';
 import { IProfileData } from 'entities/Profile';
@@ -16,14 +15,16 @@ export const fetchProfileData = createAsyncThunk<IProfileData, void, IThunkConfi
       const response = await extra.api.get<IProfileData>('/profile');
 
       if (!response.data) {
-        rejectWithValue({ status: ErrorStatusCode.BadRequest, message: 'No data from server' });
+        return rejectWithValue({ status: ErrorStatusCode.BadRequest, message: 'No data from server' });
       }
 
       return response.data;
-    } catch (e: unknown) {
+      // TODO: remove any type
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (e: any) {
       console.error('There was error while fetching profile data ', e);
 
-      if (e instanceof AxiosError && e.response?.status) {
+      if (e.response?.status) {
         switch (e.response.status) {
           case ErrorStatusCode.Forbidden:
             return rejectWithValue({

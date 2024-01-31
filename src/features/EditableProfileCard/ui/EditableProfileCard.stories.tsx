@@ -1,26 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Theme } from 'app/providers/theme';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
 import { storeDecorator } from 'shared/lib/storybook/storeDecorator';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
-import AvatarImg from 'shared/ui/Avatar/ui/storybook-avatar.jpeg';
+import { profileForm } from 'shared/mocks/profileForm';
 
 import { EditableProfileCard } from './EditableProfileCard';
 
 import { ValidateProfileError } from '../models/types/validateProfileError';
 
-const profileForm = {
-  age: '24',
-  avatar: AvatarImg,
-  city: 'City',
-  country: Country.Canada,
-  currency: Currency.EUR,
-  firstName: 'First name',
-  lastName: 'Last name',
-  username: 'Username',
-};
 const meta = {
   title: 'entities/EditableProfileCard',
   component: EditableProfileCard,

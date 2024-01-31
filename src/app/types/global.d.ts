@@ -16,6 +16,7 @@ declare module '*.svg' {
 }
 declare const IS_DEV: boolean;
 declare const API_URL: string;
+declare const PROJECT: 'storybook' | 'frontend' | 'jest';
 declare module '@loki/is-loki-running';
 declare module '@loki/create-async-callback';
 type DeepPartial<T> = T extends object

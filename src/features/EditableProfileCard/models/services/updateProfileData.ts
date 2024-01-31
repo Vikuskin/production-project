@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { AxiosError } from 'axios';
 
 import { IThunkConfig } from 'app/providers/StoreProvider';
 import { IProfileData } from 'entities/Profile';
@@ -27,22 +26,12 @@ export const updateProfileData = createAsyncThunk<IProfileData, void, IThunkConf
       const response = await extra.api.put('/profile', profileForm);
 
       if (!response.data) {
-        rejectWithValue({ status: ErrorStatusCode.BadRequest, message: 'No data from server' });
+        return rejectWithValue({ status: ErrorStatusCode.BadRequest, message: 'No data from server' });
       }
 
       return response.data;
     } catch (e: unknown) {
       console.error('There was error while fetching profile data ', e);
-
-      if (e instanceof AxiosError && e.response?.status) {
-        switch (e.response.status) {
-          case ErrorStatusCode.Forbidden:
-            return rejectWithValue({
-              status: e.response.status,
-              message: 'Authentication error, you are not authorized',
-            });
-        }
-      }
 
       return rejectWithValue(INTERNAL_SERVER_ERROR);
     }

@@ -6,7 +6,7 @@ import { buildResolvers } from './buildResolvers';
 import { IBuildOptions } from './types/config';
 
 export function buildWebpackConfig(options: IBuildOptions): webpack.Configuration {
-  const { paths, mode, isDev, port, apiUrl } = options;
+  const { paths, mode, isDev, port, apiUrl, project } = options;
 
   return {
     mode,
@@ -16,7 +16,7 @@ export function buildWebpackConfig(options: IBuildOptions): webpack.Configuratio
       path: paths.build,
       clean: true,
     },
-    plugins: buildPlugins(paths, isDev, apiUrl),
+    plugins: buildPlugins(paths, isDev, apiUrl, project),
     module: {
       strictExportPresence: true,
       rules: buildLoaders(isDev),
