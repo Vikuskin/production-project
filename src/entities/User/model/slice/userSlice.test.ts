@@ -15,12 +15,14 @@ describe('userSlice', () => {
         id: '1',
         username: 'test_name',
       },
+      _mounted: false,
     });
   });
 
   it('should set passed password', () => {
     expect(userReducer(userInitialState, userActions.logout())).toEqual({
       authData: null,
+      _mounted: false,
     });
   });
 
@@ -38,6 +40,7 @@ describe('userSlice', () => {
         id: '1',
         username: 'test_name',
       },
+      _mounted: false,
     });
   });
 });

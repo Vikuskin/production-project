@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
 import { Theme } from 'app/providers/theme';
+import { storeDecorator } from 'shared/lib/storybook/storeDecorator';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
 import { NavbarLink } from './NavbarLink';
@@ -15,6 +16,7 @@ const meta = {
   args: {
     link: navbarLinks[0],
   },
+  decorators: [storeDecorator({})],
 } satisfies Meta<typeof NavbarLink>;
 
 export default meta;
