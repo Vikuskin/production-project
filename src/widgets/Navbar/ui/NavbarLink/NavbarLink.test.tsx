@@ -25,8 +25,10 @@ describe('NavbarLink', () => {
     expect(link).toHaveTextContent(testLink.text);
   });
 
-  it('does not render link when flag authOnly true', async () => {
-    const { container } = componentRender(<NavbarLink link={{ ...testLink, authOnly: true }} />);
+  it('does not render link when flag authOnly true and user is not auth', async () => {
+    const { container } = componentRender(<NavbarLink link={{ ...testLink, authOnly: true }} />, {
+      initialState: { user: { authData: null } },
+    });
 
     expect(container.childElementCount).toBe(0);
   });

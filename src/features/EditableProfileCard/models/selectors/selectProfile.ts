@@ -6,7 +6,7 @@ import { ICustomError } from 'shared/types/customError';
 
 const selectProfile = (state: IState) => state.profile;
 
-export const selectProfileLoading = createSelector(selectProfile, (profile): boolean => profile?.isLoading || false);
+export const selectProfileLoading = createSelector(selectProfile, (profile): boolean => !!profile?.isLoading);
 export const selectProfileData = createSelector(selectProfile, (profile): IProfileData | null => profile?.data || null);
 export const selectProfileError = createSelector(
   selectProfile,

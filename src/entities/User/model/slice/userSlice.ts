@@ -6,6 +6,7 @@ import { IAuthData, IUser } from '../types/user';
 
 export const userInitialState: IUser = {
   authData: null,
+  _mounted: false,
 };
 
 export const userSlice = createSlice({
@@ -18,6 +19,7 @@ export const userSlice = createSlice({
       if (authData) {
         state.authData = JSON.parse(authData);
       }
+      state._mounted = true;
     },
     login: (state, action: PayloadAction<IAuthData>) => {
       state.authData = action.payload;

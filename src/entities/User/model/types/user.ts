@@ -1,5 +1,6 @@
 export interface IUser {
   authData: IAuthData | null;
+  _mounted: boolean;
 }
 
 export interface IAuthData {
