@@ -1,6 +1,6 @@
 .husky
 .loki
-build
+./build
 coverage
 node_modules
 .DS_Store
