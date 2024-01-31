@@ -27,6 +27,6 @@ describe('ProfileCard', () => {
   };
 
   it('renders without crashing', () => {
-    componentRender(<ProfileCard profileData={profileDataMock} {...defaultProps} />);
+    componentRender(<ProfileCard profileForm={profileDataMock} {...defaultProps} />);
   });
 });

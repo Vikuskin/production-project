@@ -7,12 +7,15 @@ import { profileForm } from 'shared/mocks/profileForm';
 
 import { EditableProfileCard } from './EditableProfileCard';
 
-import { ValidateProfileError } from '../models/types/validateProfileError';
+import { ValidateProfileError } from '../../models/types/validateProfileError';
 
 const meta = {
   title: 'entities/EditableProfileCard',
   component: EditableProfileCard,
   tags: ['autodocs'],
+  args: {
+    profileForm,
+  },
   decorators: [
     storeDecorator({
       profile: {

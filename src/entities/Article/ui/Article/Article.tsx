@@ -59,7 +59,7 @@ export const Article: FC<IArticleProps> = memo(({ className, id }: IArticleProps
 
   return (
     <DynamicReducerLoader reducers={articleReducers} removeAfterUnmount>
-      <div className={getClassNames(styles.article, [className ?? ''])}> {content}</div>
+      <div className={getClassNames(styles.article, [className ?? ''])}>{content}</div>
     </DynamicReducerLoader>
   );
 });

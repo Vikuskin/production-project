@@ -1,9 +1,15 @@
-import React, { FC, memo } from 'react';
+import React, { FC, ReactElement, memo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { EditableProfileCard, profileReducer } from 'features/EditableProfileCard';
-import { selectProfileError, selectProfileLoading } from 'features/EditableProfileCard/models/selectors/selectProfile';
+import {
+  selectProfileError,
+  selectProfileForm,
+  selectProfileLoading,
+} from 'features/EditableProfileCard/models/selectors/selectProfile';
+import { fetchProfileData } from 'features/EditableProfileCard/models/services/fetchProfileData';
 import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { Text, TextAlign, TextVariant } from 'shared/ui/Text';
 import { PageLoader } from 'widgets/PageLoader';
@@ -15,12 +21,22 @@ const profileAsyncReducers: ReducersList = {
 };
 const ProfilePage: FC = () => {
   const { t } = useTranslation();
+  const dispatch = useAppDispatch();
   const profileError = useAppSelector(selectProfileError);
+
+  console.log('profileError: ', profileError);
   const profileIsLoading = useAppSelector(selectProfileLoading);
-  let content;
+
+  console.log('profileIsLoading: ', profileIsLoading);
+  const profileForm = useAppSelector(selectProfileForm);
+  let content: ReactElement | null = null;
+
+  useEffect(() => {
+    PROJECT !== 'storybook' && PROJECT !== 'jest' && dispatch(fetchProfileData());
+  }, [dispatch]);
 
   if (profileIsLoading) {
-    content = <PageLoader data-testid="page-loader" />;
+    content = <PageLoader />;
   } else if (profileError) {
     content = (
       <Text
@@ -30,8 +46,8 @@ const ProfilePage: FC = () => {
         align={TextAlign.Center}
       />
     );
-  } else {
-    content = <EditableProfileCard />;
+  } else if (profileForm) {
+    content = <EditableProfileCard profileForm={profileForm} />;
   }
 
   return (

@@ -11,7 +11,7 @@ import * as styles from './ProfileCard.module.scss';
 import { IProfileData } from '../model/types/profileData';
 
 interface ProfileCardProps {
-  profileData: Partial<IProfileData>;
+  profileForm: Partial<IProfileData>;
   onChangeFirstName: (value: string) => void;
   onChangeLastName: (value: string) => void;
   onChangeCity: (value: string) => void;
@@ -26,7 +26,7 @@ interface ProfileCardProps {
 
 export const ProfileCard: FC<ProfileCardProps> = (props) => {
   const {
-    profileData,
+    profileForm,
     onChangeFirstName,
     onChangeLastName,
     onChangeAge,
@@ -43,38 +43,38 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
   return (
     <div className={getClassNames(styles.profileForm, [className ?? ''])}>
       <AppInput
-        value={profileData.firstName!}
+        value={profileForm.firstName!}
         placeholder={t('First name')}
         onChange={onChangeFirstName}
         readonly={readonly}
       />
       <AppInput
-        value={profileData.lastName!}
+        value={profileForm.lastName!}
         placeholder={t('Last name')}
         onChange={onChangeLastName}
         readonly={readonly}
       />
       <AppInput
         onChange={onChangeUsername}
-        value={profileData.username!}
+        value={profileForm.username!}
         placeholder={t('Username')}
         readonly={readonly}
       />
-      <AppInput onChange={onChangeAvatar} value={profileData.avatar!} placeholder={t('Avatar')} readonly={readonly} />
-      <AppInput onChange={onChangeAge} value={profileData.age!} placeholder={t('Age')} readonly={readonly} />
+      <AppInput onChange={onChangeAvatar} value={profileForm.avatar!} placeholder={t('Avatar')} readonly={readonly} />
+      <AppInput onChange={onChangeAge} value={profileForm.age!} placeholder={t('Age')} readonly={readonly} />
       <SelectCurrency
         className={styles.input}
-        value={profileData.currency!}
+        value={profileForm.currency!}
         onChange={onChangeCurrency}
         readonly={readonly}
       />
       <SelectCountry
         className={styles.input}
-        value={profileData.country!}
+        value={profileForm.country!}
         onChange={onChangeCountry}
         readonly={readonly}
       />
-      <AppInput onChange={onChangeCity} value={profileData.city!} placeholder={t('City')} readonly={readonly} />
+      <AppInput onChange={onChangeCity} value={profileForm.city!} placeholder={t('City')} readonly={readonly} />
     </div>
   );
 };

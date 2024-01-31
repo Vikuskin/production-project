@@ -19,7 +19,7 @@ const config: Config = {
   coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
-  coveragePathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/config/jest/', 'index.ts'],
+  coveragePathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/config/jest/', 'index.ts', 'types'],
 
   // An array of directory names to be searched recursively up from the requiring module's location
   moduleDirectories: ['node_modules'],
