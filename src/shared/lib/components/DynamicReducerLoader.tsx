@@ -8,12 +8,12 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 export type ReducersList = {
   [key in StateKey]?: Reducer;
 };
-interface DynamicModuleLoaderProps {
+interface IDynamicReducerLoaderProps {
   reducers: ReducersList;
   removeAfterUnmount?: boolean;
 }
 
-export const DynamicModuleLoader: FC<PropsWithChildren<DynamicModuleLoaderProps>> = (props) => {
+export const DynamicReducerLoader: FC<PropsWithChildren<IDynamicReducerLoaderProps>> = (props) => {
   const { reducers, children, removeAfterUnmount } = props;
   const store = useStore() as IStoreWithManager;
   const dispatch = useAppDispatch();

@@ -12,24 +12,39 @@
   "comments": [
     {
       "id": "1",
-      "text": "a comment about post 1",
-      "postId": "1"
+      "text": "a comment about article 1",
+      "articleId": "1",
+      "userId": "1"
     },
     {
       "id": "2",
-      "text": "another comment about post 1",
-      "postId": "1"
+      "text": "cool article",
+      "articleId": "1",
+      "userId": "2"
+    },
+    {
+      "id": "3",
+      "text": "cool article",
+      "articleId": "1",
+      "userId": "1"
     }
   ],
   "users": [
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "123",
+      "role": "user"
     }
   ],
   "profile": {
-    "firstName": "Vikuskin",
+    "firstName": "Vikuskinn",
     "lastName": "Test",
     "age": "24",
     "currency": "RUB",
@@ -37,5 +52,50 @@
     "city": "Saint-Petersburg",
     "username": "admin",
     "avatar": "https://list-15.net/wp-content/uploads/2023/02/25-1-768x603.jpg"
-  }
+  },
+  "articles": [
+    {
+      "id": "1",
+      "title": "JavaScript news",
+      "subtitle": "what's new for 2024",
+      "img": "https://edu-tritec.ru/wp-content/uploads/2023/01/js_thumb.jpg",
+      "views": "1022",
+      "createdAt": "26.01.2024",
+      "type": ["IT"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Eiusmod ad sunt amet culpa nostrud reprehenderit. Nisi occaecat exercitation enim excepteur sint ad mollit ullamco dolor nisi nulla. Nostrud cupidatat amet minim do. Officia aliquip sit voluptate proident magna elit duis. Est aute ex dolore incididunt id non cupidatat ea ipsum sunt veniam."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "const jsonServer = require('json-server');\nconst path = require('path');\nconst server = jsonServer.create();\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+        },
+        {
+          "id": "3",
+          "type": "text",
+          "paragraphs": [
+            "Occaecat fugiat dolore adipisicing commodo deserunt in exercitation id duis adipisicing culpa ipsum labore. Ut dolore laboris velit quis ipsum adipisicing Lorem. Nostrud esse voluptate deserunt mollit voluptate culpa.",
+            "Esse culpa in laborum mollit. In veniam veniam esse voluptate cupidatat sunt. Esse exercitation pariatur laboris qui eu eu nostrud ex excepteur aliqua excepteur commodo. Aliquip ipsum do fugiat enim veniam ea et excepteur amet consequat Lorem incididunt dolor. In id consequat nulla cupidatat minim incididunt sunt id nulla mollit. Ea dolor sit anim tempor aliqua irure officia et est dolore ea anim eiusmod irure. Ut nostrud sint tempor ad non Lorem irure esse ullamco fugiat."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "img",
+          "src": "https://edu-tritec.ru/wp-content/uploads/2023/01/js_thumb.jpg",
+          "title": "Id ullamco cupidatat excepteur minim et ut sint commodo anim ad esse consectetur."
+        },
+        {
+          "id": "5",
+          "type": "code",
+          "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n<title>Document</title>\n</head>\n<body>\n<div id=\"root\"></div>\n</body>\n</html>"
+        }
+      ]
+    }
+  ]
 }
