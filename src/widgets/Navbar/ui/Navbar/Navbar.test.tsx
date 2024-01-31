@@ -1,19 +1,17 @@
-import { BrowserRouter } from 'react-router-dom';
-
 import { componentRender } from 'shared/lib/tests/componentRender';
 
 import { Navbar } from './Navbar';
 
-import { navbarLinks } from '../../models/navbarLinks';
+import { navbarLinks } from '../../model/navbarLinks';
 
 describe('Navbar', () => {
   it('renders without crashing', () => {
-    componentRender(<Navbar />, { wrapper: BrowserRouter });
+    componentRender(<Navbar />);
   });
 
   it('renders with the correct passed className', () => {
     const mockClassName = 'custom-class';
-    const { getByTestId } = componentRender(<Navbar className={mockClassName} />, { wrapper: BrowserRouter });
+    const { getByTestId } = componentRender(<Navbar className={mockClassName} />);
     const navbar = getByTestId('navbar');
 
     expect(navbar).toBeInTheDocument();
@@ -21,9 +19,9 @@ describe('Navbar', () => {
   });
 
   it('renders all links from array with navbar links', async () => {
-    const { findAllByTestId } = componentRender(<Navbar />, { wrapper: BrowserRouter });
+    const { findAllByTestId } = componentRender(<Navbar />);
     const links = await findAllByTestId('navbar-link');
 
-    expect(links.length).toBe(navbarLinks.length);
+    expect(links.length).toBe(navbarLinks.filter((link) => !link.authOnly).length);
   });
 });

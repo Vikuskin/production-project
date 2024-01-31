@@ -1,8 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { IState } from 'app/providers/StoreProvider';
-
-import { ILoginFormError } from '../types/loginForm';
+import { ICustomError } from 'shared/types/customError';
 
 const selectLoginForm = (state: IState) => state.loginForm;
 
@@ -14,5 +13,5 @@ export const selectLoginIsLoading = createSelector(
 );
 export const selectLoginError = createSelector(
   selectLoginForm,
-  (loginForm): ILoginFormError | null => loginForm?.error || null,
+  (loginForm): ICustomError | null => loginForm?.error || null,
 );

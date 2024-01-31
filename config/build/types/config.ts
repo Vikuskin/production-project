@@ -12,9 +12,12 @@ export interface IBuildOptions {
   paths: IBuildPaths;
   isDev: boolean;
   port: number;
+  apiUrl: string;
+  project: Project;
 }
-
+export type Project = 'storybook' | 'frontend' | 'jest';
 export interface IBuildEnv {
   mode: BuildMode;
   port: number;
+  apiUrl: string;
 }

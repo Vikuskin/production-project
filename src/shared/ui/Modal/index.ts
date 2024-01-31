@@ -1,3 +1,1 @@
-import { Modal } from './ui/Modal';
-
-export { Modal };
+export { Modal } from './ui/Modal';

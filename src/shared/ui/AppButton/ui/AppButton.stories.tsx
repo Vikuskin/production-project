@@ -36,6 +36,12 @@ export const OutlineLight: Story = {
   },
 };
 
+export const OutlineDanger: Story = {
+  args: {
+    variant: AppButtonVariant.OutlineDanger,
+  },
+};
+
 export const OutlineDark: Story = {
   args: {
     variant: AppButtonVariant.Outline,

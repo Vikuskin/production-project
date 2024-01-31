@@ -17,6 +17,12 @@
   border: 1px solid var(--primary-color);
 }
 
+.outline-danger {
+  color: var(--red-dark);
+  background: none;
+  border: 1px solid var(--red-dark);
+}
+
 .disabled {
   opacity: 0.5;
 }

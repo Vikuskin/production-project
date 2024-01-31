@@ -1,51 +1,53 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios, { AxiosError } from 'axios';
+import { AxiosError } from 'axios';
 
-import { IState } from 'app/providers/StoreProvider';
+import { AppRoute, routePaths } from 'app/providers/router';
+import { IThunkConfig } from 'app/providers/StoreProvider';
 import { IAuthData, userActions } from 'entities/User';
+import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
+import { ICustomError } from 'shared/types/customError';
 
-import { ILoginFormError } from '../types/loginForm';
-
-export const INTERNAL_SERVER_ERROR: ILoginFormError = {
-  status: ErrorStatusCode.InternalServerError,
-  message: 'Internal server error',
-};
 interface ILoginByUsernameProps {
   username: string;
   password: string;
 }
 
-export const loginByUsername = createAsyncThunk<
-  IAuthData,
-  ILoginByUsernameProps,
-  { state: IState; rejectValue: ILoginFormError }
->('loginForm/loginByUsername', async ({ username, password }, { rejectWithValue, dispatch }) => {
-  try {
-    const response = await axios.post<IAuthData>('http://localhost:8000/login', { username, password });
+export const loginByUsername = createAsyncThunk<IAuthData, ILoginByUsernameProps, IThunkConfig<ICustomError>>(
+  'loginForm/loginByUsername',
+  async ({ username, password }, thunkApi) => {
+    const { rejectWithValue, dispatch, extra } = thunkApi;
 
-    if (!response.data) {
-      throw new Error('No data from server');
-    }
+    try {
+      const response = await extra.api.post<IAuthData>('/login', { username, password });
 
-    dispatch(userActions.login(response.data));
-
-    return response.data;
-  } catch (e: unknown) {
-    console.error('There was authentication error ', e);
-
-    if (e instanceof AxiosError && e.response?.status) {
-      switch (e.response.status) {
-        case ErrorStatusCode.BadRequest:
-          return rejectWithValue({ status: e.response.status, message: 'Incorrect authentication data' });
-        case ErrorStatusCode.NotFound:
-          return rejectWithValue({
-            status: e.response.status,
-            message: 'The server cannot find the requested resource',
-          });
+      if (!response.data) {
+        return rejectWithValue({ status: ErrorStatusCode.BadRequest, message: 'No data from server' });
       }
-    }
 
-    return rejectWithValue(INTERNAL_SERVER_ERROR);
-  }
-});
+      dispatch(userActions.login(response.data));
+      extra.navigate(routePaths[AppRoute.Profile]);
+
+      return response.data;
+      // TODO: remove any type
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (e: any) {
+      console.error('There was authentication error ', e);
+      console.log('e instanceof AxiosError: ', e instanceof AxiosError);
+
+      if (e.response?.status) {
+        switch (e.response.status) {
+          case ErrorStatusCode.BadRequest:
+            return rejectWithValue({ status: e.response.status, message: 'Incorrect authentication data' });
+          case ErrorStatusCode.NotFound:
+            return rejectWithValue({
+              status: e.response.status,
+              message: 'The server cannot find the requested resource',
+            });
+        }
+      }
+
+      return rejectWithValue(INTERNAL_SERVER_ERROR);
+    }
+  },
+);

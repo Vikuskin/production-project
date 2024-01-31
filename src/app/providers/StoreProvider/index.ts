@@ -1,5 +1,3 @@
-import { createStore } from './config/store';
-import { IState, IStoreWithManager, StateKey } from './types/state';
-import { StoreProvider } from './ui/StoreProvider';
-
-export { StoreProvider, createStore, IState, IStoreWithManager, StateKey };
+export { createStore } from './config/store';
+export type { IState, IStoreWithManager, IThunkConfig, IThunkExtraArg, StateKey } from './types/state';
+export { StoreProvider } from './ui/StoreProvider';

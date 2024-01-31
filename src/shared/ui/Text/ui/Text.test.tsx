@@ -1,6 +1,8 @@
 import { render } from '@testing-library/react';
 
-import { Text, TextVariant } from './Text';
+import { Text } from './Text';
+
+import { TextVariant } from '../types/TextVariant';
 
 describe('Text', () => {
   it('renders without crashing with default normal class', () => {

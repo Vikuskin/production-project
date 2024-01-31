@@ -4,7 +4,7 @@ import { getClassNames } from 'shared/lib/classNames/getClassNames';
 
 import * as styles from './Navbar.module.scss';
 
-import { navbarLinks } from '../../models/navbarLinks';
+import { navbarLinks } from '../../model/navbarLinks';
 import { NavbarLink } from '../NavbarLink/NavbarLink';
 
 interface INavbarProps {

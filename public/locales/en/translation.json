@@ -9,11 +9,13 @@
   "Authentication error": "Authentication error",
   "Error": "Error",
   "400_error": "Bad request",
+  "403_error": "Forbidden",
   "404_error": "Not found",
   "500_error": "Internal server error",
   "Incorrect authentication data": "Incorrect authentication data",
+  "Authentication error, you are not authorized": "Authentication error, you are not authorized",
   "The server cannot find the requested resource": "The server cannot find the requested resource",
   "Internal server error": "Something went wrong",
-  "Profile": "Profile",
-  "Logout": "Logout"
+  "Logout": "Logout",
+  "Profile": "Profile"
 }

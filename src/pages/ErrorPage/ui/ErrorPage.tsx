@@ -11,7 +11,7 @@ interface IErrorPageProps {
   errorCode: number;
 }
 
-const ErrorPage: FC<IErrorPageProps> = ({ text, errorCode }) => {
+export const ErrorPage: FC<IErrorPageProps> = ({ text, errorCode }) => {
   const { t } = useTranslation('errorPage');
 
   return (
@@ -28,5 +28,3 @@ const ErrorPage: FC<IErrorPageProps> = ({ text, errorCode }) => {
     </div>
   );
 };
-
-export default ErrorPage;

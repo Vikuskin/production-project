@@ -1,20 +1,40 @@
 {
   "posts": [
-    { "id": "1", "title": "a title" },
-    { "id": "2", "title": "another title" }
+    {
+      "id": "1",
+      "title": "a title"
+    },
+    {
+      "id": "2",
+      "title": "another title"
+    }
   ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
   ],
-  "users": [{ "id": "1", "username": "admin", "password": "123" }],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ],
   "profile": {
-    "firstName": "First name",
-    "lastName": "Last name",
+    "firstName": "Vikuskin",
+    "lastName": "Test",
     "age": "24",
     "currency": "RUB",
     "country": "Russia",
-    "city": "Saint-P",
+    "city": "Saint-Petersburg",
     "username": "admin",
     "avatar": "https://list-15.net/wp-content/uploads/2023/02/25-1-768x603.jpg"
   }

@@ -1,13 +1,9 @@
 import { routePaths } from 'app/providers/router';
 import { AppLinkVariant } from 'shared/ui/AppLink/ui/AppLink';
 
-export interface INavBarLink {
-  path: string;
-  text: string;
-  variant: AppLinkVariant;
-}
+import { INavbarLink } from './types/navbarLink';
 
-export const navbarLinks: INavBarLink[] = [
+export const navbarLinks: INavbarLink[] = [
   {
     path: routePaths.about,
     text: 'About',
@@ -22,5 +18,6 @@ export const navbarLinks: INavBarLink[] = [
     path: routePaths.profile,
     text: 'Profile',
     variant: AppLinkVariant.Primary,
+    authOnly: true,
   },
 ];

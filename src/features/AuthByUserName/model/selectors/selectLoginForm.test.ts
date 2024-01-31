@@ -1,11 +1,10 @@
 import { IState } from 'app/providers/StoreProvider';
+import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 
 import { selectLoginError, selectLoginIsLoading, selectLoginName, selectLoginPassword } from './selectLoginForm';
 
-import { INTERNAL_SERVER_ERROR } from '../services/loginByUsername';
-
 describe('selectLoginForm', () => {
-  const state: Partial<IState> = {
+  const state: DeepPartial<IState> = {
     loginForm: {
       username: 'test_name',
       password: 'test_password',

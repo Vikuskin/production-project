@@ -1,6 +1,5 @@
 import { within } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
-import { BrowserRouter } from 'react-router-dom';
 
 import i18n from 'app/providers/i18n/i18nForTests';
 import { Theme, useTheme } from 'app/providers/theme';
@@ -101,7 +100,6 @@ describe('Sidebar', () => {
 
   it('renders login button when auth data is not exist', async () => {
     const { getByText, getByTestId } = componentRender(<Sidebar />, {
-      wrapper: BrowserRouter,
       initialState: { user: { authData: null } },
     });
     const loginBtn = getByText('Login');
@@ -116,7 +114,6 @@ describe('Sidebar', () => {
 
   it('renders logout button when auth data is exist', () => {
     const { getByText } = componentRender(<Sidebar />, {
-      wrapper: BrowserRouter,
       initialState: { user: { authData: { id: '1', username: 'test' } } },
     });
     const loginBtn = getByText('Logout');

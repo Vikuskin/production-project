@@ -33,6 +33,14 @@ server.post('/login', (req, res) => {
   }
 });
 
+server.use((req, res, next) => {
+  if (!req.headers.authorization) {
+    return res.status(403).json({ message: 'AUTH ERROR' });
+  }
+
+  next();
+});
+
 server.use(router);
 server.listen(8000, () => {
   console.log('server is running on 8000 port');

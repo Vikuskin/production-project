@@ -1,6 +1,8 @@
 import { ActionReducerMapBuilder, PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { INTERNAL_SERVER_ERROR, loginByUsername } from '../services/loginByUsername';
+import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
+
+import { loginByUsername } from '../services/loginByUsername';
 import { ILoginForm } from '../types/loginForm';
 
 export const loginFormInitialState: ILoginForm = {

@@ -11,11 +11,12 @@ export default ({ config }: { config: webpack.Configuration }) => {
     html: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
   };
+  const rules = config.module!.rules as RuleSetRule[];
 
   config.resolve!.modules!.push(paths.src);
   config.resolve!.extensions!.push('.ts', '.tsx');
 
-  config.module!.rules = config.module!.rules!.map((rule: any) =>
+  config.module!.rules = rules.map((rule: any) =>
     /svg/.test(rule.test as string) ? { ...rule, exclude: /\.svg/i } : { ...rule },
   );
   config.module!.rules!.push(buildSvgLoader());
@@ -24,7 +25,9 @@ export default ({ config }: { config: webpack.Configuration }) => {
   config.resolve!.alias = {
     entities: path.resolve(__dirname, '..', '..', 'src', 'entities'),
   };
-  config.plugins?.push(new DefinePlugin({ IS_DEV: true }));
+  config.plugins?.push(
+    new DefinePlugin({ IS_DEV: true, API_URL: JSON.stringify(''), PROJECT: JSON.stringify('storybook') }),
+  );
 
   return config;
 };

@@ -3,7 +3,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/theme';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
-import { Text, TextVariant } from './Text';
+import { Text } from './Text';
+
+import { TextVariant } from '../types/TextVariant';
 
 const meta = {
   title: 'shared/Text',
