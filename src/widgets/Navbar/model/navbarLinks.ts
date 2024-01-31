@@ -20,4 +20,10 @@ export const navbarLinks: INavbarLink[] = [
     variant: AppLinkVariant.Primary,
     authOnly: true,
   },
+  {
+    path: routePaths.article_list,
+    text: 'Articles',
+    variant: AppLinkVariant.Primary,
+    authOnly: true,
+  },
 ];

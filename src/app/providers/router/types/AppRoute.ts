@@ -4,6 +4,8 @@ export enum AppRoute {
   Main = 'main',
   About = 'about',
   Profile = 'profile',
+  ArticleList = 'article_list',
+  Article = 'article',
   NotFound = 'not_found',
 }
 

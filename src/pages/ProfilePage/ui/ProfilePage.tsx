@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { EditableProfileCard, profileReducer } from 'features/EditableProfileCard';
@@ -37,4 +37,4 @@ const ProfilePage: FC = () => {
   );
 };
 
-export default ProfilePage;
+export default memo(ProfilePage);

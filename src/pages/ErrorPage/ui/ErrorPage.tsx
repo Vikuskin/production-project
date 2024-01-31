@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { BackButton } from 'shared/ui/BackButton';
@@ -11,7 +11,7 @@ interface IErrorPageProps {
   errorCode: number;
 }
 
-export const ErrorPage: FC<IErrorPageProps> = ({ text, errorCode }) => {
+export const ErrorPage: FC<IErrorPageProps> = memo(({ text, errorCode }: IErrorPageProps) => {
   const { t } = useTranslation('errorPage');
 
   return (
@@ -27,4 +27,4 @@ export const ErrorPage: FC<IErrorPageProps> = ({ text, errorCode }) => {
       <BackButton className={styles.buttonBack} />
     </div>
   );
-};
+});
