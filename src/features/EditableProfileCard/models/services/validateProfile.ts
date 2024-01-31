@@ -1,3 +1,4 @@
+// TODO: improve validation
 import { IProfileData } from 'entities/Profile';
 
 import { ValidateProfileError } from '../types/validateProfileError';
