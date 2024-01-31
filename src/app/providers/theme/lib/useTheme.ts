@@ -26,7 +26,21 @@ export const DEFAULT_TEAM: Theme = getLocalStorageTheme() ?? Theme.Light;
 export function useTheme(): IUseThemeResult {
   const { theme, setTheme } = useContext(ThemeContext);
   const toggleTheme = (): void => {
-    const newTheme = theme === Theme.Light ? Theme.Dark : Theme.Light;
+    let newTheme;
+
+    switch (theme) {
+      case Theme.Dark:
+        newTheme = Theme.Light;
+        break;
+      case Theme.Light:
+        newTheme = Theme.Pink;
+        break;
+      case Theme.Pink:
+        newTheme = Theme.Dark;
+        break;
+      default:
+        newTheme = Theme.Light;
+    }
 
     localStorage.setItem(LOCAL_STORAGE_KEYS.Theme, newTheme);
     setTheme?.(newTheme);
