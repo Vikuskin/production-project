@@ -23,11 +23,7 @@ const ProfilePage: FC = () => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const profileError = useAppSelector(selectProfileError);
-
-  console.log('profileError: ', profileError);
   const profileIsLoading = useAppSelector(selectProfileLoading);
-
-  console.log('profileIsLoading: ', profileIsLoading);
   const profileForm = useAppSelector(selectProfileForm);
   let content: ReactElement | null = null;
 
