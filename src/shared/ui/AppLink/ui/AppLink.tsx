@@ -19,7 +19,7 @@ export const AppLink: FC<PropsWithChildren<IAppLinkProps>> = memo((props: PropsW
   const { className, to, children, variant = AppLinkVariant.Primary, ...otherProps } = props;
 
   return (
-    <Link to={to} className={getClassNames('', [className ?? '', styles[variant]])} {...otherProps}>
+    <Link to={to} className={getClassNames(styles.link, [className ?? '', styles[variant]])} {...otherProps}>
       {children}
     </Link>
   );

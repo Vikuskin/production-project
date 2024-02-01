@@ -1,4 +1,4 @@
-enum ArticleBlockType {
+export enum ArticleBlockType {
   Text = 'text',
   Code = 'code',
   Img = 'img',
@@ -9,18 +9,18 @@ interface IArticleBlockBase {
   type: ArticleBlockType;
 }
 
-interface IArticleTextBlock extends IArticleBlockBase {
+export interface IArticleTextBlock extends IArticleBlockBase {
   type: ArticleBlockType.Text;
   title: string;
   paragraphs: string[];
 }
 
-interface IArticleCodeBlock extends IArticleBlockBase {
+export interface IArticleCodeBlock extends IArticleBlockBase {
   type: ArticleBlockType.Code;
   code: string;
 }
 
-interface IArticleImgBlock extends IArticleBlockBase {
+export interface IArticleImgBlock extends IArticleBlockBase {
   type: ArticleBlockType.Img;
   src: string;
   title: string;

@@ -43,4 +43,24 @@ describe('userSlice', () => {
       _mounted: false,
     });
   });
+
+  it('should set _mounted true and auth data from storage after init', () => {
+    const userDataMock = { id: '1', username: 'test' };
+
+    Storage.prototype.getItem = jest.fn(() => JSON.stringify(userDataMock));
+
+    expect(userReducer(userInitialState, userActions.init())).toEqual({
+      authData: userDataMock,
+      _mounted: true,
+    });
+  });
+
+  it('should set _mounted true and does not set auth data from storage after init', () => {
+    Storage.prototype.getItem = jest.fn(() => null);
+
+    expect(userReducer(userInitialState, userActions.init())).toEqual({
+      authData: null,
+      _mounted: true,
+    });
+  });
 });

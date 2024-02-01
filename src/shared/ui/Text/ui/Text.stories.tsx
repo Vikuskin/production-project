@@ -5,6 +5,7 @@ import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
 import { Text } from './Text';
 
+import { TextSize } from '../types/TextSize';
 import { TextVariant } from '../types/TextVariant';
 
 const meta = {
@@ -50,4 +51,16 @@ export const ErrorLightWithTitle: Story = {
 export const ErrorDarkWithTitle: Story = {
   args: { title: 'Title', variant: TextVariant.Error },
   decorators: [themeDecorator(Theme.Dark)],
+};
+
+export const SizeSLight: Story = {
+  args: { title: 'Title', size: TextSize.SizeS },
+};
+
+export const SizeMLight: Story = {
+  args: { title: 'Title', size: TextSize.SizeM },
+};
+
+export const SizeLLight: Story = {
+  args: { title: 'Title', size: TextSize.SizeL },
 };

@@ -1,6 +1,11 @@
 .article {
   min-height: 100vh;
 
+  .avatar-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
   .avatar {
     margin: auto;
   }
@@ -11,6 +16,20 @@
   }
 
   .skeleton {
+    margin-top: 15px;
+  }
+
+  .article-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    margin-right: 3px;
+    fill: var(--primary-color);
+  }
+
+  .block {
     margin-top: 15px;
   }
 }
