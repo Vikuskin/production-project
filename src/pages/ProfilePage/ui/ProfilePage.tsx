@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, memo, useEffect } from 'react';
+import React, { FC, ReactElement, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { EditableProfileCard, profileReducer } from 'features/EditableProfileCard';
@@ -11,6 +11,7 @@ import { fetchProfileData } from 'features/EditableProfileCard/models/services/f
 import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { Text, TextAlign, TextVariant } from 'shared/ui/Text';
 import { PageLoader } from 'widgets/PageLoader';
 
@@ -27,9 +28,7 @@ const ProfilePage: FC = () => {
   const profileForm = useAppSelector(selectProfileForm);
   let content: ReactElement | null = null;
 
-  useEffect(() => {
-    PROJECT !== 'storybook' && PROJECT !== 'jest' && dispatch(fetchProfileData());
-  }, [dispatch]);
+  useInitialEffect(() => dispatch(fetchProfileData()));
 
   if (profileIsLoading) {
     content = <PageLoader />;

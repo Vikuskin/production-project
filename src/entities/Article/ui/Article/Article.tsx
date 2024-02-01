@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, memo, useEffect, useMemo } from 'react';
+import React, { FC, ReactElement, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import CalendarSvg from 'shared/assets/icons/calendar.svg';
@@ -7,6 +7,7 @@ import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { Avatar } from 'shared/ui/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton';
 import { Text, TextAlign, TextSize, TextVariant } from 'shared/ui/Text';
@@ -52,9 +53,7 @@ export const Article: FC<IArticleProps> = memo(({ className, id }: IArticleProps
     });
   }, [articleData?.blocks]);
 
-  useEffect(() => {
-    PROJECT === 'frontend' && dispatch(fetchArticleById(id));
-  }, [dispatch, id]);
+  useInitialEffect(() => dispatch(fetchArticleById(id)));
 
   if (articleIsLoading) {
     content = (

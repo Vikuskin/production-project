@@ -4,6 +4,7 @@ import { NavigateOptions, To } from 'react-router-dom';
 
 import { IArticle } from 'entities/Article';
 import { IUser } from 'entities/User';
+import { IArticleComments } from 'features/ArticleComments';
 import { ILoginForm } from 'features/AuthByUserName';
 import { IProfile } from 'features/EditableProfileCard';
 
@@ -15,6 +16,7 @@ export interface IState {
   loginForm?: ILoginForm;
   profile?: IProfile;
   article?: IArticle;
+  articleComments?: IArticleComments;
 }
 export type StateKey = keyof IState;
 export type ReducerManager = ReturnType<typeof createReducerManager>;

@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { Theme } from 'app/providers/theme';
 import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
+import { delayCaptureDecorator } from 'shared/lib/storybook/delayCaptureDecorator';
 import { storeDecorator } from 'shared/lib/storybook/storeDecorator';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 import { articleDataMock } from 'shared/mocks/articleData';
@@ -12,7 +13,7 @@ const meta = {
   title: 'pages/ArticlePage',
   component: ArticlePage,
   tags: ['autodocs'],
-  decorators: [storeDecorator({ article: { articleData: articleDataMock } })],
+  decorators: [storeDecorator({ article: { articleData: articleDataMock } }), delayCaptureDecorator()],
 } satisfies Meta<typeof ArticlePage>;
 
 export default meta;
