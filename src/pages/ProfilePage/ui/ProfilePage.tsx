@@ -1,5 +1,6 @@
 import React, { FC, ReactElement, memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 
 import { EditableProfileCard, profileReducer } from 'features/EditableProfileCard';
 import {
@@ -21,6 +22,7 @@ const profileAsyncReducers: ReducersList = {
   profile: profileReducer,
 };
 const ProfilePage: FC = () => {
+  const { id } = useParams<{ id: string }>();
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const profileError = useAppSelector(selectProfileError);
@@ -28,7 +30,7 @@ const ProfilePage: FC = () => {
   const profileForm = useAppSelector(selectProfileForm);
   let content: ReactElement | null = null;
 
-  useInitialEffect(() => dispatch(fetchProfileData()));
+  useInitialEffect(() => id && dispatch(fetchProfileData(id)));
 
   if (profileIsLoading) {
     content = <PageLoader />;

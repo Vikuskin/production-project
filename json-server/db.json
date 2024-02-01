@@ -45,16 +45,30 @@
       "avatar": "https://avatars.dzeninfra.ru/get-zen-logos/5398874/pubsuite_a2f831d7-a969-4c5e-a1b8-3ae8eab5150a_64da17e1d3af84703bc5d837/orig"
     }
   ],
-  "profile": {
-    "firstName": "Vikuskin",
-    "lastName": "Test",
-    "age": "24",
-    "currency": "USD",
-    "country": "United States",
-    "city": "Saint-Petersburg",
-    "username": "admin",
-    "avatar": "https://list-15.net/wp-content/uploads/2023/02/25-1-768x603.jpg"
-  },
+  "profile": [
+    {
+      "id": "1",
+      "firstName": "Vikuskin",
+      "lastName": "Test",
+      "age": "24",
+      "currency": "USD",
+      "country": "United States",
+      "city": "Saint-Petersburg",
+      "username": "admin",
+      "avatar": "https://list-15.net/wp-content/uploads/2023/02/25-1-768x603.jpg"
+    },
+    {
+      "id": "2",
+      "firstName": "User2",
+      "lastName": "Test",
+      "age": "29",
+      "currency": "USD",
+      "country": "United States",
+      "city": "New-York",
+      "username": "user123",
+      "avatar": "https://avatars.dzeninfra.ru/get-zen-logos/5398874/pubsuite_a2f831d7-a969-4c5e-a1b8-3ae8eab5150a_64da17e1d3af84703bc5d837/orig"
+    }
+  ],
   "articles": [
     {
       "id": "1",
@@ -95,7 +109,10 @@
         {
           "id": "5",
           "type": "text",
-          "paragraphs": ["Culpa do ex ullamco aliquip eu officia incididunt minim.", "Tempor dolore magna amet ea quis incididunt adipisicing laboris voluptate commodo proident. Cupidatat incididunt officia cillum proident elit est deserunt qui ut consectetur aute sunt tempor. Laboris labore deserunt commodo velit esse veniam est dolor velit est occaecat pariatur qui. Lorem consectetur dolore et cillum voluptate esse adipisicing et eiusmod duis. Irure do qui magna pariatur qui ex non aliquip ea incididunt quis irure."]
+          "paragraphs": [
+            "Culpa do ex ullamco aliquip eu officia incididunt minim.",
+            "Tempor dolore magna amet ea quis incididunt adipisicing laboris voluptate commodo proident. Cupidatat incididunt officia cillum proident elit est deserunt qui ut consectetur aute sunt tempor. Laboris labore deserunt commodo velit esse veniam est dolor velit est occaecat pariatur qui. Lorem consectetur dolore et cillum voluptate esse adipisicing et eiusmod duis. Irure do qui magna pariatur qui ex non aliquip ea incididunt quis irure."
+          ]
         },
         {
           "id": "6",

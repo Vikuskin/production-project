@@ -13,7 +13,7 @@ describe('fetchProfileData', () => {
 
     thunk.api.get.mockResolvedValue({ data: profileForm });
 
-    const result = await thunk.callThunk();
+    const result = await thunk.callThunk('1');
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('fulfilled');
@@ -26,7 +26,7 @@ describe('fetchProfileData', () => {
 
     thunk.api.get.mockResolvedValue({ data: null });
 
-    const result = await thunk.callThunk();
+    const result = await thunk.callThunk('1');
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
@@ -39,7 +39,7 @@ describe('fetchProfileData', () => {
 
     thunk.api.get.mockRejectedValue({ response: { status: 499 } });
 
-    const result = await thunk.callThunk();
+    const result = await thunk.callThunk('1');
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
@@ -56,7 +56,7 @@ describe('fetchProfileData', () => {
 
     thunk.api.get.mockRejectedValue(error);
 
-    const result = await thunk.callThunk();
+    const result = await thunk.callThunk('1');
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');

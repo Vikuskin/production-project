@@ -70,7 +70,11 @@ export const EditableProfileCard: FC<IEditableProfileCardProps> = ({ className, 
 
   return (
     <div className={getClassNames('', [className ?? ''])}>
-      <EditableProfileCardHeader avatar={profileForm.avatar} profileReadonly={profileReadonly} />
+      <EditableProfileCardHeader
+        profileId={profileForm.id}
+        avatar={profileForm.avatar}
+        profileReadonly={profileReadonly}
+      />
       {validationErrors}
       <ProfileCard
         className={styles.form}

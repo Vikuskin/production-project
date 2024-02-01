@@ -13,7 +13,7 @@ import { AppRoute, AppRouteProps } from '../types/AppRoute';
 export const routePaths: Record<AppRoute, string> = {
   [AppRoute.Main]: '/',
   [AppRoute.About]: '/about',
-  [AppRoute.Profile]: '/profile',
+  [AppRoute.Profile]: '/profile/', // + id
   [AppRoute.ArticleList]: '/articles',
   [AppRoute.Article]: '/article/', // + id
   [AppRoute.NotFound]: '*',
@@ -43,7 +43,7 @@ export const routeConfig: AppRouteProps[] = [
     element: <ErrorPage errorCode={ErrorStatusCode.NotFound} text="Page not found" />,
   },
   {
-    path: routePaths[AppRoute.Profile],
+    path: `${routePaths[AppRoute.Profile]}:id`,
     element: <ProfilePage />,
     authOnly: true,
   },

@@ -1,6 +1,8 @@
 import React, { FC, memo } from 'react';
 
+import { routePaths } from 'app/providers/router';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
+import { AppLink } from 'shared/ui/AppLink';
 import { Avatar } from 'shared/ui/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton';
 import { Text } from 'shared/ui/Text';
@@ -17,7 +19,7 @@ interface ICommentProps {
 
 export const Comment: FC<ICommentProps> = memo((props: ICommentProps) => {
   const { comment, className, isLoading } = props;
-  const { username, avatar } = comment.user;
+  const { username, avatar, id } = comment.user;
 
   if (isLoading) {
     return (
@@ -37,9 +39,11 @@ export const Comment: FC<ICommentProps> = memo((props: ICommentProps) => {
   return (
     <div className={getClassNames(styles.comment, [className ?? ''])}>
       {avatar && (
-        <div className={styles.avatarWrapper}>
-          <Avatar className={styles.avatar} size={40} src={avatar} />
-        </div>
+        <AppLink to={`${routePaths.profile}${id}`}>
+          <div className={styles.avatarWrapper}>
+            <Avatar className={styles.avatar} size={40} src={avatar} />
+          </div>
+        </AppLink>
       )}
 
       <div className={styles.content}>

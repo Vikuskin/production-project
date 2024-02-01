@@ -12,7 +12,15 @@ const meta = {
   title: 'pages/ProfilePage',
   component: ProfilePage,
   tags: ['autodocs'],
-  decorators: [storeDecorator({ profile: { form: profileForm } }), delayCaptureDecorator()],
+  decorators: [
+    storeDecorator({
+      profile: { form: profileForm },
+      user: {
+        authData: { id: profileForm.id },
+      },
+    }),
+    delayCaptureDecorator(),
+  ],
 } satisfies Meta<typeof ProfilePage>;
 
 export default meta;

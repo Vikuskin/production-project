@@ -6,13 +6,13 @@ import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 import { ICustomError } from 'shared/types/customError';
 
-export const fetchProfileData = createAsyncThunk<IProfileData, void, IThunkConfig<ICustomError>>(
+export const fetchProfileData = createAsyncThunk<IProfileData, string, IThunkConfig<ICustomError>>(
   'profile/fetchProfileData',
-  async (_, thunkApi) => {
+  async (profileId, thunkApi) => {
     const { rejectWithValue, extra } = thunkApi;
 
     try {
-      const response = await extra.api.get<IProfileData>('/profile');
+      const response = await extra.api.get<IProfileData>(`/profile/${profileId}`);
 
       if (!response.data) {
         return rejectWithValue({ status: ErrorStatusCode.BadRequest, message: 'No data from server' });

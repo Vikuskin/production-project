@@ -26,7 +26,7 @@ export const NavbarLink: FC<INavbarLinkProps> = memo(({ className, link }: INavb
       data-testid="navbar-link"
       className={getClassNames('', [className ?? ''])}
       variant={link.variant}
-      to={link.path}
+      to={link.path.endsWith('/') ? `${link.path}${userAuth?.id}` : link.path}
     >
       {t(link.text)}
     </AppLink>

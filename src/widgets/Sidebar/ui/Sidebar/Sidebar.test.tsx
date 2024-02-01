@@ -9,8 +9,8 @@ import { AppButtonVariant } from 'shared/ui/AppButton';
 
 import { Sidebar } from './Sidebar';
 
-jest.mock('app/providers/theme', () => ({
-  ...jest.requireActual('app/providers/theme'),
+jest.mock('shared/lib/hooks/useTheme', () => ({
+  ...jest.requireActual('shared/lib/hooks/useTheme'),
   useTheme: jest.fn(),
 }));
 

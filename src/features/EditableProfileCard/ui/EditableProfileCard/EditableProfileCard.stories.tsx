@@ -21,6 +21,9 @@ const meta = {
       profile: {
         form: profileForm,
       },
+      user: {
+        authData: { id: profileForm.id },
+      },
     }),
   ],
 } satisfies Meta<typeof EditableProfileCard>;
@@ -35,11 +38,26 @@ export const Dark: Story = {
 };
 
 export const LightReadonly: Story = {
-  decorators: [storeDecorator({ profile: { readonly: true, form: profileForm } })],
+  decorators: [
+    storeDecorator({
+      profile: { readonly: true, form: profileForm },
+      user: {
+        authData: { id: 'readonly' },
+      },
+    }),
+  ],
 };
 
 export const DarkReadonly: Story = {
-  decorators: [themeDecorator(Theme.Dark), storeDecorator({ profile: { readonly: true, form: profileForm } })],
+  decorators: [
+    themeDecorator(Theme.Dark),
+    storeDecorator({
+      profile: { readonly: true, form: profileForm },
+      user: {
+        authData: { id: 'readonly' },
+      },
+    }),
+  ],
 };
 
 export const LightWithValidationError: Story = {
@@ -48,6 +66,9 @@ export const LightWithValidationError: Story = {
       profile: {
         validationErrors: [ValidateProfileError.IncorrectAge, ValidateProfileError.IncorrectCity],
         form: profileForm,
+      },
+      user: {
+        authData: { id: profileForm.id },
       },
     }),
   ],
@@ -60,6 +81,9 @@ export const DarkWithValidationError: Story = {
       profile: {
         validationErrors: [ValidateProfileError.IncorrectAge, ValidateProfileError.IncorrectCity],
         form: profileForm,
+      },
+      user: {
+        authData: { id: profileForm.id },
       },
     }),
   ],
