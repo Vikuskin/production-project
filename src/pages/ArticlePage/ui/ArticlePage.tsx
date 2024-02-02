@@ -10,7 +10,8 @@ import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 import * as styles from './ArticlePage.module.scss';
 
 const ArticlePage: FC = () => {
-  const { id } = useParams<{ id: string }>();
+  // TODO: remove default value (storybook)
+  const { id = '1' } = useParams<{ id: string }>();
   const { t } = useTranslation('article');
 
   if (!id) {

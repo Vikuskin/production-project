@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback } from 'react';
+import React, { FC, Suspense, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { CommentList } from 'entities/Comment';
@@ -8,6 +8,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { Text, TextSize } from 'shared/ui/Text';
+import { PageLoader } from 'widgets/PageLoader';
 
 import * as styles from './ArticleComments.module.scss';
 
@@ -35,10 +36,12 @@ export const ArticleComments: FC<IArticleCommentsProps> = memo(({ id }: IArticle
   const onCommentSend = useCallback((text: string) => dispatch(addArticleComment(text)), [dispatch]);
 
   return (
-    <DynamicReducerLoader reducers={articleCommentsReducers} removeAfterUnmount>
-      <Text className={styles.title} title={t('Comments')} size={TextSize.SizeL} />
-      <AddNewComment onCommentSend={onCommentSend} />
-      <CommentList comments={comments} isLoading={commentsIsLoading} />
-    </DynamicReducerLoader>
+    <Suspense fallback={<PageLoader />}>
+      <DynamicReducerLoader reducers={articleCommentsReducers} removeAfterUnmount>
+        <Text className={styles.title} title={t('Comments')} size={TextSize.SizeL} />
+        <AddNewComment onCommentSend={onCommentSend} />
+        <CommentList comments={comments} isLoading={commentsIsLoading} />
+      </DynamicReducerLoader>
+    </Suspense>
   );
 });
