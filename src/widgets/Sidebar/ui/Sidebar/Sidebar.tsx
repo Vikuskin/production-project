@@ -1,7 +1,6 @@
 import React, { FC, memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { useTheme } from 'app/providers/theme';
 import { selectUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUserName';
 import ExpandSvg from 'shared/assets/icons/expand.svg';
@@ -12,6 +11,7 @@ import TranslationSvg from 'shared/assets/icons/translation.svg';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
+import { useTheme } from 'shared/lib/hooks/useTheme';
 import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
 
 import * as styles from './Sidebar.module.scss';
@@ -65,7 +65,11 @@ export const Sidebar: FC<ISidebarProps> = memo(({ className }: ISidebarProps) =>
       <hr />
       <div className={styles.itemsBlock}>
         {userAuthData ? (
-          <SidebarItem collapsed={collapsed} item={{ text: t('Logout'), Icon: LogoutSvg, onClick: onLogout }} />
+          <SidebarItem
+            className={styles.logout}
+            collapsed={collapsed}
+            item={{ text: t('Logout'), Icon: LogoutSvg, onClick: onLogout }}
+          />
         ) : (
           <SidebarItem collapsed={collapsed} item={{ text: t('Login'), Icon: LoginSvg, onClick: onShowModal }} />
         )}

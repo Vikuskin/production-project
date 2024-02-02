@@ -2,7 +2,7 @@ import React, { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
+import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
@@ -44,7 +44,7 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onClose }: LoginFormPro
   }, [dispatch, onClose, password, username]);
 
   return (
-    <DynamicModuleLoader reducers={loginAsyncReducers} removeAfterUnmount>
+    <DynamicReducerLoader reducers={loginAsyncReducers} removeAfterUnmount>
       <div className={getClassNames(styles.loginForm, [className ?? ''])}>
         {error && <Text title={t(`${error.status}_error`)} text={t(error.message)} variant={TextVariant.Error} />}
         <AppInput
@@ -71,7 +71,7 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onClose }: LoginFormPro
           {t('Login')}
         </AppButton>
       </div>
-    </DynamicModuleLoader>
+    </DynamicReducerLoader>
   );
 });
 

@@ -3,7 +3,7 @@ import { NavigateOptions, To } from 'react-router-dom';
 
 import { userReducer } from 'entities/User';
 import { API } from 'shared/api/api';
-import { ReducersList } from 'shared/lib/components/DynamicModuleLoader';
+import { ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 
 import { createReducerManager } from './createReducerManager';
 

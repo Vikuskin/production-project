@@ -2,7 +2,10 @@ import { EnhancedStore, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router-dom';
 
+import { IArticle } from 'entities/Article';
 import { IUser } from 'entities/User';
+import { INewComment } from 'features/AddNewComment';
+import { IArticleComments } from 'features/ArticleComments';
 import { ILoginForm } from 'features/AuthByUserName';
 import { IProfile } from 'features/EditableProfileCard';
 
@@ -13,6 +16,9 @@ export interface IState {
   user: IUser;
   loginForm?: ILoginForm;
   profile?: IProfile;
+  article?: IArticle;
+  articleComments?: IArticleComments;
+  newComment?: INewComment;
 }
 export type StateKey = keyof IState;
 export type ReducerManager = ReturnType<typeof createReducerManager>;

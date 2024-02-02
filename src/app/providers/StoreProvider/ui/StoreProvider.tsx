@@ -2,7 +2,7 @@ import React, { FC, PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import { ReducersList } from 'shared/lib/components/DynamicModuleLoader';
+import { ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 
 import { createStore } from '../config/store';
 import { IState } from '../types/state';

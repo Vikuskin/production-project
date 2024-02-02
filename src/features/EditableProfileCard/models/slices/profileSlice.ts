@@ -29,7 +29,7 @@ export const profileSlice = createSlice({
     cancelEdit: (state) => {
       state.readonly = true;
       state.validationErrors = null;
-      state.form = { ...state.data };
+      state.form = state.data;
     },
   },
   extraReducers: (builder: ActionReducerMapBuilder<IProfile>) => {
@@ -57,6 +57,7 @@ export const profileSlice = createSlice({
         state.data = action.payload;
         state.form = action.payload;
         state.readonly = true;
+        state.validationErrors = null;
       })
       .addCase(updateProfileData.rejected, (state, action) => {
         state.isLoading = false;

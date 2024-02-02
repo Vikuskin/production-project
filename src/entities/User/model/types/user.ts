@@ -6,4 +6,5 @@ export interface IUser {
 export interface IAuthData {
   id: string;
   username: string;
+  avatar?: string;
 }

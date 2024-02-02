@@ -21,7 +21,7 @@ const meta = {
     onChangeFirstName: () => {},
     onChangeLastName: () => {},
     onChangeUsername: () => {},
-    profileData: {
+    profileForm: {
       age: '24',
       avatar: 'https://test.ico',
       city: 'City',

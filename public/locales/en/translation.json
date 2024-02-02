@@ -17,5 +17,6 @@
   "The server cannot find the requested resource": "The server cannot find the requested resource",
   "Internal server error": "Something went wrong",
   "Logout": "Logout",
-  "Profile": "Profile"
+  "Profile": "Profile",
+  "Articles": "Articles"
 }

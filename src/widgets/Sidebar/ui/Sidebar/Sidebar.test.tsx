@@ -2,14 +2,15 @@ import { within } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
 import i18n from 'app/providers/i18n/i18nForTests';
-import { Theme, useTheme } from 'app/providers/theme';
+import { Theme } from 'app/providers/theme';
+import { useTheme } from 'shared/lib/hooks/useTheme';
 import { componentRender } from 'shared/lib/tests/componentRender';
 import { AppButtonVariant } from 'shared/ui/AppButton';
 
 import { Sidebar } from './Sidebar';
 
-jest.mock('app/providers/theme', () => ({
-  ...jest.requireActual('app/providers/theme'),
+jest.mock('shared/lib/hooks/useTheme', () => ({
+  ...jest.requireActual('shared/lib/hooks/useTheme'),
   useTheme: jest.fn(),
 }));
 

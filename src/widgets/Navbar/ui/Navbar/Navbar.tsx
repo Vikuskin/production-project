@@ -1,10 +1,11 @@
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
+import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 
 import * as styles from './Navbar.module.scss';
 
-import { navbarLinks } from '../../model/navbarLinks';
+import { selectNavbarLinks } from '../../model/selectors/selectNavbarLinks';
 import { NavbarLink } from '../NavbarLink/NavbarLink';
 
 interface INavbarProps {
@@ -12,13 +13,15 @@ interface INavbarProps {
 }
 
 export const Navbar = memo(({ className }: INavbarProps) => {
+  const navbarLinks = useAppSelector(selectNavbarLinks);
+  const renderNavbarLinks = useMemo(
+    () => navbarLinks.map((link) => <NavbarLink data-testid="navbar-link" key={link.path} link={link} />),
+    [navbarLinks],
+  );
+
   return (
     <div data-testid="navbar" className={getClassNames(styles.navbar, [className ?? ''])}>
-      <div className={styles.links}>
-        {navbarLinks.map((link) => (
-          <NavbarLink data-testid="navbar-link" key={link.path} link={link} />
-        ))}
-      </div>
+      <div className={styles.links}>{renderNavbarLinks}</div>
     </div>
   );
 });

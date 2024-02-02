@@ -53,7 +53,7 @@ describe('profileSlice', () => {
     describe('fetchProfileData', () => {
       it('should set loading true and error null when fetchProfileData is pending', () => {
         expect(
-          profileReducer({ ...profileInitialState, isLoading: false, error }, fetchProfileData.pending('')),
+          profileReducer({ ...profileInitialState, isLoading: false, error }, fetchProfileData.pending('', '')),
         ).toMatchObject({
           isLoading: true,
           error: null,
@@ -62,7 +62,7 @@ describe('profileSlice', () => {
 
       it('should set loading false, set payload to data and form when fetchProfileData is fulfilled', () => {
         expect(
-          profileReducer({ ...profileInitialState, isLoading: true }, fetchProfileData.fulfilled(profileForm, '')),
+          profileReducer({ ...profileInitialState, isLoading: true }, fetchProfileData.fulfilled(profileForm, '', '')),
         ).toMatchObject({
           isLoading: false,
           data: profileForm,
@@ -71,16 +71,14 @@ describe('profileSlice', () => {
       });
 
       it('should set loading false and set payload error in state when fetchProfileData is rejected with error', () => {
-        expect(
-          profileReducer(profileInitialState, fetchProfileData.rejected(null, '', {} as unknown as void, error)),
-        ).toMatchObject({
+        expect(profileReducer(profileInitialState, fetchProfileData.rejected(null, '', '', error))).toMatchObject({
           isLoading: false,
           error: error,
         });
       });
 
       it('should set loading false and set default error in state when fetchProfileData is rejected without payload', () => {
-        expect(profileReducer(profileInitialState, fetchProfileData.rejected(null, ''))).toMatchObject({
+        expect(profileReducer(profileInitialState, fetchProfileData.rejected(null, '', ''))).toMatchObject({
           isLoading: false,
           error: INTERNAL_SERVER_ERROR,
         });
@@ -117,7 +115,7 @@ describe('profileSlice', () => {
         });
       });
 
-      it('should set loading false and set payload error in state when updateProfileData is rejected with error', () => {
+      it('should set loading false and set payload error in state when updateProfileData is rejected with custom error', () => {
         expect(
           profileReducer(profileInitialState, updateProfileData.rejected(null, '', {} as unknown as void, error)),
         ).toMatchObject({
@@ -130,6 +128,18 @@ describe('profileSlice', () => {
         expect(profileReducer(profileInitialState, updateProfileData.rejected(null, ''))).toMatchObject({
           isLoading: false,
           error: INTERNAL_SERVER_ERROR,
+        });
+      });
+
+      it('should set validation errors when updateProfileDara is rejected with array of errors', () => {
+        expect(
+          profileReducer(
+            profileInitialState,
+            updateProfileData.rejected(null, '', {} as unknown as void, validationErrors),
+          ),
+        ).toMatchObject({
+          validationErrors,
+          error: null,
         });
       });
     });

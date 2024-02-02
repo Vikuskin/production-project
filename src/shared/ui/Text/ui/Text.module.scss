@@ -1,9 +1,25 @@
-.title {
-  font: var(--font-l);
+.size-s {
+  font-size: var(--font-size-s);
+
+  .title {
+    font-size: var(--font-size-m);
+  }
 }
 
-.text {
-  font: var(--font-m);
+.size-m {
+  font-size: var(--font-size-m);
+
+  .title {
+    font-size: var(--font-size-l);
+  }
+}
+
+.size-l {
+  font-size: var(--font-size-l);
+
+  .title {
+    font-size: var(--font-size-xl);
+  }
 }
 
 .normal {
@@ -17,8 +33,6 @@
 }
 
 .error {
-  color: var(--red-dark);
-
   .title {
     color: var(--red-light);
   }

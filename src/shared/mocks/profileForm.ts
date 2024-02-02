@@ -3,6 +3,7 @@ import { Currency } from 'entities/Currency';
 import AvatarImg from 'shared/assets/tests/storybook-avatar.jpeg';
 
 export const profileForm = {
+  id: '1',
   age: '24',
   avatar: AvatarImg,
   city: 'City',

@@ -12,30 +12,138 @@
   "comments": [
     {
       "id": "1",
-      "text": "a comment about post 1",
-      "postId": "1"
+      "text": "a comment about article 1",
+      "articleId": "1",
+      "userId": "1"
     },
     {
       "id": "2",
-      "text": "another comment about post 1",
-      "postId": "1"
+      "text": "cool article",
+      "articleId": "1",
+      "userId": "2"
+    },
+    {
+      "id": "3",
+      "text": "cool article",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "new comment",
+      "id": "yKoBWm8"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "user comment",
+      "id": "Vovx9S_"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "test",
+      "id": "Sz9RpLM"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "test2",
+      "id": "EwdppxM"
     }
   ],
   "users": [
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "role": "admin",
+      "avatar": "https://list-15.net/wp-content/uploads/2023/02/25-1-768x603.jpg"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "123",
+      "role": "user",
+      "avatar": "https://avatars.dzeninfra.ru/get-zen-logos/5398874/pubsuite_a2f831d7-a969-4c5e-a1b8-3ae8eab5150a_64da17e1d3af84703bc5d837/orig"
     }
   ],
-  "profile": {
-    "firstName": "Vikuskin",
-    "lastName": "Test",
-    "age": "24",
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Saint-Petersburg",
-    "username": "admin",
-    "avatar": "https://list-15.net/wp-content/uploads/2023/02/25-1-768x603.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstName": "Vikuskin",
+      "lastName": "Test",
+      "age": "24",
+      "currency": "USD",
+      "country": "United States",
+      "city": "Saint-Petersburg",
+      "username": "admin",
+      "avatar": "https://list-15.net/wp-content/uploads/2023/02/25-1-768x603.jpg"
+    },
+    {
+      "id": "2",
+      "firstName": "User2",
+      "lastName": "Test",
+      "age": "29",
+      "currency": "USD",
+      "country": "United States",
+      "city": "New-York",
+      "username": "user123",
+      "avatar": "https://avatars.dzeninfra.ru/get-zen-logos/5398874/pubsuite_a2f831d7-a969-4c5e-a1b8-3ae8eab5150a_64da17e1d3af84703bc5d837/orig"
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "JavaScript news",
+      "subtitle": "what's new for 2024",
+      "img": "https://edu-tritec.ru/wp-content/uploads/2023/01/js_thumb.jpg",
+      "views": "1022",
+      "createdAt": "26.01.2024",
+      "type": ["IT"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Eiusmod ad sunt amet culpa nostrud reprehenderit. Nisi occaecat exercitation enim excepteur sint ad mollit ullamco dolor nisi nulla. Nostrud cupidatat amet minim do. Officia aliquip sit voluptate proident magna elit duis. Est aute ex dolore incididunt id non cupidatat ea ipsum sunt veniam."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "const jsonServer = require('json-server');\nconst path = require('path');\nconst server = jsonServer.create();\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+        },
+        {
+          "id": "3",
+          "type": "text",
+          "paragraphs": [
+            "Occaecat fugiat dolore adipisicing commodo deserunt in exercitation id duis adipisicing culpa ipsum labore. Ut dolore laboris velit quis ipsum adipisicing Lorem. Nostrud esse voluptate deserunt mollit voluptate culpa.",
+            "Esse culpa in laborum mollit. In veniam veniam esse voluptate cupidatat sunt. Esse exercitation pariatur laboris qui eu eu nostrud ex excepteur aliqua excepteur commodo. Aliquip ipsum do fugiat enim veniam ea et excepteur amet consequat Lorem incididunt dolor. In id consequat nulla cupidatat minim incididunt sunt id nulla mollit. Ea dolor sit anim tempor aliqua irure officia et est dolore ea anim eiusmod irure. Ut nostrud sint tempor ad non Lorem irure esse ullamco fugiat."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "img",
+          "src": "https://edu-tritec.ru/wp-content/uploads/2023/01/js_thumb.jpg",
+          "title": "Id ullamco cupidatat excepteur minim et ut sint commodo anim ad esse consectetur."
+        },
+        {
+          "id": "5",
+          "type": "text",
+          "paragraphs": [
+            "Culpa do ex ullamco aliquip eu officia incididunt minim.",
+            "Tempor dolore magna amet ea quis incididunt adipisicing laboris voluptate commodo proident. Cupidatat incididunt officia cillum proident elit est deserunt qui ut consectetur aute sunt tempor. Laboris labore deserunt commodo velit esse veniam est dolor velit est occaecat pariatur qui. Lorem consectetur dolore et cillum voluptate esse adipisicing et eiusmod duis. Irure do qui magna pariatur qui ex non aliquip ea incididunt quis irure."
+          ]
+        },
+        {
+          "id": "6",
+          "type": "code",
+          "code": "<!doctype html>\n\t<html lang=\"en\">\n\t\t<head>\n\t\t\t<meta charset=\"UTF-8\" />\n\t\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n\t\t\t<title>Document</title>\n\t\t</head>\n\t<body>\n\t\t<div id=\"root\"></div>\n\t</body>\n</html>"
+        }
+      ]
+    }
+  ]
 }

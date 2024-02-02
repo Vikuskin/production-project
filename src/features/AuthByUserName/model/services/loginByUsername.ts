@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { AxiosError } from 'axios';
 
 import { AppRoute, routePaths } from 'app/providers/router';
 import { IThunkConfig } from 'app/providers/StoreProvider';
@@ -26,14 +25,13 @@ export const loginByUsername = createAsyncThunk<IAuthData, ILoginByUsernameProps
       }
 
       dispatch(userActions.login(response.data));
-      extra.navigate(routePaths[AppRoute.Profile]);
+      extra.navigate(`${routePaths[AppRoute.Profile]}${response.data.id}`);
 
       return response.data;
       // TODO: remove any type
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (e: any) {
       console.error('There was authentication error ', e);
-      console.log('e instanceof AxiosError: ', e instanceof AxiosError);
 
       if (e.response?.status) {
         switch (e.response.status) {
