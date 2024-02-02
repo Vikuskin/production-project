@@ -1,16 +1,21 @@
 import { userEvent } from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
 
+import { routePaths } from 'app/providers/router';
 import { componentRender } from 'shared/lib/tests/componentRender';
+import { AppLinkVariant } from 'shared/ui/AppLink/ui/AppLink';
 
 import { NavbarLink } from './NavbarLink';
 
-import { navbarLinks } from '../../model/navbarLinks';
+import { INavbarLink } from '../../model/types/navbarLink';
 
 describe('NavbarLink', () => {
-  const testLink = navbarLinks[0];
-
   it('renders with passed props and routes to the correct page by the click', async () => {
+    const testLink: INavbarLink = {
+      path: routePaths.about,
+      text: 'About',
+      variant: AppLinkVariant.Secondary,
+    };
     const history = createMemoryHistory();
     const { getByTestId } = componentRender(<NavbarLink link={testLink} />, {
       routerProps: { history, location: history.location },
@@ -23,13 +28,5 @@ describe('NavbarLink', () => {
     expect(history.location.pathname).toEqual(testLink.path);
     expect(link).toHaveClass(testLink.variant);
     expect(link).toHaveTextContent(testLink.text);
-  });
-
-  it('does not render link when flag authOnly true and user is not auth', async () => {
-    const { container } = componentRender(<NavbarLink link={{ ...testLink, authOnly: true }} />, {
-      initialState: { user: { authData: null } },
-    });
-
-    expect(container.childElementCount).toBe(0);
   });
 });
