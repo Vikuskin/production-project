@@ -3,6 +3,7 @@ import React from 'react';
 
 import { IState, StoreProvider } from 'app/providers/StoreProvider';
 import { articleReducer } from 'entities/Article/model/slices/articleSlice';
+import { addNewCommentReducer } from 'features/AddNewComment/model/slices/addNewCommentSlice';
 import { articleCommentsReducer } from 'features/ArticleComments/model/slices/articleCommentsSlice';
 import { loginFormReducer } from 'features/AuthByUserName/model/slices/loginFormSlice';
 import { profileReducer } from 'features/EditableProfileCard';
@@ -13,6 +14,7 @@ const defaultAsyncReducers: ReducersList = {
   profile: profileReducer,
   article: articleReducer,
   articleComments: articleCommentsReducer,
+  newComment: addNewCommentReducer,
 };
 
 export const storeDecorator = (initialState: DeepPartial<IState>, asyncReducers?: ReducersList) => (Story: StoryFn) => (

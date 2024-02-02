@@ -7,7 +7,7 @@ import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 import { ICustomError } from 'shared/types/customError';
 
 export const fetchCommentsByArticleId = createAsyncThunk<IComment[], string, IThunkConfig<ICustomError>>(
-  'loginForm/loginByUsername',
+  'articleComments/fetchCommentsByArticleId',
   async (articleId, thunkApi) => {
     const { rejectWithValue, extra } = thunkApi;
 

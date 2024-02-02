@@ -1,1 +1,7 @@
-{ "Article was not found": "Article wasn't found", "Comments": "Comments", "No comments": "No comments" }
+{
+  "Article was not found": "Article wasn't found",
+  "Comments": "Comments",
+  "No comments": "No comments",
+  "Your comment": "Your comment",
+  "Send": "Send"
+}

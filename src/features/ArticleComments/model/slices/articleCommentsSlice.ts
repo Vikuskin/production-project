@@ -2,7 +2,6 @@ import { ActionReducerMapBuilder, PayloadAction, createEntityAdapter, createSlic
 
 import { IState } from 'app/providers/StoreProvider';
 import { IComment } from 'entities/Comment';
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId';
 import { IArticleComments } from '../types/articleComments';
@@ -11,7 +10,6 @@ const articleCommentsAdapter = createEntityAdapter<IComment>();
 const articleCommentsSlice = createSlice({
   name: 'articleCommentList',
   initialState: articleCommentsAdapter.getInitialState<IArticleComments>({
-    error: null,
     isLoading: false,
     ids: [],
     entities: {},
@@ -20,16 +18,14 @@ const articleCommentsSlice = createSlice({
   extraReducers: (builder: ActionReducerMapBuilder<IArticleComments>) => {
     builder
       .addCase(fetchCommentsByArticleId.pending, (state) => {
-        state.error = null;
         state.isLoading = true;
       })
       .addCase(fetchCommentsByArticleId.fulfilled, (state, action: PayloadAction<IComment[]>) => {
         state.isLoading = false;
         articleCommentsAdapter.setAll(state, action.payload);
       })
-      .addCase(fetchCommentsByArticleId.rejected, (state, action) => {
+      .addCase(fetchCommentsByArticleId.rejected, (state) => {
         state.isLoading = false;
-        state.error = action.payload || INTERNAL_SERVER_ERROR;
       });
   },
 });

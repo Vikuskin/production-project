@@ -27,6 +27,30 @@
       "text": "cool article",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "new comment",
+      "id": "yKoBWm8"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "user comment",
+      "id": "Vovx9S_"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "test",
+      "id": "Sz9RpLM"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "test2",
+      "id": "EwdppxM"
     }
   ],
   "users": [

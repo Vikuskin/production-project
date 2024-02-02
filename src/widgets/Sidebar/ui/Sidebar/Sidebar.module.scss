@@ -41,3 +41,14 @@ hr {
   width: var(--sidebar-width);
   padding-left: 20px;
 }
+
+.logout {
+  svg {
+    fill: none !important;
+  }
+
+  path {
+    stroke: var(--primary-color);
+    stroke-width: 2px;
+  }
+}

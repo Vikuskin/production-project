@@ -2,7 +2,7 @@ import React, { FC, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { Text, TextSize } from 'shared/ui/Text';
+import { Text, TextAlign } from 'shared/ui/Text';
 
 import * as styles from './CommentList.module.scss';
 
@@ -16,7 +16,6 @@ interface ICommentListProps {
 }
 
 export const CommentList: FC<ICommentListProps> = memo(({ className, comments, isLoading }: ICommentListProps) => {
-  console.log('comments: ', comments);
   const { t } = useTranslation('article');
   const commentList = useMemo(() => {
     return comments.map((comment: IComment) => (
@@ -26,8 +25,11 @@ export const CommentList: FC<ICommentListProps> = memo(({ className, comments, i
 
   return (
     <div className={getClassNames(styles.commentList, [className ?? ''])}>
-      <Text title={t('Comments')} size={TextSize.SizeL} />
-      {comments.length ? commentList : <Text text={t('No comments')} />}
+      {comments.length ? (
+        commentList
+      ) : (
+        <Text align={TextAlign.Center} className={styles.noComment} text={t('No comments')} />
+      )}
     </div>
   );
 });

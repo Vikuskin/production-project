@@ -1,0 +1,13 @@
+.new-comment-form {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+
+  .send-btn {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+  }
+}

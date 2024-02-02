@@ -25,7 +25,7 @@ export const loginByUsername = createAsyncThunk<IAuthData, ILoginByUsernameProps
       }
 
       dispatch(userActions.login(response.data));
-      extra.navigate(routePaths[AppRoute.Profile]);
+      extra.navigate(`${routePaths[AppRoute.Profile]}${response.data.id}`);
 
       return response.data;
       // TODO: remove any type

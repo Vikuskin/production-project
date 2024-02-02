@@ -65,7 +65,11 @@ export const Sidebar: FC<ISidebarProps> = memo(({ className }: ISidebarProps) =>
       <hr />
       <div className={styles.itemsBlock}>
         {userAuthData ? (
-          <SidebarItem collapsed={collapsed} item={{ text: t('Logout'), Icon: LogoutSvg, onClick: onLogout }} />
+          <SidebarItem
+            className={styles.logout}
+            collapsed={collapsed}
+            item={{ text: t('Logout'), Icon: LogoutSvg, onClick: onLogout }}
+          />
         ) : (
           <SidebarItem collapsed={collapsed} item={{ text: t('Login'), Icon: LoginSvg, onClick: onShowModal }} />
         )}
