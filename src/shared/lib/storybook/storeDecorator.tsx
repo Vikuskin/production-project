@@ -7,6 +7,7 @@ import { addNewCommentReducer } from 'features/AddNewComment/model/slices/addNew
 import { articleCommentsReducer } from 'features/ArticleComments/model/slices/articleCommentsSlice';
 import { loginFormReducer } from 'features/AuthByUserName/model/slices/loginFormSlice';
 import { profileReducer } from 'features/EditableProfileCard';
+import { articleListReducer } from 'pages/ArticleListPage/model/slices/articleListPageSlice';
 import { ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 
 const defaultAsyncReducers: ReducersList = {
@@ -15,6 +16,7 @@ const defaultAsyncReducers: ReducersList = {
   article: articleReducer,
   articleComments: articleCommentsReducer,
   newComment: addNewCommentReducer,
+  articleList: articleListReducer,
 };
 
 export const storeDecorator = (initialState: DeepPartial<IState>, asyncReducers?: ReducersList) => (Story: StoryFn) => (

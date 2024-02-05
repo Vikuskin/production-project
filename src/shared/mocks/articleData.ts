@@ -10,6 +10,7 @@ export const articleDataMock: IArticleData = {
   img: StrybookAvatar,
   views: '1000',
   createdAt: '01.01.2024',
+  user: { id: '1', username: 'test', avatar: StrybookAvatar },
   type: [ArticleType.It, ArticleType.Medicine],
   blocks: [
     {
