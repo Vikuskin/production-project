@@ -101,7 +101,6 @@
       "img": "https://edu-tritec.ru/wp-content/uploads/2023/01/js_thumb.jpg",
       "views": "1022",
       "createdAt": "26.01.2024",
-      "user": "1",
       "type": ["IT"],
       "blocks": [
         {
@@ -143,47 +142,6 @@
           "id": "6",
           "type": "code",
           "code": "<!doctype html>\n\t<html lang=\"en\">\n\t\t<head>\n\t\t\t<meta charset=\"UTF-8\" />\n\t\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n\t\t\t<title>Document</title>\n\t\t</head>\n\t<body>\n\t\t<div id=\"root\"></div>\n\t</body>\n</html>"
-        }
-      ]
-    },
-    {
-      "id": "2",
-      "title": "Mollit magna qui quis sint et ut.Aliquip ad nisi quis veniam est ullamco pariatur.",
-      "subtitle": "New explore",
-      "img": "https://www.dubaistandard.com/wp-content/uploads/2017/03/medicine-tablets.jpg",
-      "views": "999",
-      "createdAt": "26.05.2023",
-      "user": "2",
-      "type": ["IT", "Science", "Economics", "Medicine"],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "text",
-          "title": "Title of this block",
-          "paragraphs": [
-            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
-          ]
-        },
-        {
-          "id": "2",
-          "type": "text",
-          "paragraphs": [
-            "Ullamco incididunt ea eu nostrud irure consectetur Lorem incididunt aliqua. Consectetur aute irure ea deserunt mollit est consequat. Amet aliquip dolor aliquip do officia aliquip ipsum mollit.",
-            "Enim incididunt veniam eu minim ullamco ad incididunt magna excepteur Lorem. Laboris veniam incididunt consectetur do enim et consectetur ea consectetur ad. Sint excepteur in est excepteur. Esse non officia laborum fugiat exercitation amet Lorem excepteur. Aliquip voluptate ea nisi proident nisi enim voluptate nisi nulla labore veniam. Ea quis duis cillum nisi. Ullamco officia enim laborum ipsum reprehenderit veniam eu."
-          ]
-        },
-        {
-          "id": "3",
-          "type": "img",
-          "src": "https://ir.ozone.ru/s3/multimedia-m/6463874638.jpg",
-          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
-        },
-        {
-          "id": "4",
-          "type": "text",
-          "paragraphs": [
-            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
-          ]
         }
       ]
     }

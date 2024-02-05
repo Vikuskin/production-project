@@ -1,5 +1,3 @@
-import { IAuthData } from 'entities/User';
-
 import { ArticleBlock } from './articleBlock';
 import { ArticleType } from './articleType';
 
@@ -10,7 +8,6 @@ export interface IArticleData {
   img: string;
   views: string;
   createdAt: string;
-  user: IAuthData;
   type: ArticleType[];
   blocks: ArticleBlock[];
 }
