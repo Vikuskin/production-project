@@ -8,6 +8,8 @@ import { profileForm } from 'shared/mocks/profileForm';
 
 import ProfilePage from './ProfilePage';
 
+jest.mock('../../../shared/lib/hooks/useInfiniteScroll');
+
 describe('ProfilePage', () => {
   it('renders error when state has error', () => {
     const { getByText } = componentRender(<ProfilePage />, {

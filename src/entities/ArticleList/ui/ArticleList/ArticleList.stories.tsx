@@ -16,6 +16,7 @@ const meta = {
   args: {
     articleList: articleListMock,
     isLoading: false,
+    view: ArticleListView.Tile,
   },
   decorators: [delayCaptureDecorator()],
 } satisfies Meta<typeof ArticleList>;

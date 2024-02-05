@@ -8,13 +8,17 @@ import { articleListMock } from 'shared/mocks/articleList';
 
 import ArticleListPage from './ArticleListPage';
 
+const articleListStateMock = {
+  entities: { '1': articleListMock[0], '2': articleListMock[1], '3': articleListMock[2] },
+  ids: ['1', '2', '3'],
+};
 const meta = {
   title: 'pages/ArticleListPage',
   component: ArticleListPage,
   tags: ['autodocs'],
   decorators: [
     storeDecorator({
-      articleList: { articleList: articleListMock },
+      articleList: articleListStateMock,
     }),
     delayCaptureDecorator(),
   ],
@@ -32,7 +36,7 @@ export const Dark: Story = {
 export const LightLoading: Story = {
   decorators: [
     storeDecorator({
-      articleList: { articleList: articleListMock, isLoading: true },
+      articleList: { entities: {}, ids: [], isLoading: true },
     }),
   ],
 };
@@ -41,7 +45,7 @@ export const DarkLoading: Story = {
   decorators: [
     themeDecorator(Theme.Dark),
     storeDecorator({
-      articleList: { articleList: articleListMock, isLoading: true },
+      articleList: { entities: {}, ids: [], isLoading: true },
     }),
   ],
 };

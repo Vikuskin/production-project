@@ -14,7 +14,7 @@ import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 interface IArticleListProps {
   articleList: IArticleData[];
   isLoading: boolean;
-  view?: ArticleListView;
+  view: ArticleListView;
   className?: string;
 }
 const getSkeletons = (view: ArticleListView) => {
@@ -31,7 +31,7 @@ const getSkeletons = (view: ArticleListView) => {
 
 export const ArticleList: FC<IArticleListProps> = memo((props: IArticleListProps) => {
   const { t } = useTranslation();
-  const { articleList, isLoading, className, view = ArticleListView.Tile } = props;
+  const { articleList, isLoading, className, view } = props;
   const renderArticles = useMemo(() => {
     return articleList.map((article: IArticleData) => (
       <ArticleListItem key={article.id} article={article} view={view} />

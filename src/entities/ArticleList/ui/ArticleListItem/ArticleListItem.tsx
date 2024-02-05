@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback } from 'react';
+import React, { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ interface IArticleListItemProps {
   className?: string;
 }
 
-export const ArticleListItem: FC<IArticleListItemProps> = memo((props: IArticleListItemProps) => {
+export const ArticleListItem: FC<IArticleListItemProps> = (props: IArticleListItemProps) => {
   const { t } = useTranslation('article');
   const { article, view, className } = props;
   const types = <Text className={styles.types} text={article.type.join(', ')} />;
@@ -78,4 +78,4 @@ export const ArticleListItem: FC<IArticleListItemProps> = memo((props: IArticleL
       </Card>
     </div>
   );
-});
+};

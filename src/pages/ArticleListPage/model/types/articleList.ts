@@ -1,8 +1,12 @@
-import { IArticleData } from 'entities/Article';
-import { ICustomError } from 'shared/types/customError';
+import { EntityState } from '@reduxjs/toolkit';
 
-export interface IArticleList {
-  error: ICustomError | null;
-  articleList: IArticleData[];
+import { IArticleData } from 'entities/Article';
+import { ArticleListView } from 'entities/ArticleList';
+
+export interface IArticleList extends EntityState<IArticleData, string> {
   isLoading: boolean;
+  page: number;
+  limit: number;
+  hasMore: boolean;
+  view: ArticleListView | null;
 }

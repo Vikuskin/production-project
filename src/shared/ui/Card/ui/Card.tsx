@@ -1,4 +1,4 @@
-import React, { FC, HTMLAttributes, PropsWithChildren, memo } from 'react';
+import React, { FC, HTMLAttributes, PropsWithChildren } from 'react';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 
@@ -8,7 +8,7 @@ interface ICardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
 }
 
-export const Card: FC<PropsWithChildren<ICardProps>> = memo((props: PropsWithChildren<ICardProps>) => {
+export const Card: FC<PropsWithChildren<ICardProps>> = (props: PropsWithChildren<ICardProps>) => {
   const { className, children, ...otherProps } = props;
 
   return (
@@ -16,4 +16,4 @@ export const Card: FC<PropsWithChildren<ICardProps>> = memo((props: PropsWithChi
       {children}
     </div>
   );
-});
+};

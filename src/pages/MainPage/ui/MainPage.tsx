@@ -1,10 +1,12 @@
 import React, { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { PageWrapper } from 'shared/ui/PageWrapper';
+
 const MainPage: FC = () => {
   const { t } = useTranslation('mainPage');
 
-  return <div>{t('Main Page')}</div>;
+  return <PageWrapper>{t('Main Page')}</PageWrapper>;
 };
 
 export default memo(MainPage);

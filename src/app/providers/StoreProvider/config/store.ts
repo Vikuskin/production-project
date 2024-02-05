@@ -7,6 +7,7 @@ import { ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 
 import { createReducerManager } from './createReducerManager';
 
+import { articlesViewMiddleware } from '../middleware/articlesViewMiddleware';
 import { authMiddleware } from '../middleware/authMiddleware';
 import { IState, IStoreWithManager, IThunkExtraArg } from '../types/state';
 
@@ -34,7 +35,7 @@ export const createStore = (
           thunk: {
             extraArgument: extraArg,
           },
-        }).concat(authMiddleware),
+        }).concat(authMiddleware, articlesViewMiddleware),
     }),
     reducerManager,
   };

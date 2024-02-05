@@ -6,13 +6,22 @@ import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 import { ICustomError } from 'shared/types/customError';
 
-export const fetchAllArticles = createAsyncThunk<IArticleData[], void, IThunkConfig<ICustomError>>(
-  'article/fetchAllArticles',
-  async (_, thunkApi) => {
-    const { rejectWithValue, extra } = thunkApi;
+import { selectArticleListLimit } from '../selectors/selectArticleList';
+
+export const fetchAllArticles = createAsyncThunk<IArticleData[], { page?: number }, IThunkConfig<ICustomError>>(
+  'articleList/fetchAllArticles',
+  async ({ page = 1 }, thunkApi) => {
+    const { rejectWithValue, extra, getState } = thunkApi;
+    const limit = selectArticleListLimit(getState());
 
     try {
-      const response = await extra.api.get<IArticleData[]>('/articles');
+      const response = await extra.api.get<IArticleData[]>('/articles', {
+        params: {
+          _expand: 'user',
+          _limit: limit,
+          _page: page,
+        },
+      });
 
       if (!response.data) {
         return rejectWithValue({ status: ErrorStatusCode.BadRequest, message: 'No data from server' });
