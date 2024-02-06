@@ -13,6 +13,7 @@ import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/Dynami
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
+import { PageWrapper } from 'shared/ui/PageWrapper';
 import { Text, TextAlign, TextVariant } from 'shared/ui/Text';
 import { PageLoader } from 'widgets/PageLoader';
 
@@ -48,9 +49,11 @@ const ProfilePage: FC = () => {
   }
 
   return (
-    <DynamicReducerLoader reducers={profileAsyncReducers} removeAfterUnmount>
-      <div className={styles.profilePage}>{content}</div>
-    </DynamicReducerLoader>
+    <PageWrapper>
+      <DynamicReducerLoader reducers={profileAsyncReducers} removeAfterUnmount>
+        <section className={styles.profilePage}>{content}</section>
+      </DynamicReducerLoader>
+    </PageWrapper>
   );
 };
 

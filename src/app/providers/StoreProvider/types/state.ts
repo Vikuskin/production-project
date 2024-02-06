@@ -8,6 +8,7 @@ import { INewComment } from 'features/AddNewComment';
 import { IArticleComments } from 'features/ArticleComments';
 import { ILoginForm } from 'features/AuthByUserName';
 import { IProfile } from 'features/EditableProfileCard';
+import { IArticleList } from 'pages/ArticleListPage';
 
 import { createReducerManager } from '../config/createReducerManager';
 
@@ -19,6 +20,7 @@ export interface IState {
   article?: IArticle;
   articleComments?: IArticleComments;
   newComment?: INewComment;
+  articleList?: IArticleList;
 }
 export type StateKey = keyof IState;
 export type ReducerManager = ReturnType<typeof createReducerManager>;

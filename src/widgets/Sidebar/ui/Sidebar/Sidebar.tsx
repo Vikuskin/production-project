@@ -53,7 +53,7 @@ export const Sidebar: FC<ISidebarProps> = memo(({ className }: ISidebarProps) =>
   ];
 
   return (
-    <div
+    <menu
       data-testid="sidebar"
       className={getClassNames(styles.sidebar, [className ?? ''], { [styles.collapsed]: collapsed })}
     >
@@ -83,6 +83,6 @@ export const Sidebar: FC<ISidebarProps> = memo(({ className }: ISidebarProps) =>
         <ExpandSvg />
       </AppButton>
       {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
-    </div>
+    </menu>
   );
 });

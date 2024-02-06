@@ -14,10 +14,8 @@ export const AppRouter: FC = memo(() => {
   }, []);
 
   return (
-    <div className="page-wrapper">
-      <Suspense fallback={<PageLoader />}>
-        <Routes>{routeConfig.map(renderWithWrapper)}</Routes>
-      </Suspense>
-    </div>
+    <Suspense fallback={<PageLoader />}>
+      <Routes>{routeConfig.map(renderWithWrapper)}</Routes>
+    </Suspense>
   );
 });

@@ -6,6 +6,7 @@ import { Article } from 'entities/Article';
 import { ArticleComments } from 'features/ArticleComments';
 import { ErrorPage } from 'pages/ErrorPage';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
+import { PageWrapper } from 'shared/ui/PageWrapper';
 
 import * as styles from './ArticlePage.module.scss';
 
@@ -19,11 +20,11 @@ const ArticlePage: FC = () => {
   }
 
   return (
-    <>
+    <PageWrapper>
       <Article id={id} />
       <hr className={styles.line} />
       <ArticleComments id={id} />
-    </>
+    </PageWrapper>
   );
 };
 

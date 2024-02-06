@@ -1,14 +1,4 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "title": "a title"
-    },
-    {
-      "id": "2",
-      "title": "another title"
-    }
-  ],
   "comments": [
     {
       "id": "1",
@@ -51,6 +41,18 @@
       "userId": "2",
       "text": "test2",
       "id": "EwdppxM"
+    },
+    {
+      "articleId": "4",
+      "userId": "2",
+      "text": "useful article about C#",
+      "id": "oBqvbqa"
+    },
+    {
+      "articleId": "3",
+      "userId": "2",
+      "text": "python ",
+      "id": "IIuFIX3"
     }
   ],
   "users": [
@@ -101,6 +103,7 @@
       "img": "https://edu-tritec.ru/wp-content/uploads/2023/01/js_thumb.jpg",
       "views": "1022",
       "createdAt": "26.01.2024",
+      "userId": "1",
       "type": ["IT"],
       "blocks": [
         {
@@ -142,6 +145,655 @@
           "id": "6",
           "type": "code",
           "code": "<!doctype html>\n\t<html lang=\"en\">\n\t\t<head>\n\t\t\t<meta charset=\"UTF-8\" />\n\t\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n\t\t\t<title>Document</title>\n\t\t</head>\n\t<body>\n\t\t<div id=\"root\"></div>\n\t</body>\n</html>"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Mollit magna qui quis sint et ut.Aliquip ad nisi quis veniam est ullamco pariatur.",
+      "subtitle": "New explore",
+      "img": "https://www.dubaistandard.com/wp-content/uploads/2017/03/medicine-tablets.jpg",
+      "views": "999",
+      "createdAt": "26.05.2023",
+      "userId": "2",
+      "type": ["IT", "Science", "Economics", "Medicine"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "text",
+          "paragraphs": [
+            "Ullamco incididunt ea eu nostrud irure consectetur Lorem incididunt aliqua. Consectetur aute irure ea deserunt mollit est consequat. Amet aliquip dolor aliquip do officia aliquip ipsum mollit.",
+            "Enim incididunt veniam eu minim ullamco ad incididunt magna excepteur Lorem. Laboris veniam incididunt consectetur do enim et consectetur ea consectetur ad. Sint excepteur in est excepteur. Esse non officia laborum fugiat exercitation amet Lorem excepteur. Aliquip voluptate ea nisi proident nisi enim voluptate nisi nulla labore veniam. Ea quis duis cillum nisi. Ullamco officia enim laborum ipsum reprehenderit veniam eu."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://ir.ozone.ru/s3/multimedia-m/6463874638.jpg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Python news",
+      "subtitle": "Id aute excepteur consequat irure nostrud nulla proident fugiat tempor.",
+      "img": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhe3iZB6psNRY3Ehv0rM87JyLX89Ug3sWGaQrjQ71uF_C01mToxZz8U_3kzeNAgsNzbYxflauKEjBd-ml88gokUZaMYVZqKvTeaU8TYoeQfmacYQtMb8gBOoLcLyNfqq9de5FnbdMHrM87X_tyJGU_QobXdaZT67TG7LTx6r2dgfhuwNnVFyekIhKHvvA/s944/work11.png",
+      "views": "629",
+      "createdAt": "26.05.2023",
+      "userId": "2",
+      "type": ["IT", "Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "def hello(name):\nprint('Hello, ' + name)\n\nhello('Max')\nhello('Ivan')\nhello('Alex')\nhello('Kate')"
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://office-guru.ru/wp-content/uploads/2021/08/python.png",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "C# news",
+      "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
+      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "views": "629",
+      "createdAt": "26.05.2023",
+      "userId": "1",
+      "type": ["IT", "Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Eu culpa cillum irure pariatur adipisicing enim veniam amet dolor velit cillum.",
+      "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
+      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "views": "629",
+      "createdAt": "26.05.2023",
+      "userId": "1",
+      "type": ["IT", "Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Ea deserunt duis mollit officia officia magna ipsum irure deserunt reprehenderit.",
+      "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
+      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "views": "629",
+      "createdAt": "26.05.2023",
+      "userId": "1",
+      "type": ["IT", "Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Est fugiat irure adipisicing id veniam ea.",
+      "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
+      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "views": "629",
+      "createdAt": "26.05.2023",
+      "userId": "1",
+      "type": ["IT", "Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Commodo officia et sit aute ex consectetur dolor labore et nulla enim.",
+      "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
+      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "views": "629",
+      "createdAt": "26.05.2023",
+      "userId": "1",
+      "type": ["IT", "Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Minim voluptate eu qui velit aute voluptate commodo.",
+      "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
+      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "views": "629",
+      "createdAt": "26.05.2023",
+      "userId": "1",
+      "type": ["IT", "Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Culpa exercitation eiusmod laborum sit qui duis commodo irure sit ex cillum aliqua commodo.",
+      "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
+      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "views": "629",
+      "createdAt": "26.05.2023",
+      "userId": "1",
+      "type": ["IT", "Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Eu minim magna eu veniam Lorem.",
+      "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
+      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "views": "629",
+      "createdAt": "26.05.2023",
+      "userId": "1",
+      "type": ["IT", "Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Ad eiusmod id veniam fugiat commodo do cillum dolore et eiusmod.",
+      "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
+      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "views": "629",
+      "createdAt": "26.05.2023",
+      "userId": "1",
+      "type": ["IT", "Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "C# news",
+      "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
+      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "views": "629",
+      "createdAt": "26.05.2023",
+      "userId": "1",
+      "type": ["IT", "Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "title": "Quis cillum aliquip aliqua proident voluptate do excepteur.",
+      "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
+      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "views": "629",
+      "createdAt": "26.05.2023",
+      "userId": "1",
+      "type": ["IT", "Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Anim officia culpa occaecat dolore proident occaecat aliquip magna esse ipsum et magna.",
+      "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
+      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "views": "629",
+      "createdAt": "26.05.2023",
+      "userId": "1",
+      "type": ["IT", "Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Occaecat labore ex anim exercitation ipsum consequat cupidatat velit excepteur.",
+      "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
+      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "views": "629",
+      "createdAt": "26.05.2023",
+      "userId": "1",
+      "type": ["IT", "Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "title": "Consequat velit cupidatat ex voluptate ea tempor magna exercitation et magna ipsum voluptate officia in.",
+      "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
+      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "views": "629",
+      "createdAt": "26.05.2023",
+      "userId": "1",
+      "type": ["IT", "Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "title": "Laborum ea excepteur deserunt aliqua occaecat.",
+      "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
+      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "views": "629",
+      "createdAt": "26.05.2023",
+      "userId": "1",
+      "type": ["IT", "Science"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
         }
       ]
     }

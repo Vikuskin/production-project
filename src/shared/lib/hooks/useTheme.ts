@@ -9,10 +9,10 @@ interface IUseThemeResult {
 }
 
 const getLocalStorageTheme = (): Theme | null => {
-  const localStorageTheme: Theme | null = localStorage.getItem(LOCAL_STORAGE_KEYS.Theme) as Theme;
+  const localStorageTheme = localStorage.getItem(LOCAL_STORAGE_KEYS.Theme);
 
-  if (localStorageTheme && Object.values(Theme).includes(localStorageTheme)) {
-    return localStorageTheme;
+  if (localStorageTheme && Object.values(Theme).includes(localStorageTheme as Theme)) {
+    return localStorageTheme as Theme;
   }
 
   return null;

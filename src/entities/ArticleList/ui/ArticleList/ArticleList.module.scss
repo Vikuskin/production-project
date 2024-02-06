@@ -1,0 +1,20 @@
+.article-list {
+  display: flex;
+  gap: 15px;
+}
+
+.tile {
+  flex-wrap: wrap;
+
+  .skeleton-card {
+    border-radius: 15px;
+  }
+}
+
+.list {
+  flex-direction: column;
+
+  .skeleton-card {
+    border-radius: 15px;
+  }
+}

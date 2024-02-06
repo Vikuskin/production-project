@@ -20,8 +20,8 @@ export const Navbar = memo(({ className }: INavbarProps) => {
   );
 
   return (
-    <div data-testid="navbar" className={getClassNames(styles.navbar, [className ?? ''])}>
+    <header data-testid="navbar" className={getClassNames(styles.navbar, [className ?? ''])}>
       <div className={styles.links}>{renderNavbarLinks}</div>
-    </div>
+    </header>
   );
 });
