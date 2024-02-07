@@ -23,7 +23,7 @@ export const useInfiniteScroll = ({ callback, triggerRef, wrapperRef }: IUseInfi
 
     return () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
-      triggerRef.current && observer && observer.unobserve(triggerRef.current);
+      triggerRef.current && observer.unobserve(triggerRef.current);
     };
   }, [callback, triggerRef, wrapperRef]);
 };

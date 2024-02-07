@@ -7,6 +7,7 @@ import { INewComment } from 'features/AddNewComment';
 import { IArticleComments } from 'features/ArticleComments';
 import { ILoginForm } from 'features/AuthByUserName';
 import { IProfile } from 'features/EditableProfileCard';
+import { IInfiniteScroll } from 'features/ScrollPosition';
 import { IArticleList } from 'pages/ArticleListPage';
 
 import { createReducerManager } from '../config/createReducerManager';
@@ -14,6 +15,7 @@ import { createReducerManager } from '../config/createReducerManager';
 export type AppDispatch = ThunkDispatch<IState, IThunkExtraArg, UnknownAction>;
 export interface IState {
   user: IUser;
+  infiniteScroll: IInfiniteScroll;
   loginForm?: ILoginForm;
   profile?: IProfile;
   article?: IArticle;

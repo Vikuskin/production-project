@@ -13,9 +13,9 @@ import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/Dynami
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { PageWrapper } from 'shared/ui/PageWrapper';
 import { Text, TextAlign, TextVariant } from 'shared/ui/Text';
 import { PageLoader } from 'widgets/PageLoader';
+import { PageWrapper } from 'widgets/PageWrapper';
 
 import * as styles from './ProfilePage.module.scss';
 

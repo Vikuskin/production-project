@@ -15,11 +15,11 @@ export const selectArticleListView = createSelector(
 );
 export const selectArticleListPage = createSelector(
   selectArticleListState,
-  (articleList): number => articleList?.page || 1,
+  (articleList): number => articleList?.page ?? 1,
 );
 export const selectArticleListLimit = createSelector(
   selectArticleListState,
-  (articleList): number => articleList?.limit || 3,
+  (articleList): number => articleList?.limit ?? 3,
 );
 export const selectArticleListHasMore = createSelector(
   selectArticleListState,

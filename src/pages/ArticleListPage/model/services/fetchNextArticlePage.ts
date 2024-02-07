@@ -17,7 +17,7 @@ export const fetchNextArticlePage = createAsyncThunk<void, void, IThunkConfig<IC
     const page = selectArticleListPage(getState());
     const loading = selectArticleLoading(getState());
 
-    if (hasMore || !loading) {
+    if (hasMore && !loading) {
       const nextPage = page + 1;
 
       dispatch(articleListActions.setPage(nextPage));

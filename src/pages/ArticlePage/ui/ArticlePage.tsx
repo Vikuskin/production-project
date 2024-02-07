@@ -6,7 +6,7 @@ import { Article } from 'entities/Article';
 import { ArticleComments } from 'features/ArticleComments';
 import { ErrorPage } from 'pages/ErrorPage';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-import { PageWrapper } from 'shared/ui/PageWrapper';
+import { PageWrapper } from 'widgets/PageWrapper';
 
 import * as styles from './ArticlePage.module.scss';
 

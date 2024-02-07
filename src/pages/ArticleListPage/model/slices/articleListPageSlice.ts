@@ -22,7 +22,7 @@ const articleListSlice = createSlice({
   name: 'articleList',
   initialState: articleListAdapter.getInitialState<IArticleList>({
     isLoading: false,
-    view: ArticleListView.Tile,
+    view: getInitialView(),
     hasMore: true,
     limit: getInitialView() === ArticleListView.Tile ? 9 : 4,
     page: 1,

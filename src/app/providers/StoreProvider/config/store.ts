@@ -1,6 +1,7 @@
 import { Reducer, ReducersMapObject, configureStore } from '@reduxjs/toolkit';
 
 import { userReducer } from 'entities/User';
+import { infiniteScrollReducer } from 'features/ScrollPosition';
 import { API } from 'shared/api/api';
 import { ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 
@@ -14,6 +15,7 @@ export const createStore = (initialState?: IState, asyncReducers?: ReducersList)
   const staticReducers: ReducersMapObject<IState> = {
     ...asyncReducers,
     user: userReducer,
+    infiniteScroll: infiniteScrollReducer,
   };
   const reducerManager = createReducerManager(staticReducers);
   const extraArg: IThunkExtraArg = {

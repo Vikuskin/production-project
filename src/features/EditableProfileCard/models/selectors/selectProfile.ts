@@ -12,7 +12,7 @@ export const selectProfileError = createSelector(
   selectProfile,
   (profile): ICustomError | null => profile?.error || null,
 );
-export const selectProfileReadonly = createSelector(selectProfile, (profile): boolean => profile?.readonly || false);
+export const selectProfileReadonly = createSelector(selectProfile, (profile): boolean => !!profile?.readonly);
 export const selectProfileForm = createSelector(
   selectProfile,
   (profile): Partial<IProfileData> | null => profile?.form || null,

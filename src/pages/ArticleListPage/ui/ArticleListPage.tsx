@@ -6,7 +6,7 @@ import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/Dynami
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { PageWrapper } from 'shared/ui/PageWrapper';
+import { PageWrapper } from 'widgets/PageWrapper';
 
 import { selectArticleListLoading, selectArticleListView } from '../model/selectors/selectArticleList';
 import { fetchNextArticlePage } from '../model/services/fetchNextArticlePage';
@@ -33,7 +33,7 @@ const ArticleListPage: FC = () => {
   );
 
   return (
-    <PageWrapper onScrollEnd={onLoadNextPart}>
+    <PageWrapper onScrollEnd={onLoadNextPart} isSaveScroll>
       <DynamicReducerLoader reducers={articleListReducers}>
         <ArticleViewSwitcher view={articleListView} onViewClick={onChangeView} />
         {<ArticleList articleList={articleList} isLoading={articleListLoading} view={articleListView} />}
