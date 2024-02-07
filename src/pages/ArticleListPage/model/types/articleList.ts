@@ -9,4 +9,5 @@ export interface IArticleList extends EntityState<IArticleData, string> {
   limit: number;
   hasMore: boolean;
   view: ArticleListView | null;
+  _mounted: boolean;
 }

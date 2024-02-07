@@ -20,19 +20,17 @@ export const DynamicReducerLoader: FC<PropsWithChildren<IDynamicReducerLoaderPro
 
   useEffect(() => {
     Object.entries(reducers).forEach(([reducerKey, reducer]) => {
-      store.reducerManager.add(reducerKey as StateKey, reducer);
-      dispatch({ type: `@INIT ${reducerKey} reducer` });
+      !!store.reducerManager.add(reducerKey as StateKey, reducer) && dispatch({ type: `@INIT ${reducerKey} reducer` });
     });
 
     return () => {
       if (removeAfterUnmount) {
         Object.entries(reducers).forEach(([reducerKey]) => {
-          store.reducerManager.remove(reducerKey as StateKey);
-          dispatch({ type: `@DESTROY ${reducerKey} reducer` });
+          !!store.reducerManager.remove(reducerKey as StateKey) && dispatch({ type: `@DESTROY ${reducerKey} reducer` });
         });
       }
     };
-    //eslint-disable-next-line
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return <>{children}</>;

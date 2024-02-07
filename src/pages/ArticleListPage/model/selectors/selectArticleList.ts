@@ -25,3 +25,7 @@ export const selectArticleListHasMore = createSelector(
   selectArticleListState,
   (articleList): boolean => !!articleList?.hasMore,
 );
+export const selectArticleListMounted = createSelector(
+  selectArticleListState,
+  (articleList): boolean => !!articleList?._mounted,
+);

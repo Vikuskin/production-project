@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { AppRoute, routePaths } from 'app/providers/router';
 import { IThunkConfig } from 'app/providers/StoreProvider';
 import { IAuthData, userActions } from 'entities/User';
 import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
@@ -25,7 +24,6 @@ export const loginByUsername = createAsyncThunk<IAuthData, ILoginByUsernameProps
       }
 
       dispatch(userActions.login(response.data));
-      extra.navigate(`${routePaths[AppRoute.Profile]}${response.data.id}`);
 
       return response.data;
       // TODO: remove any type

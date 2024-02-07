@@ -28,6 +28,7 @@ const articleListSlice = createSlice({
     page: 1,
     ids: [],
     entities: {},
+    _mounted: false,
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleListView>) => {
@@ -49,6 +50,7 @@ const articleListSlice = createSlice({
         state.isLoading = false;
         articleListAdapter.addMany(state, action.payload);
         state.hasMore = !!action.payload.length;
+        state._mounted = true;
       })
       .addCase(fetchAllArticles.rejected, (state) => {
         state.isLoading = false;

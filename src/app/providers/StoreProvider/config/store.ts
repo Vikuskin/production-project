@@ -1,5 +1,4 @@
 import { Reducer, ReducersMapObject, configureStore } from '@reduxjs/toolkit';
-import { NavigateOptions, To } from 'react-router-dom';
 
 import { userReducer } from 'entities/User';
 import { API } from 'shared/api/api';
@@ -11,11 +10,7 @@ import { articlesViewMiddleware } from '../middleware/articlesViewMiddleware';
 import { authMiddleware } from '../middleware/authMiddleware';
 import { IState, IStoreWithManager, IThunkExtraArg } from '../types/state';
 
-export const createStore = (
-  navigate: (to: To, options?: NavigateOptions) => void,
-  initialState?: IState,
-  asyncReducers?: ReducersList,
-): IStoreWithManager => {
+export const createStore = (initialState?: IState, asyncReducers?: ReducersList): IStoreWithManager => {
   const staticReducers: ReducersMapObject<IState> = {
     ...asyncReducers,
     user: userReducer,
@@ -23,7 +18,6 @@ export const createStore = (
   const reducerManager = createReducerManager(staticReducers);
   const extraArg: IThunkExtraArg = {
     api: API,
-    navigate,
   };
   const store = {
     ...configureStore({

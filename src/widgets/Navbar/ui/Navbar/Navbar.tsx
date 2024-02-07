@@ -21,7 +21,7 @@ export const Navbar = memo(({ className }: INavbarProps) => {
 
   return (
     <header data-testid="navbar" className={getClassNames(styles.navbar, [className ?? ''])}>
-      <div className={styles.links}>{renderNavbarLinks}</div>
+      <nav className={styles.links}>{renderNavbarLinks}</nav>
     </header>
   );
 });

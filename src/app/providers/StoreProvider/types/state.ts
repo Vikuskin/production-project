@@ -1,6 +1,5 @@
 import { EnhancedStore, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { NavigateOptions, To } from 'react-router-dom';
 
 import { IArticle } from 'entities/Article';
 import { IUser } from 'entities/User';
@@ -30,7 +29,6 @@ export interface IStoreWithManager extends EnhancedStore<IState> {
 }
 export interface IThunkExtraArg {
   api: AxiosInstance;
-  navigate: (to: To, options?: NavigateOptions) => void;
 }
 export interface IThunkConfig<T> {
   rejectValue: T;
