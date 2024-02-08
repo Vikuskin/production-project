@@ -30,7 +30,7 @@ const getSkeletons = (view: ArticleListView) => {
 };
 
 export const ArticleList: FC<IArticleListProps> = memo((props: IArticleListProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('article');
   const { articleList, isLoading, className, view } = props;
   const renderArticles = useMemo(() => {
     return articleList.map((article: IArticleData) => (

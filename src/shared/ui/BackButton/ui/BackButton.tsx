@@ -9,6 +9,7 @@ interface IBackButtonProps {
 export const BackButton: FC<IBackButtonProps> = memo(({ className }: IBackButtonProps) => {
   const back = () => {
     window.history.back();
+    window.location.reload();
   };
 
   return (

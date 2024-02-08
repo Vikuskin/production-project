@@ -1,6 +1,11 @@
 .page-wrapper {
   flex-grow: 1;
   height: calc(100vh - var(--navbar-height));
-  padding: 20px;
+  padding: 20px 20px 0;
   overflow-y: auto;
+}
+
+.trigger {
+  width: 20px;
+  height: 20px;
 }

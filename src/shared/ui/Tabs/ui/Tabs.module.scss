@@ -1,0 +1,25 @@
+.tabs-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .tab {
+    position: relative;
+    width: auto;
+    min-width: 60px;
+    padding: 5px 25px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    .clear-btn {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      font-size: var(--font-size-s);
+    }
+  }
+}

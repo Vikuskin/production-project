@@ -1,6 +1,8 @@
+import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Theme } from 'app/providers/theme';
+import { Country } from 'entities/Country';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
 import { Select } from './Select';
@@ -11,13 +13,9 @@ const meta = {
   tags: ['autodocs'],
   args: {
     label: 'Test option',
-    options: [
-      { value: 'Test 1', content: 'Test 1' },
-      { value: 'Test 2', content: 'Test 2' },
-      { value: 'Test 3', content: 'Test 3' },
-    ],
+    enumOptions: Country,
     value: 'Test',
-    onChange: () => {},
+    onChange: action('onChange'),
   },
 } satisfies Meta<typeof Select>;
 

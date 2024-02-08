@@ -18,5 +18,10 @@
   "Internal server error": "Something went wrong",
   "Logout": "Logout",
   "Profile": "Profile",
-  "Articles": "Articles"
+  "views": "views",
+  "title": "titles",
+  "date": "dates",
+  "asc": "increasing",
+  "desc": "decreasing",
+  "createdAt": "created date"
 }

@@ -2,24 +2,38 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { IThunkConfig } from 'app/providers/StoreProvider';
 import { IArticleData } from 'entities/Article';
+import { selectArticleOrder, selectArticleSearch, selectArticleSort, selectArticleType } from 'features/ArticleFilters';
 import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
+import { addQueryParams } from 'shared/lib/url/addQueryParams';
 import { ICustomError } from 'shared/types/customError';
 
-import { selectArticleListLimit } from '../selectors/selectArticleList';
+import { selectArticleListLimit, selectArticleListPage } from '../selectors/selectArticleList';
 
-export const fetchAllArticles = createAsyncThunk<IArticleData[], { page?: number }, IThunkConfig<ICustomError>>(
+export const fetchAllArticles = createAsyncThunk<IArticleData[], { replace?: boolean }, IThunkConfig<ICustomError>>(
   'articleList/fetchAllArticles',
-  async ({ page = 1 }, thunkApi) => {
+  async (_, thunkApi) => {
     const { rejectWithValue, extra, getState } = thunkApi;
-    const limit = selectArticleListLimit(getState());
 
     try {
+      const limit = selectArticleListLimit(getState());
+      const order = selectArticleOrder(getState());
+      const sort = selectArticleSort(getState());
+      const search = selectArticleSearch(getState());
+      const page = selectArticleListPage(getState());
+      const type = selectArticleType(getState());
+
+      addQueryParams({ sort, order, search, type });
+
       const response = await extra.api.get<IArticleData[]>('/articles', {
         params: {
           _expand: 'user',
           _limit: limit,
           _page: page,
+          _sort: sort,
+          _order: order,
+          q: search,
+          type_like: type,
         },
       });
 

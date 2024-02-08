@@ -5,6 +5,7 @@ import { IArticle } from 'entities/Article';
 import { IUser } from 'entities/User';
 import { INewComment } from 'features/AddNewComment';
 import { IArticleComments } from 'features/ArticleComments';
+import { IArticleFilters } from 'features/ArticleFilters';
 import { ILoginForm } from 'features/AuthByUserName';
 import { IProfile } from 'features/EditableProfileCard';
 import { IInfiniteScroll } from 'features/ScrollPosition';
@@ -22,6 +23,7 @@ export interface IState {
   articleComments?: IArticleComments;
   newComment?: INewComment;
   articleList?: IArticleList;
+  articleFilters?: IArticleFilters;
 }
 export type StateKey = keyof IState;
 export type ReducerManager = ReturnType<typeof createReducerManager>;

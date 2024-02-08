@@ -1,5 +1,7 @@
 import { render } from '@testing-library/react';
 
+import { Country } from 'entities/Country';
+
 import { Select } from './Select';
 
 describe('Select component', () => {
@@ -16,6 +18,7 @@ describe('Select component', () => {
     onChange: onChangeMock,
     value: 'option1',
     readonly: false,
+    enumOptions: Country,
   };
 
   it('renders with the correct props', () => {

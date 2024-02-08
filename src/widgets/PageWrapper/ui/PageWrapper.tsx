@@ -38,7 +38,7 @@ export const PageWrapper: FC<PropsWithChildren<IPageWrapper>> = (props) => {
   return (
     <div ref={wrapperRef} className={styles.pageWrapper} onScroll={onScroll}>
       {children}
-      <div ref={triggerRef} />
+      {onScrollEnd && <div className={styles.trigger} ref={triggerRef} />}
     </div>
   );
 };

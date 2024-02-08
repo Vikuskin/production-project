@@ -1,34 +1,36 @@
-import React, { ChangeEvent, FC, ReactElement, memo, useMemo } from 'react';
+import React, { ChangeEvent, ReactElement, memo, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 
 import * as styles from './Select.module.scss';
 
-interface ISelectOption {
-  value: string;
-  content: string;
-}
-interface ISelectProps {
+import { getSelectOptions } from '../lib/getSelectOptions';
+
+interface ISelectProps<T extends string> {
   label: string;
-  options: ISelectOption[];
-  value: string;
-  onChange: (value: string) => void;
+  enumOptions: { [key: string]: string };
+  value: T;
+  onChange: (value: T) => void;
   className?: string;
   readonly?: boolean;
 }
 
-export const Select: FC<ISelectProps> = memo((props: ISelectProps) => {
-  const { label, options, className, onChange, value, readonly } = props;
-  const optionsList = useMemo<ReactElement[]>(
-    () =>
-      options.map((option) => (
-        <option key={option.value} value={option.value}>
-          {option.content}
-        </option>
-      )),
-    [options],
-  );
-  const onChangeSelect = (e: ChangeEvent<HTMLSelectElement>) => onChange(e.target.value);
+const typedMemo: <T>(c: T) => T = memo;
+
+export const Select = typedMemo(<T extends string>(props: ISelectProps<T>) => {
+  const { t } = useTranslation();
+  const { label, enumOptions, className, onChange, value, readonly } = props;
+  const optionsList = useMemo<ReactElement[]>(() => {
+    const options = getSelectOptions(enumOptions);
+
+    return options.map((option) => (
+      <option key={option.value} value={option.value}>
+        {t(option.content)}
+      </option>
+    ));
+  }, [enumOptions, t]);
+  const onChangeSelect = (e: ChangeEvent<HTMLSelectElement>) => onChange(e.target.value as T);
 
   return (
     <div className={getClassNames(styles.selectWrapper, [className ?? ''], { [styles.readonly]: !!readonly })}>

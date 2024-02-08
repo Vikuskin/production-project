@@ -95,6 +95,9 @@ export const Article: FC<IArticleProps> = memo(({ className, id }: IArticleProps
           <CalendarSvg className={styles.icon} />
           <Text text={articleData.createdAt} size={TextSize.SizeS} />
         </div>
+        <p>
+          <Text size={TextSize.SizeS} text={articleData.type.join(', ')} />
+        </p>
         {renderBlock}
       </>
     );
