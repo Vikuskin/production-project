@@ -17,8 +17,8 @@ const meta = {
   },
   decorators: [
     storeDecorator({
-      articleComments: articleCommentsMock,
-      newComment: {},
+      articleDetails: { articleComments: articleCommentsMock },
+      newComment: { text: 'text' },
     }),
   ],
 } satisfies Meta<typeof ArticleComments>;
@@ -41,12 +41,12 @@ export const DarkWithNoComments: Story = {
 };
 
 export const LightLoading: Story = {
-  decorators: [storeDecorator({ articleComments: { ...articleCommentsMock, isLoading: true } })],
+  decorators: [storeDecorator({ articleDetails: { articleComments: { ...articleCommentsMock, isLoading: true } } })],
 };
 
 export const DarkLoading: Story = {
   decorators: [
     themeDecorator(Theme.Dark),
-    storeDecorator({ articleComments: { ...articleCommentsMock, isLoading: true } }),
+    storeDecorator({ articleDetails: { articleComments: { ...articleCommentsMock, isLoading: true } } }),
   ],
 };

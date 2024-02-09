@@ -4,6 +4,8 @@ import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk';
 import { fetchAllArticles } from './fetchAllArticles';
 import { fetchNextArticlePage } from './fetchNextArticlePage';
 
+import { articleListActions } from '../slices/articleListPageSlice';
+
 jest.mock('./fetchAllArticles');
 jest.mock('../slices/articleListPageSlice.ts');
 
@@ -23,7 +25,7 @@ describe('fetchNextArticlePage', () => {
 
     await thunk.callThunk();
 
-    expect(thunk.dispatch).toHaveBeenCalledTimes(4);
-    expect(fetchAllArticles).toHaveBeenCalledWith({ page: 3 });
+    expect(thunk.dispatch).toHaveBeenCalledWith(articleListActions.setPage(3));
+    expect(fetchAllArticles).toHaveBeenCalledWith({});
   });
 });

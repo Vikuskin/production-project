@@ -1,0 +1,13 @@
+.recommends {
+  .title {
+    margin: 30px 0 15px;
+  }
+
+  .content {
+    flex-wrap: nowrap;
+    height: calc(var(--article-tile-card-height) + 30px);
+    padding: 10px 5px;
+    overflow: visible;
+    overflow-x: auto;
+  }
+}

@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 
 import { CommentList } from 'entities/Comment';
 import { AddNewComment } from 'features/AddNewComment';
-import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
@@ -12,18 +11,14 @@ import { PageLoader } from 'widgets/PageLoader';
 
 import * as styles from './ArticleComments.module.scss';
 
-import { selectArticleCommentsLoading } from '../model/selectors/articleComments';
-import { addArticleComment } from '../model/services/addArticleComment';
-import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId';
-import { articleCommentsReducer, selectArticleComments } from '../model/slices/articleCommentsSlice';
+import { selectArticleCommentsLoading } from '../../model/selectors/selectArticleComments';
+import { addArticleComment } from '../../model/services/addArticleComment';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId';
+import { selectArticleComments } from '../../model/slices/articleCommentsSlice';
 
 interface IArticleCommentsProps {
   id: string;
 }
-
-const articleCommentsReducers: ReducersList = {
-  articleComments: articleCommentsReducer,
-};
 
 export const ArticleComments: FC<IArticleCommentsProps> = memo(({ id }: IArticleCommentsProps) => {
   const { t } = useTranslation('article');
@@ -37,11 +32,9 @@ export const ArticleComments: FC<IArticleCommentsProps> = memo(({ id }: IArticle
 
   return (
     <Suspense fallback={<PageLoader />}>
-      <DynamicReducerLoader reducers={articleCommentsReducers} removeAfterUnmount>
-        <Text className={styles.title} title={t('Comments')} size={TextSize.SizeL} />
-        <AddNewComment onCommentSend={onCommentSend} />
-        <CommentList comments={comments} isLoading={commentsIsLoading} />
-      </DynamicReducerLoader>
+      <Text className={styles.title} title={t('Comments')} size={TextSize.SizeL} />
+      <AddNewComment onCommentSend={onCommentSend} />
+      <CommentList comments={comments} isLoading={commentsIsLoading} />
     </Suspense>
   );
 });

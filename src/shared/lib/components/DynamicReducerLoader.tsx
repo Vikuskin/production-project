@@ -6,7 +6,7 @@ import { IStoreWithManager, StateKey } from 'app/providers/StoreProvider';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 
 export type ReducersList = {
-  [key in StateKey]?: Reducer;
+  [name in StateKey]?: Reducer;
 };
 interface IDynamicReducerLoaderProps {
   reducers: ReducersList;

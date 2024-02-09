@@ -3,12 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
 import { Article } from 'entities/Article';
-import { ArticleComments } from 'features/ArticleComments';
+import { ArticleDetails } from 'features/ArticleDetails';
 import { ErrorPage } from 'pages/ErrorPage';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 import { PageWrapper } from 'widgets/PageWrapper';
-
-import * as styles from './ArticlePage.module.scss';
 
 const ArticlePage: FC = () => {
   // TODO: remove default value (storybook)
@@ -22,8 +20,7 @@ const ArticlePage: FC = () => {
   return (
     <PageWrapper>
       <Article id={id} />
-      <hr className={styles.line} />
-      <ArticleComments id={id} />
+      <ArticleDetails articleId={id} />
     </PageWrapper>
   );
 };
