@@ -2,12 +2,16 @@ import { render } from '@testing-library/react';
 
 import { Select } from './Select';
 
+import { getSelectOptions } from '../lib/getSelectOptions';
+
+enum TestEnum {
+  option1 = 'Option 1',
+  option2 = 'Option 2',
+  option3 = 'Option 3',
+}
+
 describe('Select component', () => {
-  const options = [
-    { value: 'option1', content: 'Option 1' },
-    { value: 'option2', content: 'Option 2' },
-    { value: 'option3', content: 'Option 3' },
-  ];
+  const options = getSelectOptions(TestEnum);
   const onChangeMock = jest.fn();
   const defaultProps = {
     label: 'Select an option',
@@ -16,6 +20,7 @@ describe('Select component', () => {
     onChange: onChangeMock,
     value: 'option1',
     readonly: false,
+    enumOptions: TestEnum,
   };
 
   it('renders with the correct props', () => {

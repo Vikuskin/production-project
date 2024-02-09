@@ -53,6 +53,18 @@
       "userId": "2",
       "text": "python ",
       "id": "IIuFIX3"
+    },
+    {
+      "articleId": "2",
+      "userId": "2",
+      "text": "test",
+      "id": "LR5rQva"
+    },
+    {
+      "articleId": "2",
+      "userId": "2",
+      "text": "ddddd",
+      "id": "ZK9FIeu"
     }
   ],
   "users": [
@@ -101,8 +113,8 @@
       "title": "JavaScript news",
       "subtitle": "what's new for 2024",
       "img": "https://edu-tritec.ru/wp-content/uploads/2023/01/js_thumb.jpg",
-      "views": "1022",
-      "createdAt": "26.01.2024",
+      "views": "102",
+      "createdAt": "2024.12.19",
       "userId": "1",
       "type": ["IT"],
       "blocks": [
@@ -153,8 +165,8 @@
       "title": "Mollit magna qui quis sint et ut.Aliquip ad nisi quis veniam est ullamco pariatur.",
       "subtitle": "New explore",
       "img": "https://www.dubaistandard.com/wp-content/uploads/2017/03/medicine-tablets.jpg",
-      "views": "999",
-      "createdAt": "26.05.2023",
+      "views": "123",
+      "createdAt": "2023.09.19",
       "userId": "2",
       "type": ["IT", "Science", "Economics", "Medicine"],
       "blocks": [
@@ -194,10 +206,10 @@
       "title": "Python news",
       "subtitle": "Id aute excepteur consequat irure nostrud nulla proident fugiat tempor.",
       "img": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhe3iZB6psNRY3Ehv0rM87JyLX89Ug3sWGaQrjQ71uF_C01mToxZz8U_3kzeNAgsNzbYxflauKEjBd-ml88gokUZaMYVZqKvTeaU8TYoeQfmacYQtMb8gBOoLcLyNfqq9de5FnbdMHrM87X_tyJGU_QobXdaZT67TG7LTx6r2dgfhuwNnVFyekIhKHvvA/s944/work11.png",
-      "views": "629",
-      "createdAt": "26.05.2023",
+      "views": "187",
+      "createdAt": "2021.05.20",
       "userId": "2",
-      "type": ["IT", "Science"],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -232,10 +244,10 @@
       "title": "C# news",
       "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
       "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
-      "views": "629",
-      "createdAt": "26.05.2023",
+      "views": "126",
+      "createdAt": "2023.12.24",
       "userId": "1",
-      "type": ["IT", "Science"],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -269,11 +281,11 @@
       "id": "5",
       "title": "Eu culpa cillum irure pariatur adipisicing enim veniam amet dolor velit cillum.",
       "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
-      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
-      "views": "629",
-      "createdAt": "26.05.2023",
+      "img": "https://images.unsplash.com/photo-1706800695685-c82b21928d87?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA2MDd8&ixlib=rb-4.0.3&q=80&w=1080",
+      "views": "999",
+      "createdAt": "2021.02.19",
       "userId": "1",
-      "type": ["IT", "Science"],
+      "type": ["Economics"],
       "blocks": [
         {
           "id": "1",
@@ -307,11 +319,11 @@
       "id": "6",
       "title": "Ea deserunt duis mollit officia officia magna ipsum irure deserunt reprehenderit.",
       "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
-      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "img": "https://images.unsplash.com/photo-1705037202436-2e4ade07d823?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA1OTR8&ixlib=rb-4.0.3&q=80&w=1080",
       "views": "629",
-      "createdAt": "26.05.2023",
+      "createdAt": "2022.06.26",
       "userId": "1",
-      "type": ["IT", "Science"],
+      "type": ["Science"],
       "blocks": [
         {
           "id": "1",
@@ -345,11 +357,11 @@
       "id": "7",
       "title": "Est fugiat irure adipisicing id veniam ea.",
       "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
-      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
-      "views": "629",
-      "createdAt": "26.05.2023",
+      "img": "https://images.unsplash.com/photo-1705714135183-dbe57919b735?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA0ODl8&ixlib=rb-4.0.3&q=80&w=1080",
+      "views": "899",
+      "createdAt": "2024.02.19",
       "userId": "1",
-      "type": ["IT", "Science"],
+      "type": ["IT", "Economics"],
       "blocks": [
         {
           "id": "1",
@@ -383,11 +395,11 @@
       "id": "8",
       "title": "Commodo officia et sit aute ex consectetur dolor labore et nulla enim.",
       "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
-      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
-      "views": "629",
-      "createdAt": "26.05.2023",
+      "img": "https://images.unsplash.com/photo-1706211306706-8f36d91c8379?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA1NjN8&ixlib=rb-4.0.3&q=80&w=1080",
+      "views": "678",
+      "createdAt": "2024.02.07",
       "userId": "1",
-      "type": ["IT", "Science"],
+      "type": ["IT", "Economics", "Medicine"],
       "blocks": [
         {
           "id": "1",
@@ -421,11 +433,11 @@
       "id": "9",
       "title": "Minim voluptate eu qui velit aute voluptate commodo.",
       "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
-      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
-      "views": "629",
-      "createdAt": "26.05.2023",
+      "img": "https://images.unsplash.com/photo-1705642230267-f504b922b19c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA1NTF8&ixlib=rb-4.0.3&q=80&w=1080",
+      "views": "298",
+      "createdAt": "2023.11.17",
       "userId": "1",
-      "type": ["IT", "Science"],
+      "type": ["Science", "Medicine"],
       "blocks": [
         {
           "id": "1",
@@ -459,11 +471,11 @@
       "id": "10",
       "title": "Culpa exercitation eiusmod laborum sit qui duis commodo irure sit ex cillum aliqua commodo.",
       "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
-      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
-      "views": "629",
-      "createdAt": "26.05.2023",
-      "userId": "1",
-      "type": ["IT", "Science"],
+      "img": "https://images.unsplash.com/photo-1707063497724-388fcaf5d2d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA3NjR8&ixlib=rb-4.0.3&q=80&w=1080",
+      "views": "333",
+      "createdAt": "2021.01.02",
+      "userId": "2",
+      "type": ["IT", "Economics", "Medicine"],
       "blocks": [
         {
           "id": "1",
@@ -497,11 +509,11 @@
       "id": "11",
       "title": "Eu minim magna eu veniam Lorem.",
       "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
-      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
-      "views": "629",
-      "createdAt": "26.05.2023",
+      "img": "https://images.unsplash.com/photo-1706586348467-5c1593cd0aad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA1Mzl8&ixlib=rb-4.0.3&q=80&w=1080",
+      "views": "887",
+      "createdAt": "2021.05.26",
       "userId": "1",
-      "type": ["IT", "Science"],
+      "type": ["IT", "Science", "Medicine"],
       "blocks": [
         {
           "id": "1",
@@ -535,11 +547,11 @@
       "id": "12",
       "title": "Ad eiusmod id veniam fugiat commodo do cillum dolore et eiusmod.",
       "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
-      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
-      "views": "629",
-      "createdAt": "26.05.2023",
+      "img": "https://images.unsplash.com/photo-1706169582307-8ae586631e8a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA1Mjd8&ixlib=rb-4.0.3&q=80&w=1080",
+      "views": "123",
+      "createdAt": "2023.09.22",
       "userId": "1",
-      "type": ["IT", "Science"],
+      "type": ["IT", "Medicine"],
       "blocks": [
         {
           "id": "1",
@@ -573,11 +585,11 @@
       "id": "13",
       "title": "C# news",
       "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
-      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
-      "views": "629",
-      "createdAt": "26.05.2023",
+      "img": "https://images.unsplash.com/photo-1705660083822-a31f2cf22f68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA1MTV8&ixlib=rb-4.0.3&q=80&w=1080",
+      "views": "239",
+      "createdAt": "2023.01.11",
       "userId": "1",
-      "type": ["IT", "Science"],
+      "type": ["Science", "Economics", "Medicine"],
       "blocks": [
         {
           "id": "1",
@@ -611,11 +623,11 @@
       "id": "14",
       "title": "Quis cillum aliquip aliqua proident voluptate do excepteur.",
       "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
-      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
-      "views": "629",
-      "createdAt": "26.05.2023",
-      "userId": "1",
-      "type": ["IT", "Science"],
+      "img": "https://images.unsplash.com/photo-1707079960449-e0c5f16b8195?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA1MDF8&ixlib=rb-4.0.3&q=80&w=1080",
+      "views": "543",
+      "createdAt": "2023.05.26",
+      "userId": "2",
+      "type": ["Science", "Economics"],
       "blocks": [
         {
           "id": "1",
@@ -649,11 +661,11 @@
       "id": "15",
       "title": "Anim officia culpa occaecat dolore proident occaecat aliquip magna esse ipsum et magna.",
       "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
-      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
-      "views": "629",
-      "createdAt": "26.05.2023",
-      "userId": "1",
-      "type": ["IT", "Science"],
+      "img": "https://images.unsplash.com/photo-1704741252008-bc9930d84a0a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA2MzN8&ixlib=rb-4.0.3&q=80&w=1080",
+      "views": "101",
+      "createdAt": "2022.05.26",
+      "userId": "2",
+      "type": ["Science", "Medicine"],
       "blocks": [
         {
           "id": "1",
@@ -687,11 +699,11 @@
       "id": "16",
       "title": "Occaecat labore ex anim exercitation ipsum consequat cupidatat velit excepteur.",
       "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
-      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
-      "views": "629",
-      "createdAt": "26.05.2023",
+      "img": "https://images.unsplash.com/photo-1703442701300-cb06c58378a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA0Njl8&ixlib=rb-4.0.3&q=80&w=1080",
+      "views": "159",
+      "createdAt": "2022.04.03",
       "userId": "1",
-      "type": ["IT", "Science"],
+      "type": ["IT", "Economics", "Medicine"],
       "blocks": [
         {
           "id": "1",
@@ -725,11 +737,11 @@
       "id": "17",
       "title": "Consequat velit cupidatat ex voluptate ea tempor magna exercitation et magna ipsum voluptate officia in.",
       "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
-      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
-      "views": "629",
-      "createdAt": "26.05.2023",
+      "img": "https://images.unsplash.com/photo-1706403877459-955948702e48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA0NTR8&ixlib=rb-4.0.3&q=80&w=1080",
+      "views": "162",
+      "createdAt": "2022.04.02",
       "userId": "1",
-      "type": ["IT", "Science"],
+      "type": ["Economics", "Medicine"],
       "blocks": [
         {
           "id": "1",
@@ -763,11 +775,87 @@
       "id": "18",
       "title": "Laborum ea excepteur deserunt aliqua occaecat.",
       "subtitle": "Quis nostrud labore ipsum excepteur ex esse excepteur.",
-      "img": "https://static.tildacdn.com/tild3231-3035-4863-b161-396462666132/1_.png",
+      "img": "https://images.unsplash.com/photo-1703514881823-eda837e5fbbd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA0MTZ8&ixlib=rb-4.0.3&q=80&w=1080",
       "views": "629",
-      "createdAt": "26.05.2023",
-      "userId": "1",
-      "type": ["IT", "Science"],
+      "createdAt": "2009.05.26",
+      "userId": "2",
+      "type": ["IT", "Science", "Economics", "Medicine"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "title": "Tempor nisi occaecat irure est velit eu esse.",
+      "subtitle": "Elit sint elit sit consequat aute id in non ullamco commodo esse voluptate ut.",
+      "img": "https://images.unsplash.com/photo-1706064959488-7f0d3c9febf2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA3NjZ8&ixlib=rb-4.0.3&q=80&w=1080",
+      "views": "521",
+      "createdAt": "2021.07.26",
+      "userId": "2",
+      "type": ["IT", "Economics", "Medicine"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "text",
+          "title": "Title of this block",
+          "paragraphs": [
+            "Adipisicing irure cupidatat consectetur labore duis. Et sunt amet dolor veniam laboris in amet et. Anim sit ipsum ipsum qui amet ullamco fugiat aute magna amet voluptate non nulla. Sunt irure pariatur irure duis minim laborum reprehenderit id magna exercitation non. Lorem nisi amet nisi adipisicing. Ipsum anim deserunt sint commodo veniam minim laborum tempor id excepteur."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "Console.WriteLine(\"Привет\"); // Выводим строку \"Привет\"\nConsole.WriteLine(\"Добро пожаловать в C#\"); // Выводим строку \"Добро пожаловать в C#\""
+        },
+        {
+          "id": "3",
+          "type": "img",
+          "src": "https://habrastorage.org/webt/21/_h/u6/21_hu6mi0r6toeblz3tnufvlipo.jpeg",
+          "title": "Tempor duis labore reprehenderit duis anim ea ea ea aliqua incididunt."
+        },
+        {
+          "id": "4",
+          "type": "text",
+          "paragraphs": [
+            "Ipsum sunt velit tempor ea sit tempor. Reprehenderit adipisicing cillum sint ut labore elit aliqua dolore laboris et ad. Do non excepteur excepteur pariatur labore dolore exercitation ex. Culpa laboris commodo fugiat duis irure. Elit qui nisi eu eiusmod. Pariatur ut nulla commodo veniam ea nisi."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "title": "Reprehenderit fugiat nostrud culpa ex.",
+      "subtitle": "Aliqua qui reprehenderit cillum commodo sint.",
+      "img": "https://images.unsplash.com/photo-1706038513426-97db705d6bbd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTUwNTV8&ixlib=rb-4.0.3&q=80&w=1080",
+      "views": "521",
+      "createdAt": "2021.07.26",
+      "userId": "2",
+      "type": ["Medicine"],
       "blocks": [
         {
           "id": "1",

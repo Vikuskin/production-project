@@ -1,12 +1,12 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 import { routePaths } from 'app/providers/router';
 import { ArticleBlockType, ArticleTextBlock, IArticleData, IArticleTextBlock } from 'entities/Article';
 import EyeSvg from 'shared/assets/icons/eye-out.svg';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
+import { AppLink } from 'shared/ui/AppLink';
 import { Avatar } from 'shared/ui/Avatar';
 import { Card } from 'shared/ui/Card';
 import { Text } from 'shared/ui/Text';
@@ -18,12 +18,13 @@ import { ArticleListView } from '../../model/types/articleListView';
 interface IArticleListItemProps {
   article: IArticleData;
   view: ArticleListView;
+  target?: React.HTMLAttributeAnchorTarget;
   className?: string;
 }
 
 export const ArticleListItem: FC<IArticleListItemProps> = (props: IArticleListItemProps) => {
   const { t } = useTranslation('article');
-  const { article, view, className } = props;
+  const { article, view, className, target } = props;
   const types = <Text className={styles.types} text={article.type.join(', ')} />;
   const views = (
     <>
@@ -32,8 +33,6 @@ export const ArticleListItem: FC<IArticleListItemProps> = (props: IArticleListIt
     </>
   );
   const image = <img src={article.img} className={styles.img} alt={article.title} />;
-  const navigate = useNavigate();
-  const onOpenArticle = useCallback(() => navigate(`${routePaths.article}${article.id}`), [article.id, navigate]);
 
   if (view === ArticleListView.List) {
     const textBlock = article.blocks.find(
@@ -53,9 +52,9 @@ export const ArticleListItem: FC<IArticleListItemProps> = (props: IArticleListIt
           {image}
           {textBlock && <ArticleTextBlock className={styles.textBlock} block={textBlock} />}
           <div className={styles.footer}>
-            <AppButton variant={AppButtonVariant.Outline} onClick={onOpenArticle}>
-              {t('Read more...')}
-            </AppButton>
+            <AppLink target={target} to={`${routePaths.article}${article.id}`}>
+              <AppButton variant={AppButtonVariant.Outline}>{t('Read more...')}</AppButton>
+            </AppLink>
             {views}
           </div>
         </Card>
@@ -64,8 +63,12 @@ export const ArticleListItem: FC<IArticleListItemProps> = (props: IArticleListIt
   }
 
   return (
-    <div className={getClassNames(styles.articleListItem, [className ?? '', styles[view]])}>
-      <Card className={styles.card} onClick={onOpenArticle}>
+    <AppLink
+      target={target}
+      to={`${routePaths.article}${article.id}`}
+      className={getClassNames(styles.articleListItem, [className ?? '', styles[view]])}
+    >
+      <Card className={styles.card}>
         <div className={styles.imgWrapper}>
           {image}
           <Text text={article.createdAt} className={styles.date} />
@@ -76,6 +79,6 @@ export const ArticleListItem: FC<IArticleListItemProps> = (props: IArticleListIt
         </div>
         <Text className={styles.title} title={article.title} />
       </Card>
-    </div>
+    </AppLink>
   );
 };

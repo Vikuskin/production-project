@@ -12,21 +12,16 @@ interface ISelectCurrencyProps {
   className?: string;
 }
 
-const currencyOptions = (Object.keys(Currency) as Array<keyof typeof Currency>).map((key) => ({
-  value: Currency[key],
-  content: Currency[key],
-}));
-
 export const SelectCurrency: FC<ISelectCurrencyProps> = memo((props: ISelectCurrencyProps) => {
   const { onChange, value, className, readonly } = props;
   const { t } = useTranslation();
-  const onChangeHandler = useCallback((value: string) => onChange(value as Currency), [onChange]);
+  const onChangeHandler = useCallback((value: Currency) => onChange(value), [onChange]);
 
   return (
     <Select
       className={className}
       label={t('Currency')}
-      options={currencyOptions}
+      enumOptions={Currency}
       value={value}
       readonly={readonly}
       onChange={onChangeHandler}

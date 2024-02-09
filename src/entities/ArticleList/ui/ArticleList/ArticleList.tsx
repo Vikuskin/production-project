@@ -15,6 +15,7 @@ interface IArticleListProps {
   articleList: IArticleData[];
   isLoading: boolean;
   view: ArticleListView;
+  target?: React.HTMLAttributeAnchorTarget;
   className?: string;
 }
 const getSkeletons = (view: ArticleListView) => {
@@ -30,13 +31,13 @@ const getSkeletons = (view: ArticleListView) => {
 };
 
 export const ArticleList: FC<IArticleListProps> = memo((props: IArticleListProps) => {
-  const { t } = useTranslation();
-  const { articleList, isLoading, className, view } = props;
+  const { t } = useTranslation('article');
+  const { articleList, isLoading, className, view, target } = props;
   const renderArticles = useMemo(() => {
     return articleList.map((article: IArticleData) => (
-      <ArticleListItem key={article.id} article={article} view={view} />
+      <ArticleListItem key={article.id} article={article} view={view} target={target} />
     ));
-  }, [articleList, view]);
+  }, [articleList, view, target]);
 
   if (isLoading) {
     return (

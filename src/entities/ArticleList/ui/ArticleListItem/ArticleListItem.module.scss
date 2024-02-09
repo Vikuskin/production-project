@@ -51,8 +51,8 @@
 }
 
 .tile {
-  width: 220px;
-  height: 330px;
+  width: var(--article-tile-card-width);
+  height: var(--article-tile-card-height);
   transition: 0.2s;
 
   .card {

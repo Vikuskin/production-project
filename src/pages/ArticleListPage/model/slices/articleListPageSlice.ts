@@ -33,24 +33,27 @@ const articleListSlice = createSlice({
   reducers: {
     setView: (state, action: PayloadAction<ArticleListView>) => {
       state.view = action.payload;
+      state.limit = action.payload === ArticleListView.Tile ? 10 : 4;
     },
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload;
     },
-    setLimit: (state, action: PayloadAction<number>) => {
-      state.limit = action.payload;
-    },
   },
   extraReducers: (builder: ActionReducerMapBuilder<IArticleList>) => {
     builder
-      .addCase(fetchAllArticles.pending, (state) => {
+      .addCase(fetchAllArticles.pending, (state, action) => {
         state.isLoading = true;
+
+        action.meta.arg.replace && articleListAdapter.removeAll(state);
       })
-      .addCase(fetchAllArticles.fulfilled, (state, action: PayloadAction<IArticleData[]>) => {
+      .addCase(fetchAllArticles.fulfilled, (state, action) => {
         state.isLoading = false;
-        articleListAdapter.addMany(state, action.payload);
-        state.hasMore = !!action.payload.length;
+        state.hasMore = action.payload.length >= state.limit;
         state._mounted = true;
+
+        action.meta.arg.replace
+          ? articleListAdapter.setAll(state, action.payload)
+          : articleListAdapter.addMany(state, action.payload);
       })
       .addCase(fetchAllArticles.rejected, (state) => {
         state.isLoading = false;

@@ -1,8 +1,13 @@
 {
-  "Article was not found": "Article wasn't found",
+  "Article was not found": "Статья не найдена",
   "Comments": "Комментарии",
   "No comments": "Комментарии отсутствуют",
   "Your comment": "Ваш комментарий",
   "Send": "Отправить",
-  "Read more...": "Читать далее"
+  "Read more...": "Читать далее",
+  "Search": "Поиск",
+  "Sort by": "Сортировать по",
+  "By": "По",
+  "results": "результатов",
+  "No articles": "Статьи не найдены"
 }

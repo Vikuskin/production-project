@@ -4,7 +4,8 @@ import { AxiosInstance } from 'axios';
 import { IArticle } from 'entities/Article';
 import { IUser } from 'entities/User';
 import { INewComment } from 'features/AddNewComment';
-import { IArticleComments } from 'features/ArticleComments';
+import { IArticleDetails } from 'features/ArticleDetails';
+import { IArticleFilters } from 'features/ArticleFilters';
 import { ILoginForm } from 'features/AuthByUserName';
 import { IProfile } from 'features/EditableProfileCard';
 import { IInfiniteScroll } from 'features/ScrollPosition';
@@ -19,9 +20,10 @@ export interface IState {
   loginForm?: ILoginForm;
   profile?: IProfile;
   article?: IArticle;
-  articleComments?: IArticleComments;
   newComment?: INewComment;
   articleList?: IArticleList;
+  articleFilters?: IArticleFilters;
+  articleDetails?: IArticleDetails;
 }
 export type StateKey = keyof IState;
 export type ReducerManager = ReturnType<typeof createReducerManager>;

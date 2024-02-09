@@ -7,6 +7,8 @@ import { Text } from 'shared/ui/Text';
 
 import { Card } from './Card';
 
+import { CardVariant } from '../model/types/cardVariant';
+
 const meta = {
   title: 'shared/Card',
   component: Card,
@@ -19,8 +21,22 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {};
+export const LightNormal: Story = {};
 
-export const Dark: Story = {
+export const DarkNormal: Story = {
+  decorators: [themeDecorator(Theme.Dark)],
+};
+
+export const LightOutlined: Story = { args: { variant: CardVariant.Outlined } };
+
+export const DarkOutlined: Story = {
+  args: { variant: CardVariant.Outlined },
+  decorators: [themeDecorator(Theme.Dark)],
+};
+
+export const LightSelected: Story = { args: { variant: CardVariant.Selected } };
+
+export const DarkSelected: Story = {
+  args: { variant: CardVariant.Selected },
   decorators: [themeDecorator(Theme.Dark)],
 };
