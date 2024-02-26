@@ -3,9 +3,9 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import Backend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 
-import { LOCAL_STORAGE_KEY_LANG } from 'shared/ui/LangSwitcher';
+import { LOCAL_STORAGE_KEYS } from 'shared/constants/constants';
 
-const choosedLanguage = localStorage.getItem(LOCAL_STORAGE_KEY_LANG);
+const choosedLanguage = localStorage.getItem(LOCAL_STORAGE_KEYS.Language);
 
 i18n
   .use(Backend)
@@ -14,7 +14,7 @@ i18n
   .init({
     lng: choosedLanguage || 'en',
     fallbackLng: choosedLanguage || 'en',
-    debug: IS_DEV,
+    debug: false,
 
     interpolation: {
       escapeValue: false,

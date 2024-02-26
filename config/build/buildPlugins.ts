@@ -2,10 +2,16 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
-import { BuildPaths } from './types/config';
+import { IBuildPaths, Project } from './types/config';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import CopyPlugin from 'copy-webpack-plugin';
 
-export function buildPlugins(paths: BuildPaths, isDev: boolean): webpack.WebpackPluginInstance[] {
+export function buildPlugins(
+  paths: IBuildPaths,
+  isDev: boolean,
+  apiUrl: string,
+  project: Project,
+): webpack.WebpackPluginInstance[] {
   const plugins: webpack.WebpackPluginInstance[] = [
     new HTMLWebpackPlugin({
       template: paths.html,
@@ -17,6 +23,11 @@ export function buildPlugins(paths: BuildPaths, isDev: boolean): webpack.Webpack
     }),
     new webpack.DefinePlugin({
       IS_DEV: JSON.stringify(isDev),
+      API_URL: JSON.stringify(apiUrl),
+      PROJECT: JSON.stringify(project),
+    }),
+    new CopyPlugin({
+      patterns: [{ from: paths.locales, to: paths.buildLocales }],
     }),
   ];
 

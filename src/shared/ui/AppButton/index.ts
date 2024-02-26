@@ -1,3 +1,1 @@
-import { AppButton, AppButtonVariants } from './ui/AppButton';
-
-export { AppButton, AppButtonVariants };
+export { AppButton, AppButtonVariant } from './ui/AppButton';

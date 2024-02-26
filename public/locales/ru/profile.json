@@ -1,0 +1,18 @@
+{
+  "Profile": "Профиль",
+  "Edit": "Редактировать",
+  "Save": "Сохранить",
+  "Cancel": "Отменить",
+  "City": "Город",
+  "Country": "Страна",
+  "Currency": "Валюта",
+  "First name": "Имя",
+  "Last name": "Фамилия",
+  "Username": "Имя пользователя",
+  "Age": "Возраст",
+  "No data from server": "Нет данных на сервере",
+  "Incorrect user data": "Имя и фамилия обязательны",
+  "Incorrect age": "Неправильный возраст",
+  "Incorrect city": "Неправильный город",
+  "No data": "Данные не указаны"
+}

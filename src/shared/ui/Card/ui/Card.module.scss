@@ -1,0 +1,20 @@
+.card {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.normal {
+  background: var(--secondary-bg-color);
+}
+
+.outline,
+.select {
+  color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.select {
+  background: var(--secondary-bg-color);
+}

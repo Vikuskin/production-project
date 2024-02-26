@@ -1,0 +1,55 @@
+.size-s {
+  font-size: var(--font-size-s);
+
+  .title {
+    font-size: var(--font-size-m);
+  }
+}
+
+.size-m {
+  font-size: var(--font-size-m);
+
+  .title {
+    font-size: var(--font-size-l);
+  }
+}
+
+.size-l {
+  font-size: var(--font-size-l);
+
+  .title {
+    font-size: var(--font-size-xl);
+  }
+}
+
+.normal {
+  .title {
+    color: var(--primary-color);
+  }
+
+  .text {
+    color: var(--secondary-color);
+  }
+}
+
+.error {
+  .title {
+    color: var(--red-light);
+  }
+
+  .text {
+    color: var(--red-dark);
+  }
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}

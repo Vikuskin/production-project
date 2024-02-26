@@ -1,3 +1,1 @@
-import { ReloadButton } from './ui/ReloadButton';
-
-export { ReloadButton };
+export { ReloadButton } from './ui/ReloadButton';

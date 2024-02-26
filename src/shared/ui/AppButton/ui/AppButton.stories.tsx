@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Themes } from 'app/providers/theme';
+import { Theme } from 'app/providers/theme';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
-import { AppButton, AppButtonSizes, AppButtonVariants } from './AppButton';
+import { AppButton, AppButtonSize, AppButtonVariant } from './AppButton';
 
 const meta = {
   title: 'shared/AppButton',
@@ -19,52 +19,71 @@ type Story = StoryObj<typeof meta>;
 
 export const ClearLight: Story = {
   args: {
-    variant: AppButtonVariants.Clear,
+    variant: AppButtonVariant.Clear,
   },
-  decorators: [themeDecorator(Themes.Light)],
 };
 
 export const ClearDark: Story = {
   args: {
-    variant: AppButtonVariants.Clear,
+    variant: AppButtonVariant.Clear,
   },
-  decorators: [themeDecorator(Themes.Dark)],
+  decorators: [themeDecorator(Theme.Dark)],
 };
 
 export const OutlineLight: Story = {
   args: {
-    variant: AppButtonVariants.Outline,
+    variant: AppButtonVariant.Outline,
   },
-  decorators: [themeDecorator(Themes.Light)],
+};
+
+export const OutlineDanger: Story = {
+  args: {
+    variant: AppButtonVariant.OutlineDanger,
+  },
 };
 
 export const OutlineDark: Story = {
   args: {
-    variant: AppButtonVariants.Outline,
+    variant: AppButtonVariant.Outline,
   },
-  decorators: [themeDecorator(Themes.Dark)],
+  decorators: [themeDecorator(Theme.Dark)],
 };
 
 export const OutlineSizeM: Story = {
   args: {
-    variant: AppButtonVariants.Outline,
-    size: AppButtonSizes.SizeM,
+    variant: AppButtonVariant.Outline,
+    size: AppButtonSize.SizeM,
   },
-  decorators: [themeDecorator(Themes.Dark)],
+  decorators: [themeDecorator(Theme.Dark)],
 };
 
 export const OutlineSizeL: Story = {
   args: {
-    variant: AppButtonVariants.Outline,
-    size: AppButtonSizes.SizeL,
+    variant: AppButtonVariant.Outline,
+    size: AppButtonSize.SizeL,
   },
-  decorators: [themeDecorator(Themes.Dark)],
+  decorators: [themeDecorator(Theme.Dark)],
 };
 
 export const OutlineSizeXl: Story = {
   args: {
-    variant: AppButtonVariants.Outline,
-    size: AppButtonSizes.SizeXl,
+    variant: AppButtonVariant.Outline,
+    size: AppButtonSize.SizeXl,
   },
-  decorators: [themeDecorator(Themes.Dark)],
+  decorators: [themeDecorator(Theme.Dark)],
+};
+
+export const OutlineLightDisabled: Story = {
+  args: {
+    variant: AppButtonVariant.Outline,
+    disabled: true,
+  },
+};
+
+export const OutlineDarkDisabled: Story = {
+  args: {
+    variant: AppButtonVariant.Outline,
+    disabled: true,
+  },
+  decorators: [themeDecorator(Theme.Dark)],
 };

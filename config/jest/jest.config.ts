@@ -2,6 +2,13 @@ import type { Config } from 'jest';
 import path from 'path';
 
 const config: Config = {
+  // A set of global variables that need to be available in all test environments
+  globals: {
+    IS_DEV: true,
+    API_URL: '',
+    PROJECT: 'jest',
+  },
+
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
 
@@ -12,7 +19,7 @@ const config: Config = {
   coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
-  coveragePathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/config/jest/', 'index.ts'],
+  coveragePathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/config/jest/', 'index.ts', 'types'],
 
   // An array of directory names to be searched recursively up from the requiring module's location
   moduleDirectories: ['node_modules'],
@@ -36,7 +43,8 @@ const config: Config = {
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
     '\\.(css|scss)$': '<rootDir>/config/jest/identity-obj-proxy.js',
-    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    '\\.(svg|jpeg)$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    'entities/(.*)': '<rootDir>src/entities/$1',
   },
 
   // A map from regular expressions to paths to transformers
@@ -87,9 +95,6 @@ const config: Config = {
 
   // A path to a module which exports an async function that is triggered once after all test suites
   // globalTeardown: undefined,
-
-  // A set of global variables that need to be available in all test environments
-  // globals: {},
 
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",

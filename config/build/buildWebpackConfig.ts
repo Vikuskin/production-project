@@ -3,10 +3,10 @@ import { buildDevServer } from './buildDevServer';
 import { buildLoaders } from './buildLoaders';
 import { buildPlugins } from './buildPlugins';
 import { buildResolvers } from './buildResolvers';
-import { BuildOptions } from './types/config';
+import { IBuildOptions } from './types/config';
 
-export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
-  const { paths, mode, isDev, port } = options;
+export function buildWebpackConfig(options: IBuildOptions): webpack.Configuration {
+  const { paths, mode, isDev, port, apiUrl, project } = options;
 
   return {
     mode,
@@ -15,8 +15,9 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
       filename: '[name].[contenthash].js',
       path: paths.build,
       clean: true,
+      publicPath: '/',
     },
-    plugins: buildPlugins(paths, isDev),
+    plugins: buildPlugins(paths, isDev, apiUrl, project),
     module: {
       strictExportPresence: true,
       rules: buildLoaders(isDev),

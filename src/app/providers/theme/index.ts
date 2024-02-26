@@ -1,6 +1,2 @@
-import { Themes } from './lib/ThemeContext';
-import ThemeProvider from './ui/ThemeProvider';
-
-export { useTheme } from './lib/useTheme';
-
-export { ThemeProvider, Themes };
+export { Theme } from './types/Theme';
+export { ThemeProvider, ThemeContext } from './ui/ThemeProvider';

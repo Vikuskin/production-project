@@ -1,33 +1,63 @@
 import React from 'react';
-import { RouteProps } from 'react-router-dom';
 
 import { AboutPage } from 'pages/AboutPage';
+import { ArticleEditPage } from 'pages/ArticleEditPage';
+import { ArticleListPage } from 'pages/ArticleListPage';
+import { ArticlePage } from 'pages/ArticlePage';
 import { ErrorPage } from 'pages/ErrorPage';
 import { MainPage } from 'pages/MainPage';
+import { ProfilePage } from 'pages/ProfilePage';
+import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 
-export enum AppRoutes {
-  Main = 'main',
-  About = 'about',
-  NotFound = 'not_found',
-}
+import { AppRoute, AppRouteProps } from '../types/AppRoute';
 
-export const routePaths: Record<AppRoutes, string> = {
-  [AppRoutes.Main]: '/',
-  [AppRoutes.About]: '/about',
-  [AppRoutes.NotFound]: '*',
+export const routePaths: Record<AppRoute, string> = {
+  [AppRoute.Main]: '/',
+  [AppRoute.About]: '/about',
+  [AppRoute.Profile]: '/profile/', // + id
+  [AppRoute.ArticleList]: '/article',
+  [AppRoute.Article]: '/article/', // + id
+  [AppRoute.ArticleCreate]: '/article/create',
+  [AppRoute.ArticleEdit]: '/article/:id/edit',
+  [AppRoute.NotFound]: '*',
 };
 
-export const routeConfig: RouteProps[] = [
+export const routeConfig: AppRouteProps[] = [
   {
-    path: routePaths[AppRoutes.Main],
+    path: routePaths[AppRoute.Main],
     element: <MainPage />,
   },
   {
-    path: routePaths[AppRoutes.About],
+    path: routePaths[AppRoute.About],
     element: <AboutPage />,
   },
   {
-    path: routePaths[AppRoutes.NotFound],
-    element: <ErrorPage text="Page not found" />,
+    path: routePaths[AppRoute.ArticleList],
+    element: <ArticleListPage />,
+    authOnly: true,
+  },
+  {
+    path: `${routePaths[AppRoute.Article]}:id`,
+    element: <ArticlePage />,
+    authOnly: true,
+  },
+  {
+    path: `${routePaths[AppRoute.ArticleEdit]}`,
+    element: <ArticleEditPage />,
+    authOnly: true,
+  },
+  {
+    path: routePaths[AppRoute.ArticleCreate],
+    element: <ArticleEditPage />,
+    authOnly: true,
+  },
+  {
+    path: routePaths[AppRoute.NotFound],
+    element: <ErrorPage errorCode={ErrorStatusCode.NotFound} text="Page not found" />,
+  },
+  {
+    path: `${routePaths[AppRoute.Profile]}:id`,
+    element: <ProfilePage />,
+    authOnly: true,
   },
 ];

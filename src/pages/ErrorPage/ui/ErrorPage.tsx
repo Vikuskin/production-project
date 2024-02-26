@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { BackButton } from 'shared/ui/BackButton';
@@ -6,17 +6,20 @@ import { ReloadButton } from 'shared/ui/ReloadButton';
 
 import * as styles from './ErrorPage.module.scss';
 
-interface ErrorPageProps {
+interface IErrorPageProps {
   text: string;
+  errorCode: number;
 }
 
-const ErrorPage: FC<ErrorPageProps> = ({ text }) => {
+export const ErrorPage: FC<IErrorPageProps> = memo(({ text, errorCode }: IErrorPageProps) => {
   const { t } = useTranslation('errorPage');
 
   return (
     <div className={styles.pageError}>
       <div className={styles.container}>
-        <p className={styles.text}>{t(text)}</p>
+        <p className={styles.text}>
+          {errorCode} {t(text)}
+        </p>
 
         <span className={styles.handle}></span>
       </div>
@@ -24,6 +27,4 @@ const ErrorPage: FC<ErrorPageProps> = ({ text }) => {
       <BackButton className={styles.buttonBack} />
     </div>
   );
-};
-
-export default ErrorPage;
+});

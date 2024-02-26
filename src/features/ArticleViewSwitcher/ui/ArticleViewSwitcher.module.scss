@@ -1,0 +1,15 @@
+.article-view-switcher {
+  svg,
+  path {
+    opacity: 0.8;
+    fill: var(--secondary-color);
+  }
+}
+
+.active {
+  svg,
+  path {
+    opacity: 1;
+    fill: var(--primary-color);
+  }
+}
