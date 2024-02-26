@@ -1,18 +1,21 @@
 import React, { FC, memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { routePaths } from 'app/providers/router';
 import { selectUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUserName';
 import ExpandSvg from 'shared/assets/icons/expand.svg';
 import LoginSvg from 'shared/assets/icons/login.svg';
 import LogoutSvg from 'shared/assets/icons/logout.svg';
+import ProfileSvg from 'shared/assets/icons/profile.svg';
 import Themevg from 'shared/assets/icons/theme.svg';
 import TranslationSvg from 'shared/assets/icons/translation.svg';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { useTheme } from 'shared/lib/hooks/useTheme';
-import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
+import { AppButton } from 'shared/ui/AppButton';
+import { AppLink } from 'shared/ui/AppLink';
 
 import * as styles from './Sidebar.module.scss';
 
@@ -65,21 +68,21 @@ export const Sidebar: FC<ISidebarProps> = memo(({ className }: ISidebarProps) =>
       <hr />
       <div className={styles.itemsBlock}>
         {userAuthData ? (
-          <SidebarItem
-            className={styles.logout}
-            collapsed={collapsed}
-            item={{ text: t('Logout'), Icon: LogoutSvg, onClick: onLogout }}
-          />
+          <>
+            <AppLink to={`${routePaths.profile}${userAuthData?.id}`}>
+              <SidebarItem collapsed={collapsed} item={{ text: t('Profile'), Icon: ProfileSvg }} />
+            </AppLink>
+            <SidebarItem
+              className={styles.logout}
+              collapsed={collapsed}
+              item={{ text: t('Logout'), Icon: LogoutSvg, onClick: onLogout }}
+            />
+          </>
         ) : (
           <SidebarItem collapsed={collapsed} item={{ text: t('Login'), Icon: LoginSvg, onClick: onShowModal }} />
         )}
       </div>
-      <AppButton
-        className={styles.collapseBtn}
-        variant={AppButtonVariant.Clear}
-        data-testid="sidebar-collapse-btn"
-        onClick={toggleCollapsed}
-      >
+      <AppButton className={styles.collapseBtn} data-testid="sidebar-collapse-btn" onClick={toggleCollapsed}>
         <ExpandSvg />
       </AppButton>
       {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}

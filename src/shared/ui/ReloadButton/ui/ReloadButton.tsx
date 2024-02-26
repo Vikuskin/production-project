@@ -1,7 +1,7 @@
 import React, { FC, memo } from 'react';
 
 import ReloadSvg from 'shared/assets/icons/reload.svg';
-import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
+import { AppButton } from 'shared/ui/AppButton';
 
 interface IReloadButtonProps {
   className?: string;
@@ -12,7 +12,7 @@ export const ReloadButton: FC<IReloadButtonProps> = memo(({ className }: IReload
   };
 
   return (
-    <AppButton data-testid="reload-button" className={className} variant={AppButtonVariant.Clear} onClick={reloadPage}>
+    <AppButton data-testid="reload-button" className={className} onClick={reloadPage}>
       <ReloadSvg />
     </AppButton>
   );

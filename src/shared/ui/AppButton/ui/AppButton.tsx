@@ -19,14 +19,14 @@ export enum AppButtonSize {
 }
 
 interface IAppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: AppButtonVariant;
+  variant?: AppButtonVariant;
   square?: boolean;
   size?: AppButtonSize;
   className?: string;
 }
 
 export const AppButton: FC<PropsWithChildren<IAppButtonProps>> = memo((props: PropsWithChildren<IAppButtonProps>) => {
-  const { className, children, variant, square, size, disabled, ...otherProps } = props;
+  const { className, children, variant = AppButtonVariant.Clear, square, size, disabled, ...otherProps } = props;
   const additionalClasses = [className ?? '', styles[variant]];
   let mods: Record<string, boolean> = {
     [styles.square]: !!square,

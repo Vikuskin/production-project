@@ -1,6 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { IState } from 'app/providers/StoreProvider';
+import { selectUserAuthData } from 'entities/User';
 import { ICustomError } from 'shared/types/customError';
 
 import { IArticleData } from '../types/articleData';
@@ -15,4 +16,9 @@ export const selectArticleLoading = createSelector(selectArticle, (article): boo
 export const selectArticleError = createSelector(
   selectArticle,
   (article): ICustomError | null => article?.error || null,
+);
+export const selectIsEditableArticle = createSelector(
+  selectArticleData,
+  selectUserAuthData,
+  (article, user): boolean => article?.user.id === user?.id,
 );

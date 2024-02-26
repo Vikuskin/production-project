@@ -1,5 +1,5 @@
 export interface ISidebarItem {
-  onClick: () => void;
+  onClick?: () => void;
   text: string;
   Icon: React.FunctionComponent<React.SVGAttributes<SVGAElement>>;
 }

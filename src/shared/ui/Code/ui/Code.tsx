@@ -2,7 +2,7 @@ import React, { FC, PropsWithChildren, useCallback } from 'react';
 
 import CopySvg from 'shared/assets/icons/copy.svg';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
+import { AppButton } from 'shared/ui/AppButton';
 
 import * as styles from './Code.module.scss';
 
@@ -18,7 +18,7 @@ export const Code: FC<PropsWithChildren<CodeProps>> = ({ className, text }) => {
 
   return (
     <pre className={getClassNames(styles.code, [className ?? ''])}>
-      <AppButton className={styles.copyBtn} variant={AppButtonVariant.Clear} onClick={copy}>
+      <AppButton className={styles.copyBtn} onClick={copy}>
         <CopySvg className={styles.icon} />
       </AppButton>
       <code>{text}</code>

@@ -13,7 +13,11 @@ export const fetchArticleById = createAsyncThunk<IArticleData, string, IThunkCon
     const { rejectWithValue, extra } = thunkApi;
 
     try {
-      const response = await extra.api.get<IArticleData>(`/articles/${articleId}`);
+      const response = await extra.api.get<IArticleData>(`/articles/${articleId}`, {
+        params: {
+          _expand: 'user',
+        },
+      });
 
       if (!response.data) {
         return rejectWithValue({ status: ErrorStatusCode.BadRequest, message: 'No data from server' });

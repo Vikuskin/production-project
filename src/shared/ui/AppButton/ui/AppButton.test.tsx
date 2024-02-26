@@ -5,7 +5,7 @@ import { AppButton, AppButtonSize, AppButtonVariant } from './AppButton';
 
 describe('AppButton', () => {
   it('renders without crashing', () => {
-    render(<AppButton variant={AppButtonVariant.Clear}>Test Button</AppButton>);
+    render(<AppButton>Test Button</AppButton>);
   });
 
   it('renders with the correct variant', () => {

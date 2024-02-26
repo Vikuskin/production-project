@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useMemo } from 'react';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
+import { AppButton } from 'shared/ui/AppButton';
 import { Card, CardVariant } from 'shared/ui/Card';
 
 import * as styles from './Tabs.module.scss';
@@ -45,7 +45,7 @@ export const Tabs = typedMemo(<T extends string>(props: ITabsProps<T>) => {
       >
         {tab.content}
         {tab.value === value && (
-          <AppButton className={styles.clearBtn} variant={AppButtonVariant.Clear} onClick={onClearHandler}>
+          <AppButton className={styles.clearBtn} onClick={onClearHandler}>
             X
           </AppButton>
         )}

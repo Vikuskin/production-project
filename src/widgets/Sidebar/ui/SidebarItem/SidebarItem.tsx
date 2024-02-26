@@ -1,7 +1,7 @@
 import React, { FC, memo } from 'react';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
+import { AppButton } from 'shared/ui/AppButton';
 
 import * as styles from './SidebarItem.module.scss';
 
@@ -20,7 +20,6 @@ export const SidebarItem: FC<ISidebarItemProps> = memo((props: ISidebarItemProps
     <AppButton
       data-testid="sidebar-item"
       className={getClassNames(styles.item, [className ?? ''], { [styles.collapsed]: collapsed })}
-      variant={AppButtonVariant.Clear}
       onClick={item.onClick}
     >
       <p>

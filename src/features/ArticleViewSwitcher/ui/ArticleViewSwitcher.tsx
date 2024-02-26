@@ -4,7 +4,7 @@ import { ArticleListView } from 'entities/ArticleList';
 import ListViewSvg from 'shared/assets/icons/list-view.svg';
 import TileViewSvg from 'shared/assets/icons/tile-view.svg';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
+import { AppButton } from 'shared/ui/AppButton';
 
 import * as styles from './ArticleViewSwitcher.module.scss';
 
@@ -34,7 +34,6 @@ export const ArticleViewSwitcher: FC<IArticleViewSwitcherProps> = (props: IArtic
         <AppButton
           className={getClassNames('', [], { [styles.active]: view === type })}
           key={type}
-          variant={AppButtonVariant.Clear}
           onClick={() => onClickHandler(type)}
         >
           <Icon />

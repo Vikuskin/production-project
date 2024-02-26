@@ -5,7 +5,7 @@ import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
+import { AppButton } from 'shared/ui/AppButton';
 import { AppInput } from 'shared/ui/AppInput';
 import { Text, TextVariant } from 'shared/ui/Text';
 
@@ -62,12 +62,7 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onClose }: LoginFormPro
           onChange={onChangePassword}
           placeholder={t('Password')}
         />
-        <AppButton
-          onClick={onLoginClick}
-          className={styles.loginBtn}
-          variant={AppButtonVariant.Clear}
-          disabled={isLoading}
-        >
+        <AppButton onClick={onLoginClick} className={styles.loginBtn} disabled={isLoading}>
           {t('Login')}
         </AppButton>
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { AboutPage } from 'pages/AboutPage';
+import { ArticleEditPage } from 'pages/ArticleEditPage';
 import { ArticleListPage } from 'pages/ArticleListPage';
 import { ArticlePage } from 'pages/ArticlePage';
 import { ErrorPage } from 'pages/ErrorPage';
@@ -14,8 +15,10 @@ export const routePaths: Record<AppRoute, string> = {
   [AppRoute.Main]: '/',
   [AppRoute.About]: '/about',
   [AppRoute.Profile]: '/profile/', // + id
-  [AppRoute.ArticleList]: '/articles',
+  [AppRoute.ArticleList]: '/article',
   [AppRoute.Article]: '/article/', // + id
+  [AppRoute.ArticleCreate]: '/article/create',
+  [AppRoute.ArticleEdit]: '/article/:id/edit',
   [AppRoute.NotFound]: '*',
 };
 
@@ -36,6 +39,16 @@ export const routeConfig: AppRouteProps[] = [
   {
     path: `${routePaths[AppRoute.Article]}:id`,
     element: <ArticlePage />,
+    authOnly: true,
+  },
+  {
+    path: `${routePaths[AppRoute.ArticleEdit]}`,
+    element: <ArticleEditPage />,
+    authOnly: true,
+  },
+  {
+    path: routePaths[AppRoute.ArticleCreate],
+    element: <ArticleEditPage />,
     authOnly: true,
   },
   {
