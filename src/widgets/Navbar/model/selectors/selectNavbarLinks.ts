@@ -23,18 +23,11 @@ export const selectNavbarLinks = createSelector(selectUserAuthData, (authData): 
   const navbarLinks = [...mainLinks];
 
   authData &&
-    navbarLinks.push(
-      {
-        path: routePaths.article_list,
-        text: 'Articles',
-        variant: AppLinkVariant.Primary,
-      },
-      {
-        path: routePaths.article_create,
-        text: 'Create article',
-        variant: AppLinkVariant.Primary,
-      },
-    );
+    navbarLinks.push({
+      path: routePaths.article_list,
+      text: 'Articles',
+      variant: AppLinkVariant.Primary,
+    });
 
   return navbarLinks;
 });

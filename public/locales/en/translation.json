@@ -23,5 +23,6 @@
   "date": "dates",
   "asc": "increasing",
   "desc": "decreasing",
-  "createdAt": "created date"
+  "createdAt": "created date",
+  "Create article": "Create article"
 }
