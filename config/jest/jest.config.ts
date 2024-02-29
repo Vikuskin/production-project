@@ -50,6 +50,18 @@ const config: Config = {
   // A map from regular expressions to paths to transformers
   transform: { '\\.[jt]sx?$': 'babel-jest' },
 
+  // Use this configuration option to add custom reporters to Jest
+  reporters: [
+    'default',
+    [
+      './node_modules/jest-html-reporter',
+      {
+        pageTitle: 'Test Report',
+        outputPath: '<rootDir>/reports/unit/test-unit-report.html',
+      },
+    ],
+  ],
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -113,9 +125,6 @@ const config: Config = {
 
   // Run tests from one or more projects
   // projects: undefined,
-
-  // Use this configuration option to add custom reporters to Jest
-  // reporters: undefined,
 
   // Automatically reset mock state before every test
   // resetMocks: false,
