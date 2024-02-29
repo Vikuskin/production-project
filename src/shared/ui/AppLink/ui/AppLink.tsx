@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, memo } from 'react';
+import React, { ForwardedRef, PropsWithChildren, forwardRef } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
@@ -14,12 +14,11 @@ interface IAppLinkProps extends LinkProps {
   variant?: AppLinkVariant;
   className?: string;
 }
-
-export const AppLink: FC<PropsWithChildren<IAppLinkProps>> = memo((props: PropsWithChildren<IAppLinkProps>) => {
+export const AppLink = forwardRef((props: PropsWithChildren<IAppLinkProps>, ref: ForwardedRef<HTMLAnchorElement>) => {
   const { className, to, children, variant = AppLinkVariant.Primary, ...otherProps } = props;
 
   return (
-    <Link to={to} className={getClassNames(styles.link, [className ?? '', styles[variant]])} {...otherProps}>
+    <Link ref={ref} to={to} className={getClassNames(styles.link, [className ?? '', styles[variant]])} {...otherProps}>
       {children}
     </Link>
   );
