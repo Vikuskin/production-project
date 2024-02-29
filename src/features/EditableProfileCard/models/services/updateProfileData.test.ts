@@ -9,7 +9,10 @@ import { ValidateProfileError } from '../types/validateProfileError';
 
 describe('updateProfileData', () => {
   it('handles success response from server', async () => {
-    const thunk = new TestAsyncThunk(updateProfileData, { profile: { form: profileForm } });
+    const thunk = new TestAsyncThunk(updateProfileData, {
+      profile: { form: profileForm },
+      user: { authData: { id: '1', username: '' } },
+    });
 
     thunk.api.put.mockResolvedValue({ data: profileForm });
 
@@ -22,7 +25,10 @@ describe('updateProfileData', () => {
   });
 
   it('handles response with no data from server', async () => {
-    const thunk = new TestAsyncThunk(updateProfileData, { profile: { form: profileForm } });
+    const thunk = new TestAsyncThunk(updateProfileData, {
+      profile: { form: profileForm },
+      user: { authData: { id: '1', username: '' } },
+    });
 
     thunk.api.put.mockResolvedValue({ data: null });
 
@@ -35,7 +41,10 @@ describe('updateProfileData', () => {
   });
 
   it('handles internal error from server', async () => {
-    const thunk = new TestAsyncThunk(updateProfileData, { profile: { form: profileForm } });
+    const thunk = new TestAsyncThunk(updateProfileData, {
+      profile: { form: profileForm },
+      user: { authData: { id: '1', username: '' } },
+    });
 
     thunk.api.put.mockRejectedValue({ response: { status: 500 } });
 
@@ -48,7 +57,7 @@ describe('updateProfileData', () => {
   });
 
   it('handles validation errors', async () => {
-    const thunk = new TestAsyncThunk(updateProfileData);
+    const thunk = new TestAsyncThunk(updateProfileData, { user: { authData: { id: '1', username: '' } } });
     const result = await thunk.callThunk();
 
     expect(thunk.api.put).not.toHaveBeenCalled();

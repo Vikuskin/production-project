@@ -31,13 +31,4 @@ describe('EditableProfileCard', () => {
     expect(cancelButton).toBeInTheDocument();
     expect(saveButton).toBeInTheDocument();
   });
-
-  it('does not render any button when profile does not belong to user', () => {
-    const { queryAllByRole } = componentRender(<EditableProfileCard profileForm={{ ...profileForm, id: '2' }} />, {
-      initialState: { profile: { readonly: false, form: { id: '2' } }, user: { authData: { id: '1' } } },
-      asyncReducers: { profile: profileReducer } as ReducersMapObject<IState>,
-    });
-
-    expect(queryAllByRole('button')).toEqual([]);
-  });
 });

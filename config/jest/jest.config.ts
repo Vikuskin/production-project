@@ -43,7 +43,7 @@ const config: Config = {
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
     '\\.(css|scss)$': '<rootDir>/config/jest/identity-obj-proxy.js',
-    '\\.(svg|jpeg)$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    '\\.(svg|jpeg|png)$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     'entities/(.*)': '<rootDir>src/entities/$1',
   },
 
