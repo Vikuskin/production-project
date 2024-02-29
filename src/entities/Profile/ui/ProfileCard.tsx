@@ -1,13 +1,14 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Country, SelectCountry } from 'entities/Country';
-import { Currency, SelectCurrency } from 'entities/Currency';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { AppInput } from 'shared/ui/AppInput';
+import { ListBox } from 'shared/ui/ListBox';
 
 import * as styles from './ProfileCard.module.scss';
 
+import { Country } from '../model/types/country';
+import { Currency } from '../model/types/currency';
 import { IProfileData } from '../model/types/profileData';
 
 interface ProfileCardProps {
@@ -62,17 +63,21 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
       />
       <AppInput onChange={onChangeAvatar} value={profileForm.avatar!} placeholder={t('Avatar')} readonly={readonly} />
       <AppInput onChange={onChangeAge} value={profileForm.age!} placeholder={t('Age')} readonly={readonly} />
-      <SelectCurrency
+      <ListBox
+        label={t('Currency')}
         className={styles.input}
         value={profileForm.currency!}
         onChange={onChangeCurrency}
         readonly={readonly}
+        enumOptions={Currency}
       />
-      <SelectCountry
+      <ListBox
+        label={t('Country')}
         className={styles.input}
         value={profileForm.country!}
         onChange={onChangeCountry}
         readonly={readonly}
+        enumOptions={Country}
       />
       <AppInput onChange={onChangeCity} value={profileForm.city!} placeholder={t('City')} readonly={readonly} />
     </div>

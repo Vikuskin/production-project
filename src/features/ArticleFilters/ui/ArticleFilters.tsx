@@ -4,10 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { ArticleType } from 'entities/Article';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
+import { getEnumOptions } from 'shared/lib/helpers/getEnumOptions';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { AppInput } from 'shared/ui/AppInput';
-import { Select } from 'shared/ui/Select';
-import { getSelectOptions } from 'shared/ui/Select/lib/getSelectOptions';
+import { ListBox } from 'shared/ui/ListBox';
 import { HStack } from 'shared/ui/Stack';
 import { ITab, Tabs } from 'shared/ui/Tabs';
 
@@ -36,7 +36,7 @@ interface IArticleFiltersProps {
 
   className?: string;
 }
-const tabs = getSelectOptions(ArticleType);
+const tabs = getEnumOptions(ArticleType);
 
 export const ArticleFilters: FC<IArticleFiltersProps> = memo((props: IArticleFiltersProps) => {
   const { onChangeOrder, onChangeSearch, onChangeSort, onChangeType, onClearType, className } = props;
@@ -50,14 +50,14 @@ export const ArticleFilters: FC<IArticleFiltersProps> = memo((props: IArticleFil
     <DynamicReducerLoader reducers={articleFiltersReducers}>
       <HStack className={getClassNames(styles.filtersWrapper, [className ?? ''])}>
         <div className={styles.filters}>
-          <Select<ArticleSort>
+          <ListBox<ArticleSort>
             className={styles.sortBy}
             label={t('Sort by')}
             onChange={onChangeSort}
             enumOptions={ArticleSort}
             value={articleSort}
           />
-          <Select<ArticleOrder>
+          <ListBox<ArticleOrder>
             className={styles.sortBy}
             label={t('By')}
             onChange={onChangeOrder}

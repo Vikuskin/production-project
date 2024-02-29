@@ -1,23 +1,23 @@
-import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 
 import { Theme } from 'app/providers/theme';
-import { Country } from 'entities/Country';
+import { Country } from 'entities/Profile';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
-import { Select } from './Select';
+import { ListBox } from './ListBox';
 
 const meta = {
-  title: 'shared/Select',
-  component: Select,
+  title: 'shared/ListBox',
+  component: ListBox,
   tags: ['autodocs'],
   args: {
-    label: 'Test option',
+    label: 'Country',
+    value: Country.USA,
+    onChange: () => {},
     enumOptions: Country,
-    value: 'Test',
-    onChange: action('onChange'),
   },
-} satisfies Meta<typeof Select>;
+} satisfies Meta<typeof ListBox>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
