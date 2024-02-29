@@ -9,6 +9,7 @@ import { ArticleViewSwitcher } from 'features/ArticleViewSwitcher';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useDebounce } from 'shared/lib/hooks/useDebounce';
+import { HStack } from 'shared/ui/Stack';
 import { ITab } from 'shared/ui/Tabs';
 import { Text } from 'shared/ui/Text';
 
@@ -87,10 +88,10 @@ export const ArticleListHeader: FC<IArticleListHeaderProps> = memo(
           onChangeType={onChangeType}
           onClearType={onClearType}
         />
-        <div className={styles.bottom}>
+        <HStack className={styles.bottom}>
           <Text className={styles.results} text={`${resultCount} ${t('results')}`} />
           <ArticleViewSwitcher view={articleListView} onViewClick={onChangeView} />
-        </div>
+        </HStack>
       </div>
     );
   },

@@ -10,6 +10,7 @@ import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { Avatar } from 'shared/ui/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton';
+import { HStack } from 'shared/ui/Stack';
 import { Text, TextAlign, TextSize, TextVariant } from 'shared/ui/Text';
 
 import * as styles from './Article.module.scss';
@@ -87,14 +88,14 @@ export const Article: FC<IArticleProps> = memo(({ className, id }: IArticleProps
           size={TextSize.SizeL}
           align={TextAlign.Center}
         />
-        <div className={styles.articleInfo}>
+        <HStack justify="start" gap={0}>
           <EyeIconSvg className={styles.icon} />
           <Text text={articleData.views} size={TextSize.SizeS} />
-        </div>
-        <div className={styles.articleInfo}>
+        </HStack>
+        <HStack justify="start" gap={0}>
           <CalendarSvg className={styles.icon} />
           <Text text={articleData.createdAt} size={TextSize.SizeS} />
-        </div>
+        </HStack>
         <span>
           <Text size={TextSize.SizeS} text={articleData.type.join(', ')} />
         </span>

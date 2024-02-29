@@ -8,6 +8,7 @@ import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { AppInput } from 'shared/ui/AppInput';
 import { Select } from 'shared/ui/Select';
 import { getSelectOptions } from 'shared/ui/Select/lib/getSelectOptions';
+import { HStack } from 'shared/ui/Stack';
 import { ITab, Tabs } from 'shared/ui/Tabs';
 
 import * as styles from './ArticleFilters.module.scss';
@@ -47,7 +48,7 @@ export const ArticleFilters: FC<IArticleFiltersProps> = memo((props: IArticleFil
 
   return (
     <DynamicReducerLoader reducers={articleFiltersReducers}>
-      <div className={getClassNames(styles.filtersWrapper, [className ?? ''])}>
+      <HStack className={getClassNames(styles.filtersWrapper, [className ?? ''])}>
         <div className={styles.filters}>
           <Select<ArticleSort>
             className={styles.sortBy}
@@ -65,7 +66,7 @@ export const ArticleFilters: FC<IArticleFiltersProps> = memo((props: IArticleFil
           />
         </div>
         <AppInput className={styles.search} value={articleSearch} placeholder={t('Search')} onChange={onChangeSearch} />
-      </div>
+      </HStack>
       <Tabs
         className={styles.tabs}
         onTabClick={onChangeType}

@@ -7,6 +7,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { AppButton } from 'shared/ui/AppButton';
 import { AppInput } from 'shared/ui/AppInput';
+import { VStack } from 'shared/ui/Stack';
 import { Text, TextVariant } from 'shared/ui/Text';
 
 import * as styles from './LoginForm.module.scss';
@@ -45,7 +46,7 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onClose }: LoginFormPro
 
   return (
     <DynamicReducerLoader reducers={loginAsyncReducers} removeAfterUnmount>
-      <div className={getClassNames(styles.loginForm, [className ?? ''])}>
+      <VStack className={getClassNames('', [className ?? ''])}>
         {error && <Text title={t(`${error.status}_error`)} text={t(error.message)} variant={TextVariant.Error} />}
         <AppInput
           data-testid="username-input"
@@ -65,7 +66,7 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onClose }: LoginFormPro
         <AppButton onClick={onLoginClick} className={styles.loginBtn} disabled={isLoading}>
           {t('Login')}
         </AppButton>
-      </div>
+      </VStack>
     </DynamicReducerLoader>
   );
 });

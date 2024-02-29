@@ -7,6 +7,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
 import { Avatar } from 'shared/ui/Avatar';
+import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text';
 
 import * as styles from './EditableProfileCardHeader.module.scss';
@@ -34,16 +35,16 @@ export const EditableProfileCardHeader: FC<IEditableProfileCardHeaderProps> = me
 
     if (!isProfileBelongUser) {
       return (
-        <div className={getClassNames(styles.header, [className ?? ''])}>
-          {avatar && <Avatar className={styles.avatarWrapper} src={avatar} />}
+        <HStack className={getClassNames(styles.header, [className ?? ''])} justify="start">
+          {avatar && <Avatar src={avatar} />}
           <Text title={t('Profile')} text="" />
-        </div>
+        </HStack>
       );
     }
 
     return (
-      <div className={getClassNames(styles.header, [className ?? ''])}>
-        {avatar && <Avatar className={styles.avatarWrapper} src={avatar} />}
+      <HStack className={getClassNames(styles.header, [className ?? ''])}>
+        {avatar && <Avatar src={avatar} />}
         <Text title={t('Profile')} text="" />
         {profileReadonly ? (
           <AppButton data-testid="edit-btn" variant={AppButtonVariant.Outline} onClick={onEdit}>
@@ -64,7 +65,7 @@ export const EditableProfileCardHeader: FC<IEditableProfileCardHeaderProps> = me
             </AppButton>
           </>
         )}
-      </div>
+      </HStack>
     );
   },
 );

@@ -9,6 +9,7 @@ import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
 import { AppLink } from 'shared/ui/AppLink';
 import { Avatar } from 'shared/ui/Avatar';
 import { Card } from 'shared/ui/Card';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text';
 
 import * as styles from './ArticleListItem.module.scss';
@@ -27,10 +28,10 @@ export const ArticleListItem: FC<IArticleListItemProps> = (props: IArticleListIt
   const { article, view, className, target } = props;
   const types = <Text className={styles.types} text={article.type.join(', ')} />;
   const views = (
-    <>
+    <HStack gap={0}>
       <Text className={styles.view} text={article.views} />
       <EyeSvg className={styles.viewIcon} />
-    </>
+    </HStack>
   );
   const image = <img src={article.img} className={styles.img} alt={article.title} />;
 
@@ -42,21 +43,21 @@ export const ArticleListItem: FC<IArticleListItemProps> = (props: IArticleListIt
     return (
       <div className={getClassNames(styles.articleListItem, [className ?? '', styles[view]])}>
         <Card>
-          <div className={styles.header}>
+          <HStack>
             <Avatar size={30} src={article.user.avatar || ''} />
-            <Text className={styles.username} text={article.user.username} />
+            <Text text={article.user.username} />
             <Text text={article.createdAt} className={styles.date} />
-          </div>
+          </HStack>
           <Text className={styles.title} title={article.title} />
           {types}
           {image}
           {textBlock && <ArticleTextBlock className={styles.textBlock} block={textBlock} />}
-          <div className={styles.footer}>
+          <HStack className={styles.footer}>
             <AppLink target={target} to={`${routePaths.article}${article.id}`}>
               <AppButton variant={AppButtonVariant.Outline}>{t('Read more...')}</AppButton>
             </AppLink>
             {views}
-          </div>
+          </HStack>
         </Card>
       </div>
     );
@@ -68,17 +69,19 @@ export const ArticleListItem: FC<IArticleListItemProps> = (props: IArticleListIt
       to={`${routePaths.article}${article.id}`}
       className={getClassNames(styles.articleListItem, [className ?? '', styles[view]])}
     >
-      <Card className={styles.card}>
-        <div className={styles.imgWrapper}>
-          {image}
-          <Text text={article.createdAt} className={styles.date} />
-        </div>
-        <div className={styles.info}>
-          {types}
-          {views}
-        </div>
-        <Text className={styles.title} title={article.title} />
-      </Card>
+      <VStack>
+        <Card>
+          <div className={styles.imgWrapper}>
+            {image}
+            <Text text={article.createdAt} className={styles.date} />
+          </div>
+          <HStack className={styles.info}>
+            {types}
+            {views}
+          </HStack>
+          <Text className={styles.title} title={article.title} />
+        </Card>
+      </VStack>
     </AppLink>
   );
 };

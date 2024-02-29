@@ -2,6 +2,7 @@ import React, { memo, useMemo } from 'react';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
+import { HStack } from 'shared/ui/Stack';
 
 import * as styles from './Navbar.module.scss';
 
@@ -21,7 +22,9 @@ export const Navbar = memo(({ className }: INavbarProps) => {
 
   return (
     <header data-testid="navbar" className={getClassNames(styles.navbar, [className ?? ''])}>
-      <nav className={styles.links}>{renderNavbarLinks}</nav>
+      <HStack align="center" gap={15} className={styles.links} component="nav">
+        {renderNavbarLinks}
+      </HStack>
     </header>
   );
 });

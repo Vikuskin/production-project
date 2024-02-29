@@ -5,6 +5,7 @@ import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { AppLink } from 'shared/ui/AppLink';
 import { Avatar } from 'shared/ui/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton';
+import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text';
 
 import * as styles from './Comment.module.scss';
@@ -23,7 +24,7 @@ export const Comment: FC<ICommentProps> = memo((props: ICommentProps) => {
 
   if (isLoading) {
     return (
-      <div className={getClassNames(styles.comment, [className ?? ''])}>
+      <HStack className={getClassNames(styles.comment, [className ?? ''])}>
         <div className={styles.avatarWrapper}>
           <Skeleton className={styles.avatar} width={40} height={40} border="50%" />
         </div>
@@ -32,12 +33,12 @@ export const Comment: FC<ICommentProps> = memo((props: ICommentProps) => {
           <Skeleton width={100} height={15} />
           <Skeleton width="100%" height={50} />
         </div>
-      </div>
+      </HStack>
     );
   }
 
   return (
-    <div className={getClassNames(styles.comment, [className ?? ''])}>
+    <HStack className={getClassNames(styles.comment, [className ?? ''])}>
       {avatar && (
         <AppLink to={`${routePaths.profile}${id}`}>
           <div className={styles.avatarWrapper}>
@@ -50,6 +51,6 @@ export const Comment: FC<ICommentProps> = memo((props: ICommentProps) => {
         <Text title={username} />
         <Text text={comment.text} />
       </div>
-    </div>
+    </HStack>
   );
 });

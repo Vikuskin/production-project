@@ -33,11 +33,6 @@ hr {
 }
 
 .items-block {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: start;
-  justify-content: start;
   width: var(--sidebar-width);
   padding-left: 20px;
 }

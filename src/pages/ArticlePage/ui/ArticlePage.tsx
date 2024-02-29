@@ -9,6 +9,7 @@ import { ErrorPage } from 'pages/ErrorPage';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
+import { HStack } from 'shared/ui/Stack';
 import { PageWrapper } from 'widgets/PageWrapper';
 
 import * as styles from './ArticlePage.module.scss';
@@ -32,16 +33,18 @@ const ArticlePage: FC = () => {
 
   return (
     <PageWrapper>
-      <div className={styles.articleHeader}>
-        <AppButton variant={AppButtonVariant.Outline} onClick={onBack}>
-          {t('Back to list')}
-        </AppButton>
-        {isEditableArticle && (
+      <HStack>
+        {articleData && (
+          <AppButton variant={AppButtonVariant.Outline} onClick={onBack}>
+            {t('Back to list')}
+          </AppButton>
+        )}
+        {isEditableArticle && articleData && (
           <AppButton className={styles.editBtn} variant={AppButtonVariant.Outline} onClick={onEdit}>
             {t('Edit')}
           </AppButton>
         )}
-      </div>
+      </HStack>
       <Article id={id} />
       <ArticleDetails articleId={id} />
     </PageWrapper>
