@@ -18,7 +18,7 @@ const meta = {
   tags: ['autodocs'],
   decorators: [
     storeDecorator({
-      articleDetails: { articleRecommends: articleRecommendsMock },
+      articleRecommends: articleRecommendsMock,
     }),
   ],
 } satisfies Meta<typeof ArticleRecommends>;

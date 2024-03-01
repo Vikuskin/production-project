@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { IState } from 'app/providers/StoreProvider';
 
-const selectRecommends = (state: IState) => state.articleDetails?.articleRecommends;
+const selectRecommends = (state: IState) => state?.articleRecommends;
 
 export const selectRecommendsLoading = createSelector(
   selectRecommends,

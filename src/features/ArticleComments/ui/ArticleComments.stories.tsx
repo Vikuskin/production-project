@@ -13,11 +13,11 @@ const meta = {
   component: ArticleComments,
   tags: ['autodocs'],
   args: {
-    id: '1',
+    articleId: '1',
   },
   decorators: [
     storeDecorator({
-      articleDetails: { articleComments: articleCommentsMock },
+      articleComments: articleCommentsMock,
       newComment: { text: 'text' },
     }),
   ],
@@ -41,12 +41,12 @@ export const DarkWithNoComments: Story = {
 };
 
 export const LightLoading: Story = {
-  decorators: [storeDecorator({ articleDetails: { articleComments: { ...articleCommentsMock, isLoading: true } } })],
+  decorators: [storeDecorator({ articleComments: { ...articleCommentsMock, isLoading: true } })],
 };
 
 export const DarkLoading: Story = {
   decorators: [
     themeDecorator(Theme.Dark),
-    storeDecorator({ articleDetails: { articleComments: { ...articleCommentsMock, isLoading: true } } }),
+    storeDecorator({ articleComments: { ...articleCommentsMock, isLoading: true } }),
   ],
 };

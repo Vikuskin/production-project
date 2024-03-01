@@ -32,5 +32,5 @@ const articleRecommendsSlice = createSlice({
 
 export const { actions: articleRecommendsActions, reducer: articleRecommendsReducer } = articleRecommendsSlice;
 export const selectArticleRecommends = articleRecommendsAdapter.getSelectors<IState>(
-  (state) => state.articleDetails?.articleRecommends || articleRecommendsAdapter.getInitialState(),
+  (state) => state?.articleRecommends || articleRecommendsAdapter.getInitialState(),
 );

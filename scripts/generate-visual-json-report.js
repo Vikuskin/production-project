@@ -27,9 +27,9 @@ if (!fs.existsSync(outputPath)) {
       expectedItems: diffs,
       actualItems: diffs,
       diffItems: diffs,
-      actualDir: relative(lokiDir, actualDir),
-      expectedDir: relative(lokiDir, expectedDir),
-      diffDir: relative(lokiDir, diffDir),
+      actualDir: relative(outputPath, actualDir),
+      expectedDir: relative(outputPath, expectedDir),
+      diffDir: relative(outputPath, diffDir),
     }),
   );
 })();
