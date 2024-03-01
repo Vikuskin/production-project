@@ -2,16 +2,16 @@ import { ArticleListView } from 'entities/ArticleList';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk';
 
 import { fetchAllArticles } from './fetchAllArticles';
-import { fetchNextArticlePage } from './fetchNextArticlePage';
+import { fetchNextArticleListPage } from './fetchNextArticleListPage';
 
 import { articleListActions } from '../slices/articleListPageSlice';
 
 jest.mock('./fetchAllArticles');
 jest.mock('../slices/articleListPageSlice.ts');
 
-describe('fetchNextArticlePage', () => {
+describe('fetchNextArticleListPage', () => {
   it('should increase page number and call fetchAllArticles', async () => {
-    const thunk = new TestAsyncThunk(fetchNextArticlePage, {
+    const thunk = new TestAsyncThunk(fetchNextArticleListPage, {
       articleList: {
         page: 2,
         hasMore: true,

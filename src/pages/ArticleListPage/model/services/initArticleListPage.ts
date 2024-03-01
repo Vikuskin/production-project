@@ -9,8 +9,8 @@ import { fetchAllArticles } from './fetchAllArticles';
 
 import { selectArticleListMounted } from '../selectors/selectArticleList';
 
-export const initArticlePage = createAsyncThunk<void, URLSearchParams, IThunkConfig<ICustomError>>(
-  'articleList/initArticlePage',
+export const initArticleListPage = createAsyncThunk<void, URLSearchParams, IThunkConfig<ICustomError>>(
+  'articleList/initArticleListPage',
   async (searchParams, thunkApi) => {
     const { getState, dispatch } = thunkApi;
     const articleListMounted = selectArticleListMounted(getState());

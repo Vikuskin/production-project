@@ -6,11 +6,11 @@ import { IUser } from 'entities/User';
 import { INewComment } from 'features/AddNewComment';
 import { IArticleComments } from 'features/ArticleComments';
 import { IArticleFilters } from 'features/ArticleFilters';
-import { IArticleRecommends } from 'features/ArticleRecommends';
 import { ILoginForm } from 'features/AuthByUserName';
 import { IProfile } from 'features/EditableProfileCard';
 import { IInfiniteScroll } from 'features/ScrollPosition';
 import { IArticleList } from 'pages/ArticleListPage';
+import { RTKapi } from 'shared/api/RTKapi';
 
 import { createReducerManager } from '../config/createReducerManager';
 
@@ -18,6 +18,7 @@ export type AppDispatch = ThunkDispatch<IState, IThunkExtraArg, UnknownAction>;
 export interface IState {
   user: IUser;
   infiniteScroll: IInfiniteScroll;
+  [RTKapi.reducerPath]: ReturnType<typeof RTKapi.reducer>;
   loginForm?: ILoginForm;
   profile?: IProfile;
   article?: IArticle;
@@ -25,7 +26,6 @@ export interface IState {
   articleList?: IArticleList;
   articleFilters?: IArticleFilters;
   articleComments?: IArticleComments;
-  articleRecommends?: IArticleRecommends;
 }
 export type StateKey = keyof IState;
 export type ReducerManager = ReturnType<typeof createReducerManager>;

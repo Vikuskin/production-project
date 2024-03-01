@@ -4,6 +4,7 @@ import { IThunkConfig } from 'app/providers/StoreProvider';
 import { selectArticleData } from 'entities/Article';
 import { IComment } from 'entities/Comment';
 import { selectUserAuthData } from 'entities/User';
+import { ROUTES } from 'shared/api/routes';
 import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 import { ICustomError } from 'shared/types/customError';
@@ -23,7 +24,7 @@ export const addArticleComment = createAsyncThunk<IComment, string, IThunkConfig
         return rejectWithValue({ status: ErrorStatusCode.BadRequest, message: 'No data' });
       }
 
-      const response = await extra.api.post<IComment>('/comments', {
+      const response = await extra.api.post<IComment>(ROUTES.comments, {
         articleId: article.id,
         userId: userAuth.id,
         text: commentText,

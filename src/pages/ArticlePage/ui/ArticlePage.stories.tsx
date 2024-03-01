@@ -18,7 +18,7 @@ const meta = {
   decorators: [
     storeDecorator({
       article: { articleData: articleDataMock },
-      articleDetails: { articleComments: { ...articleCommentsMock, isLoading: false } },
+      articleComments: { ...articleCommentsMock, isLoading: false },
       newComment: {},
     }),
     delayCaptureDecorator(),
@@ -38,9 +38,7 @@ export const LightLoading: Story = {
   decorators: [
     storeDecorator({
       article: { isLoading: true },
-      articleDetails: {
-        articleComments: { ...articleCommentsMock, isLoading: true },
-      },
+      articleComments: { ...articleCommentsMock, isLoading: true },
       newComment: {},
     }),
   ],
@@ -51,7 +49,7 @@ export const DarkLoading: Story = {
     themeDecorator(Theme.Dark),
     storeDecorator({
       article: { isLoading: true },
-      articleDetails: { articleComments: { ...articleCommentsMock, isLoading: true } },
+      articleComments: { ...articleCommentsMock, isLoading: true },
       newComment: {},
     }),
   ],

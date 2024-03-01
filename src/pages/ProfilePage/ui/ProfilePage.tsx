@@ -2,13 +2,14 @@ import React, { FC, ReactElement, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
-import { EditableProfileCard, profileReducer } from 'features/EditableProfileCard';
 import {
+  EditableProfileCard,
+  fetchProfileData,
+  profileReducer,
   selectProfileError,
   selectProfileForm,
   selectProfileLoading,
-} from 'features/EditableProfileCard/models/selectors/selectProfile';
-import { fetchProfileData } from 'features/EditableProfileCard/models/services/fetchProfileData';
+} from 'features/EditableProfileCard';
 import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';

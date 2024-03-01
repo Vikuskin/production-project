@@ -9,8 +9,8 @@ import { fetchAllArticles } from './fetchAllArticles';
 import { selectArticleListHasMore, selectArticleListPage } from '../selectors/selectArticleList';
 import { articleListActions } from '../slices/articleListPageSlice';
 
-export const fetchNextArticlePage = createAsyncThunk<void, void, IThunkConfig<ICustomError>>(
-  'articleList/fetchNextArticlePage',
+export const fetchNextArticleListPage = createAsyncThunk<void, void, IThunkConfig<ICustomError>>(
+  'articleList/fetchNextArticleListPage',
   async (_, thunkApi) => {
     const { getState, dispatch } = thunkApi;
     const hasMore = selectArticleListHasMore(getState());

@@ -12,8 +12,8 @@ import * as styles from './ArticleList.module.scss';
 import { ArticleListHeader } from './ArticleListHeader/ArticleListHeader';
 
 import { selectArticleListLoading, selectArticleListView } from '../model/selectors/selectArticleList';
-import { fetchNextArticlePage } from '../model/services/fetchNextArticlePage';
-import { initArticlePage } from '../model/services/initArticlePage';
+import { fetchNextArticleListPage } from '../model/services/fetchNextArticleListPage';
+import { initArticleListPage } from '../model/services/initArticleListPage';
 import { articleListReducer, selectArticleList } from '../model/slices/articleListPageSlice';
 
 const articleListReducers: ReducersList = {
@@ -26,10 +26,10 @@ const ArticleListPage: FC = () => {
   const articleListLoading = useAppSelector(selectArticleListLoading);
   const articleListView = useAppSelector(selectArticleListView);
   const onLoadNextPart = useCallback(() => {
-    PROJECT === 'frontend' && dispatch(fetchNextArticlePage());
+    PROJECT === 'frontend' && dispatch(fetchNextArticleListPage());
   }, [dispatch]);
 
-  useInitialEffect(() => dispatch(initArticlePage(searchParams)));
+  useInitialEffect(() => dispatch(initArticleListPage(searchParams)));
 
   return (
     <PageWrapper onScrollEnd={onLoadNextPart} isSaveScroll>
