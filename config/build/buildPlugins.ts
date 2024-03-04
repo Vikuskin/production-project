@@ -6,6 +6,7 @@ import { IBuildPaths, Project } from './types/config';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import CopyPlugin from 'copy-webpack-plugin';
 import CircularDependencyPlugin from 'circular-dependency-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 export function buildPlugins(
   paths: IBuildPaths,
@@ -30,19 +31,6 @@ export function buildPlugins(
     new CopyPlugin({
       patterns: [{ from: paths.locales, to: paths.buildLocales }],
     }),
-    new CircularDependencyPlugin({
-      // exclude detection of files based on a RegExp
-      exclude: /node_modules/,
-      // include specific files based on a RegExp
-      //include: /build/,
-      // add errors to webpack instead of warnings
-      failOnError: true,
-      // allow import cycles that include an asyncronous import,
-      // e.g. via import(/* webpackMode: "weak" */ './file.js')
-      allowAsyncCycles: false,
-      // set the current working directory for displaying module paths
-      cwd: process.cwd(),
-    }),
   ];
 
   if (isDev) {
@@ -53,6 +41,20 @@ export function buildPlugins(
       new webpack.HotModuleReplacementPlugin(),
       new BundleAnalyzerPlugin({
         openAnalyzer: false,
+      }),
+      new CircularDependencyPlugin({
+        exclude: /node_modules/,
+        failOnError: true,
+        allowAsyncCycles: false,
+        cwd: process.cwd(),
+      }),
+      new ForkTsCheckerWebpackPlugin({
+        typescript: {
+          diagnosticOptions: {
+            semantic: true,
+            syntactic: true,
+          },
+        },
       }),
     );
   }
