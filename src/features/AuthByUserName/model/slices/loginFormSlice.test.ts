@@ -1,4 +1,4 @@
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
+import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 
 import { loginFormActions, loginFormInitialState, loginFormReducer } from './loginFormSlice';
@@ -40,7 +40,7 @@ describe('loginFormSlice', () => {
       expect(
         loginFormReducer(
           loginFormInitialState,
-          loginByUsername.fulfilled({ id: '', username: '' }, '', { password: '', username: '' }),
+          loginByUsername.fulfilled({ id: '', username: '', roles: [] }, '', { password: '', username: '' }),
         ),
       ).toMatchObject({
         isLoading: false,

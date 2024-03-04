@@ -5,9 +5,9 @@ import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
+import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
 import { AppInput } from 'shared/ui/AppInput';
-import { Text, TextVariant } from 'shared/ui/Text';
+import { Text, TextVariants } from 'shared/ui/Text';
 
 import * as styles from './AddNewComment.module.scss';
 
@@ -36,10 +36,10 @@ const AddNewComment: FC<AddNewCommentProps> = ({ className, onCommentSend }) => 
 
   return (
     <DynamicReducerLoader reducers={newCommentReducers} removeAfterUnmount>
-      {commentError && <Text variant={TextVariant.Error} text={commentError} />}
+      {commentError && <Text variant={TextVariants.Error} text={commentError} />}
       <div className={getClassNames(styles.newCommentForm, [className ?? ''])}>
         <AppInput value={commentText} placeholder={t('Your comment')} onChange={onCommentTextChange} />
-        <AppButton className={styles.sendBtn} variant={AppButtonVariant.Outline} onClick={onSendHandler}>
+        <AppButton className={styles.sendBtn} variant={AppButtonVariants.Outline} onClick={onSendHandler}>
           {t('Send')}
         </AppButton>
       </div>

@@ -1,7 +1,7 @@
 import { AxiosError, AxiosResponse } from 'axios';
 
 import { userActions } from 'entities/User';
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
+import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk';
 
@@ -9,7 +9,7 @@ import { loginByUsername } from './loginByUsername';
 
 describe('loginByUsername', () => {
   it('handles success response from server', async () => {
-    const mockUserData = { username: 'test', id: '1' };
+    const mockUserData = { username: 'test', id: '1', roles: [] };
     const thunk = new TestAsyncThunk(loginByUsername);
 
     thunk.api.post.mockResolvedValue({ data: mockUserData });

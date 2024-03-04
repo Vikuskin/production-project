@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { INewComment } from '../types/newComment';
+import { INewComment } from '../interfaces/newComment';
 
 export const newCommentInitialState: INewComment = {
   text: '',

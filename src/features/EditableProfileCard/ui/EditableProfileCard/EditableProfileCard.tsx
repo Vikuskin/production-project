@@ -1,13 +1,11 @@
 import React, { FC, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import { IProfileData, ProfileCard } from 'entities/Profile';
+import { Country, Currency, IProfileData, ProfileCard } from 'entities/Profile';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { Text, TextVariant } from 'shared/ui/Text';
+import { Text, TextVariants } from 'shared/ui/Text';
 
 import * as styles from './EditableProfileCard.module.scss';
 
@@ -28,7 +26,7 @@ export const EditableProfileCard: FC<IEditableProfileCardProps> = ({ className, 
   const validationErrors = useMemo(
     () =>
       profileValidationErrors &&
-      profileValidationErrors.map((error) => <Text variant={TextVariant.Error} key={error} text={t(error)} />),
+      profileValidationErrors.map((error) => <Text variant={TextVariants.Error} key={error} text={t(error)} />),
     [profileValidationErrors, t],
   );
   const onChangeFirstName = useCallback(

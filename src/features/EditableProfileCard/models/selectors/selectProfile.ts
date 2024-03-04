@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { IState } from 'app/providers/StoreProvider';
 import { IProfileData } from 'entities/Profile';
-import { ICustomError } from 'shared/types/customError';
+import { ICustomError } from 'shared/interfaces/customError';
 
 const selectProfile = (state: IState) => state.profile;
 

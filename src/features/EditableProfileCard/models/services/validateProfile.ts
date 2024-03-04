@@ -1,7 +1,7 @@
 // TODO: improve validation
 import { IProfileData } from 'entities/Profile';
 
-import { ValidateProfileError } from '../types/validateProfileError';
+import { ValidateProfileError } from '../enums/validateProfileError';
 
 export const validateProfile = (profile: Partial<IProfileData> | null): ValidateProfileError[] => {
   if (!profile) {

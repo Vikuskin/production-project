@@ -2,11 +2,11 @@ import React, { FC, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { Text, TextAlign } from 'shared/ui/Text';
+import { Text, TextAligns } from 'shared/ui/Text';
 
 import * as styles from './CommentList.module.scss';
 
-import { IComment } from '../../model/types/comment';
+import { IComment } from '../../model/interfaces/comment';
 import { Comment } from '../Comment/Comment';
 
 interface ICommentListProps {
@@ -25,11 +25,7 @@ export const CommentList: FC<ICommentListProps> = memo(({ className, comments, i
 
   return (
     <div className={getClassNames(styles.commentList, [className ?? ''])}>
-      {comments.length ? (
-        commentList
-      ) : (
-        <Text align={TextAlign.Center} className={styles.noComment} text={t('No comments')} />
-      )}
+      {comments.length ? commentList : <Text align={TextAligns.Center} text={t('No comments')} />}
     </div>
   );
 });

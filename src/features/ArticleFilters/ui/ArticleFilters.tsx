@@ -1,17 +1,20 @@
 import React, { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ArticleType } from 'entities/Article';
+import { ArticleTypes } from 'entities/Article/model/enums/articleTypes';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
+import { getEnumOptions } from 'shared/lib/helpers/getEnumOptions';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { AppInput } from 'shared/ui/AppInput';
-import { Select } from 'shared/ui/Select';
-import { getSelectOptions } from 'shared/ui/Select/lib/getSelectOptions';
+import { ListBox } from 'shared/ui/ListBox';
+import { HStack } from 'shared/ui/Stack';
 import { ITab, Tabs } from 'shared/ui/Tabs';
 
 import * as styles from './ArticleFilters.module.scss';
 
+import { ArticleOrder } from '../model/enums/articleOrder';
+import { ArticleSort } from '../model/enums/articleSort';
 import {
   selectArticleOrder,
   selectArticleSearch,
@@ -19,8 +22,6 @@ import {
   selectArticleType,
 } from '../model/selectors/selectArticleFilter';
 import { articleFiltersReducer } from '../model/slices/articleFiltersSlice';
-import { ArticleOrder } from '../model/types/articleOrder';
-import { ArticleSort } from '../model/types/articleSort';
 
 const articleFiltersReducers: ReducersList = {
   articleFilters: articleFiltersReducer,
@@ -30,12 +31,12 @@ interface IArticleFiltersProps {
   onChangeOrder: (newOrder: ArticleOrder) => void;
   onChangeSort: (newSort: ArticleSort) => void;
   onChangeSearch: (search: string) => void;
-  onChangeType: (tab: ITab<ArticleType>) => void;
+  onChangeType: (tab: ITab<ArticleTypes>) => void;
   onClearType?: () => void;
 
   className?: string;
 }
-const tabs = getSelectOptions(ArticleType);
+const tabs = getEnumOptions(ArticleTypes);
 
 export const ArticleFilters: FC<IArticleFiltersProps> = memo((props: IArticleFiltersProps) => {
   const { onChangeOrder, onChangeSearch, onChangeSort, onChangeType, onClearType, className } = props;
@@ -47,16 +48,16 @@ export const ArticleFilters: FC<IArticleFiltersProps> = memo((props: IArticleFil
 
   return (
     <DynamicReducerLoader reducers={articleFiltersReducers}>
-      <div className={getClassNames(styles.filtersWrapper, [className ?? ''])}>
+      <HStack className={getClassNames(styles.filtersWrapper, [className ?? ''])}>
         <div className={styles.filters}>
-          <Select<ArticleSort>
+          <ListBox<ArticleSort>
             className={styles.sortBy}
             label={t('Sort by')}
             onChange={onChangeSort}
             enumOptions={ArticleSort}
             value={articleSort}
           />
-          <Select<ArticleOrder>
+          <ListBox<ArticleOrder>
             className={styles.sortBy}
             label={t('By')}
             onChange={onChangeOrder}
@@ -65,12 +66,12 @@ export const ArticleFilters: FC<IArticleFiltersProps> = memo((props: IArticleFil
           />
         </div>
         <AppInput className={styles.search} value={articleSearch} placeholder={t('Search')} onChange={onChangeSearch} />
-      </div>
+      </HStack>
       <Tabs
         className={styles.tabs}
         onTabClick={onChangeType}
         onTabClear={onClearType}
-        tabs={tabs as ITab<ArticleType>[]}
+        tabs={tabs as ITab<ArticleTypes>[]}
         value={articleType}
       />
     </DynamicReducerLoader>

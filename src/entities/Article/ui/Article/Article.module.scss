@@ -2,8 +2,7 @@
   min-height: 100vh;
 
   .avatar-wrapper {
-    display: flex;
-    justify-content: center;
+    text-align: center;
   }
 
   .avatar {
@@ -12,16 +11,11 @@
 
   .title {
     margin: auto;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .skeleton {
     margin-top: 15px;
-  }
-
-  .article-info {
-    display: flex;
-    align-items: center;
   }
 
   .icon {

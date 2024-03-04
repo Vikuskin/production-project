@@ -1,8 +1,8 @@
 import { ProfileCard } from './ProfileCard';
 
 import { componentRender } from '../../../shared/lib/tests/componentRender';
-import { Country } from '../../Country';
-import { Currency } from '../../Currency';
+import { Country } from '../model/enums/country';
+import { Currency } from '../model/enums/currency';
 
 describe('ProfileCard', () => {
   const profileDataMock = {

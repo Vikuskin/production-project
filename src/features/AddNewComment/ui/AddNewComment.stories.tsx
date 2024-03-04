@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Theme } from 'app/providers/theme';
+import { Themes } from 'shared/enums/themes';
 import { storeDecorator } from 'shared/lib/storybook/storeDecorator';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
@@ -13,7 +13,7 @@ const meta = {
   decorators: [
     storeDecorator({
       newComment: {
-        text: 'Anim aute aliqua minim sint qui quis esse laborum deserunt nostrud cillum amet',
+        text: 'Anim aute aliqua minim',
       },
     }),
   ],
@@ -25,22 +25,22 @@ type Story = StoryObj<typeof meta>;
 export const LightNormal: Story = {};
 
 export const DarkNormal: Story = {
-  decorators: [themeDecorator(Theme.Dark)],
+  decorators: [themeDecorator(Themes.Dark)],
 };
 
 export const LightError: Story = {
   decorators: [
     storeDecorator({
-      newComment: { error: 'No data' },
+      newComment: { error: 'Something went wrong' },
     }),
   ],
 };
 
 export const DarkError: Story = {
   decorators: [
-    themeDecorator(Theme.Dark),
+    themeDecorator(Themes.Dark),
     storeDecorator({
-      newComment: { error: 'No data' },
+      newComment: { error: 'Something went wrong' },
     }),
   ],
 };

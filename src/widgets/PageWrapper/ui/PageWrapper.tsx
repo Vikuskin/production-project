@@ -36,9 +36,9 @@ export const PageWrapper: FC<PropsWithChildren<IPageWrapper>> = (props) => {
   useInfiniteScroll({ triggerRef, wrapperRef, callback: onScrollEnd });
 
   return (
-    <div ref={wrapperRef} className={styles.pageWrapper} onScroll={onScroll}>
+    <main ref={wrapperRef} className={styles.pageWrapper} onScroll={onScroll}>
       {children}
       {onScrollEnd && <div className={styles.trigger} ref={triggerRef} />}
-    </div>
+    </main>
   );
 };

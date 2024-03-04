@@ -3,10 +3,11 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { IThunkConfig } from 'app/providers/StoreProvider';
 import { IArticleData } from 'entities/Article';
 import { selectArticleOrder, selectArticleSearch, selectArticleSort, selectArticleType } from 'features/ArticleFilters';
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
+import { ROUTES } from 'shared/api/routes';
+import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
+import { ICustomError } from 'shared/interfaces/customError';
 import { addQueryParams } from 'shared/lib/url/addQueryParams';
-import { ICustomError } from 'shared/types/customError';
 
 import { selectArticleListLimit, selectArticleListPage } from '../selectors/selectArticleList';
 
@@ -25,7 +26,7 @@ export const fetchAllArticles = createAsyncThunk<IArticleData[], { replace?: boo
 
       addQueryParams({ sort, order, search, type });
 
-      const response = await extra.api.get<IArticleData[]>('/articles', {
+      const response = await extra.api.get<IArticleData[]>(ROUTES.articles, {
         params: {
           _expand: 'user',
           _limit: limit,

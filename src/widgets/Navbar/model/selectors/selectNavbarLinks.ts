@@ -1,21 +1,21 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { routePaths } from 'app/providers/router';
 import { selectUserAuthData } from 'entities/User';
-import { AppLinkVariant } from 'shared/ui/AppLink/ui/AppLink';
+import { routePaths } from 'shared/constants/routePaths';
+import { AppLinkVariants } from 'shared/ui/AppLink';
 
-import { INavbarLink } from '../types/navbarLink';
+import { INavbarLink } from '../interfaces/navbarLink';
 
 const mainLinks: INavbarLink[] = [
   {
     path: routePaths.about,
     text: 'About',
-    variant: AppLinkVariant.Secondary,
+    variant: AppLinkVariants.Secondary,
   },
   {
     path: routePaths.main,
     text: 'Main',
-    variant: AppLinkVariant.Secondary,
+    variant: AppLinkVariants.Secondary,
   },
 ];
 
@@ -23,18 +23,11 @@ export const selectNavbarLinks = createSelector(selectUserAuthData, (authData): 
   const navbarLinks = [...mainLinks];
 
   authData &&
-    navbarLinks.push(
-      {
-        path: routePaths.article_list,
-        text: 'Articles',
-        variant: AppLinkVariant.Primary,
-      },
-      {
-        path: routePaths.article_create,
-        text: 'Create article',
-        variant: AppLinkVariant.Primary,
-      },
-    );
+    navbarLinks.push({
+      path: routePaths.article_list,
+      text: 'Articles',
+      variant: AppLinkVariants.Primary,
+    });
 
   return navbarLinks;
 });

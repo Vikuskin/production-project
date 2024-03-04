@@ -5,6 +5,8 @@ import webpack from 'webpack';
 import { IBuildPaths, Project } from './types/config';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import CopyPlugin from 'copy-webpack-plugin';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 export function buildPlugins(
   paths: IBuildPaths,
@@ -39,6 +41,20 @@ export function buildPlugins(
       new webpack.HotModuleReplacementPlugin(),
       new BundleAnalyzerPlugin({
         openAnalyzer: false,
+      }),
+      new CircularDependencyPlugin({
+        exclude: /node_modules/,
+        failOnError: true,
+        allowAsyncCycles: false,
+        cwd: process.cwd(),
+      }),
+      new ForkTsCheckerWebpackPlugin({
+        typescript: {
+          diagnosticOptions: {
+            semantic: true,
+            syntactic: true,
+          },
+        },
       }),
     );
   }

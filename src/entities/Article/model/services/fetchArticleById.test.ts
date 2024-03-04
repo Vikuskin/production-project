@@ -1,9 +1,10 @@
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
+import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk';
-import { articleDataMock } from 'shared/mocks/articleData';
 
 import { fetchArticleById } from './fetchArticleById';
+
+import { articleDataMock } from '../mocks/articleData';
 
 describe('fetchArticleById', () => {
   it('handles success response from server', async () => {

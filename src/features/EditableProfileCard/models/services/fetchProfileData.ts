@@ -2,9 +2,10 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { IThunkConfig } from 'app/providers/StoreProvider';
 import { IProfileData } from 'entities/Profile';
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
+import { ROUTES } from 'shared/api/routes';
+import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-import { ICustomError } from 'shared/types/customError';
+import { ICustomError } from 'shared/interfaces/customError';
 
 export const fetchProfileData = createAsyncThunk<IProfileData, string, IThunkConfig<ICustomError>>(
   'profile/fetchProfileData',
@@ -12,7 +13,7 @@ export const fetchProfileData = createAsyncThunk<IProfileData, string, IThunkCon
     const { rejectWithValue, extra } = thunkApi;
 
     try {
-      const response = await extra.api.get<IProfileData>(`/profile/${profileId}`);
+      const response = await extra.api.get<IProfileData>(`${ROUTES.profile}/${profileId}`);
 
       if (!response.data) {
         return rejectWithValue({ status: ErrorStatusCode.BadRequest, message: 'No data from server' });

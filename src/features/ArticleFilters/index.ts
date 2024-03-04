@@ -1,5 +1,5 @@
 export { articleFiltersReducer, articleFiltersActions } from './model/slices/articleFiltersSlice';
-export { IArticleFilters } from './model/types/articleFilters';
+export type { IArticleFilters } from './model/interfaces/articleFilters';
 export { ArticleFilters } from './ui/ArticleFilters';
 export {
   selectArticleOrder,
@@ -7,5 +7,5 @@ export {
   selectArticleSort,
   selectArticleType,
 } from './model/selectors/selectArticleFilter';
-export { ArticleOrder } from './model/types/articleOrder';
-export { ArticleSort } from './model/types/articleSort';
+export { ArticleOrder } from './model/enums/articleOrder';
+export { ArticleSort } from './model/enums/articleSort';

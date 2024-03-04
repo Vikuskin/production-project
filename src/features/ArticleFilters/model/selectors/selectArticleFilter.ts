@@ -1,10 +1,10 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { IState } from 'app/providers/StoreProvider';
-import { ArticleType } from 'entities/Article';
+import { ArticleTypes } from 'entities/Article';
 
-import { ArticleOrder } from '../types/articleOrder';
-import { ArticleSort } from '../types/articleSort';
+import { ArticleOrder } from '../enums/articleOrder';
+import { ArticleSort } from '../enums/articleSort';
 
 const selectArticleFilters = (state: IState) => state.articleFilters;
 
@@ -22,5 +22,5 @@ export const selectArticleSort = createSelector(
 );
 export const selectArticleType = createSelector(
   selectArticleFilters,
-  (articleFilters): ArticleType | null => articleFilters?.type || null,
+  (articleFilters): ArticleTypes | null => articleFilters?.type || null,
 );

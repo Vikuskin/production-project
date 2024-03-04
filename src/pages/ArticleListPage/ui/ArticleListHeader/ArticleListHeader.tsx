@@ -2,13 +2,14 @@ import React, { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 
-import { ArticleType } from 'entities/Article';
+import { ArticleTypes } from 'entities/Article';
 import { ArticleListView } from 'entities/ArticleList';
 import { ArticleFilters, ArticleOrder, ArticleSort, articleFiltersActions } from 'features/ArticleFilters';
 import { ArticleViewSwitcher } from 'features/ArticleViewSwitcher';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useDebounce } from 'shared/lib/hooks/useDebounce';
+import { HStack } from 'shared/ui/Stack';
 import { ITab } from 'shared/ui/Tabs';
 import { Text } from 'shared/ui/Text';
 
@@ -66,7 +67,7 @@ export const ArticleListHeader: FC<IArticleListHeaderProps> = memo(
       [dispatch, debouncedFetchData, searchParams, setSearchParams],
     );
     const onChangeType = useCallback(
-      (tab: ITab<ArticleType>) => {
+      (tab: ITab<ArticleTypes>) => {
         dispatch(articleFiltersActions.setType(tab.value));
         fetchData();
       },
@@ -87,10 +88,10 @@ export const ArticleListHeader: FC<IArticleListHeaderProps> = memo(
           onChangeType={onChangeType}
           onClearType={onClearType}
         />
-        <div className={styles.bottom}>
+        <HStack className={styles.bottom}>
           <Text className={styles.results} text={`${resultCount} ${t('results')}`} />
           <ArticleViewSwitcher view={articleListView} onViewClick={onChangeView} />
-        </div>
+        </HStack>
       </div>
     );
   },

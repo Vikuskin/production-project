@@ -1,9 +1,9 @@
 import { ActionReducerMapBuilder, PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
+import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
 
+import { IArticle } from '../interfaces/article';
 import { fetchArticleById } from '../services/fetchArticleById';
-import { IArticle } from '../types/article';
 import { IArticleData } from '../types/articleData';
 
 export const articleInitialState: IArticle = {

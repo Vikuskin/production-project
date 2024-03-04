@@ -1,8 +1,9 @@
 import { IState } from 'app/providers/StoreProvider';
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
-import { articleDataMock } from 'shared/mocks/articleData';
+import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
 
 import { selectArticleData, selectArticleError, selectArticleLoading } from './selectArticle';
+
+import { articleDataMock } from '../mocks/articleData';
 
 describe('selectArticle', () => {
   it('should select article data', () => {

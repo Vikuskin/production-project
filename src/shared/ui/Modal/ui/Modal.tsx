@@ -1,8 +1,8 @@
 import React, { FC, PropsWithChildren, useCallback, useEffect, useRef, useState } from 'react';
 
-import { ANIMATION_DELAY } from 'shared/constants/constants';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { Portal } from 'shared/ui/Portal/ui/Portal';
+import { HStack } from 'shared/ui/Stack';
 
 import * as styles from './Modal.module.scss';
 
@@ -12,7 +12,7 @@ interface IModalProps {
   className?: string;
   lazy?: boolean;
 }
-
+export const ANIMATION_DELAY = 200;
 export const Modal: FC<PropsWithChildren<IModalProps>> = (props) => {
   const { children, className, isOpen, onClose, lazy } = props;
   const [isOpening, setIsOpening] = useState(false);
@@ -78,11 +78,11 @@ export const Modal: FC<PropsWithChildren<IModalProps>> = (props) => {
   return (
     <Portal>
       <div data-testid="modal" className={getClassNames(styles.modal, [className ?? ''], mods)}>
-        <div data-testid="overlay" className={styles.overlay} onClick={closeHandler}>
+        <HStack align="center" justify="center" className={styles.overlay} onClick={closeHandler}>
           <div data-testid="content" className={styles.content} onClick={onContentClick}>
             {children}
           </div>
-        </div>
+        </HStack>
       </div>
     </Portal>
   );

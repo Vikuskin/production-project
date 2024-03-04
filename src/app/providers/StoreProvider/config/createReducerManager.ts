@@ -1,6 +1,6 @@
 import { Reducer, ReducersMapObject, UnknownAction, combineReducers } from '@reduxjs/toolkit';
 
-import { IState, StateKey } from '../types/state';
+import { IState, StateKey } from '../interfaces/state';
 
 export function createReducerManager(initialReducers: ReducersMapObject<IState>) {
   const reducers = { ...initialReducers };

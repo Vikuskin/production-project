@@ -1,6 +1,6 @@
 import axios, { InternalAxiosRequestConfig } from 'axios';
 
-import { LOCAL_STORAGE_KEYS } from 'shared/constants/constants';
+import { LOCAL_STORAGE_KEYS } from 'shared/constants/localStorageKeys';
 
 export const API = axios.create({
   baseURL: API_URL,

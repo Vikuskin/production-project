@@ -5,7 +5,7 @@ import { Text } from 'shared/ui/Text';
 
 import * as styles from './ArticleTextBlock.module.scss';
 
-import { IArticleTextBlock } from '../../model/types/articleBlock';
+import { IArticleTextBlock } from '../../model/interfaces/articleTextBlock';
 
 interface IArticleTextBlockProps {
   block: IArticleTextBlock;

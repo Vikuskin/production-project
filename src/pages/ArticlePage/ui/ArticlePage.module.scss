@@ -1,8 +1,7 @@
-.article-header {
-  display: flex;
-  align-items: center;
+.line {
+  margin: 40px 0 30px;
+}
 
-  .edit-btn {
-    margin-left: auto;
-  }
+.line:last-of-type {
+  margin: 0 0 30px;
 }

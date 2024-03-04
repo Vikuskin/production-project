@@ -1,4 +1,4 @@
 export { Text } from './ui/Text';
-export { TextVariant } from './types/TextVariant';
-export { TextAlign } from './types/TextAlign';
-export { TextSize } from './types/TextSize';
+export { TextVariants } from './enums/textVariants';
+export { TextAligns } from './enums/textAligns';
+export { TextSizes } from './enums/textSizes';

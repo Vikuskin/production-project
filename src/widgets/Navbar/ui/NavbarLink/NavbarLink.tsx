@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { AppLink } from 'shared/ui/AppLink';
 
-import { INavbarLink } from '../../model/types/navbarLink';
+import { INavbarLink } from '../../model/interfaces/navbarLink';
 
 interface INavbarLinkProps {
   className?: string;

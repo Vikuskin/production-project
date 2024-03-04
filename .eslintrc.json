@@ -38,7 +38,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "import", "prettier", "i18next", "react-hooks"],
+  "plugins": ["react", "@typescript-eslint", "import", "prettier", "i18next", "react-hooks", "fsd-paths"],
   "ignorePatterns": [
     "build",
     "coverage",
@@ -119,6 +119,8 @@
         "name": "react-redux",
         "importNames": ["useSelector", "useDispatch"]
       }
-    ]
+    ],
+    // custom plugins
+    "fsd-paths/relative-paths": "error"
   }
 }

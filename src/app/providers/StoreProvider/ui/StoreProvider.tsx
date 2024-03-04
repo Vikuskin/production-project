@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 
 import { createStore } from '../config/store';
-import { IState } from '../types/state';
+import { IState } from '../interfaces/state';
 
 interface IStoreProvider {
   initialState?: IState;

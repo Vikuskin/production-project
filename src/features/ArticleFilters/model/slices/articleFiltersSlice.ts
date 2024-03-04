@@ -1,10 +1,10 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { ArticleType } from 'entities/Article';
+import { ArticleTypes } from 'entities/Article';
 
-import { IArticleFilters } from '../types/articleFilters';
-import { ArticleOrder } from '../types/articleOrder';
-import { ArticleSort } from '../types/articleSort';
+import { ArticleOrder } from '../enums/articleOrder';
+import { ArticleSort } from '../enums/articleSort';
+import { IArticleFilters } from '../interfaces/articleFilters';
 
 export const articleFiltersInitialState: IArticleFilters = {
   order: ArticleOrder.Decrease,
@@ -26,7 +26,7 @@ export const articleFiltersSlice = createSlice({
     setSort: (state, action: PayloadAction<ArticleSort>) => {
       state.sort = action.payload;
     },
-    setType: (state, action: PayloadAction<ArticleType | null>) => {
+    setType: (state, action: PayloadAction<ArticleTypes | null>) => {
       state.type = action.payload;
     },
   },

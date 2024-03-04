@@ -2,9 +2,10 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { IThunkConfig } from 'app/providers/StoreProvider';
 import { IAuthData, userActions } from 'entities/User';
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
+import { ROUTES } from 'shared/api/routes';
+import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-import { ICustomError } from 'shared/types/customError';
+import { ICustomError } from 'shared/interfaces/customError';
 
 interface ILoginByUsernameProps {
   username: string;
@@ -17,7 +18,7 @@ export const loginByUsername = createAsyncThunk<IAuthData, ILoginByUsernameProps
     const { rejectWithValue, dispatch, extra } = thunkApi;
 
     try {
-      const response = await extra.api.post<IAuthData>('/login', { username, password });
+      const response = await extra.api.post<IAuthData>(ROUTES.login, { username, password });
 
       if (!response.data) {
         return rejectWithValue({ status: ErrorStatusCode.BadRequest, message: 'No data from server' });

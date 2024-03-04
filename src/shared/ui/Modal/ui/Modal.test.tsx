@@ -1,8 +1,6 @@
-import { act, fireEvent, render } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 
-import { ANIMATION_DELAY } from 'shared/constants/constants';
-
-import { Modal } from './Modal';
+import { ANIMATION_DELAY, Modal } from './Modal';
 
 describe('Modal', () => {
   const onCloseMock = jest.fn();
@@ -35,8 +33,10 @@ describe('Modal', () => {
   });
 
   it('calls onClose when overlay is clicked', () => {
-    const { getByTestId } = render(<Modal isOpen={true} onClose={onCloseMock} />);
-    const overlay = getByTestId('overlay');
+    render(<Modal isOpen={true} onClose={onCloseMock} />);
+
+    const body = screen.getAllByRole('generic');
+    const overlay = body[2];
 
     fireEvent.click(overlay);
     expect(setTimeout).toHaveBeenCalledTimes(2);

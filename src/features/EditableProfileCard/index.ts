@@ -1,3 +1,5 @@
 export { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCard';
-export { profileReducer } from '../../features/EditableProfileCard/models/slices/profileSlice';
-export type { IProfile } from '../../features/EditableProfileCard/models/types/profile';
+export { profileReducer } from './models/slices/profileSlice';
+export type { IProfile } from './models/interfaces/profile';
+export { selectProfileError, selectProfileForm, selectProfileLoading } from './models/selectors/selectProfile';
+export { fetchProfileData } from './models/services/fetchProfileData';

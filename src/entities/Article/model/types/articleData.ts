@@ -1,7 +1,8 @@
 import { IAuthData } from 'entities/User';
 
 import { ArticleBlock } from './articleBlock';
-import { ArticleType } from './articleType';
+
+import { ArticleTypes } from '../enums/articleTypes';
 
 export interface IArticleData {
   id: string;
@@ -11,6 +12,6 @@ export interface IArticleData {
   views: string;
   createdAt: string;
   user: IAuthData;
-  type: ArticleType[];
+  type: ArticleTypes[];
   blocks: ArticleBlock[];
 }

@@ -1,11 +1,11 @@
 import { ActionReducerMapBuilder, PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import { IProfileData } from 'entities/Profile';
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
+import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
 
+import { IProfile } from '../interfaces/profile';
 import { fetchProfileData } from '../services/fetchProfileData';
 import { updateProfileData } from '../services/updateProfileData';
-import { IProfile } from '../types/profile';
 
 export const profileInitialState: IProfile = {
   isLoading: false,

@@ -5,17 +5,8 @@
 .list {
   width: 100%;
 
-  .header {
-    display: flex;
-    align-items: center;
-
-    .username {
-      margin-left: 5px;
-    }
-
-    .date {
-      margin-left: auto;
-    }
+  .date {
+    margin-left: auto;
   }
 
   .title {
@@ -40,8 +31,6 @@
   }
 
   .footer {
-    display: flex;
-    align-items: center;
     margin-top: 10px;
 
     .view {
@@ -55,13 +44,6 @@
   height: var(--article-tile-card-height);
   transition: 0.2s;
 
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  /* stylelint-disable-next-line no-descending-specificity */
   .date {
     display: none;
   }
@@ -93,8 +75,6 @@
   }
 
   .info {
-    display: flex;
-    align-items: center;
     margin-top: 8px;
 
     .types,
@@ -115,7 +95,7 @@
   }
 
   .title {
-    width: 200px;
+    width: calc(var(--article-tile-card-width) - var(--card-padding) * 2);
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

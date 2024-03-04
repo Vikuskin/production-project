@@ -1,6 +1,4 @@
 .header {
-  display: flex;
-  align-items: center;
   margin-bottom: 10px;
 
   button {
@@ -8,10 +6,6 @@
   }
 
   .edit-btn {
-    margin-left: 10px;
-  }
-
-  .avatar-wrapper {
-    margin-right: 10px;
+    margin-left: 0;
   }
 }

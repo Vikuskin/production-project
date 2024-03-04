@@ -5,13 +5,13 @@
   height: var(--navbar-height);
   padding: 20px;
   background: var(--secondary-bg-color);
+
+  .profile-menu {
+    margin-left: 15px;
+  }
 }
 
 .links {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  justify-content: center;
   margin-left: auto;
 }
 

@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { IInfiniteScroll } from '../types/infiniteScroll';
+import { IInfiniteScroll } from '../interfaces/infiniteScroll';
 
 const infiniteScrollInitialState: IInfiniteScroll = {
   scroll: {},

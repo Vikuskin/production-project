@@ -4,11 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { IArticleData } from 'entities/Article';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { Skeleton } from 'shared/ui/Skeleton';
+import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text';
 
 import * as styles from './ArticleList.module.scss';
 
-import { ArticleListView } from '../../model/types/articleListView';
+import { ArticleListView } from '../../model/enums/articleListView';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 
 interface IArticleListProps {
@@ -41,13 +42,15 @@ export const ArticleList: FC<IArticleListProps> = memo((props: IArticleListProps
 
   if (isLoading) {
     return (
-      <div className={getClassNames(styles.articleList, [className ?? '', styles[view]])}>{getSkeletons(view)}</div>
+      <HStack className={getClassNames('', [className ?? '', styles[view]])} gap={15}>
+        {getSkeletons(view)}
+      </HStack>
     );
   }
 
   return (
-    <div className={getClassNames(styles.articleList, [className ?? '', styles[view]])}>
+    <HStack className={getClassNames('', [className ?? '', styles[view]])} gap={15}>
       {articleList.length ? renderArticles : <Text text={t('No articles')} />}
-    </div>
+    </HStack>
   );
 });

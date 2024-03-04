@@ -1,8 +1,10 @@
 import React, { FC, ReactElement, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { ErrorPage } from 'pages/ErrorPage';
 import CalendarSvg from 'shared/assets/icons/calendar.svg';
 import EyeIconSvg from 'shared/assets/icons/eye-out.svg';
+import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
@@ -10,14 +12,15 @@ import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { Avatar } from 'shared/ui/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton';
-import { Text, TextAlign, TextSize, TextVariant } from 'shared/ui/Text';
+import { HStack } from 'shared/ui/Stack';
+import { Text, TextAligns, TextSizes } from 'shared/ui/Text';
 
 import * as styles from './Article.module.scss';
 
+import { ArticleBlocks } from '../../model/enums/articleBlocks';
 import { selectArticleData, selectArticleError, selectArticleLoading } from '../../model/selectors/selectArticle';
 import { fetchArticleById } from '../../model/services/fetchArticleById';
 import { articleReducer } from '../../model/slices/articleSlice';
-import { ArticleBlockType } from '../../model/types/articleBlock';
 import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock';
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock';
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
@@ -27,7 +30,7 @@ const articleReducers: ReducersList = {
 };
 
 interface IArticleProps {
-  id: string;
+  id: string | null;
   className?: string;
 }
 
@@ -41,11 +44,11 @@ export const Article: FC<IArticleProps> = memo(({ className, id }: IArticleProps
   const renderBlock = useMemo(() => {
     return articleData?.blocks.map((block) => {
       switch (block.type) {
-        case ArticleBlockType.Code:
+        case ArticleBlocks.Code:
           return <ArticleCodeBlock key={block.id} className={styles.block} block={block} />;
-        case ArticleBlockType.Img:
+        case ArticleBlocks.Img:
           return <ArticleImageBlock key={block.id} className={styles.block} block={block} />;
-        case ArticleBlockType.Text:
+        case ArticleBlocks.Text:
           return <ArticleTextBlock key={block.id} className={styles.block} block={block} />;
         default:
           return null;
@@ -66,14 +69,7 @@ export const Article: FC<IArticleProps> = memo(({ className, id }: IArticleProps
       </>
     );
   } else if (articleError) {
-    content = (
-      <Text
-        title={t(`${articleError.status}_error`)}
-        text={t(articleError.message)}
-        variant={TextVariant.Error}
-        align={TextAlign.Center}
-      />
-    );
+    content = <ErrorPage errorCode={ErrorStatusCode.BadRequest} text={t('Article was not found')} />;
   } else if (articleData) {
     content = (
       <>
@@ -84,19 +80,19 @@ export const Article: FC<IArticleProps> = memo(({ className, id }: IArticleProps
           className={styles.title}
           title={articleData.title}
           text={articleData.subtitle}
-          size={TextSize.SizeL}
-          align={TextAlign.Center}
+          size={TextSizes.SizeL}
+          align={TextAligns.Center}
         />
-        <div className={styles.articleInfo}>
+        <HStack justify="start" gap={0}>
           <EyeIconSvg className={styles.icon} />
-          <Text text={articleData.views} size={TextSize.SizeS} />
-        </div>
-        <div className={styles.articleInfo}>
+          <Text text={articleData.views} size={TextSizes.SizeS} />
+        </HStack>
+        <HStack justify="start" gap={0}>
           <CalendarSvg className={styles.icon} />
-          <Text text={articleData.createdAt} size={TextSize.SizeS} />
-        </div>
+          <Text text={articleData.createdAt} size={TextSizes.SizeS} />
+        </HStack>
         <span>
-          <Text size={TextSize.SizeS} text={articleData.type.join(', ')} />
+          <Text size={TextSizes.SizeS} text={articleData.type.join(', ')} />
         </span>
         {renderBlock}
       </>
