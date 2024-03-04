@@ -1,6 +1,4 @@
-import { IArticleData } from 'entities/Article';
-import { ArticleBlockType } from 'entities/Article/model/types/articleBlock';
-import { ArticleType } from 'entities/Article/model/types/articleType';
+import { ArticleBlocks, IArticleData } from 'entities/Article';
 import StrybookAvatar from 'shared/assets/tests/storybook-avatar.jpeg';
 
 export const articleDataMock: IArticleData = {
@@ -11,11 +9,11 @@ export const articleDataMock: IArticleData = {
   views: '1000',
   createdAt: '01.01.2024',
   user: { id: '1', username: 'test', avatar: StrybookAvatar, roles: [] },
-  type: [ArticleType.It, ArticleType.Medicine],
+  type: ['IT', 'Medicine'],
   blocks: [
     {
       id: '1',
-      type: ArticleBlockType.Text,
+      type: ArticleBlocks.Text,
       title: 'Title of this block',
       paragraphs: [
         'Culpa do ex ullamco aliquip eu officia incididunt minim.',
@@ -24,13 +22,13 @@ export const articleDataMock: IArticleData = {
     },
     {
       id: '2',
-      type: ArticleBlockType.Code,
+      type: ArticleBlocks.Code,
       // eslint-disable-next-line quotes
       code: "const jsonServer = require('json-server');\nconst path = require('path');\nconst server = jsonServer.create();\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
     },
     {
       id: '3',
-      type: ArticleBlockType.Text,
+      type: ArticleBlocks.Text,
       title: 'Title of this block',
       paragraphs: [
         'Occaecat fugiat dolore adipisicing commodo deserunt in exercitation id duis adipisicing culpa ipsum labore. Ut dolore laboris velit quis ipsum adipisicing Lorem. Nostrud esse voluptate deserunt mollit voluptate culpa.',
@@ -38,7 +36,7 @@ export const articleDataMock: IArticleData = {
     },
     {
       id: '4',
-      type: ArticleBlockType.Img,
+      type: ArticleBlocks.Img,
       src: StrybookAvatar,
       title: 'Id ullamco cupidatat excepteur minim et ut sint commodo anim ad esse consectetur.',
     },

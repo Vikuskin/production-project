@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Theme } from 'app/providers/theme';
+import { Themes } from 'app/providers/theme';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
 import { Text } from './Text';
 
-import { TextSize } from '../types/TextSize';
-import { TextVariant } from '../types/TextVariant';
+import { TextSizes } from '../enums/textSizes';
+import { TextVariants } from '../enums/textVariants';
 
 const meta = {
   title: 'shared/Text',
@@ -23,7 +23,7 @@ type Story = StoryObj<typeof meta>;
 export const NormalLightOnlyText: Story = {};
 
 export const NormalDarkOnlyText: Story = {
-  decorators: [themeDecorator(Theme.Dark)],
+  decorators: [themeDecorator(Themes.Dark)],
 };
 
 export const NormalLightWithTitle: Story = {
@@ -32,35 +32,35 @@ export const NormalLightWithTitle: Story = {
 
 export const NormalDarkWithTitle: Story = {
   args: { title: 'Title' },
-  decorators: [themeDecorator(Theme.Dark)],
+  decorators: [themeDecorator(Themes.Dark)],
 };
 
 export const ErrorLightOnlyText: Story = {
-  args: { variant: TextVariant.Error },
+  args: { variant: TextVariants.Error },
 };
 
 export const ErrorDarkOnlyText: Story = {
-  args: { variant: TextVariant.Error },
-  decorators: [themeDecorator(Theme.Dark)],
+  args: { variant: TextVariants.Error },
+  decorators: [themeDecorator(Themes.Dark)],
 };
 
 export const ErrorLightWithTitle: Story = {
-  args: { title: 'Title', variant: TextVariant.Error },
+  args: { title: 'Title', variant: TextVariants.Error },
 };
 
 export const ErrorDarkWithTitle: Story = {
-  args: { title: 'Title', variant: TextVariant.Error },
-  decorators: [themeDecorator(Theme.Dark)],
+  args: { title: 'Title', variant: TextVariants.Error },
+  decorators: [themeDecorator(Themes.Dark)],
 };
 
 export const SizeSLight: Story = {
-  args: { title: 'Title', size: TextSize.SizeS },
+  args: { title: 'Title', size: TextSizes.SizeS },
 };
 
 export const SizeMLight: Story = {
-  args: { title: 'Title', size: TextSize.SizeM },
+  args: { title: 'Title', size: TextSizes.SizeM },
 };
 
 export const SizeLLight: Story = {
-  args: { title: 'Title', size: TextSize.SizeL },
+  args: { title: 'Title', size: TextSizes.SizeL },
 };

@@ -11,7 +11,7 @@ import {
   selectProfileValidationErrors,
 } from './selectProfile';
 
-import { ValidateProfileError } from '../types/validateProfileError';
+import { ValidateProfileError } from '../enums/validateProfileError';
 
 describe('selectProfile', () => {
   const state: DeepPartial<IState> = {

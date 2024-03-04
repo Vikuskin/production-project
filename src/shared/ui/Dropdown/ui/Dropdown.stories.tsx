@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Theme } from 'app/providers/theme';
+import { Themes } from 'app/providers/theme';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
-import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
+import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
 
 import { Dropdown } from './Dropdown';
 
@@ -12,7 +12,7 @@ const meta = {
   component: Dropdown,
   tags: ['autodocs'],
   args: {
-    trigger: <AppButton variant={AppButtonVariant.Outline}>Trigger button</AppButton>,
+    trigger: <AppButton variant={AppButtonVariants.Outline}>Trigger button</AppButton>,
     items: [
       { content: <span>Dropdown item 1</span> },
       { content: <span>Dropdown item 2</span> },
@@ -35,7 +35,7 @@ type Story = StoryObj<typeof meta>;
 export const LightTopRight: Story = {};
 
 export const DarkTopRight: Story = {
-  decorators: [themeDecorator(Theme.Dark)],
+  decorators: [themeDecorator(Themes.Dark)],
 };
 
 export const LightTopLeft: Story = {
@@ -52,7 +52,7 @@ export const LightTopLeft: Story = {
 export const DarkTopLeft: Story = {
   args: { direction: 'topLeft' },
   decorators: [
-    themeDecorator(Theme.Dark),
+    themeDecorator(Themes.Dark),
     (Story) => (
       <div style={{ textAlign: 'left' }}>
         <Story />

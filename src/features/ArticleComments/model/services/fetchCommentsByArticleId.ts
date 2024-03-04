@@ -5,7 +5,7 @@ import { IComment } from 'entities/Comment';
 import { ROUTES } from 'shared/api/routes';
 import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-import { ICustomError } from 'shared/types/customError';
+import { ICustomError } from 'shared/interfaces/customError';
 
 export const fetchCommentsByArticleId = createAsyncThunk<IComment[], string | null, IThunkConfig<ICustomError>>(
   'articleComments/fetchCommentsByArticleId',

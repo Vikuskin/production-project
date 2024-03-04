@@ -6,13 +6,9 @@ import { AppLink } from 'shared/ui/AppLink';
 
 import * as styles from './Dropdown.module.scss';
 
-export type DropdownDirection = 'topRight' | 'topLeft';
-export interface IDropdownItem {
-  content: ReactNode;
-  onClick?: () => void;
-  href?: string;
-  disabled?: boolean;
-}
+import { IDropdownItem } from '../interfaces/dropdownItem';
+
+type DropdownDirection = 'topRight' | 'topLeft';
 interface IDropdownProps {
   items: IDropdownItem[];
   trigger: ReactNode;

@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { IThunkConfig } from 'app/providers/StoreProvider';
-import { ArticleType } from 'entities/Article';
+import { ArticleTypes } from 'entities/Article';
 import { ArticleOrder, ArticleSort, articleFiltersActions } from 'features/ArticleFilters';
-import { ICustomError } from 'shared/types/customError';
+import { ICustomError } from 'shared/interfaces/customError';
 
 import { fetchAllArticles } from './fetchAllArticles';
 
@@ -29,7 +29,7 @@ export const initArticleListPage = createAsyncThunk<void, URLSearchParams, IThun
           dispatch(articleFiltersActions.setSearch(value));
           break;
         case 'type':
-          dispatch(articleFiltersActions.setType(value as ArticleType));
+          dispatch(articleFiltersActions.setType(value as ArticleTypes));
           break;
         default:
           break;

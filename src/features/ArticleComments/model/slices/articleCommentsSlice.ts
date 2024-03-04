@@ -3,8 +3,8 @@ import { ActionReducerMapBuilder, PayloadAction, createEntityAdapter, createSlic
 import { IState } from 'app/providers/StoreProvider';
 import { IComment } from 'entities/Comment';
 
+import { IArticleComments } from '../interfaces/articleComments';
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId';
-import { IArticleComments } from '../types/articleComments';
 
 const articleCommentsAdapter = createEntityAdapter<IComment>();
 const articleCommentsSlice = createSlice({

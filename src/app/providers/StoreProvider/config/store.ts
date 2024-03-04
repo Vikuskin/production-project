@@ -8,9 +8,11 @@ import { ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 
 import { createReducerManager } from './createReducerManager';
 
+import { IState } from '../interfaces/state';
+import { IStoreWithManager } from '../interfaces/storeWithManager';
+import { IThunkExtraArg } from '../interfaces/thunkConfig';
 import { articlesViewMiddleware } from '../middleware/articlesViewMiddleware';
 import { authMiddleware } from '../middleware/authMiddleware';
-import { IState, IStoreWithManager, IThunkExtraArg } from '../types/state';
 
 export const createStore = (initialState?: IState, asyncReducers?: ReducersList): IStoreWithManager => {
   const staticReducers: ReducersMapObject<IState> = {

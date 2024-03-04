@@ -2,7 +2,7 @@ import React, { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 
-import { ArticleType } from 'entities/Article';
+import { ArticleTypes } from 'entities/Article';
 import { ArticleListView } from 'entities/ArticleList';
 import { ArticleFilters, ArticleOrder, ArticleSort, articleFiltersActions } from 'features/ArticleFilters';
 import { ArticleViewSwitcher } from 'features/ArticleViewSwitcher';
@@ -67,7 +67,7 @@ export const ArticleListHeader: FC<IArticleListHeaderProps> = memo(
       [dispatch, debouncedFetchData, searchParams, setSearchParams],
     );
     const onChangeType = useCallback(
-      (tab: ITab<ArticleType>) => {
+      (tab: ITab<ArticleTypes>) => {
         dispatch(articleFiltersActions.setType(tab.value));
         fetchData();
       },

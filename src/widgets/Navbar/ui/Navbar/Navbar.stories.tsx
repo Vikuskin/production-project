@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Theme } from 'app/providers/theme';
+import { Themes } from 'app/providers/theme';
 import { storeDecorator } from 'shared/lib/storybook/storeDecorator';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
@@ -20,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 export const LightWithoutAuth: Story = {};
 
 export const DarkWithoutAuth: Story = {
-  decorators: [themeDecorator(Theme.Dark)],
+  decorators: [themeDecorator(Themes.Dark)],
 };
 
 export const LightWithAuth: Story = {
@@ -28,5 +28,5 @@ export const LightWithAuth: Story = {
 };
 
 export const DarkWithAuth: Story = {
-  decorators: [themeDecorator(Theme.Dark), storeDecorator({ user: { authData: {} } })],
+  decorators: [themeDecorator(Themes.Dark), storeDecorator({ user: { authData: {} } })],
 };

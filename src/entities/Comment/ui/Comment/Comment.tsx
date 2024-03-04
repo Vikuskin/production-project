@@ -10,7 +10,7 @@ import { Text } from 'shared/ui/Text';
 
 import * as styles from './Comment.module.scss';
 
-import { IComment } from '../../model/types/comment';
+import { IComment } from '../../model/interfaces/comment';
 
 interface ICommentProps {
   comment: IComment;

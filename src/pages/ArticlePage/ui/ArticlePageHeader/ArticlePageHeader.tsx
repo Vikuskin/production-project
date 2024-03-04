@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { routePaths } from 'app/providers/router';
 import { selectArticleData, selectIsEditableArticle } from 'entities/Article';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
+import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
 import { HStack } from 'shared/ui/Stack';
 
 import * as styles from './ArticlePageHeader.module.scss';
@@ -28,12 +28,12 @@ export const ArticlePageHeader: FC<IArticlePageHeaderProps> = ({ className }) =>
   return (
     <HStack className={className}>
       {articleData && (
-        <AppButton variant={AppButtonVariant.Outline} onClick={onBack}>
+        <AppButton variant={AppButtonVariants.Outline} onClick={onBack}>
           {t('Back to list')}
         </AppButton>
       )}
       {isEditableArticle && articleData && (
-        <AppButton className={styles.editBtn} variant={AppButtonVariant.Outline} onClick={onEdit}>
+        <AppButton className={styles.editBtn} variant={AppButtonVariants.Outline} onClick={onEdit}>
           {t('Edit')}
         </AppButton>
       )}

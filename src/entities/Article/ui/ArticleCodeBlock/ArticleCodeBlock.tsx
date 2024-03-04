@@ -5,7 +5,7 @@ import { Code } from 'shared/ui/Code';
 
 import * as styles from './ArticleCodeBlock.module.scss';
 
-import { IArticleCodeBlock } from '../../model/types/articleBlock';
+import { IArticleCodeBlock } from '../../model/interfaces/articleCodeBlock';
 
 interface IArticleCodeBlockProps {
   block: IArticleCodeBlock;

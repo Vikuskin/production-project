@@ -4,29 +4,18 @@ import { getClassNames } from 'shared/lib/classNames/getClassNames';
 
 import * as styles from './AppButton.module.scss';
 
-export enum AppButtonVariant {
-  Clear = 'clear',
-  Outline = 'outline',
-  OutlineDanger = 'outlineDanger',
-  Background = 'background',
-  BackgroundInverted = 'backgroundInverted',
-}
-
-export enum AppButtonSize {
-  SizeM = 'sizeM',
-  SizeL = 'sizeL',
-  SizeXl = 'sizeXl',
-}
+import { AppButtonSizes } from '../enums/appButtonSizes';
+import { AppButtonVariants } from '../enums/appButtonVariants';
 
 interface IAppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: AppButtonVariant;
+  variant?: AppButtonVariants;
   square?: boolean;
-  size?: AppButtonSize;
+  size?: AppButtonSizes;
   className?: string;
 }
 
 export const AppButton: FC<PropsWithChildren<IAppButtonProps>> = memo((props: PropsWithChildren<IAppButtonProps>) => {
-  const { className, children, variant = AppButtonVariant.Clear, square, size, disabled, ...otherProps } = props;
+  const { className, children, variant = AppButtonVariants.Clear, square, size, disabled, ...otherProps } = props;
   const additionalClasses = [className ?? '', styles[variant]];
   let mods: Record<string, boolean> = {
     [styles.square]: !!square,

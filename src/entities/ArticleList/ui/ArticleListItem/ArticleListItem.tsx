@@ -2,10 +2,10 @@ import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { routePaths } from 'app/providers/router';
-import { ArticleBlockType, ArticleTextBlock, IArticleData, IArticleTextBlock } from 'entities/Article';
+import { ArticleBlocks, ArticleTextBlock, IArticleData, IArticleTextBlock } from 'entities/Article';
 import EyeSvg from 'shared/assets/icons/eye-out.svg';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
+import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
 import { AppLink } from 'shared/ui/AppLink';
 import { Avatar } from 'shared/ui/Avatar';
 import { Card } from 'shared/ui/Card';
@@ -14,7 +14,7 @@ import { Text } from 'shared/ui/Text';
 
 import * as styles from './ArticleListItem.module.scss';
 
-import { ArticleListView } from '../../model/types/articleListView';
+import { ArticleListView } from '../../model/enums/articleListView';
 
 interface IArticleListItemProps {
   article: IArticleData;
@@ -37,7 +37,7 @@ export const ArticleListItem: FC<IArticleListItemProps> = (props: IArticleListIt
 
   if (view === ArticleListView.List) {
     const textBlock = article.blocks.find(
-      (block) => block.type === ArticleBlockType.Text && block.paragraphs && block.title,
+      (block) => block.type === ArticleBlocks.Text && block.paragraphs && block.title,
     ) as IArticleTextBlock;
 
     return (
@@ -54,7 +54,7 @@ export const ArticleListItem: FC<IArticleListItemProps> = (props: IArticleListIt
           {textBlock && <ArticleTextBlock className={styles.textBlock} block={textBlock} />}
           <HStack className={styles.footer}>
             <AppLink target={target} to={`${routePaths.article}${article.id}`}>
-              <AppButton variant={AppButtonVariant.Outline}>{t('Read more...')}</AppButton>
+              <AppButton variant={AppButtonVariants.Outline}>{t('Read more...')}</AppButton>
             </AppLink>
             {views}
           </HStack>

@@ -7,7 +7,7 @@ import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/Dynami
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { Text, TextSize } from 'shared/ui/Text';
+import { Text, TextSizes } from 'shared/ui/Text';
 import { PageLoader } from 'widgets/PageLoader';
 
 import * as styles from './ArticleComments.module.scss';
@@ -38,7 +38,7 @@ export const ArticleComments: FC<IArticleCommentsProps> = memo(({ articleId }: I
   return (
     <DynamicReducerLoader reducers={articleCommentsReducers} removeAfterUnmount>
       <Suspense fallback={<PageLoader />}>
-        <Text className={styles.title} title={t('Comments')} size={TextSize.SizeL} />
+        <Text className={styles.title} title={t('Comments')} size={TextSizes.SizeL} />
         <AddNewComment onCommentSend={onCommentSend} />
         <CommentList comments={comments} isLoading={commentsIsLoading} />
       </Suspense>

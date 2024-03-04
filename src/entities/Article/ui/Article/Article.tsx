@@ -13,14 +13,14 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { Avatar } from 'shared/ui/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton';
 import { HStack } from 'shared/ui/Stack';
-import { Text, TextAlign, TextSize } from 'shared/ui/Text';
+import { Text, TextAligns, TextSizes } from 'shared/ui/Text';
 
 import * as styles from './Article.module.scss';
 
+import { ArticleBlocks } from '../../model/enums/articleBlocks';
 import { selectArticleData, selectArticleError, selectArticleLoading } from '../../model/selectors/selectArticle';
 import { fetchArticleById } from '../../model/services/fetchArticleById';
 import { articleReducer } from '../../model/slices/articleSlice';
-import { ArticleBlockType } from '../../model/types/articleBlock';
 import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock';
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock';
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock';
@@ -44,11 +44,11 @@ export const Article: FC<IArticleProps> = memo(({ className, id }: IArticleProps
   const renderBlock = useMemo(() => {
     return articleData?.blocks.map((block) => {
       switch (block.type) {
-        case ArticleBlockType.Code:
+        case ArticleBlocks.Code:
           return <ArticleCodeBlock key={block.id} className={styles.block} block={block} />;
-        case ArticleBlockType.Img:
+        case ArticleBlocks.Img:
           return <ArticleImageBlock key={block.id} className={styles.block} block={block} />;
-        case ArticleBlockType.Text:
+        case ArticleBlocks.Text:
           return <ArticleTextBlock key={block.id} className={styles.block} block={block} />;
         default:
           return null;
@@ -80,19 +80,19 @@ export const Article: FC<IArticleProps> = memo(({ className, id }: IArticleProps
           className={styles.title}
           title={articleData.title}
           text={articleData.subtitle}
-          size={TextSize.SizeL}
-          align={TextAlign.Center}
+          size={TextSizes.SizeL}
+          align={TextAligns.Center}
         />
         <HStack justify="start" gap={0}>
           <EyeIconSvg className={styles.icon} />
-          <Text text={articleData.views} size={TextSize.SizeS} />
+          <Text text={articleData.views} size={TextSizes.SizeS} />
         </HStack>
         <HStack justify="start" gap={0}>
           <CalendarSvg className={styles.icon} />
-          <Text text={articleData.createdAt} size={TextSize.SizeS} />
+          <Text text={articleData.createdAt} size={TextSizes.SizeS} />
         </HStack>
         <span>
-          <Text size={TextSize.SizeS} text={articleData.type.join(', ')} />
+          <Text size={TextSizes.SizeS} text={articleData.type.join(', ')} />
         </span>
         {renderBlock}
       </>

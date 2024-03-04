@@ -2,8 +2,8 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { selectUserAuthData } from './selectUser';
 
-import { IAuthData } from '../types/authData';
-import { UserRoles } from '../types/userRoles';
+import { UserRoles } from '../enums/userRoles';
+import { IAuthData } from '../interfaces/authData';
 
 export const selectUserRoles = createSelector(
   selectUserAuthData,

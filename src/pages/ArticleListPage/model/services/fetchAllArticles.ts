@@ -6,8 +6,8 @@ import { selectArticleOrder, selectArticleSearch, selectArticleSort, selectArtic
 import { ROUTES } from 'shared/api/routes';
 import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
+import { ICustomError } from 'shared/interfaces/customError';
 import { addQueryParams } from 'shared/lib/url/addQueryParams';
-import { ICustomError } from 'shared/types/customError';
 
 import { selectArticleListLimit, selectArticleListPage } from '../selectors/selectArticleList';
 

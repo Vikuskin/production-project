@@ -5,7 +5,7 @@ import { profileForm } from 'shared/mocks/profileForm';
 
 import { updateProfileData } from './updateProfileData';
 
-import { ValidateProfileError } from '../types/validateProfileError';
+import { ValidateProfileError } from '../enums/validateProfileError';
 
 describe('updateProfileData', () => {
   it('handles success response from server', async () => {

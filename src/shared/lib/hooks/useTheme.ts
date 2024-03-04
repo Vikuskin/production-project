@@ -1,24 +1,24 @@
 import { useContext } from 'react';
 
-import { Theme, ThemeContext } from 'app/providers/theme';
+import { ThemeContext, Themes } from 'app/providers/theme';
 import { LOCAL_STORAGE_KEYS } from 'shared/constants/constants';
 
 interface IUseThemeResult {
-  theme: Theme;
+  theme: Themes;
   toggleTheme: () => void;
 }
 
-const getLocalStorageTheme = (): Theme | null => {
+const getLocalStorageTheme = (): Themes | null => {
   const localStorageTheme = localStorage.getItem(LOCAL_STORAGE_KEYS.Theme);
 
-  if (localStorageTheme && Object.values(Theme).includes(localStorageTheme as Theme)) {
-    return localStorageTheme as Theme;
+  if (localStorageTheme && Object.values(Themes).includes(localStorageTheme as Themes)) {
+    return localStorageTheme as Themes;
   }
 
   return null;
 };
 
-export const DEFAULT_TEAM: Theme = getLocalStorageTheme() ?? Theme.Light;
+export const DEFAULT_TEAM: Themes = getLocalStorageTheme() ?? Themes.Light;
 
 export function useTheme(): IUseThemeResult {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -26,17 +26,17 @@ export function useTheme(): IUseThemeResult {
     let newTheme;
 
     switch (theme) {
-      case Theme.Dark:
-        newTheme = Theme.Light;
+      case Themes.Dark:
+        newTheme = Themes.Light;
         break;
-      case Theme.Light:
-        newTheme = Theme.Pink;
+      case Themes.Light:
+        newTheme = Themes.Pink;
         break;
-      case Theme.Pink:
-        newTheme = Theme.Dark;
+      case Themes.Pink:
+        newTheme = Themes.Dark;
         break;
       default:
-        newTheme = Theme.Light;
+        newTheme = Themes.Light;
     }
 
     localStorage.setItem(LOCAL_STORAGE_KEYS.Theme, newTheme);

@@ -5,7 +5,7 @@ import { IAuthData, userActions } from 'entities/User';
 import { ROUTES } from 'shared/api/routes';
 import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-import { ICustomError } from 'shared/types/customError';
+import { ICustomError } from 'shared/interfaces/customError';
 
 interface ILoginByUsernameProps {
   username: string;

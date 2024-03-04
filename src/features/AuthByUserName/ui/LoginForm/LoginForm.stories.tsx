@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Theme } from 'app/providers/theme';
+import { Themes } from 'app/providers/theme';
 import { delayCaptureDecorator } from 'shared/lib/storybook/delayCaptureDecorator';
 import { storeDecorator } from 'shared/lib/storybook/storeDecorator';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 export const LightNormal: Story = {};
 
 export const DarkNormal: Story = {
-  decorators: [themeDecorator(Theme.Dark)],
+  decorators: [themeDecorator(Themes.Dark)],
 };
 
 export const LightError: Story = {
@@ -35,7 +35,7 @@ export const LightError: Story = {
 
 export const DarkError: Story = {
   decorators: [
-    themeDecorator(Theme.Dark),
+    themeDecorator(Themes.Dark),
     storeDecorator({
       loginForm: { error: { status: 500, message: 'Internal server error' } },
     }),
@@ -47,5 +47,5 @@ export const LightLoading: Story = {
 };
 
 export const DarkLoading: Story = {
-  decorators: [themeDecorator(Theme.Dark), storeDecorator({ loginForm: { isLoading: true } })],
+  decorators: [themeDecorator(Themes.Dark), storeDecorator({ loginForm: { isLoading: true } })],
 };

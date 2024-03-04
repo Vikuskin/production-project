@@ -2,7 +2,7 @@ import { IProfileData } from 'entities/Profile';
 
 import { validateProfile } from './validateProfile';
 
-import { ValidateProfileError } from '../types/validateProfileError';
+import { ValidateProfileError } from '../enums/validateProfileError';
 
 describe('validateProfile', () => {
   it('returns an array with ValidateProfileError.NoData if profile is null', () => {

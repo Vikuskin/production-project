@@ -4,7 +4,7 @@ import { getClassNames } from 'shared/lib/classNames/getClassNames';
 
 import * as styles from './Card.module.scss';
 
-import { CardVariant } from '../model/types/cardVariant';
+import { CardVariant } from '../enums/cardVariant';
 
 interface ICardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;

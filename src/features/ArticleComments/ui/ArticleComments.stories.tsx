@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Theme } from 'app/providers/theme';
+import { Themes } from 'app/providers/theme';
 import { storeDecorator } from 'shared/lib/storybook/storeDecorator';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 import { commentsMock } from 'shared/mocks/comments';
@@ -29,7 +29,7 @@ type Story = StoryObj<typeof meta>;
 export const LightNormal: Story = {};
 
 export const DarkNormal: Story = {
-  decorators: [themeDecorator(Theme.Dark)],
+  decorators: [themeDecorator(Themes.Dark)],
 };
 
 export const LightWithNoComments: Story = {
@@ -37,7 +37,7 @@ export const LightWithNoComments: Story = {
 };
 
 export const DarkWithNoComments: Story = {
-  decorators: [themeDecorator(Theme.Dark), storeDecorator({})],
+  decorators: [themeDecorator(Themes.Dark), storeDecorator({})],
 };
 
 export const LightLoading: Story = {
@@ -46,7 +46,7 @@ export const LightLoading: Story = {
 
 export const DarkLoading: Story = {
   decorators: [
-    themeDecorator(Theme.Dark),
+    themeDecorator(Themes.Dark),
     storeDecorator({ articleComments: { ...articleCommentsMock, isLoading: true } }),
   ],
 };

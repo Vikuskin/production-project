@@ -4,9 +4,9 @@ import { profileForm } from 'shared/mocks/profileForm';
 
 import { profileActions, profileInitialState, profileReducer } from './profileSlice';
 
+import { ValidateProfileError } from '../enums/validateProfileError';
 import { fetchProfileData } from '../services/fetchProfileData';
 import { updateProfileData } from '../services/updateProfileData';
-import { ValidateProfileError } from '../types/validateProfileError';
 
 describe('profileSlice', () => {
   it('should set readonly flag', () => {

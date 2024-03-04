@@ -1,2 +1,2 @@
-export type { IArticleRecommends } from './models/types/articleRecommends';
+export type { IArticleRecommends } from './models/interfaces/articleRecommends';
 export { ArticleRecommends } from './ui/ArticleRecommends';

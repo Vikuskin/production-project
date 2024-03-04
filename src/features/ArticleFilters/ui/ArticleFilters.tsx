@@ -1,7 +1,7 @@
 import React, { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ArticleType } from 'entities/Article';
+import { ArticleTypes } from 'entities/Article/model/enums/articleTypes';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 import { getEnumOptions } from 'shared/lib/helpers/getEnumOptions';
@@ -13,6 +13,8 @@ import { ITab, Tabs } from 'shared/ui/Tabs';
 
 import * as styles from './ArticleFilters.module.scss';
 
+import { ArticleOrder } from '../model/enums/articleOrder';
+import { ArticleSort } from '../model/enums/articleSort';
 import {
   selectArticleOrder,
   selectArticleSearch,
@@ -20,8 +22,6 @@ import {
   selectArticleType,
 } from '../model/selectors/selectArticleFilter';
 import { articleFiltersReducer } from '../model/slices/articleFiltersSlice';
-import { ArticleOrder } from '../model/types/articleOrder';
-import { ArticleSort } from '../model/types/articleSort';
 
 const articleFiltersReducers: ReducersList = {
   articleFilters: articleFiltersReducer,
@@ -31,12 +31,12 @@ interface IArticleFiltersProps {
   onChangeOrder: (newOrder: ArticleOrder) => void;
   onChangeSort: (newSort: ArticleSort) => void;
   onChangeSearch: (search: string) => void;
-  onChangeType: (tab: ITab<ArticleType>) => void;
+  onChangeType: (tab: ITab<ArticleTypes>) => void;
   onClearType?: () => void;
 
   className?: string;
 }
-const tabs = getEnumOptions(ArticleType);
+const tabs = getEnumOptions(ArticleTypes);
 
 export const ArticleFilters: FC<IArticleFiltersProps> = memo((props: IArticleFiltersProps) => {
   const { onChangeOrder, onChangeSearch, onChangeSort, onChangeType, onClearType, className } = props;
@@ -71,7 +71,7 @@ export const ArticleFilters: FC<IArticleFiltersProps> = memo((props: IArticleFil
         className={styles.tabs}
         onTabClick={onChangeType}
         onTabClear={onClearType}
-        tabs={tabs as ITab<ArticleType>[]}
+        tabs={tabs as ITab<ArticleTypes>[]}
         value={articleType}
       />
     </DynamicReducerLoader>

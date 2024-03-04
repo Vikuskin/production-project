@@ -2,8 +2,8 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { IState } from 'app/providers/StoreProvider';
 
-import { IAuthData } from '../types/authData';
-import { IUser } from '../types/user';
+import { IAuthData } from '../interfaces/authData';
+import { IUser } from '../interfaces/user';
 
 const selectUser = (state: IState) => state.user;
 

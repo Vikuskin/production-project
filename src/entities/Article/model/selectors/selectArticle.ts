@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { IState } from 'app/providers/StoreProvider';
 import { selectUserAuthData } from 'entities/User';
-import { ICustomError } from 'shared/types/customError';
+import { ICustomError } from 'shared/interfaces/customError';
 
 import { IArticleData } from '../types/articleData';
 

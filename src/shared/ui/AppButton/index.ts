@@ -1,1 +1,2 @@
-export { AppButton, AppButtonVariant } from './ui/AppButton';
+export { AppButton } from './ui/AppButton';
+export { AppButtonVariants } from './enums/appButtonVariants';

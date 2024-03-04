@@ -2,14 +2,14 @@ import React, { FC, PropsWithChildren, createContext, useMemo, useState } from '
 
 import { DEFAULT_TEAM } from 'shared/lib/hooks/useTheme';
 
-import { Theme } from '../types/Theme';
+import { Themes } from '../enums/themes';
 
 interface IThemeProviderProps {
-  initialTheme?: Theme;
+  initialTheme?: Themes;
 }
 interface IThemeContextProps {
-  theme?: Theme;
-  setTheme?: React.Dispatch<React.SetStateAction<Theme>>;
+  theme?: Themes;
+  setTheme?: React.Dispatch<React.SetStateAction<Themes>>;
 }
 
 export const ThemeContext = createContext<IThemeContextProps>({});

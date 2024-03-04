@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { ArticleList, ArticleListView } from 'entities/ArticleList';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { Text, TextSize } from 'shared/ui/Text';
+import { Text, TextSizes } from 'shared/ui/Text';
 
 import * as styles from './ArticleRecommends.module.scss';
 
@@ -21,7 +21,7 @@ export const ArticleRecommends: FC<ArticleRecommendsProps> = ({ className }) => 
 
   return (
     <div className={getClassNames(styles.recommends, [className ?? ''])}>
-      <Text size={TextSize.SizeL} title={'Recommends'} />
+      <Text size={TextSizes.SizeL} title={'Recommends'} />
       <ArticleList
         target={'_blank'}
         className={styles.content}

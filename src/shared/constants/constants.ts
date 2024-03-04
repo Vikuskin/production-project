@@ -1,5 +1,5 @@
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-import { ICustomError } from 'shared/types/customError';
+import { ICustomError } from 'shared/interfaces/customError';
 
 export const LOCAL_STORAGE_KEYS = {
   Theme: 'theme',

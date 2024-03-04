@@ -1,6 +1,6 @@
 import { userActions, userInitialState, userReducer } from './userSlice';
 
-import { UserRoles } from '../types/userRoles';
+import { UserRoles } from '../enums/userRoles';
 
 describe('userSlice', () => {
   it('should set passed username', () => {

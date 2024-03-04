@@ -2,8 +2,8 @@ import { ActionReducerMapBuilder, PayloadAction, createSlice } from '@reduxjs/to
 
 import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 
+import { ILoginForm } from '../interfaces/loginForm';
 import { loginByUsername } from '../services/loginByUsername';
-import { ILoginForm } from '../types/loginForm';
 
 export const loginFormInitialState: ILoginForm = {
   isLoading: false,

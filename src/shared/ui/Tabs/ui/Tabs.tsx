@@ -7,7 +7,7 @@ import { HStack } from 'shared/ui/Stack';
 
 import * as styles from './Tabs.module.scss';
 
-import { ITab } from '../model/types/tab';
+import { ITab } from '../interfaces/tab';
 
 interface ITabsProps<T> {
   tabs: ITab<T>[];

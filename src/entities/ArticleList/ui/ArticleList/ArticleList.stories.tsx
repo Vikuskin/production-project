@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Theme } from 'app/providers/theme';
+import { Themes } from 'app/providers/theme';
 import { delayCaptureDecorator } from 'shared/lib/storybook/delayCaptureDecorator';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 import { getArticleListMock } from 'shared/mocks/articleList';
 
 import { ArticleList } from './ArticleList';
 
-import { ArticleListView } from '../../model/types/articleListView';
+import { ArticleListView } from '../../model/enums/articleListView';
 
 const articleListMock = getArticleListMock(3);
 const meta = {
@@ -28,7 +28,7 @@ type Story = StoryObj<typeof meta>;
 export const LightTile: Story = {};
 
 export const DarkTile: Story = {
-  decorators: [themeDecorator(Theme.Dark)],
+  decorators: [themeDecorator(Themes.Dark)],
 };
 
 export const LightList: Story = {
@@ -37,7 +37,7 @@ export const LightList: Story = {
 
 export const DarkList: Story = {
   args: { articleList: articleListMock, view: ArticleListView.List, isLoading: false },
-  decorators: [themeDecorator(Theme.Dark)],
+  decorators: [themeDecorator(Themes.Dark)],
 };
 
 export const LightTileLoading: Story = {
@@ -46,7 +46,7 @@ export const LightTileLoading: Story = {
 
 export const DarkTileLoading: Story = {
   args: { articleList: articleListMock, isLoading: true },
-  decorators: [themeDecorator(Theme.Dark)],
+  decorators: [themeDecorator(Themes.Dark)],
 };
 
 export const LightListLoading: Story = {
@@ -55,5 +55,5 @@ export const LightListLoading: Story = {
 
 export const DarkListLoading: Story = {
   args: { articleList: articleListMock, isLoading: true, view: ArticleListView.List },
-  decorators: [themeDecorator(Theme.Dark)],
+  decorators: [themeDecorator(Themes.Dark)],
 };

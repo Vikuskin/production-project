@@ -7,9 +7,9 @@ import { ListBox } from 'shared/ui/ListBox';
 
 import * as styles from './ProfileCard.module.scss';
 
-import { Country } from '../model/types/country';
-import { Currency } from '../model/types/currency';
-import { IProfileData } from '../model/types/profileData';
+import { Country } from '../model/enums/country';
+import { Currency } from '../model/enums/currency';
+import { IProfileData } from '../model/interfaces/profileData';
 
 interface ProfileCardProps {
   profileForm: Partial<IProfileData>;

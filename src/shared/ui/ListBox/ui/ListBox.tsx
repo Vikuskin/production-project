@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { getEnumOptions } from 'shared/lib/helpers/getEnumOptions';
-import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
+import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
 
 import * as styles from './ListBox.module.scss';
 
@@ -43,7 +43,7 @@ export const ListBox = typedMemo(<T extends string>(props: IListBoxProps<T>) => 
     >
       <HListbox.Button as="div">
         <span className={styles.label}>{label}</span>
-        <AppButton variant={AppButtonVariant.Clear} className={styles.triggerBtn}>
+        <AppButton variant={AppButtonVariants.Clear} className={styles.triggerBtn}>
           {value}
         </AppButton>
       </HListbox.Button>

@@ -7,7 +7,7 @@ import { ErrorPage } from 'pages/ErrorPage';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 
-import { routePaths } from '../lib/routeConfig';
+import { routePaths } from '../constants/routePaths';
 
 interface IRequireAuth {
   roles: UserRoles[] | null;

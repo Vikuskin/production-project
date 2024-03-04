@@ -2,10 +2,10 @@ import { within } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
 import i18n from 'app/providers/i18n/i18nForTests';
-import { Theme } from 'app/providers/theme';
+import { Themes } from 'app/providers/theme';
 import { useTheme } from 'shared/lib/hooks/useTheme';
 import { componentRender } from 'shared/lib/tests/componentRender';
-import { AppButtonVariant } from 'shared/ui/AppButton';
+import { AppButtonVariants } from 'shared/ui/AppButton';
 
 import { Sidebar } from './Sidebar';
 
@@ -20,7 +20,7 @@ describe('Sidebar', () => {
   const user = userEvent.setup();
 
   beforeEach(() => {
-    mockUseTheme.mockReturnValue({ theme: Theme.Light, toggleTheme: mockToggleTheme });
+    mockUseTheme.mockReturnValue({ theme: Themes.Light, toggleTheme: mockToggleTheme });
   });
 
   it('renders without crashing', () => {
@@ -49,7 +49,7 @@ describe('Sidebar', () => {
     await user.click(button);
 
     expect(sidebar).toHaveClass('collapsed');
-    expect(button).toHaveClass(AppButtonVariant.Clear);
+    expect(button).toHaveClass(AppButtonVariants.Clear);
 
     await user.click(button);
 

@@ -5,8 +5,8 @@ import { IArticleData } from 'entities/Article';
 import { ArticleListView } from 'entities/ArticleList';
 import { LOCAL_STORAGE_KEYS } from 'shared/constants/constants';
 
+import { IArticleList } from '../interfaces/articleList';
 import { fetchAllArticles } from '../services/fetchAllArticles';
-import { IArticleList } from '../types/articleList';
 
 const getInitialView = (): ArticleListView | null => {
   const localStorageView = localStorage.getItem(LOCAL_STORAGE_KEYS.ArticleView);

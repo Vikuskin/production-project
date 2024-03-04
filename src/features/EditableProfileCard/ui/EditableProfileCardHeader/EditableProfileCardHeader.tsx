@@ -5,7 +5,7 @@ import { selectUserAuthData } from 'entities/User';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { AppButton, AppButtonVariant } from 'shared/ui/AppButton';
+import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
 import { Avatar } from 'shared/ui/Avatar';
 import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text';
@@ -47,18 +47,18 @@ export const EditableProfileCardHeader: FC<IEditableProfileCardHeaderProps> = me
         {avatar && <Avatar src={avatar} />}
         <Text title={t('Profile')} text="" />
         {profileReadonly ? (
-          <AppButton data-testid="edit-btn" variant={AppButtonVariant.Outline} onClick={onEdit}>
+          <AppButton data-testid="edit-btn" variant={AppButtonVariants.Outline} onClick={onEdit}>
             {t('Edit')}
           </AppButton>
         ) : (
           <>
-            <AppButton data-testid="cancel-btn" variant={AppButtonVariant.OutlineDanger} onClick={onCancelEdit}>
+            <AppButton data-testid="cancel-btn" variant={AppButtonVariants.OutlineDanger} onClick={onCancelEdit}>
               {t('Cancel')}
             </AppButton>
             <AppButton
               data-testid="save-btn"
               className={styles.editBtn}
-              variant={AppButtonVariant.Outline}
+              variant={AppButtonVariants.Outline}
               onClick={onSave}
             >
               {t('Save')}

@@ -14,7 +14,7 @@ import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/Dynami
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { Text, TextAlign, TextVariant } from 'shared/ui/Text';
+import { Text, TextAligns, TextVariants } from 'shared/ui/Text';
 import { PageLoader } from 'widgets/PageLoader';
 import { PageWrapper } from 'widgets/PageWrapper';
 
@@ -41,8 +41,8 @@ const ProfilePage: FC = () => {
       <Text
         title={t(`${profileError.status}_error`)}
         text={t(profileError.message)}
-        variant={TextVariant.Error}
-        align={TextAlign.Center}
+        variant={TextVariants.Error}
+        align={TextAligns.Center}
       />
     );
   } else if (profileForm) {

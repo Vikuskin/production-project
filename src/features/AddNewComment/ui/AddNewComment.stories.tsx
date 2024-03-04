@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Theme } from 'app/providers/theme';
+import { Themes } from 'app/providers/theme';
 import { storeDecorator } from 'shared/lib/storybook/storeDecorator';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
@@ -25,7 +25,7 @@ type Story = StoryObj<typeof meta>;
 export const LightNormal: Story = {};
 
 export const DarkNormal: Story = {
-  decorators: [themeDecorator(Theme.Dark)],
+  decorators: [themeDecorator(Themes.Dark)],
 };
 
 export const LightError: Story = {
@@ -38,7 +38,7 @@ export const LightError: Story = {
 
 export const DarkError: Story = {
   decorators: [
-    themeDecorator(Theme.Dark),
+    themeDecorator(Themes.Dark),
     storeDecorator({
       newComment: { error: 'Something went wrong' },
     }),

@@ -1,3 +1,3 @@
-export { routePaths } from './lib/routeConfig';
+export { routePaths } from './constants/routePaths';
 export { AppRouter } from './ui/AppRouter';
-export { AppRoute } from './types/AppRoute';
+export { AppRoutes } from './constants/appRoutes';

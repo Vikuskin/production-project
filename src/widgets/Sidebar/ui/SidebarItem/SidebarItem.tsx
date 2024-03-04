@@ -6,7 +6,7 @@ import { HStack } from 'shared/ui/Stack';
 
 import * as styles from './SidebarItem.module.scss';
 
-import { ISidebarItem } from '../../models/types/sidebarItem';
+import { ISidebarItem } from '../../models/interfaces/sidebarItem';
 
 interface ISidebarItemProps {
   item: ISidebarItem;

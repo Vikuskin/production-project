@@ -3,18 +3,18 @@ import { createMemoryHistory } from 'history';
 
 import { routePaths } from 'app/providers/router';
 import { componentRender } from 'shared/lib/tests/componentRender';
-import { AppLinkVariant } from 'shared/ui/AppLink/ui/AppLink';
+import { AppLinkVariants } from 'shared/ui/AppLink';
 
 import { NavbarLink } from './NavbarLink';
 
-import { INavbarLink } from '../../model/types/navbarLink';
+import { INavbarLink } from '../../model/interfaces/navbarLink';
 
 describe('NavbarLink', () => {
   it('renders with passed props and routes to the correct page by the click', async () => {
     const testLink: INavbarLink = {
       path: routePaths.about,
       text: 'About',
-      variant: AppLinkVariant.Secondary,
+      variant: AppLinkVariants.Secondary,
     };
     const history = createMemoryHistory();
     const { getByTestId } = componentRender(<NavbarLink link={testLink} />, {

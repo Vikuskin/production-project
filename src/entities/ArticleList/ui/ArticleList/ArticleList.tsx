@@ -9,7 +9,7 @@ import { Text } from 'shared/ui/Text';
 
 import * as styles from './ArticleList.module.scss';
 
-import { ArticleListView } from '../../model/types/articleListView';
+import { ArticleListView } from '../../model/enums/articleListView';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 
 interface IArticleListProps {

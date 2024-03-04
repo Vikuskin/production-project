@@ -2,8 +2,8 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import { LOCAL_STORAGE_KEYS } from 'shared/constants/constants';
 
-import { IAuthData } from '../types/authData';
-import { IUser } from '../types/user';
+import { IAuthData } from '../interfaces/authData';
+import { IUser } from '../interfaces/user';
 
 export const userInitialState: IUser = {
   authData: null,
