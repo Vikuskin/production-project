@@ -4,10 +4,9 @@ import { Navigate, useLocation } from 'react-router-dom';
 
 import { UserRoles, selectUserAuthData, selectUserRoles } from 'entities/User';
 import { ErrorPage } from 'pages/ErrorPage';
+import { routePaths } from 'shared/constants/routePaths';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-
-import { routePaths } from '../constants/routePaths';
 
 interface IRequireAuth {
   roles: UserRoles[] | null;

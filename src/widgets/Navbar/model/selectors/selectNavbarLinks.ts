@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { routePaths } from 'app/providers/router';
 import { selectUserAuthData } from 'entities/User';
+import { routePaths } from 'shared/constants/routePaths';
 import { AppLinkVariants } from 'shared/ui/AppLink';
 
 import { INavbarLink } from '../interfaces/navbarLink';

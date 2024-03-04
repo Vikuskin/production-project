@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react';
 
-import { routePaths } from 'app/providers/router';
+import { routePaths } from 'shared/constants/routePaths';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { AppLink } from 'shared/ui/AppLink';
 import { Avatar } from 'shared/ui/Avatar';

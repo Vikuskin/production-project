@@ -1,24 +1,14 @@
 import { useContext } from 'react';
 
-import { ThemeContext, Themes } from 'app/providers/theme';
-import { LOCAL_STORAGE_KEYS } from 'shared/constants/constants';
+import { ThemeContext } from 'app/providers/theme';
+import { DEFAULT_THEME } from 'shared/constants/defaultTheme';
+import { LOCAL_STORAGE_KEYS } from 'shared/constants/localStorageKeys';
+import { Themes } from 'shared/enums/themes';
 
 interface IUseThemeResult {
   theme: Themes;
   toggleTheme: () => void;
 }
-
-const getLocalStorageTheme = (): Themes | null => {
-  const localStorageTheme = localStorage.getItem(LOCAL_STORAGE_KEYS.Theme);
-
-  if (localStorageTheme && Object.values(Themes).includes(localStorageTheme as Themes)) {
-    return localStorageTheme as Themes;
-  }
-
-  return null;
-};
-
-export const DEFAULT_TEAM: Themes = getLocalStorageTheme() ?? Themes.Light;
 
 export function useTheme(): IUseThemeResult {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -44,7 +34,7 @@ export function useTheme(): IUseThemeResult {
   };
 
   return {
-    theme: theme ?? DEFAULT_TEAM,
+    theme: theme ?? DEFAULT_THEME,
     toggleTheme,
   };
 }

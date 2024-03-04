@@ -1,6 +1,5 @@
 import React, { FC, PropsWithChildren, useCallback, useEffect, useRef, useState } from 'react';
 
-import { ANIMATION_DELAY } from 'shared/constants/constants';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { Portal } from 'shared/ui/Portal/ui/Portal';
 import { HStack } from 'shared/ui/Stack';
@@ -13,7 +12,7 @@ interface IModalProps {
   className?: string;
   lazy?: boolean;
 }
-
+export const ANIMATION_DELAY = 200;
 export const Modal: FC<PropsWithChildren<IModalProps>> = (props) => {
   const { children, className, isOpen, onClose, lazy } = props;
   const [isOpening, setIsOpening] = useState(false);

@@ -3,7 +3,7 @@ import { ActionReducerMapBuilder, PayloadAction, createEntityAdapter, createSlic
 import { IState } from 'app/providers/StoreProvider';
 import { IArticleData } from 'entities/Article';
 import { ArticleListView } from 'entities/ArticleList';
-import { LOCAL_STORAGE_KEYS } from 'shared/constants/constants';
+import { LOCAL_STORAGE_KEYS } from 'shared/constants/localStorageKeys';
 
 import { IArticleList } from '../interfaces/articleList';
 import { fetchAllArticles } from '../services/fetchAllArticles';

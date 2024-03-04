@@ -9,10 +9,10 @@ import { ArticlePage } from 'pages/ArticlePage';
 import { ErrorPage } from 'pages/ErrorPage';
 import { MainPage } from 'pages/MainPage';
 import { ProfilePage } from 'pages/ProfilePage';
+import { routePaths } from 'shared/constants/routePaths';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 
 import { AppRoutes } from './appRoutes';
-import { routePaths } from './routePaths';
 
 import { AppRouteProps } from '../types/appRouteProps';
 

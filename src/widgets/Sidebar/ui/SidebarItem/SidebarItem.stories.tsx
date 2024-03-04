@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Themes } from 'app/providers/theme';
 import TranslationSvg from 'shared/assets/icons/translation.svg';
+import { Themes } from 'shared/enums/themes';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
 import { SidebarItem } from './SidebarItem';

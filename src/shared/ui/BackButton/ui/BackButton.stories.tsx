@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Themes } from 'app/providers/theme';
+import { Themes } from 'shared/enums/themes';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
 import { BackButton } from './BackButton';

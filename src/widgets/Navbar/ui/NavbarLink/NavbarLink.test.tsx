@@ -1,7 +1,7 @@
 import { userEvent } from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
 
-import { routePaths } from 'app/providers/router';
+import { routePaths } from 'shared/constants/routePaths';
 import { componentRender } from 'shared/lib/tests/componentRender';
 import { AppLinkVariants } from 'shared/ui/AppLink';
 

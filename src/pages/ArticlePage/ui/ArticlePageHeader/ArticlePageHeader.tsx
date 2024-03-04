@@ -2,8 +2,8 @@ import React, { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
-import { routePaths } from 'app/providers/router';
 import { selectArticleData, selectIsEditableArticle } from 'entities/Article';
+import { routePaths } from 'shared/constants/routePaths';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
 import { HStack } from 'shared/ui/Stack';

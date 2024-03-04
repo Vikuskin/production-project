@@ -2,7 +2,7 @@ import { within } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
 import i18n from 'app/providers/i18n/i18nForTests';
-import { Themes } from 'app/providers/theme';
+import { Themes } from 'shared/enums/themes';
 import { useTheme } from 'shared/lib/hooks/useTheme';
 import { componentRender } from 'shared/lib/tests/componentRender';
 import { AppButtonVariants } from 'shared/ui/AppButton';

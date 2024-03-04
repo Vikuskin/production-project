@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { routePaths } from 'app/providers/router';
 import { ArticleBlocks, ArticleTextBlock, IArticleData, IArticleTextBlock } from 'entities/Article';
 import EyeSvg from 'shared/assets/icons/eye-out.svg';
+import { routePaths } from 'shared/constants/routePaths';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
 import { AppLink } from 'shared/ui/AppLink';

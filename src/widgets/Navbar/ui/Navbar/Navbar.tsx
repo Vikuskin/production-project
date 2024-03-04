@@ -2,10 +2,10 @@
 import React, { memo, useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { routePaths } from 'app/providers/router';
 import { selectUserAuthData, selectUserIsAdmin, selectUserIsManager, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUserName';
 import DefaultAvatar from 'shared/assets/images/default-avatar.png';
+import { routePaths } from 'shared/constants/routePaths';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';

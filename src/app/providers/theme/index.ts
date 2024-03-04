@@ -1,2 +1,2 @@
-export { Themes } from './enums/themes';
-export { ThemeProvider, ThemeContext } from './ui/ThemeProvider';
+export { ThemeProvider } from './ui/ThemeProvider';
+export { ThemeContext } from './ui/ThemeContext';

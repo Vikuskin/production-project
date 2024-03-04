@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { LOCAL_STORAGE_KEYS } from '../constants/constants';
+import { LOCAL_STORAGE_KEYS } from 'shared/constants/localStorageKeys';
 
 export const RTKapi = createApi({
   reducerPath: 'api',

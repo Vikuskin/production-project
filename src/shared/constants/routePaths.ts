@@ -1,4 +1,4 @@
-import { AppRoutes } from './appRoutes';
+import { AppRoutes } from 'app/providers/router/constants/appRoutes';
 
 export const routePaths: Record<AppRoutes, string> = {
   [AppRoutes.Main]: '/',

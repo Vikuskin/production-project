@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Themes } from 'app/providers/theme';
+import { Themes } from 'shared/enums/themes';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
 import { Tabs } from './Tabs';

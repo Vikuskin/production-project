@@ -2,7 +2,8 @@
 import type { StoryFn } from '@storybook/react';
 import React from 'react';
 
-import { ThemeProvider, Themes } from 'app/providers/theme';
+import { ThemeProvider } from 'app/providers/theme';
+import { Themes } from 'shared/enums/themes';
 
 export const themeDecorator =
   (theme: Themes = Themes.Light) =>

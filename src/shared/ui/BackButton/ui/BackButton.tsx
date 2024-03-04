@@ -1,7 +1,7 @@
 import React, { FC, memo } from 'react';
 
-import { routePaths } from 'app/providers/router';
 import BackSvg from 'shared/assets/icons/back.svg';
+import { routePaths } from 'shared/constants/routePaths';
 
 import { AppLink } from '../../AppLink';
 

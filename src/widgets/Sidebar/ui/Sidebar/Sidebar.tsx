@@ -1,7 +1,6 @@
 import React, { FC, memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { routePaths } from 'app/providers/router';
 import { selectUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUserName';
 import ExpandSvg from 'shared/assets/icons/expand.svg';
@@ -10,6 +9,7 @@ import LogoutSvg from 'shared/assets/icons/logout.svg';
 import ProfileSvg from 'shared/assets/icons/profile.svg';
 import Themevg from 'shared/assets/icons/theme.svg';
 import TranslationSvg from 'shared/assets/icons/translation.svg';
+import { routePaths } from 'shared/constants/routePaths';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
