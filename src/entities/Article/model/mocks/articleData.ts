@@ -1,5 +1,8 @@
-import { ArticleBlocks, IArticleData } from 'entities/Article';
 import StrybookAvatar from 'shared/assets/tests/storybook-avatar.jpeg';
+
+import { ArticleBlocks } from '../enums/articleBlocks';
+import { ArticleTypes } from '../enums/articleTypes';
+import { IArticleData } from '../types/articleData';
 
 export const articleDataMock: IArticleData = {
   id: '1',
@@ -9,7 +12,7 @@ export const articleDataMock: IArticleData = {
   views: '1000',
   createdAt: '01.01.2024',
   user: { id: '1', username: 'test', avatar: StrybookAvatar, roles: [] },
-  type: ['IT', 'Medicine'],
+  type: [ArticleTypes.It, ArticleTypes.Medicine],
   blocks: [
     {
       id: '1',

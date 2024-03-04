@@ -5,9 +5,10 @@ import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 import { delayCaptureDecorator } from 'shared/lib/storybook/delayCaptureDecorator';
 import { storeDecorator } from 'shared/lib/storybook/storeDecorator';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
-import { articleDataMock } from 'shared/mocks/articleData';
 
 import { Article } from './Article';
+
+import { articleDataMock } from '../../model/mocks/articleData';
 
 const meta = {
   title: 'entities/Article',

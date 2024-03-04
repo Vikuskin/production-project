@@ -1,9 +1,9 @@
 import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-import { articleDataMock } from 'shared/mocks/articleData';
 
 import { articleInitialState, articleReducer } from './articleSlice';
 
+import { articleDataMock } from '../mocks/articleData';
 import { fetchArticleById } from '../services/fetchArticleById';
 
 describe('articleSlice', () => {
