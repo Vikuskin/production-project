@@ -12,7 +12,7 @@
 
   .menu {
     position: absolute;
-    z-index: 1000;
+    z-index: var(--dropdown-z-index);
     min-width: 190px;
     overflow: hidden;
     background: var(--secondary-bg-color);

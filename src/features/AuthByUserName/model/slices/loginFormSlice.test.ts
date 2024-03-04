@@ -40,7 +40,7 @@ describe('loginFormSlice', () => {
       expect(
         loginFormReducer(
           loginFormInitialState,
-          loginByUsername.fulfilled({ id: '', username: '' }, '', { password: '', username: '' }),
+          loginByUsername.fulfilled({ id: '', username: '', roles: [] }, '', { password: '', username: '' }),
         ),
       ).toMatchObject({
         isLoading: false,

@@ -9,8 +9,14 @@ import { RequireAuth } from './RequireAuth';
 import { AppRouteProps } from '../types/AppRoute';
 
 export const AppRouter: FC = memo(() => {
-  const renderWithWrapper = useCallback(({ path, element, authOnly }: AppRouteProps) => {
-    return <Route key={path} path={path} element={authOnly ? <RequireAuth>{element}</RequireAuth> : element} />;
+  const renderWithWrapper = useCallback(({ path, element, authOnly, roles }: AppRouteProps) => {
+    return (
+      <Route
+        key={path}
+        path={path}
+        element={authOnly ? <RequireAuth roles={roles || null}>{element}</RequireAuth> : element}
+      />
+    );
   }, []);
 
   return (

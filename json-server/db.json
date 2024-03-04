@@ -78,15 +78,22 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "admin",
+      "roles": ["ADMIN", "USER"],
       "avatar": "https://list-15.net/wp-content/uploads/2023/02/25-1-768x603.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "user",
+      "roles": ["USER"],
       "avatar": "https://avatars.dzeninfra.ru/get-zen-logos/5398874/pubsuite_a2f831d7-a969-4c5e-a1b8-3ae8eab5150a_64da17e1d3af84703bc5d837/orig"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": ["MANAGER"],
+      "avatar": "https://images.unsplash.com/photo-1705037202436-2e4ade07d823?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA1OTR8&ixlib=rb-4.0.3&q=80&w=1080"
     }
   ],
   "profile": [
@@ -109,8 +116,19 @@
       "currency": "USD",
       "country": "United States",
       "city": "New-York",
-      "username": "user123",
+      "username": "user",
       "avatar": "https://avatars.dzeninfra.ru/get-zen-logos/5398874/pubsuite_a2f831d7-a969-4c5e-a1b8-3ae8eab5150a_64da17e1d3af84703bc5d837/orig"
+    },
+    {
+      "id": "3",
+      "firstName": "User3",
+      "lastName": "User3",
+      "age": "24",
+      "currency": "USD",
+      "country": "United States",
+      "city": "New-York",
+      "username": "manager",
+      "avatar": "https://images.unsplash.com/photo-1705037202436-2e4ade07d823?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA1OTR8&ixlib=rb-4.0.3&q=80&w=1080"
     }
   ],
   "articles": [

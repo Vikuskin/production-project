@@ -1,6 +1,8 @@
 import React from 'react';
 
+import { UserRoles } from 'entities/User';
 import { AboutPage } from 'pages/AboutPage';
+import AdminPage from 'pages/AdminPage/ui/AdminPage';
 import { ArticleEditPage } from 'pages/ArticleEditPage';
 import { ArticleListPage } from 'pages/ArticleListPage';
 import { ArticlePage } from 'pages/ArticlePage';
@@ -19,6 +21,7 @@ export const routePaths: Record<AppRoute, string> = {
   [AppRoute.Article]: '/article/', // + id
   [AppRoute.ArticleCreate]: '/article/create',
   [AppRoute.ArticleEdit]: '/article/:id/edit',
+  [AppRoute.AdminPanel]: '/admin',
   [AppRoute.NotFound]: '*',
 };
 
@@ -54,6 +57,12 @@ export const routeConfig: AppRouteProps[] = [
   {
     path: routePaths[AppRoute.NotFound],
     element: <ErrorPage errorCode={ErrorStatusCode.NotFound} text="Page not found" />,
+  },
+  {
+    path: routePaths[AppRoute.AdminPanel],
+    element: <AdminPage />,
+    authOnly: true,
+    roles: [UserRoles.Manager, UserRoles.Admin],
   },
   {
     path: `${routePaths[AppRoute.Profile]}:id`,

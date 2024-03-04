@@ -9,7 +9,7 @@ import { loginByUsername } from './loginByUsername';
 
 describe('loginByUsername', () => {
   it('handles success response from server', async () => {
-    const mockUserData = { username: 'test', id: '1' };
+    const mockUserData = { username: 'test', id: '1', roles: [] };
     const thunk = new TestAsyncThunk(loginByUsername);
 
     thunk.api.post.mockResolvedValue({ data: mockUserData });

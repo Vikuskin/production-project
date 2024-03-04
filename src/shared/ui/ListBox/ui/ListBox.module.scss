@@ -12,7 +12,7 @@
 
   .options {
     position: absolute;
-    z-index: 1000;
+    z-index: var(--dropdown-z-index);
     width: 200px;
     overflow: hidden;
     background: var(--secondary-bg-color);

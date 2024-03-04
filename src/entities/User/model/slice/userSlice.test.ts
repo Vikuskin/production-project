@@ -1,5 +1,7 @@
 import { userActions, userInitialState, userReducer } from './userSlice';
 
+import { UserRoles } from '../types/userRoles';
+
 describe('userSlice', () => {
   it('should set passed username', () => {
     expect(
@@ -8,12 +10,14 @@ describe('userSlice', () => {
         userActions.login({
           id: '1',
           username: 'test_name',
+          roles: [UserRoles.Admin],
         }),
       ),
     ).toEqual({
       authData: {
         id: '1',
         username: 'test_name',
+        roles: [UserRoles.Admin],
       },
       _mounted: false,
     });
@@ -33,12 +37,14 @@ describe('userSlice', () => {
         userActions.login({
           id: '1',
           username: 'test_name',
+          roles: [],
         }),
       ),
     ).toEqual({
       authData: {
         id: '1',
         username: 'test_name',
+        roles: [],
       },
       _mounted: false,
     });
