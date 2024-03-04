@@ -1,8 +1,10 @@
 import React, { FC, ReactElement, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { ErrorPage } from 'pages/ErrorPage';
 import CalendarSvg from 'shared/assets/icons/calendar.svg';
 import EyeIconSvg from 'shared/assets/icons/eye-out.svg';
+import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
@@ -11,7 +13,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
 import { Avatar } from 'shared/ui/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton';
 import { HStack } from 'shared/ui/Stack';
-import { Text, TextAlign, TextSize, TextVariant } from 'shared/ui/Text';
+import { Text, TextAlign, TextSize } from 'shared/ui/Text';
 
 import * as styles from './Article.module.scss';
 
@@ -28,7 +30,7 @@ const articleReducers: ReducersList = {
 };
 
 interface IArticleProps {
-  id: string;
+  id: string | null;
   className?: string;
 }
 
@@ -67,14 +69,7 @@ export const Article: FC<IArticleProps> = memo(({ className, id }: IArticleProps
       </>
     );
   } else if (articleError) {
-    content = (
-      <Text
-        title={t(`${articleError.status}_error`)}
-        text={t(articleError.message)}
-        variant={TextVariant.Error}
-        align={TextAlign.Center}
-      />
-    );
+    content = <ErrorPage errorCode={ErrorStatusCode.BadRequest} text={t('Article was not found')} />;
   } else if (articleData) {
     content = (
       <>

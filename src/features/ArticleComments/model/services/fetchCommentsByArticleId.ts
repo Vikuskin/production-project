@@ -7,12 +7,16 @@ import { INTERNAL_SERVER_ERROR } from 'shared/constants/constants';
 import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
 import { ICustomError } from 'shared/types/customError';
 
-export const fetchCommentsByArticleId = createAsyncThunk<IComment[], string, IThunkConfig<ICustomError>>(
+export const fetchCommentsByArticleId = createAsyncThunk<IComment[], string | null, IThunkConfig<ICustomError>>(
   'articleComments/fetchCommentsByArticleId',
   async (articleId, thunkApi) => {
     const { rejectWithValue, extra } = thunkApi;
 
     try {
+      if (!articleId) {
+        return rejectWithValue({ status: ErrorStatusCode.BadRequest, message: 'No passed article id' });
+      }
+
       const response = await extra.api.get<IComment[]>(ROUTES.comments, { params: { articleId, _expand: 'user' } });
 
       if (!response.data) {

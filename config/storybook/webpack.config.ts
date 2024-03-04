@@ -28,7 +28,11 @@ export default ({ config }: { config: webpack.Configuration }) => {
     entities: path.resolve(__dirname, '..', '..', 'src', 'entities'),
   };
   config.plugins?.push(
-    new DefinePlugin({ IS_DEV: true, API_URL: JSON.stringify(''), PROJECT: JSON.stringify('storybook') }),
+    new DefinePlugin({
+      IS_DEV: true,
+      API_URL: JSON.stringify('https://test-api'),
+      PROJECT: JSON.stringify('storybook'),
+    }),
   );
 
   return config;

@@ -25,11 +25,7 @@ export const CommentList: FC<ICommentListProps> = memo(({ className, comments, i
 
   return (
     <div className={getClassNames(styles.commentList, [className ?? ''])}>
-      {comments.length ? (
-        commentList
-      ) : (
-        <Text align={TextAlign.Center} className={styles.noComment} text={t('No comments')} />
-      )}
+      {comments.length ? commentList : <Text align={TextAlign.Center} text={t('No comments')} />}
     </div>
   );
 });

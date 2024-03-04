@@ -8,6 +8,8 @@ const config: StorybookConfig = {
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
     '@storybook/addon-styling',
+    'storybook-addon-mock',
+    'storybook-addon-react-router-v6',
   ],
   framework: {
     name: '@storybook/react-webpack5',
@@ -15,6 +17,7 @@ const config: StorybookConfig = {
       builder: {
         useSWC: true,
       },
+      fastRefresh: true,
     },
   },
   docs: {

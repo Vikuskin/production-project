@@ -3,6 +3,7 @@ import React from 'react';
 
 import { IState, StoreProvider } from 'app/providers/StoreProvider';
 import { articleReducer } from 'entities/Article/model/slices/articleSlice';
+import { addNewCommentReducer } from 'features/AddNewComment/model/slices/addNewCommentSlice';
 import { articleCommentsReducer } from 'features/ArticleComments/model/slices/articleCommentsSlice';
 import { articleFiltersReducer } from 'features/ArticleFilters';
 import { loginFormReducer } from 'features/AuthByUserName/model/slices/loginFormSlice';
@@ -18,6 +19,7 @@ const defaultAsyncReducers: ReducersList = {
   articleList: articleListReducer,
   articleFilters: articleFiltersReducer,
   articleComments: articleCommentsReducer,
+  newComment: addNewCommentReducer,
   [RTKapi.reducerPath]: RTKapi.reducer,
 };
 

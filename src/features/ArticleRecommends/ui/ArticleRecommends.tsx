@@ -21,7 +21,7 @@ export const ArticleRecommends: FC<ArticleRecommendsProps> = ({ className }) => 
 
   return (
     <div className={getClassNames(styles.recommends, [className ?? ''])}>
-      <Text className={styles.title} size={TextSize.SizeL} title={'Recommends'} />
+      <Text size={TextSize.SizeL} title={'Recommends'} />
       <ArticleList
         target={'_blank'}
         className={styles.content}

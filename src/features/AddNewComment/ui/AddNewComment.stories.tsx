@@ -13,7 +13,7 @@ const meta = {
   decorators: [
     storeDecorator({
       newComment: {
-        text: 'Anim aute aliqua minim sint qui quis esse laborum deserunt nostrud cillum amet',
+        text: 'Anim aute aliqua minim',
       },
     }),
   ],
@@ -31,7 +31,7 @@ export const DarkNormal: Story = {
 export const LightError: Story = {
   decorators: [
     storeDecorator({
-      newComment: { error: 'No data' },
+      newComment: { error: 'Something went wrong' },
     }),
   ],
 };
@@ -40,7 +40,7 @@ export const DarkError: Story = {
   decorators: [
     themeDecorator(Theme.Dark),
     storeDecorator({
-      newComment: { error: 'No data' },
+      newComment: { error: 'Something went wrong' },
     }),
   ],
 };

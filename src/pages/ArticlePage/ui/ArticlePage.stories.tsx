@@ -10,10 +10,24 @@ import { commentsMock } from 'shared/mocks/comments';
 
 import ArticlePage from './ArticlePage';
 
+import { ROUTES } from '../../../shared/api/routes';
+import { getArticleListMock } from '../../../shared/mocks/articleList';
+
+const articleRecommendsMock = getArticleListMock(4);
 const articleCommentsMock = { ids: ['1', '2'], entities: { '1': commentsMock[0], '2': commentsMock[1] } };
 const meta = {
   title: 'pages/ArticlePage',
   component: ArticlePage,
+  parameters: {
+    mockData: [
+      {
+        url: `${API_URL}${ROUTES.articles}?_limit=4`,
+        method: 'GET',
+        status: 200,
+        response: [...articleRecommendsMock],
+      },
+    ],
+  },
   tags: ['autodocs'],
   decorators: [
     storeDecorator({

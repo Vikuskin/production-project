@@ -18,7 +18,7 @@ import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArtic
 import { articleCommentsReducer, selectArticleComments } from '../model/slices/articleCommentsSlice';
 
 interface IArticleCommentsProps {
-  articleId: string;
+  articleId: string | null;
 }
 
 const articleCommentsReducers: ReducersList = {
