@@ -34,7 +34,6 @@ const meta = {
       articleComments: { ...articleCommentsMock, isLoading: false },
       newComment: {},
     }),
-    delayCaptureDecorator(),
   ],
 } satisfies Meta<typeof ArticlePage>;
 
@@ -49,6 +48,7 @@ export const Dark: Story = {
 
 export const LightLoading: Story = {
   decorators: [
+    delayCaptureDecorator(),
     storeDecorator({
       article: { isLoading: true },
       articleComments: { ...articleCommentsMock, isLoading: true },
@@ -59,6 +59,7 @@ export const LightLoading: Story = {
 
 export const DarkLoading: Story = {
   decorators: [
+    delayCaptureDecorator(),
     themeDecorator(Themes.Dark),
     storeDecorator({
       article: { isLoading: true },

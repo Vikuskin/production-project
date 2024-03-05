@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
 
-import { notificationsMock } from 'entities/Notification/models/mocks/notifications';
 import { ROUTES } from 'shared/api/routes';
 import { Themes } from 'shared/enums/themes';
 import { storeDecorator } from 'shared/lib/storybook/storeDecorator';
 import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
 
-import { Navbar } from './Navbar';
+import { NotificationList } from './NotificationList';
+
+import { notificationsMock } from '../../models/mocks/notifications';
 
 const meta = {
-  title: 'widgets/Navbar',
-  component: Navbar,
+  title: 'entities/NotificationList',
+  component: NotificationList,
   parameters: {
     mockData: [
       {
@@ -24,21 +24,13 @@ const meta = {
   },
   tags: ['autodocs'],
   decorators: [storeDecorator({})],
-} satisfies Meta<typeof Navbar>;
+} satisfies Meta<typeof NotificationList>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const LightWithoutAuth: Story = {};
+export const Light: Story = {};
 
-export const DarkWithoutAuth: Story = {
+export const Dark: Story = {
   decorators: [themeDecorator(Themes.Dark)],
-};
-
-export const LightWithAuth: Story = {
-  decorators: [storeDecorator({ user: { authData: {} } })],
-};
-
-export const DarkWithAuth: Story = {
-  decorators: [themeDecorator(Themes.Dark), storeDecorator({ user: { authData: {} } })],
 };

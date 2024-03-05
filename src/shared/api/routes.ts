@@ -3,4 +3,5 @@ export const ROUTES = {
   articles: '/articles',
   login: '/login',
   profile: '/profile',
+  notifications: '/notifications',
 };

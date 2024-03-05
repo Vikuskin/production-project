@@ -1,4 +1,4 @@
-.dropdown {
+.popover {
   position: relative;
 
   .btn {
@@ -10,36 +10,21 @@
     cursor: pointer;
   }
 
-  .menu {
+  .panel {
     position: absolute;
     z-index: var(--dropdown-z-index);
-    min-width: 190px;
+    min-width: 300px;
     overflow: hidden;
     background: var(--secondary-bg-color);
     border: 1px solid var(--primary-color);
     border-radius: 8px;
-    outline: none;
-  }
-
-  .item {
-    width: 100%;
-    padding: 10px 15px;
-    color: var(--primary-color);
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
-
-  .active {
-    background: var(--secondary-color);
   }
 }
 
-.menu.top-left {
+.panel.top-left {
   left: 0;
 }
 
-.menu.top-right {
+.panel.top-right {
   right: 0;
 }

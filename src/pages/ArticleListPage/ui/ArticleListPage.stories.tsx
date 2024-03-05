@@ -21,7 +21,6 @@ const meta = {
     storeDecorator({
       articleList: articleListStateMock,
     }),
-    delayCaptureDecorator(),
   ],
 } satisfies Meta<typeof ArticleListPage>;
 
@@ -36,6 +35,7 @@ export const Dark: Story = {
 
 export const LightLoading: Story = {
   decorators: [
+    delayCaptureDecorator(),
     storeDecorator({
       articleList: { entities: {}, ids: [], isLoading: true },
     }),
@@ -44,6 +44,7 @@ export const LightLoading: Story = {
 
 export const DarkLoading: Story = {
   decorators: [
+    delayCaptureDecorator(),
     themeDecorator(Themes.Dark),
     storeDecorator({
       articleList: { entities: {}, ids: [], isLoading: true },
