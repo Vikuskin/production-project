@@ -14,7 +14,7 @@ interface IDrawerProps {
   className?: string;
 }
 
-const height = window.innerHeight - 150;
+const height = window.innerHeight - 200;
 const DrawerContent: FC<PropsWithChildren<IDrawerProps>> = (props: PropsWithChildren<IDrawerProps>) => {
   const { Spring, Gesture } = useAnimationLibs();
   const { children, className, isOpen, onClose } = props;
