@@ -1,8 +1,8 @@
 import React, { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AppLink } from 'shared/ui/AppLink';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { AppLink } from '@/shared/ui/AppLink';
 
 import { INavbarLink } from '../../model/interfaces/navbarLink';
 

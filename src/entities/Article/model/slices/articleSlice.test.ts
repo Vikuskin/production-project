@@ -1,5 +1,5 @@
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
-import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
+import { INTERNAL_SERVER_ERROR } from '@/shared/constants/internalServerError';
+import { ErrorStatusCode } from '@/shared/enums/errorStatusCode';
 
 import { articleInitialState, articleReducer } from './articleSlice';
 

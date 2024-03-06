@@ -1,6 +1,6 @@
 import { EnhancedStore } from '@reduxjs/toolkit';
 
-import { AppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { AppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 
 import { IState } from './state';
 

@@ -1,13 +1,13 @@
 import React, { FC, useState } from 'react';
 
-import { NotificationList } from 'entities/Notification';
-import { selectUserAuthData } from 'entities/User';
-import NotificationSvg from 'shared/assets/icons/notification.svg';
-import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { useDevice } from 'shared/lib/hooks/useDevice';
-import { AppButton } from 'shared/ui/AppButton';
-import { Drawer } from 'shared/ui/Drawer';
-import { Popover } from 'shared/ui/Popover';
+import { NotificationList } from '@/entities/Notification';
+import { selectUserAuthData } from '@/entities/User';
+import NotificationSvg from '@/shared/assets/icons/notification.svg';
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
+import { useDevice } from '@/shared/lib/hooks/useDevice';
+import { AppButton } from '@/shared/ui/AppButton';
+import { Drawer } from '@/shared/ui/Drawer';
+import { Popover } from '@/shared/ui/Popover';
 
 import * as styles from './OpenNotifications.module.scss';
 

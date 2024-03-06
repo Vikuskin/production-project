@@ -5,8 +5,8 @@ import { ReactNode } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { Location, Router } from 'react-router-dom';
 
-import i18n from 'app/providers/i18n/i18nForTests';
-import { IState, StoreProvider } from 'app/providers/StoreProvider';
+import i18n from '@/app/providers/i18n/i18nForTests';
+import { IState, StoreProvider } from '@/app/providers/StoreProvider';
 
 interface IRouterProps {
   location: Location;

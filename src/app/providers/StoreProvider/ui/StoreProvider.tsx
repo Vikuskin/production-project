@@ -1,7 +1,7 @@
 import React, { FC, PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
 
-import { ReducersList } from 'shared/lib/components/DynamicReducerLoader';
+import { ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
 
 import { createStore } from '../config/store';
 import { IState } from '../interfaces/state';

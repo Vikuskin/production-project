@@ -1,12 +1,12 @@
 import React, { FC, memo } from 'react';
 
-import { routePaths } from 'shared/constants/routePaths';
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AppLink } from 'shared/ui/AppLink';
-import { Avatar } from 'shared/ui/Avatar';
-import { Skeleton } from 'shared/ui/Skeleton';
-import { HStack } from 'shared/ui/Stack';
-import { Text } from 'shared/ui/Text';
+import { routePaths } from '@/shared/constants/routePaths';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { HStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
 
 import * as styles from './Comment.module.scss';
 

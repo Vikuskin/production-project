@@ -2,16 +2,16 @@ import React, { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 
-import { ArticleTypes } from 'entities/Article';
-import { ArticleListView } from 'entities/ArticleList';
-import { ArticleFilters, ArticleOrder, ArticleSort, articleFiltersActions } from 'features/ArticleFilters';
-import { ArticleViewSwitcher } from 'features/ArticleViewSwitcher';
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useDebounce } from 'shared/lib/hooks/useDebounce';
-import { HStack } from 'shared/ui/Stack';
-import { ITab } from 'shared/ui/Tabs';
-import { Text } from 'shared/ui/Text';
+import { ArticleTypes } from '@/entities/Article';
+import { ArticleListView } from '@/entities/ArticleList';
+import { ArticleFilters, ArticleOrder, ArticleSort, articleFiltersActions } from '@/features/ArticleFilters';
+import { ArticleViewSwitcher } from '@/features/ArticleViewSwitcher';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce';
+import { HStack } from '@/shared/ui/Stack';
+import { ITab } from '@/shared/ui/Tabs';
+import { Text } from '@/shared/ui/Text';
 
 import * as styles from './ArticleListHeader.module.scss';
 

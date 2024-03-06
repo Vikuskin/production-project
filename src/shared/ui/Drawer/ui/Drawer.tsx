@@ -1,10 +1,10 @@
 import React, { FC, PropsWithChildren, useCallback, useEffect } from 'react';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AnimationProvider, useAnimationLibs } from 'shared/lib/components/AnimationProvider';
-import { Overlay } from 'shared/ui/Overlay';
-import { Portal } from 'shared/ui/Portal';
-import { HStack } from 'shared/ui/Stack';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import { Overlay } from '@/shared/ui/Overlay';
+import { Portal } from '@/shared/ui/Portal';
+import { HStack } from '@/shared/ui/Stack';
 
 import * as styles from './Drawer.module.scss';
 

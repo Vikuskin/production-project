@@ -1,8 +1,8 @@
 import React, { FC, PropsWithChildren, useCallback } from 'react';
 
-import CopySvg from 'shared/assets/icons/copy.svg';
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AppButton } from 'shared/ui/AppButton';
+import CopySvg from '@/shared/assets/icons/copy.svg';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { AppButton } from '@/shared/ui/AppButton';
 
 import * as styles from './Code.module.scss';
 

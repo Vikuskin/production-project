@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FC, InputHTMLAttributes, memo } from 'react';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
 
 import * as styles from './AppInput.module.scss';
 

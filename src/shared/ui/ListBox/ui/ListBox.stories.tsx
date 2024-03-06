@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Country } from 'entities/Profile';
-import { Themes } from 'shared/enums/themes';
-import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
+import { Country } from '@/entities/Profile';
+import { Themes } from '@/shared/enums/themes';
+import { themeDecorator } from '@/shared/lib/storybook/themeDecorator';
 
 import { ListBox } from './ListBox';
 

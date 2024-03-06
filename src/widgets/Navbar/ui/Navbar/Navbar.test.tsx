@@ -1,6 +1,16 @@
-import { componentRender } from 'shared/lib/tests/componentRender';
+import { componentRender } from '@/shared/lib/tests/componentRender';
 
 import { Navbar } from './Navbar';
+
+window.matchMedia =
+  window.matchMedia ||
+  function () {
+    return {
+      matches: false,
+      addListener: function () {},
+      removeListener: function () {},
+    };
+  };
 
 describe('Navbar', () => {
   it('renders without crashing', () => {

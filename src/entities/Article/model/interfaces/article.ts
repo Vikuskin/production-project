@@ -1,4 +1,4 @@
-import { ICustomError } from 'shared/interfaces/customError';
+import { ICustomError } from '@/shared/interfaces/customError';
 
 import { IArticleData } from '../types/articleData';
 

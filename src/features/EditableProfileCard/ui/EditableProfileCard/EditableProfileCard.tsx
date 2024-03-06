@@ -1,11 +1,11 @@
 import React, { FC, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Country, Currency, IProfileData, ProfileCard } from 'entities/Profile';
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { Text, TextVariants } from 'shared/ui/Text';
+import { Country, Currency, IProfileData, ProfileCard } from '@/entities/Profile';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
+import { Text, TextVariants } from '@/shared/ui/Text';
 
 import * as styles from './EditableProfileCard.module.scss';
 

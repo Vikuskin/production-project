@@ -2,11 +2,11 @@ import React, { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
-import { selectArticleData, selectIsEditableArticle } from 'entities/Article';
-import { routePaths } from 'shared/constants/routePaths';
-import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
-import { HStack } from 'shared/ui/Stack';
+import { selectArticleData, selectIsEditableArticle } from '@/entities/Article';
+import { routePaths } from '@/shared/constants/routePaths';
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
+import { AppButton, AppButtonVariants } from '@/shared/ui/AppButton';
+import { HStack } from '@/shared/ui/Stack';
 
 import * as styles from './ArticlePageHeader.module.scss';
 

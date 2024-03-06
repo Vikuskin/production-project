@@ -1,4 +1,4 @@
-import { IState } from 'app/providers/StoreProvider';
+import { IState } from '@/app/providers/StoreProvider';
 
 import { selectUserAuthData, selectUserMounted } from './selectUser';
 

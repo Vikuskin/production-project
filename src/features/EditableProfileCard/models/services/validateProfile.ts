@@ -1,5 +1,5 @@
 // TODO: improve validation
-import { IProfileData } from 'entities/Profile';
+import { IProfileData } from '@/entities/Profile';
 
 import { ValidateProfileError } from '../enums/validateProfileError';
 

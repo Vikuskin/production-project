@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { Card } from 'shared/ui/Card';
-import { Spinner } from 'shared/ui/Spinner';
-import { VStack } from 'shared/ui/Stack';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { Card } from '@/shared/ui/Card';
+import { Spinner } from '@/shared/ui/Spinner';
+import { VStack } from '@/shared/ui/Stack';
 
 import { useNotifications } from '../../models/api/notificationsApi';
 import { NotificationItem } from '../NotificationItem/NotificationItem';

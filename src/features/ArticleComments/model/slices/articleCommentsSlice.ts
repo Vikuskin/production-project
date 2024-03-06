@@ -1,7 +1,7 @@
 import { ActionReducerMapBuilder, PayloadAction, createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 
-import { IState } from 'app/providers/StoreProvider';
-import { IComment } from 'entities/Comment';
+import { IState } from '@/app/providers/StoreProvider';
+import { IComment } from '@/entities/Comment';
 
 import { IArticleComments } from '../interfaces/articleComments';
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId';

@@ -1,4 +1,4 @@
-import StorybookAvatar from 'shared/assets/tests/storybook-avatar.jpeg';
+import StorybookAvatar from '@/shared/assets/tests/storybook-avatar.jpeg';
 
 export const commentsMock = [
   {

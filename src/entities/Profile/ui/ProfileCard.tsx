@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AppInput } from 'shared/ui/AppInput';
-import { ListBox } from 'shared/ui/ListBox';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { AppInput } from '@/shared/ui/AppInput';
+import { ListBox } from '@/shared/ui/ListBox';
 
 import * as styles from './ProfileCard.module.scss';
 

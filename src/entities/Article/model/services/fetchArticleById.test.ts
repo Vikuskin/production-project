@@ -1,6 +1,6 @@
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
-import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk';
+import { INTERNAL_SERVER_ERROR } from '@/shared/constants/internalServerError';
+import { ErrorStatusCode } from '@/shared/enums/errorStatusCode';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk';
 
 import { fetchArticleById } from './fetchArticleById';
 

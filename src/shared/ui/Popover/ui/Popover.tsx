@@ -1,7 +1,7 @@
 import { Popover as HPopover } from '@headlessui/react';
 import React, { FC, PropsWithChildren, ReactNode } from 'react';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
 
 import * as styles from './Popover.module.scss';
 

@@ -1,5 +1,5 @@
-import { ROUTES } from 'shared/api/routes';
-import { RTKapi } from 'shared/api/RTKapi';
+import { ROUTES } from '@/shared/api/routes';
+import { RTKapi } from '@/shared/api/RTKapi';
 
 import { INotification } from '../interfaces/notification';
 

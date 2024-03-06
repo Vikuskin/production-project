@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
-import LangSvg from 'shared/assets/icons/translation.svg';
-import { AppButtonVariants } from 'shared/ui/AppButton';
+import LangSvg from '@/shared/assets/icons/translation.svg';
+import { AppButtonVariants } from '@/shared/ui/AppButton';
 
 import { SidebarItem } from './SidebarItem';
 

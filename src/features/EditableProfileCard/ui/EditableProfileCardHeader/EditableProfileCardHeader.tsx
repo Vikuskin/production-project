@@ -1,14 +1,14 @@
 import React, { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { selectUserAuthData } from 'entities/User';
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
-import { Avatar } from 'shared/ui/Avatar';
-import { HStack } from 'shared/ui/Stack';
-import { Text } from 'shared/ui/Text';
+import { selectUserAuthData } from '@/entities/User';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
+import { AppButton, AppButtonVariants } from '@/shared/ui/AppButton';
+import { Avatar } from '@/shared/ui/Avatar';
+import { HStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
 
 import * as styles from './EditableProfileCardHeader.module.scss';
 

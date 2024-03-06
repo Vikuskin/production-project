@@ -1,12 +1,12 @@
 import React, { FC, memo, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { ArticleList } from 'entities/ArticleList';
-import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { PageWrapper } from 'widgets/PageWrapper';
+import { ArticleList } from '@/entities/ArticleList';
+import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
+import { PageWrapper } from '@/widgets/PageWrapper';
 
 import * as styles from './ArticleList.module.scss';
 import { ArticleListHeader } from './ArticleListHeader/ArticleListHeader';

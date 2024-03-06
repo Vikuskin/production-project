@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom';
 import { ReducersMapObject } from '@reduxjs/toolkit';
 
-import { IState } from 'app/providers/StoreProvider';
-import { componentRender } from 'shared/lib/tests/componentRender';
-import { profileForm } from 'shared/mocks/profileForm';
+import { IState } from '@/app/providers/StoreProvider';
+import { componentRender } from '@/shared/lib/tests/componentRender';
+import { profileForm } from '@/shared/mocks/profileForm';
 
 import { EditableProfileCard } from './EditableProfileCard';
 

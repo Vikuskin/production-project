@@ -16,14 +16,14 @@ describe('Modal', () => {
 
   it('renders with correct isOpening class', () => {
     const { getByTestId } = render(<Modal isOpen={true} onClose={() => {}} />);
-    const modal = getByTestId('modal');
+    const modal = getByTestId('Modal.wrapper');
 
     expect(modal).toHaveClass('isOpening');
   });
 
   it('change class to opened after animation delay', () => {
     const { getByTestId } = render(<Modal isOpen={true} onClose={onCloseMock} />);
-    const modal = getByTestId('modal');
+    const modal = getByTestId('Modal.wrapper');
 
     expect(setTimeout).toHaveBeenCalledTimes(1);
     expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), ANIMATION_DELAY);
@@ -48,8 +48,8 @@ describe('Modal', () => {
 
   it('does not call onClose when content is clicked', () => {
     const { getByTestId } = render(<Modal isOpen={true} onClose={onCloseMock} />);
-    const overlay = getByTestId('content');
-    const modal = getByTestId('modal');
+    const overlay = getByTestId('Modal.content');
+    const modal = getByTestId('Modal.wrapper');
 
     fireEvent.click(overlay);
 

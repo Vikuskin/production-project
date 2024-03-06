@@ -1,6 +1,6 @@
 import { ActionReducerMapBuilder, PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
+import { INTERNAL_SERVER_ERROR } from '@/shared/constants/internalServerError';
 
 import { IArticle } from '../interfaces/article';
 import { fetchArticleById } from '../services/fetchArticleById';

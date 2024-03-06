@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { IState } from 'app/providers/StoreProvider';
+import { IState } from '@/app/providers/StoreProvider';
 
 import { IAuthData } from '../interfaces/authData';
 import { IUser } from '../interfaces/user';

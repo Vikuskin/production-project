@@ -2,11 +2,11 @@ import { FC, PropsWithChildren, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Navigate, useLocation } from 'react-router-dom';
 
-import { UserRoles, selectUserAuthData, selectUserRoles } from 'entities/User';
-import { ErrorPage } from 'pages/ErrorPage';
-import { routePaths } from 'shared/constants/routePaths';
-import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
+import { UserRoles, selectUserAuthData, selectUserRoles } from '@/entities/User';
+import { ErrorPage } from '@/pages/ErrorPage';
+import { routePaths } from '@/shared/constants/routePaths';
+import { ErrorStatusCode } from '@/shared/enums/errorStatusCode';
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
 
 interface IRequireAuth {
   roles: UserRoles[] | null;

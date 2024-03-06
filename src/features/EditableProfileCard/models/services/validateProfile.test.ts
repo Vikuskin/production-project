@@ -1,4 +1,4 @@
-import { IProfileData } from 'entities/Profile';
+import { IProfileData } from '@/entities/Profile';
 
 import { validateProfile } from './validateProfile';
 

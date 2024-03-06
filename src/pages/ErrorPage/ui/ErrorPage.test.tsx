@@ -1,5 +1,5 @@
-import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-import { componentRender } from 'shared/lib/tests/componentRender';
+import { ErrorStatusCode } from '@/shared/enums/errorStatusCode';
+import { componentRender } from '@/shared/lib/tests/componentRender';
 
 import { ErrorPage } from './ErrorPage';
 

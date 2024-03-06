@@ -1,6 +1,6 @@
 import { within } from '@testing-library/react';
 
-import { componentRender } from 'shared/lib/tests/componentRender';
+import { componentRender } from '@/shared/lib/tests/componentRender';
 
 import { LoginModal } from './LoginModal';
 
@@ -17,7 +17,7 @@ describe('LoginModal', () => {
 
   it('renders LoginForm component inside Modal', () => {
     const { getByTestId } = componentRender(<LoginModal {...mockProps} />);
-    const modalComponent = getByTestId('modal');
+    const modalComponent = getByTestId('Modal.wrapper');
     const loginForm = within(modalComponent).getByText('Login');
 
     expect(modalComponent).toBeInTheDocument();

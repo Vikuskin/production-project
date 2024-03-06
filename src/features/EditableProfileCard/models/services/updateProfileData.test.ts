@@ -1,7 +1,7 @@
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
-import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk';
-import { profileForm } from 'shared/mocks/profileForm';
+import { INTERNAL_SERVER_ERROR } from '@/shared/constants/internalServerError';
+import { ErrorStatusCode } from '@/shared/enums/errorStatusCode';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk';
+import { profileForm } from '@/shared/mocks/profileForm';
 
 import { updateProfileData } from './updateProfileData';
 

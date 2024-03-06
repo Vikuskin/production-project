@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { IState } from 'app/providers/StoreProvider';
-import { ArticleListView } from 'entities/ArticleList';
+import { IState } from '@/app/providers/StoreProvider';
+import { ArticleListView } from '@/entities/ArticleList';
 
 const selectArticleListState = (state: IState) => state.articleList;
 

@@ -44,7 +44,7 @@ const config: Config = {
   moduleNameMapper: {
     '\\.(css|scss)$': '<rootDir>/config/jest/identity-obj-proxy.js',
     '\\.(svg|jpeg|png)$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
-    'entities/(.*)': '<rootDir>src/entities/$1',
+    '^@/(.*)$': '<rootDir>src/$1',
   },
 
   // A map from regular expressions to paths to transformers

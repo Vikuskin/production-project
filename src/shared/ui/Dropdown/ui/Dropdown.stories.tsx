@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { Themes } from 'shared/enums/themes';
-import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
-import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
+import { Themes } from '@/shared/enums/themes';
+import { themeDecorator } from '@/shared/lib/storybook/themeDecorator';
+import { AppButton, AppButtonVariants } from '@/shared/ui/AppButton';
 
 import { Dropdown } from './Dropdown';
 

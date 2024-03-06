@@ -2,9 +2,9 @@ import { Listbox as HListbox } from '@headlessui/react';
 import React, { Fragment, ReactElement, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { getEnumOptions } from 'shared/lib/helpers/getEnumOptions';
-import { AppButton, AppButtonVariants } from 'shared/ui/AppButton';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { getEnumOptions } from '@/shared/lib/helpers/getEnumOptions';
+import { AppButton, AppButtonVariants } from '@/shared/ui/AppButton';
 
 import * as styles from './ListBox.module.scss';
 

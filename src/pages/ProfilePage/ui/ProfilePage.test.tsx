@@ -1,10 +1,10 @@
 import { ReducersMapObject } from '@reduxjs/toolkit';
 
-import { IState } from 'app/providers/StoreProvider';
-import { profileReducer } from 'features/EditableProfileCard';
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
-import { componentRender } from 'shared/lib/tests/componentRender';
-import { profileForm } from 'shared/mocks/profileForm';
+import { IState } from '@/app/providers/StoreProvider';
+import { profileReducer } from '@/features/EditableProfileCard';
+import { INTERNAL_SERVER_ERROR } from '@/shared/constants/internalServerError';
+import { componentRender } from '@/shared/lib/tests/componentRender';
+import { profileForm } from '@/shared/mocks/profileForm';
 
 import ProfilePage from './ProfilePage';
 

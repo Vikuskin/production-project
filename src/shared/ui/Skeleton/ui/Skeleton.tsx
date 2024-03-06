@@ -1,6 +1,6 @@
 import React, { CSSProperties, FC } from 'react';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
 
 import * as styles from './Skeleton.module.scss';
 

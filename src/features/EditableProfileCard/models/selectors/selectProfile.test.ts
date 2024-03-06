@@ -1,6 +1,6 @@
-import { IState } from 'app/providers/StoreProvider';
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
-import { profileForm } from 'shared/mocks/profileForm';
+import { IState } from '@/app/providers/StoreProvider';
+import { INTERNAL_SERVER_ERROR } from '@/shared/constants/internalServerError';
+import { profileForm } from '@/shared/mocks/profileForm';
 
 import {
   selectProfileData,

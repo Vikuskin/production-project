@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { ArticleTypes } from 'entities/Article';
+import { ArticleTypes } from '@/entities/Article';
 
 import { ArticleOrder } from '../enums/articleOrder';
 import { ArticleSort } from '../enums/articleSort';

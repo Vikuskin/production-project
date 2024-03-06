@@ -1,15 +1,15 @@
 import React, { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ArticleTypes } from 'entities/Article/model/enums/articleTypes';
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
-import { getEnumOptions } from 'shared/lib/helpers/getEnumOptions';
-import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { AppInput } from 'shared/ui/AppInput';
-import { ListBox } from 'shared/ui/ListBox';
-import { HStack } from 'shared/ui/Stack';
-import { ITab, Tabs } from 'shared/ui/Tabs';
+import { ArticleTypes } from '@/entities/Article/model/enums/articleTypes';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
+import { getEnumOptions } from '@/shared/lib/helpers/getEnumOptions';
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
+import { AppInput } from '@/shared/ui/AppInput';
+import { ListBox } from '@/shared/ui/ListBox';
+import { HStack } from '@/shared/ui/Stack';
+import { ITab, Tabs } from '@/shared/ui/Tabs';
 
 import * as styles from './ArticleFilters.module.scss';
 

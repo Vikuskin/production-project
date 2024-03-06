@@ -1,8 +1,8 @@
 import React, { FC, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { Text, TextAligns } from 'shared/ui/Text';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { Text, TextAligns } from '@/shared/ui/Text';
 
 import * as styles from './CommentList.module.scss';
 

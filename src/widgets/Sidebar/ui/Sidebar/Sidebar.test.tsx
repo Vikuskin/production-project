@@ -1,11 +1,11 @@
 import { within } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
-import i18n from 'app/providers/i18n/i18nForTests';
-import { Themes } from 'shared/enums/themes';
-import { useTheme } from 'shared/lib/hooks/useTheme';
-import { componentRender } from 'shared/lib/tests/componentRender';
-import { AppButtonVariants } from 'shared/ui/AppButton';
+import i18n from '@/app/providers/i18n/i18nForTests';
+import { Themes } from '@/shared/enums/themes';
+import { useTheme } from '@/shared/lib/hooks/useTheme';
+import { componentRender } from '@/shared/lib/tests/componentRender';
+import { AppButtonVariants } from '@/shared/ui/AppButton';
 
 import { Sidebar } from './Sidebar';
 
@@ -48,12 +48,12 @@ describe('Sidebar', () => {
 
     await user.click(button);
 
-    expect(sidebar).toHaveClass('collapsed');
+    expect(sidebar).not.toHaveClass('collapsed');
     expect(button).toHaveClass(AppButtonVariants.Clear);
 
     await user.click(button);
 
-    expect(sidebar).not.toHaveClass('collapsed');
+    expect(sidebar).toHaveClass('collapsed');
   });
 
   it('calls toggleTheme function on click', async () => {
@@ -107,7 +107,7 @@ describe('Sidebar', () => {
 
     await user.click(loginBtn);
 
-    const authModal = getByTestId('modal');
+    const authModal = getByTestId('Modal.content');
 
     expect(loginBtn).toBeInTheDocument();
     expect(authModal).toBeInTheDocument();

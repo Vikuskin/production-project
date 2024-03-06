@@ -25,7 +25,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
   config.module!.rules!.push(buildCssLoader(true));
   config.resolve!.alias = {
-    entities: path.resolve(__dirname, '..', '..', 'src', 'entities'),
+    '@': paths.src,
   };
   config.plugins?.push(
     new DefinePlugin({

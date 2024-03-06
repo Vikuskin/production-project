@@ -1,4 +1,4 @@
-import { AppRoutes } from 'app/providers/router';
+import { AppRoutes } from '@/app/providers/router';
 
 export type Scroll = Partial<Record<AppRoutes, number>>;
 

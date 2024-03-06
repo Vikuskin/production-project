@@ -1,9 +1,9 @@
 import React, { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-import { BackButton } from 'shared/ui/BackButton';
-import { ReloadButton } from 'shared/ui/ReloadButton';
+import { ErrorStatusCode } from '@/shared/enums/errorStatusCode';
+import { BackButton } from '@/shared/ui/BackButton';
+import { ReloadButton } from '@/shared/ui/ReloadButton';
 
 import * as styles from './ErrorPage.module.scss';
 

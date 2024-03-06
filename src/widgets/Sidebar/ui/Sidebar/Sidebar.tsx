@@ -1,22 +1,22 @@
 import React, { FC, memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { selectUserAuthData, userActions } from 'entities/User';
-import { LoginModal } from 'features/AuthByUserName';
-import ExpandSvg from 'shared/assets/icons/expand.svg';
-import LoginSvg from 'shared/assets/icons/login.svg';
-import LogoutSvg from 'shared/assets/icons/logout.svg';
-import ProfileSvg from 'shared/assets/icons/profile.svg';
-import Themevg from 'shared/assets/icons/theme.svg';
-import TranslationSvg from 'shared/assets/icons/translation.svg';
-import { routePaths } from 'shared/constants/routePaths';
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { useTheme } from 'shared/lib/hooks/useTheme';
-import { AppButton } from 'shared/ui/AppButton';
-import { AppLink } from 'shared/ui/AppLink';
-import { VStack } from 'shared/ui/Stack';
+import { selectUserAuthData, userActions } from '@/entities/User';
+import { LoginModal } from '@/features/AuthByUserName';
+import ExpandSvg from '@/shared/assets/icons/expand.svg';
+import LoginSvg from '@/shared/assets/icons/login.svg';
+import LogoutSvg from '@/shared/assets/icons/logout.svg';
+import ProfileSvg from '@/shared/assets/icons/profile.svg';
+import Themevg from '@/shared/assets/icons/theme.svg';
+import TranslationSvg from '@/shared/assets/icons/translation.svg';
+import { routePaths } from '@/shared/constants/routePaths';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
+import { useTheme } from '@/shared/lib/hooks/useTheme';
+import { AppButton } from '@/shared/ui/AppButton';
+import { AppLink } from '@/shared/ui/AppLink';
+import { VStack } from '@/shared/ui/Stack';
 
 import * as styles from './Sidebar.module.scss';
 

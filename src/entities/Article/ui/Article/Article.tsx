@@ -1,19 +1,19 @@
 import React, { FC, ReactElement, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ErrorPage } from 'pages/ErrorPage';
-import CalendarSvg from 'shared/assets/icons/calendar.svg';
-import EyeIconSvg from 'shared/assets/icons/eye-out.svg';
-import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { Avatar } from 'shared/ui/Avatar';
-import { Skeleton } from 'shared/ui/Skeleton';
-import { HStack } from 'shared/ui/Stack';
-import { Text, TextAligns, TextSizes } from 'shared/ui/Text';
+import { ErrorPage } from '@/pages/ErrorPage';
+import CalendarSvg from '@/shared/assets/icons/calendar.svg';
+import EyeIconSvg from '@/shared/assets/icons/eye-out.svg';
+import { ErrorStatusCode } from '@/shared/enums/errorStatusCode';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { HStack } from '@/shared/ui/Stack';
+import { Text, TextAligns, TextSizes } from '@/shared/ui/Text';
 
 import * as styles from './Article.module.scss';
 

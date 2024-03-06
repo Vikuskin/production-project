@@ -1,5 +1,5 @@
-import { IState } from 'app/providers/StoreProvider';
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
+import { IState } from '@/app/providers/StoreProvider';
+import { INTERNAL_SERVER_ERROR } from '@/shared/constants/internalServerError';
 
 import { selectArticleData, selectArticleError, selectArticleLoading } from './selectArticle';
 

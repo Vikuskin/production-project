@@ -1,7 +1,7 @@
 import React, { FC, memo } from 'react';
 
-import ReloadSvg from 'shared/assets/icons/reload.svg';
-import { AppButton } from 'shared/ui/AppButton';
+import ReloadSvg from '@/shared/assets/icons/reload.svg';
+import { AppButton } from '@/shared/ui/AppButton';
 
 interface IReloadButtonProps {
   className?: string;

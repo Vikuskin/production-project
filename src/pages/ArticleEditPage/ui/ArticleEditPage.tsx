@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
-import { Text } from 'shared/ui/Text';
-import { PageWrapper } from 'widgets/PageWrapper';
+import { Text } from '@/shared/ui/Text';
+import { PageWrapper } from '@/widgets/PageWrapper';
 
 const ArticleEditPage: FC = () => {
   const { t } = useTranslation();

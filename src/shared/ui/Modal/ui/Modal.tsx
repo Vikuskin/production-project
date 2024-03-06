@@ -1,10 +1,10 @@
 import React, { FC, PropsWithChildren } from 'react';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { useModal } from 'shared/lib/hooks/useModal';
-import { Overlay } from 'shared/ui/Overlay';
-import { Portal } from 'shared/ui/Portal/ui/Portal';
-import { HStack } from 'shared/ui/Stack';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { useModal } from '@/shared/lib/hooks/useModal';
+import { Overlay } from '@/shared/ui/Overlay';
+import { Portal } from '@/shared/ui/Portal/ui/Portal';
+import { HStack } from '@/shared/ui/Stack';
 
 import * as styles from './Modal.module.scss';
 
@@ -37,11 +37,11 @@ export const Modal: FC<PropsWithChildren<IModalProps>> = (props) => {
       <HStack
         justify="center"
         align="center"
-        data-testid="modal"
+        data-testid="Modal.wrapper"
         className={getClassNames(styles.modal, [className ?? ''], mods)}
       >
         <Overlay onClick={closeHandler} />
-        <div data-testid="content" className={styles.content}>
+        <div data-testid="Modal.content" className={styles.content}>
           {children}
         </div>
       </HStack>

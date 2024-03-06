@@ -1,6 +1,6 @@
 import React, { FC, HTMLAttributes, PropsWithChildren } from 'react';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
 
 import * as styles from './Flex.module.scss';
 
@@ -39,6 +39,7 @@ export interface FlexProps extends HTMLAttributes<HTMLDivElement> {
   gap?: FlexGap;
   component?: keyof HTMLElementTagNameMap;
   onClick?: () => void;
+  'data-testid'?: string;
 }
 
 export const Flex: FC<PropsWithChildren<FlexProps>> = (props: PropsWithChildren<FlexProps>) => {
@@ -51,6 +52,7 @@ export const Flex: FC<PropsWithChildren<FlexProps>> = (props: PropsWithChildren<
     gap = 10,
     component = 'div',
     onClick,
+    'data-testid': dataTestid,
   } = props;
   const classes = [
     className ?? '',
@@ -62,7 +64,11 @@ export const Flex: FC<PropsWithChildren<FlexProps>> = (props: PropsWithChildren<
   const ComponentWrapper = component;
 
   return (
-    <ComponentWrapper className={getClassNames(styles.flex, classes)} onClick={onClick}>
+    <ComponentWrapper
+      data-testid={dataTestid || 'Flex.wrapper'}
+      className={getClassNames(styles.flex, classes)}
+      onClick={onClick}
+    >
       {children}
     </ComponentWrapper>
   );

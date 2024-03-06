@@ -1,4 +1,4 @@
-import { AppLinkVariants } from 'shared/ui/AppLink';
+import { AppLinkVariants } from '@/shared/ui/AppLink';
 
 export interface INavbarLink {
   path: string;

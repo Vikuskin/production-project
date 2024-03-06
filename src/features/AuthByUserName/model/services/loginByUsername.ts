@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { IThunkConfig } from 'app/providers/StoreProvider';
-import { IAuthData, userActions } from 'entities/User';
-import { ROUTES } from 'shared/api/routes';
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
-import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-import { ICustomError } from 'shared/interfaces/customError';
+import { IThunkConfig } from '@/app/providers/StoreProvider';
+import { IAuthData, userActions } from '@/entities/User';
+import { ROUTES } from '@/shared/api/routes';
+import { INTERNAL_SERVER_ERROR } from '@/shared/constants/internalServerError';
+import { ErrorStatusCode } from '@/shared/enums/errorStatusCode';
+import { ICustomError } from '@/shared/interfaces/customError';
 
 interface ILoginByUsernameProps {
   username: string;

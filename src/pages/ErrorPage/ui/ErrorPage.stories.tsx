@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Themes } from 'shared/enums/themes';
-import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
+import { Themes } from '@/shared/enums/themes';
+import { themeDecorator } from '@/shared/lib/storybook/themeDecorator';
 
 import { ErrorPage } from './ErrorPage';
 

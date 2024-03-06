@@ -1,9 +1,9 @@
 import React, { memo, useCallback, useMemo } from 'react';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AppButton } from 'shared/ui/AppButton';
-import { Card, CardVariant } from 'shared/ui/Card';
-import { HStack } from 'shared/ui/Stack';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { AppButton } from '@/shared/ui/AppButton';
+import { Card, CardVariant } from '@/shared/ui/Card';
+import { HStack } from '@/shared/ui/Stack';
 
 import * as styles from './Tabs.module.scss';
 

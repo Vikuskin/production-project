@@ -1,8 +1,8 @@
 import { Menu } from '@headlessui/react';
 import React, { FC, ReactNode } from 'react';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AppLink } from 'shared/ui/AppLink';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { AppLink } from '@/shared/ui/AppLink';
 
 import * as styles from './Dropdown.module.scss';
 

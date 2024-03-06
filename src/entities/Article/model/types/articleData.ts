@@ -1,4 +1,4 @@
-import { IAuthData } from 'entities/User';
+import { IAuthData } from '@/entities/User';
 
 import { ArticleBlock } from './articleBlock';
 

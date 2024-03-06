@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
 
 import * as styles from './Text.module.scss';
 

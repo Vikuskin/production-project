@@ -1,14 +1,14 @@
 import React, { FC, Suspense, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { CommentList } from 'entities/Comment';
-import { AddNewComment } from 'features/AddNewComment';
-import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { Text, TextSizes } from 'shared/ui/Text';
-import { PageLoader } from 'widgets/PageLoader';
+import { CommentList } from '@/entities/Comment';
+import { AddNewComment } from '@/features/AddNewComment';
+import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
+import { Text, TextSizes } from '@/shared/ui/Text';
+import { PageLoader } from '@/widgets/PageLoader';
 
 import * as styles from './ArticleComments.module.scss';
 

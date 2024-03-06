@@ -1,8 +1,8 @@
 import { Component, ErrorInfo, ReactNode, Suspense } from 'react';
 
-import { ErrorPage } from 'pages/ErrorPage';
-import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-import { PageLoader } from 'widgets/PageLoader';
+import { ErrorPage } from '@/pages/ErrorPage';
+import { ErrorStatusCode } from '@/shared/enums/errorStatusCode';
+import { PageLoader } from '@/widgets/PageLoader';
 
 interface IErrorBoundaryProps {
   children: ReactNode;

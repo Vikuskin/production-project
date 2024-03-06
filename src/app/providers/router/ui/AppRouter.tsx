@@ -1,8 +1,8 @@
 import { FC, Suspense, memo, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { routeConfig } from 'app/providers/router/constants/routeConfig';
-import { PageLoader } from 'widgets/PageLoader';
+import { routeConfig } from '@/app/providers/router/constants/routeConfig';
+import { PageLoader } from '@/widgets/PageLoader';
 
 import { RequireAuth } from './RequireAuth';
 

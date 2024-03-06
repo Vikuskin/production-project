@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AppLink } from 'shared/ui/AppLink';
-import { Text, TextAligns } from 'shared/ui/Text';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Text, TextAligns } from '@/shared/ui/Text';
 
 import { INotification } from '../../models/interfaces/notification';
 

@@ -1,7 +1,7 @@
 import React, { FC, memo } from 'react';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { Text } from 'shared/ui/Text';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { Text } from '@/shared/ui/Text';
 
 import * as styles from './ArticleTextBlock.module.scss';
 

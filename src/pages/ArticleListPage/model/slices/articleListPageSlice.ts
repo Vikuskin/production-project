@@ -1,9 +1,9 @@
 import { ActionReducerMapBuilder, PayloadAction, createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 
-import { IState } from 'app/providers/StoreProvider';
-import { IArticleData } from 'entities/Article';
-import { ArticleListView } from 'entities/ArticleList';
-import { LOCAL_STORAGE_KEYS } from 'shared/constants/localStorageKeys';
+import { IState } from '@/app/providers/StoreProvider';
+import { IArticleData } from '@/entities/Article';
+import { ArticleListView } from '@/entities/ArticleList';
+import { LOCAL_STORAGE_KEYS } from '@/shared/constants/localStorageKeys';
 
 import { IArticleList } from '../interfaces/articleList';
 import { fetchAllArticles } from '../services/fetchAllArticles';

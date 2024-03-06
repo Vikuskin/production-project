@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Themes } from 'shared/enums/themes';
-import { delayCaptureDecorator } from 'shared/lib/storybook/delayCaptureDecorator';
-import { storeDecorator } from 'shared/lib/storybook/storeDecorator';
-import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
+import { Themes } from '@/shared/enums/themes';
+import { delayCaptureDecorator } from '@/shared/lib/storybook/delayCaptureDecorator';
+import { storeDecorator } from '@/shared/lib/storybook/storeDecorator';
+import { themeDecorator } from '@/shared/lib/storybook/themeDecorator';
 
 import LoginForm from './LoginForm';
 

@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
-import { ArticleList, ArticleListView } from 'entities/ArticleList';
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { Text, TextSizes } from 'shared/ui/Text';
+import { ArticleList, ArticleListView } from '@/entities/ArticleList';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { Text, TextSizes } from '@/shared/ui/Text';
 
 import * as styles from './ArticleRecommends.module.scss';
 

@@ -1,14 +1,14 @@
 import React, { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { AppButton } from 'shared/ui/AppButton';
-import { AppInput } from 'shared/ui/AppInput';
-import { VStack } from 'shared/ui/Stack';
-import { Text, TextVariants } from 'shared/ui/Text';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
+import { AppButton } from '@/shared/ui/AppButton';
+import { AppInput } from '@/shared/ui/AppInput';
+import { VStack } from '@/shared/ui/Stack';
+import { Text, TextVariants } from '@/shared/ui/Text';
 
 import * as styles from './LoginForm.module.scss';
 

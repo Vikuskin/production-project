@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { IState } from 'app/providers/StoreProvider';
-import { ArticleTypes } from 'entities/Article';
+import { IState } from '@/app/providers/StoreProvider';
+import { ArticleTypes } from '@/entities/Article';
 
 import { ArticleOrder } from '../enums/articleOrder';
 import { ArticleSort } from '../enums/articleSort';

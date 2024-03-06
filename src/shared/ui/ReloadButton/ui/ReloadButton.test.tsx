@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import { AppButtonVariants } from 'shared/ui/AppButton';
+import { AppButtonVariants } from '@/shared/ui/AppButton';
 
 import { ReloadButton } from './ReloadButton';
 

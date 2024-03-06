@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { LOCAL_STORAGE_KEYS } from 'shared/constants/localStorageKeys';
+import { LOCAL_STORAGE_KEYS } from '@/shared/constants/localStorageKeys';
 
 import { IAuthData } from '../interfaces/authData';
 import { IUser } from '../interfaces/user';

@@ -1,5 +1,5 @@
-import { Country, Currency } from 'entities/Profile';
-import AvatarImg from 'shared/assets/tests/storybook-avatar.jpeg';
+import { Country, Currency } from '@/entities/Profile';
+import AvatarImg from '@/shared/assets/tests/storybook-avatar.jpeg';
 
 export const profileForm = {
   id: '1',

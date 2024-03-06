@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ROUTES } from 'shared/api/routes';
-import { Themes } from 'shared/enums/themes';
-import { storeDecorator } from 'shared/lib/storybook/storeDecorator';
-import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
-import { getArticleListMock } from 'shared/mocks/articleList';
+import { ROUTES } from '@/shared/api/routes';
+import { Themes } from '@/shared/enums/themes';
+import { storeDecorator } from '@/shared/lib/storybook/storeDecorator';
+import { themeDecorator } from '@/shared/lib/storybook/themeDecorator';
+import { getArticleListMock } from '@/shared/mocks/articleList';
 
 import { ArticleRecommends } from './ArticleRecommends';
 

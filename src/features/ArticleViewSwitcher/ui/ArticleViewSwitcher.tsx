@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 
-import { ArticleListView } from 'entities/ArticleList';
-import ListViewSvg from 'shared/assets/icons/list-view.svg';
-import TileViewSvg from 'shared/assets/icons/tile-view.svg';
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { AppButton } from 'shared/ui/AppButton';
+import { ArticleListView } from '@/entities/ArticleList';
+import ListViewSvg from '@/shared/assets/icons/list-view.svg';
+import TileViewSvg from '@/shared/assets/icons/tile-view.svg';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { AppButton } from '@/shared/ui/AppButton';
 
 import * as styles from './ArticleViewSwitcher.module.scss';
 

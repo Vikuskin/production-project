@@ -9,14 +9,14 @@ import {
   selectProfileError,
   selectProfileForm,
   selectProfileLoading,
-} from 'features/EditableProfileCard';
-import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect';
-import { Text, TextAligns, TextVariants } from 'shared/ui/Text';
-import { PageLoader } from 'widgets/PageLoader';
-import { PageWrapper } from 'widgets/PageWrapper';
+} from '@/features/EditableProfileCard';
+import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
+import { Text, TextAligns, TextVariants } from '@/shared/ui/Text';
+import { PageLoader } from '@/widgets/PageLoader';
+import { PageWrapper } from '@/widgets/PageWrapper';
 
 import * as styles from './ProfilePage.module.scss';
 

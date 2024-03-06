@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { IThunkConfig } from 'app/providers/StoreProvider';
-import { ArticleTypes } from 'entities/Article';
-import { ArticleOrder, ArticleSort, articleFiltersActions } from 'features/ArticleFilters';
-import { ICustomError } from 'shared/interfaces/customError';
+import { IThunkConfig } from '@/app/providers/StoreProvider';
+import { ArticleTypes } from '@/entities/Article';
+import { ArticleOrder, ArticleSort, articleFiltersActions } from '@/features/ArticleFilters';
+import { ICustomError } from '@/shared/interfaces/customError';
 
 import { fetchAllArticles } from './fetchAllArticles';
 

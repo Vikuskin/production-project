@@ -1,5 +1,5 @@
-import { IProfileData } from 'entities/Profile';
-import { ICustomError } from 'shared/interfaces/customError';
+import { IProfileData } from '@/entities/Profile';
+import { ICustomError } from '@/shared/interfaces/customError';
 
 export interface IProfile {
   data: IProfileData | null;

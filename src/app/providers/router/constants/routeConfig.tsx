@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { UserRoles } from 'entities/User';
-import { AboutPage } from 'pages/AboutPage';
-import AdminPage from 'pages/AdminPage/ui/AdminPage';
-import { ArticleEditPage } from 'pages/ArticleEditPage';
-import { ArticleListPage } from 'pages/ArticleListPage';
-import { ArticlePage } from 'pages/ArticlePage';
-import { ErrorPage } from 'pages/ErrorPage';
-import { MainPage } from 'pages/MainPage';
-import { ProfilePage } from 'pages/ProfilePage';
-import { routePaths } from 'shared/constants/routePaths';
-import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
+import { UserRoles } from '@/entities/User';
+import { AboutPage } from '@/pages/AboutPage';
+import AdminPage from '@/pages/AdminPage/ui/AdminPage';
+import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { ArticleListPage } from '@/pages/ArticleListPage';
+import { ArticlePage } from '@/pages/ArticlePage';
+import { ErrorPage } from '@/pages/ErrorPage';
+import { MainPage } from '@/pages/MainPage';
+import { ProfilePage } from '@/pages/ProfilePage';
+import { routePaths } from '@/shared/constants/routePaths';
+import { ErrorStatusCode } from '@/shared/enums/errorStatusCode';
 
 import { AppRoutes } from './appRoutes';
 

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Themes } from 'shared/enums/themes';
-import { delayCaptureDecorator } from 'shared/lib/storybook/delayCaptureDecorator';
-import { storeDecorator } from 'shared/lib/storybook/storeDecorator';
-import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
-import { getArticleListMock } from 'shared/mocks/articleList';
+import { Themes } from '@/shared/enums/themes';
+import { delayCaptureDecorator } from '@/shared/lib/storybook/delayCaptureDecorator';
+import { storeDecorator } from '@/shared/lib/storybook/storeDecorator';
+import { themeDecorator } from '@/shared/lib/storybook/themeDecorator';
+import { getArticleListMock } from '@/shared/mocks/articleList';
 
 import ArticleListPage from './ArticleListPage';
 

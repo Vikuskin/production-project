@@ -1,11 +1,11 @@
 import React, { FC, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { IArticleData } from 'entities/Article';
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { Skeleton } from 'shared/ui/Skeleton';
-import { HStack } from 'shared/ui/Stack';
-import { Text } from 'shared/ui/Text';
+import { IArticleData } from '@/entities/Article';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { HStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
 
 import * as styles from './ArticleList.module.scss';
 

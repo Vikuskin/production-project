@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { PageWrapper } from 'widgets/PageWrapper';
+import { PageWrapper } from '@/widgets/PageWrapper';
 
 import * as styles from './AdminPage.module.scss';
 

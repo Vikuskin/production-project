@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { articleDataMock } from 'entities/Article/model/mocks/articleData';
-import { ROUTES } from 'shared/api/routes';
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
-import { Themes } from 'shared/enums/themes';
-import { delayCaptureDecorator } from 'shared/lib/storybook/delayCaptureDecorator';
-import { storeDecorator } from 'shared/lib/storybook/storeDecorator';
-import { themeDecorator } from 'shared/lib/storybook/themeDecorator';
-import { getArticleListMock } from 'shared/mocks/articleList';
-import { commentsMock } from 'shared/mocks/comments';
+import { articleDataMock } from '@/entities/Article/model/mocks/articleData';
+import { ROUTES } from '@/shared/api/routes';
+import { INTERNAL_SERVER_ERROR } from '@/shared/constants/internalServerError';
+import { Themes } from '@/shared/enums/themes';
+import { delayCaptureDecorator } from '@/shared/lib/storybook/delayCaptureDecorator';
+import { storeDecorator } from '@/shared/lib/storybook/storeDecorator';
+import { themeDecorator } from '@/shared/lib/storybook/themeDecorator';
+import { getArticleListMock } from '@/shared/mocks/articleList';
+import { commentsMock } from '@/shared/mocks/comments';
 
 import ArticlePage from './ArticlePage';
 

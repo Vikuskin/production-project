@@ -1,11 +1,11 @@
 import React, { memo, useCallback, useMemo, useState } from 'react';
 
-import { LoginModal } from 'features/AuthByUserName';
-import { OpenNotifications } from 'features/OpenNotifications';
-import { UserMenu } from 'features/UserMenu';
-import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
-import { HStack } from 'shared/ui/Stack';
+import { LoginModal } from '@/features/AuthByUserName';
+import { OpenNotifications } from '@/features/OpenNotifications';
+import { UserMenu } from '@/features/UserMenu';
+import { getClassNames } from '@/shared/lib/classNames/getClassNames';
+import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
+import { HStack } from '@/shared/ui/Stack';
 
 import * as styles from './Navbar.module.scss';
 

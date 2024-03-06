@@ -1,10 +1,10 @@
 import React, { FC, memo } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { Article } from 'entities/Article';
-import { ArticleComments } from 'features/ArticleComments';
-import { ArticleRecommends } from 'features/ArticleRecommends';
-import { PageWrapper } from 'widgets/PageWrapper';
+import { Article } from '@/entities/Article';
+import { ArticleComments } from '@/features/ArticleComments';
+import { ArticleRecommends } from '@/features/ArticleRecommends';
+import { PageWrapper } from '@/widgets/PageWrapper';
 
 import * as styles from './ArticlePage.module.scss';
 import { ArticlePageHeader } from './ArticlePageHeader/ArticlePageHeader';

@@ -1,7 +1,7 @@
 import React, { FC, PropsWithChildren, useMemo, useState } from 'react';
 
-import { DEFAULT_THEME } from 'shared/constants/defaultTheme';
-import { Themes } from 'shared/enums/themes';
+import { DEFAULT_THEME } from '@/shared/constants/defaultTheme';
+import { Themes } from '@/shared/enums/themes';
 
 import { ThemeContext } from './ThemeContext';
 

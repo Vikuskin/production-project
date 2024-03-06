@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { IThunkConfig } from 'app/providers/StoreProvider';
-import { IComment } from 'entities/Comment';
-import { ROUTES } from 'shared/api/routes';
-import { INTERNAL_SERVER_ERROR } from 'shared/constants/internalServerError';
-import { ErrorStatusCode } from 'shared/enums/errorStatusCode';
-import { ICustomError } from 'shared/interfaces/customError';
+import { IThunkConfig } from '@/app/providers/StoreProvider';
+import { IComment } from '@/entities/Comment';
+import { ROUTES } from '@/shared/api/routes';
+import { INTERNAL_SERVER_ERROR } from '@/shared/constants/internalServerError';
+import { ErrorStatusCode } from '@/shared/enums/errorStatusCode';
+import { ICustomError } from '@/shared/interfaces/customError';
 
 export const fetchCommentsByArticleId = createAsyncThunk<IComment[], string | null, IThunkConfig<ICustomError>>(
   'articleComments/fetchCommentsByArticleId',

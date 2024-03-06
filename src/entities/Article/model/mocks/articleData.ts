@@ -1,4 +1,4 @@
-import StrybookAvatar from 'shared/assets/tests/storybook-avatar.jpeg';
+import StrybookAvatar from '@/shared/assets/tests/storybook-avatar.jpeg';
 
 import { ArticleBlocks } from '../enums/articleBlocks';
 import { ArticleTypes } from '../enums/articleTypes';
