@@ -3,6 +3,7 @@ import React, { FC, useState } from 'react';
 import { NotificationList } from 'entities/Notification';
 import { selectUserAuthData } from 'entities/User';
 import NotificationSvg from 'shared/assets/icons/notification.svg';
+import { AnimationProvider } from 'shared/lib/components/AnimationProvider';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { useDevice } from 'shared/lib/hooks/useDevice';
 import { AppButton } from 'shared/ui/AppButton';
@@ -30,13 +31,15 @@ export const OpenNotifications: FC = () => {
   return isMobile ? (
     <>
       {trigger}
-      <Drawer onClose={closeDrawer} isOpen={isDrawerOpen}>
-        <NotificationList />
-      </Drawer>
+      <AnimationProvider>
+        <Drawer onClose={closeDrawer} isOpen={isDrawerOpen}>
+          <NotificationList />
+        </Drawer>
+      </AnimationProvider>
     </>
   ) : (
     <Popover direction={'topRight'} trigger={trigger}>
-      <NotificationList className={styles.notifications} />
+      <NotificationList className={styles.popoverNotifications} />
     </Popover>
   );
 };
