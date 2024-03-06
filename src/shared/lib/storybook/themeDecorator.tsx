@@ -2,7 +2,7 @@
 import type { StoryFn } from '@storybook/react';
 import React from 'react';
 
-import { ThemeProvider } from 'app/providers/theme';
+import { ThemeProvider } from 'app/providers/ThemeProvider';
 import { Themes } from 'shared/enums/themes';
 
 export const themeDecorator =

@@ -1,7 +1,7 @@
-import React, { FC, PropsWithChildren, memo, useCallback, useEffect } from 'react';
+import React, { FC, PropsWithChildren, useCallback, useEffect } from 'react';
 
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
-import { useAnimationLibs } from 'shared/lib/components/AnimationProvider';
+import { AnimationProvider, useAnimationLibs } from 'shared/lib/components/AnimationProvider';
 import { Overlay } from 'shared/ui/Overlay';
 import { Portal } from 'shared/ui/Portal';
 import { HStack } from 'shared/ui/Stack';
@@ -68,7 +68,7 @@ const DrawerContent: FC<PropsWithChildren<IDrawerProps>> = (props: PropsWithChil
   return (
     <Portal>
       <HStack align="end" className={getClassNames(styles.drawer, [className ?? ''])}>
-        <Overlay onClick={close} />
+        <Overlay onClick={() => close()} />
         <Spring.a.div
           className={styles.sheet}
           style={{ display, bottom: `calc(-100vh + ${height - 100}px)`, y }}
@@ -80,13 +80,14 @@ const DrawerContent: FC<PropsWithChildren<IDrawerProps>> = (props: PropsWithChil
     </Portal>
   );
 };
-
-export const Drawer = memo((props: PropsWithChildren<IDrawerProps>) => {
+const DrawerAsync: FC<PropsWithChildren<IDrawerProps>> = (props: PropsWithChildren<IDrawerProps>) => {
   const { isLoaded } = useAnimationLibs();
 
-  if (!isLoaded) {
-    return null;
-  } else {
-    return <DrawerContent {...props} />;
-  }
-});
+  return isLoaded ? <DrawerContent {...props} /> : null;
+};
+
+export const Drawer: FC<PropsWithChildren<IDrawerProps>> = (props: IDrawerProps) => (
+  <AnimationProvider>
+    <DrawerAsync {...props} />
+  </AnimationProvider>
+);

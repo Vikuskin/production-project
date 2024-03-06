@@ -28,7 +28,7 @@ interface ISidebarProps {
 }
 
 export const Sidebar: FC<ISidebarProps> = memo(({ className }: ISidebarProps) => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const toggleCollapsed = () => setCollapsed((prev) => !prev);
   const { toggleTheme } = useTheme();
   const { t, i18n } = useTranslation();
