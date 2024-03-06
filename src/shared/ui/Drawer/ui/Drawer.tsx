@@ -3,27 +3,22 @@ import React, { FC, PropsWithChildren } from 'react';
 import { getClassNames } from 'shared/lib/classNames/getClassNames';
 import { useModal } from 'shared/lib/hooks/useModal';
 import { Overlay } from 'shared/ui/Overlay';
-import { Portal } from 'shared/ui/Portal/ui/Portal';
+import { Portal } from 'shared/ui/Portal';
 import { HStack } from 'shared/ui/Stack';
 
-import * as styles from './Modal.module.scss';
+import * as styles from './Drawer.module.scss';
 
-interface IModalProps {
+interface IDrawerProps {
   isOpen: boolean;
   onClose: () => void;
   className?: string;
   lazy?: boolean;
 }
-export const ANIMATION_DELAY = 200;
-export const Modal: FC<PropsWithChildren<IModalProps>> = (props) => {
+
+export const Drawer: FC<PropsWithChildren<IDrawerProps>> = (props: PropsWithChildren<IDrawerProps>) => {
   const { children, className, isOpen, onClose, lazy } = props;
-  const { isClosing, isMounted, isOpening, closeHandler } = useModal({
-    animationDelay: ANIMATION_DELAY,
-    isOpen,
-    onClose,
-  });
+  const { closeHandler, isClosing, isMounted, isOpening } = useModal({ animationDelay: 300, isOpen, onClose });
   const mods: Record<string, boolean> = {
-    [styles.isOpening]: isOpening,
     [styles.opened]: isMounted,
     [styles.isClosing]: isClosing,
   };
@@ -34,16 +29,9 @@ export const Modal: FC<PropsWithChildren<IModalProps>> = (props) => {
 
   return (
     <Portal>
-      <HStack
-        justify="center"
-        align="center"
-        data-testid="modal"
-        className={getClassNames(styles.modal, [className ?? ''], mods)}
-      >
+      <HStack align="end" className={getClassNames(styles.drawer, [className ?? ''], mods)}>
         <Overlay onClick={closeHandler} />
-        <div data-testid="content" className={styles.content}>
-          {children}
-        </div>
+        <div className={styles.content}>{children}</div>
       </HStack>
     </Portal>
   );
