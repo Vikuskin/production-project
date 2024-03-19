@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 
-import { notificationsMock } from '@/entities/Notification/models/mocks/notifications';
+import { notificationsMock } from '@/entities/Notification';
 import { ROUTES } from '@/shared/api/routes';
 import { Themes } from '@/shared/enums/themes';
 import { storeDecorator } from '@/shared/lib/storybook/storeDecorator';

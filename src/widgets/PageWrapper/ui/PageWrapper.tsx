@@ -1,8 +1,7 @@
 import React, { FC, PropsWithChildren, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { selectInfiniteScrollByPath } from '@/features/ScrollPosition/model/selectors/selectInfiniteScroll';
-import { infiniteScrollActions } from '@/features/ScrollPosition/model/slices/infiniteScrollSlice';
+import { infiniteScrollActions, selectInfiniteScrollByPath } from '@/features/ScrollPosition';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';

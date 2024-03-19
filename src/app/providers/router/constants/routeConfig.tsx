@@ -2,7 +2,7 @@ import React from 'react';
 
 import { UserRoles } from '@/entities/User';
 import { AboutPage } from '@/pages/AboutPage';
-import AdminPage from '@/pages/AdminPage/ui/AdminPage';
+import { AdminPage } from '@/pages/AdminPage';
 import { ArticleEditPage } from '@/pages/ArticleEditPage';
 import { ArticleListPage } from '@/pages/ArticleListPage';
 import { ArticlePage } from '@/pages/ArticlePage';

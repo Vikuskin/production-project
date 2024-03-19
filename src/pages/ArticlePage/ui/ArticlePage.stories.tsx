@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { articleDataMock } from '@/entities/Article/model/mocks/articleData';
+import { articleDataMock } from '@/entities/Article';
 import { ROUTES } from '@/shared/api/routes';
 import { INTERNAL_SERVER_ERROR } from '@/shared/constants/internalServerError';
 import { Themes } from '@/shared/enums/themes';

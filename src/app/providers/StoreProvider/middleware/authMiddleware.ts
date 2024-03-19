@@ -1,7 +1,7 @@
 import { Middleware, UnknownAction, isFulfilled } from '@reduxjs/toolkit';
 
 import { userActions } from '@/entities/User';
-import { loginByUsername } from '@/features/AuthByUserName/model/services/loginByUsername';
+import { loginByUsername } from '@/features/AuthByUserName';
 import { LOCAL_STORAGE_KEYS } from '@/shared/constants/localStorageKeys';
 
 export const authMiddleware: Middleware<(action: UnknownAction) => void> = () => (next) => (action) => {

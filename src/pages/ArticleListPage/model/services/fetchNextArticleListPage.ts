@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { IThunkConfig } from '@/app/providers/StoreProvider';
-import { selectArticleLoading } from '@/entities/Article/model/selectors/selectArticle';
+import { selectArticleLoading } from '@/entities/Article';
 import { ICustomError } from '@/shared/interfaces/customError';
 
 import { fetchAllArticles } from './fetchAllArticles';

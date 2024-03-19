@@ -1,7 +1,7 @@
 import React, { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ArticleTypes } from '@/entities/Article/model/enums/articleTypes';
+import { ArticleTypes } from '@/entities/Article';
 import { getClassNames } from '@/shared/lib/classNames/getClassNames';
 import { DynamicReducerLoader, ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
 import { getEnumOptions } from '@/shared/lib/helpers/getEnumOptions';

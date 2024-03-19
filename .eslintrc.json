@@ -121,6 +121,7 @@
       }
     ],
     // custom plugins
-    "fsd-paths/relative-paths": "error"
+    "fsd-paths/relative-paths": ["error", { "alias": "@" }],
+    "fsd-paths/public-api-imports": ["error", { "alias": "@" }]
   }
 }
