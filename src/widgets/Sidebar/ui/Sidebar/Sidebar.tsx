@@ -88,7 +88,7 @@ export const Sidebar: FC<ISidebarProps> = memo(({ className }: ISidebarProps) =>
       <AppButton className={styles.collapseBtn} data-testid="sidebar-collapse-btn" onClick={toggleCollapsed}>
         <ExpandSvg />
       </AppButton>
-      {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+      <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
     </aside>
   );
 });

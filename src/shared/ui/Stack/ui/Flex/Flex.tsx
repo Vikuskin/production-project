@@ -40,6 +40,7 @@ export interface FlexProps extends HTMLAttributes<HTMLDivElement> {
   component?: keyof HTMLElementTagNameMap;
   onClick?: () => void;
   'data-testid'?: string;
+  max?: boolean;
 }
 
 export const Flex: FC<PropsWithChildren<FlexProps>> = (props: PropsWithChildren<FlexProps>) => {
@@ -53,6 +54,7 @@ export const Flex: FC<PropsWithChildren<FlexProps>> = (props: PropsWithChildren<
     component = 'div',
     onClick,
     'data-testid': dataTestid,
+    max,
   } = props;
   const classes = [
     className ?? '',
@@ -66,7 +68,7 @@ export const Flex: FC<PropsWithChildren<FlexProps>> = (props: PropsWithChildren<
   return (
     <ComponentWrapper
       data-testid={dataTestid || 'Flex.wrapper'}
-      className={getClassNames(styles.flex, classes)}
+      className={getClassNames(styles.flex, classes, { [styles.max]: !!max })}
       onClick={onClick}
     >
       {children}

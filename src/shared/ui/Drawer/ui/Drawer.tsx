@@ -10,14 +10,14 @@ import * as styles from './Drawer.module.scss';
 
 interface IDrawerProps {
   isOpen: boolean;
+  height?: number;
   onClose: () => void;
   className?: string;
 }
 
-const height = window.innerHeight - 200;
 const DrawerContent: FC<PropsWithChildren<IDrawerProps>> = (props: PropsWithChildren<IDrawerProps>) => {
   const { Spring, Gesture } = useAnimationLibs();
-  const { children, className, isOpen, onClose } = props;
+  const { children, className, isOpen, onClose, height = window.innerHeight - 200 } = props;
   const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
   const openDrawer = useCallback(() => {
     api.start({ y: 0, immediate: false });

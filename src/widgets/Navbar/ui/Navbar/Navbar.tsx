@@ -33,7 +33,7 @@ export const Navbar = memo(({ className }: INavbarProps) => {
         <OpenNotifications />
         <UserMenu onShowModal={onShowModal} />
       </HStack>
-      {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+      <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
     </header>
   );
 });

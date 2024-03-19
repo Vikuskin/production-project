@@ -12,6 +12,15 @@ export const useModal = (props: IUseModalProps) => {
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const openingTimerRef = useRef<ReturnType<typeof setTimeout>>();
+  const closingTimerRef = useRef<ReturnType<typeof setTimeout>>();
+  const closeHandler = useCallback(() => {
+    setIsClosing(true);
+    closingTimerRef.current = setTimeout(() => {
+      onClose();
+      setIsClosing(false);
+      setIsMounted(false);
+    }, animationDelay);
+  }, [animationDelay, onClose]);
 
   useEffect(() => {
     if (isOpen) {
@@ -20,24 +29,16 @@ export const useModal = (props: IUseModalProps) => {
         setIsMounted(true);
         setIsOpening(false);
       }, animationDelay);
+    } else {
+      closeHandler();
     }
 
     return () => {
       clearTimeout(openingTimerRef.current);
+      clearTimeout(closingTimerRef.current);
     };
-  }, [animationDelay, isOpen]);
+  }, [animationDelay, closeHandler, isOpen, onClose]);
 
-  const closingTimerRef = useRef<ReturnType<typeof setTimeout>>();
-  const closeHandler = useCallback(() => {
-    if (onClose) {
-      setIsClosing(true);
-      closingTimerRef.current = setTimeout(() => {
-        onClose();
-        setIsClosing(false);
-        setIsMounted(false);
-      }, animationDelay);
-    }
-  }, [animationDelay, onClose]);
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -53,7 +54,6 @@ export const useModal = (props: IUseModalProps) => {
     }
 
     return () => {
-      clearTimeout(closingTimerRef.current);
       window.removeEventListener('keydown', onKeyDown);
     };
   }, [isOpen, onKeyDown]);

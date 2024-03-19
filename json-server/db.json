@@ -193,6 +193,63 @@
       "avatar": "https://images.unsplash.com/photo-1705037202436-2e4ade07d823?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxODY2Nzh8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MDczMTA1OTR8&ixlib=rb-4.0.3&q=80&w=1080"
     }
   ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": "5",
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": "5",
+      "feedback": "Good article!",
+      "userId": "2",
+      "articleId": "1"
+    },
+    {
+      "id": "3",
+      "rate": "4",
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "id": "4",
+      "rate": "5",
+      "feedback": "Good article",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "id": "5",
+      "rate": "5",
+      "feedback": "Good article",
+      "userId": "2",
+      "articleId": "3"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "feedback": "cool",
+      "rate": 5,
+      "id": "HMbxqh6"
+    },
+    {
+      "userId": "1",
+      "articleId": "13",
+      "feedback": "",
+      "rate": 3,
+      "id": "jFc0Yca"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 2,
+      "id": "7JXKQrN"
+    }
+  ],
   "articles": [
     {
       "id": "1",

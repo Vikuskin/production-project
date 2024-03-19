@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { Article } from '@/entities/Article';
 import { ArticleComments } from '@/features/ArticleComments';
+import { ArticleRating } from '@/features/ArticleRating';
 import { ArticleRecommends } from '@/features/ArticleRecommends';
 import { PageWrapper } from '@/widgets/PageWrapper';
 
@@ -16,6 +17,8 @@ const ArticlePage: FC = () => {
     <PageWrapper>
       <ArticlePageHeader />
       <Article id={id || null} />
+      <hr className={styles.line} />
+      <ArticleRating id={id || ''} />
       <hr className={styles.line} />
       <ArticleRecommends />
       <hr className={styles.line} />

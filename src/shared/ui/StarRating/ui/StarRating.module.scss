@@ -1,0 +1,20 @@
+.star-rating {
+  opacity: 1;
+
+  .icon {
+    cursor: pointer;
+    fill: none;
+
+    path {
+      stroke: var(--primary-color);
+    }
+  }
+
+  .icon.hovered {
+    fill: var(--primary-color);
+  }
+
+  .icon.selected {
+    cursor: auto;
+  }
+}

@@ -25,6 +25,12 @@ const meta = {
         status: 200,
         response: [...articleRecommendsMock],
       },
+      {
+        url: `${API_URL}${ROUTES.articleRatings}?userId=&articleId=`,
+        method: 'GET',
+        status: 200,
+        response: [],
+      },
     ],
   },
   tags: ['autodocs'],
