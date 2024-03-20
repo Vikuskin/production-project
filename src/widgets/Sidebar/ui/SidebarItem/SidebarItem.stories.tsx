@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
 
 import TranslationSvg from '@/shared/assets/icons/translation.svg';
 import { Themes } from '@/shared/enums/themes';
