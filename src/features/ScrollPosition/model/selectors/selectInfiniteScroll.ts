@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { AppRoutes } from '@/app/providers/router';
 import { IState } from '@/app/providers/StoreProvider';
+import { AppRoutes } from '@/shared/enums/appRoutes';
 
 const selectInfiniteScroll = (state: IState) => state.infiniteScroll.scroll;
 
