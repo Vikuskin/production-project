@@ -122,6 +122,12 @@
     ],
     // custom plugins
     "fsd-paths/relative-paths": ["error", { "alias": "@" }],
-    "fsd-paths/public-api-imports": ["error", { "alias": "@" }]
+    "fsd-paths/public-api-imports": [
+      "error",
+      {
+        "alias": "@",
+        "ignoreFilePatterns": ["**/*.test.ts", "storeDecorator.tsx", "**/*.stories.tsx", "src/shared/mocks"]
+      }
+    ]
   }
 }

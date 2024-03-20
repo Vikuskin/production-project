@@ -1,4 +1,3 @@
-/* eslint-disable fsd-paths/public-api-imports */
 import type { StoryFn } from '@storybook/react';
 import React from 'react';
 

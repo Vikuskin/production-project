@@ -6,4 +6,3 @@ export type { IArticleTextBlock } from './model/interfaces/articleTextBlock';
 export { ArticleTextBlock } from './ui/ArticleTextBlock/ArticleTextBlock';
 export { ArticleBlocks } from './model/enums/articleBlocks';
 export { ArticleTypes } from './model/enums/articleTypes';
-export { articleDataMock } from './model/mocks/articleData';
