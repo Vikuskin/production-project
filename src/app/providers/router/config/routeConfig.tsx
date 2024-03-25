@@ -9,57 +9,48 @@ import { ArticlePage } from '@/pages/ArticlePage';
 import { ErrorPage } from '@/pages/ErrorPage';
 import { MainPage } from '@/pages/MainPage';
 import { ProfilePage } from '@/pages/ProfilePage';
-import {
-  getRouteAbout,
-  getRouteAdminPanel,
-  getRouteArticle,
-  getRouteArticleCreate,
-  getRouteArticleEdit,
-  getRouteArticleList,
-  getRouteMain,
-  getRouteProfile,
-} from '@/shared/constants/routePaths';
+import { routes } from '@/shared/constants/routePaths';
 import { ErrorStatusCode } from '@/shared/enums/errorStatusCode';
 
 import { AppRouteProps } from '../types/appRouteProps';
 
 export const routeConfig: AppRouteProps[] = [
   {
-    path: getRouteMain(),
+    path: routes.main,
     element: <MainPage />,
   },
   {
-    path: getRouteAbout(),
+    path: routes.about,
     element: <AboutPage />,
   },
   {
-    path: getRouteArticleList(),
+    path: routes.articleList,
     element: <ArticleListPage />,
     authOnly: true,
   },
   {
-    path: getRouteArticle(':id'),
+    path: routes.article(':id'),
     element: <ArticlePage />,
     authOnly: true,
   },
   {
-    path: getRouteArticleEdit(':id'),
+    path: routes.articleEdit(':id'),
     element: <ArticleEditPage />,
     authOnly: true,
   },
   {
-    path: getRouteArticleCreate(),
+    path: routes.articleCreate,
     element: <ArticleEditPage />,
     authOnly: true,
   },
   {
-    path: getRouteAdminPanel(),
+    path: routes.adminPanel,
     element: <AdminPage />,
     authOnly: true,
     roles: [UserRoles.Manager, UserRoles.Admin],
   },
   {
-    path: getRouteProfile(':id'),
+    path: routes.profile(':id'),
     element: <ProfilePage />,
     authOnly: true,
   },

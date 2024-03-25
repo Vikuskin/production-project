@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { ArticleBlocks, ArticleTextBlock, IArticleData, IArticleTextBlock } from '@/entities/Article';
 import EyeSvg from '@/shared/assets/icons/eye-out.svg';
-import { getRouteArticle } from '@/shared/constants/routePaths';
+import { routes } from '@/shared/constants/routePaths';
 import { getClassNames } from '@/shared/lib/classNames/getClassNames';
 import { AppButton, AppButtonVariants } from '@/shared/ui/AppButton';
 import { AppLink } from '@/shared/ui/AppLink';
@@ -53,7 +53,7 @@ export const ArticleListItem: FC<IArticleListItemProps> = (props: IArticleListIt
           {image}
           {textBlock && <ArticleTextBlock className={styles.textBlock} block={textBlock} />}
           <HStack className={styles.footer}>
-            <AppLink target={target} to={getRouteArticle(article.id)}>
+            <AppLink target={target} to={routes.article(article.id)}>
               <AppButton variant={AppButtonVariants.Outline}>{t('Read more...')}</AppButton>
             </AppLink>
             {views}
@@ -66,7 +66,7 @@ export const ArticleListItem: FC<IArticleListItemProps> = (props: IArticleListIt
   return (
     <AppLink
       target={target}
-      to={getRouteArticle(article.id)}
+      to={routes.article(article.id)}
       className={getClassNames(styles.articleListItem, [className ?? '', styles[view]])}
     >
       <VStack>

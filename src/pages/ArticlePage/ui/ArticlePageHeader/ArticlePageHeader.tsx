@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import { selectArticleData, selectIsEditableArticle } from '@/entities/Article';
-import { getRouteArticleEdit, getRouteArticleList } from '@/shared/constants/routePaths';
+import { routes } from '@/shared/constants/routePaths';
 import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
 import { AppButton, AppButtonVariants } from '@/shared/ui/AppButton';
 import { HStack } from '@/shared/ui/Stack';
@@ -18,8 +18,8 @@ export const ArticlePageHeader: FC<IArticlePageHeaderProps> = ({ className }) =>
   const { t } = useTranslation();
   const articleData = useAppSelector(selectArticleData);
   const navigate = useNavigate();
-  const onBack = useCallback(() => navigate(getRouteArticleList()), [navigate]);
-  const onEdit = useCallback(() => navigate(getRouteArticleEdit(articleData?.id ?? '')), [articleData?.id, navigate]);
+  const onBack = useCallback(() => navigate(routes.articleList), [navigate]);
+  const onEdit = useCallback(() => navigate(routes.articleEdit(articleData?.id ?? '')), [articleData?.id, navigate]);
   const isEditableArticle = useAppSelector(selectIsEditableArticle);
 
   return (

@@ -1,7 +1,7 @@
 import { userEvent } from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
 
-import { getRouteAbout } from '@/shared/constants/routePaths';
+import { routes } from '@/shared/constants/routePaths';
 import { componentRender } from '@/shared/lib/tests/componentRender';
 import { AppLinkVariants } from '@/shared/ui/AppLink';
 
@@ -12,7 +12,7 @@ import { INavbarLink } from '../../model/interfaces/navbarLink';
 describe('NavbarLink', () => {
   it('renders with passed props and routes to the correct page by the click', async () => {
     const testLink: INavbarLink = {
-      path: getRouteAbout(),
+      path: routes.about,
       text: 'About',
       variant: AppLinkVariants.Secondary,
     };

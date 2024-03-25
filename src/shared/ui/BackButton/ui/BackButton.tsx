@@ -1,7 +1,7 @@
 import React, { FC, memo } from 'react';
 
 import BackSvg from '@/shared/assets/icons/back.svg';
-import { getRouteMain } from '@/shared/constants/routePaths';
+import { routes } from '@/shared/constants/routePaths';
 
 import { AppLink } from '../../AppLink';
 
@@ -10,7 +10,7 @@ interface IBackButtonProps {
 }
 export const BackButton: FC<IBackButtonProps> = memo(({ className }: IBackButtonProps) => {
   return (
-    <AppLink data-testid="back-button" to={getRouteMain()} className={className}>
+    <AppLink data-testid="back-button" to={routes.main} className={className}>
       <BackSvg />
     </AppLink>
   );

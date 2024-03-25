@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react';
 
-import { getRouteProfile } from '@/shared/constants/routePaths';
+import { routes } from '@/shared/constants/routePaths';
 import { getClassNames } from '@/shared/lib/classNames/getClassNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -40,7 +40,7 @@ export const Comment: FC<ICommentProps> = memo((props: ICommentProps) => {
   return (
     <HStack className={getClassNames(styles.comment, [className ?? ''])}>
       {avatar && (
-        <AppLink to={getRouteProfile(id)}>
+        <AppLink to={routes.profile(id)}>
           <div className={styles.avatarWrapper}>
             <Avatar className={styles.avatar} size={40} src={avatar} />
           </div>

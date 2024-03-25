@@ -9,7 +9,7 @@ import LogoutSvg from '@/shared/assets/icons/logout.svg';
 import ProfileSvg from '@/shared/assets/icons/profile.svg';
 import Themevg from '@/shared/assets/icons/theme.svg';
 import TranslationSvg from '@/shared/assets/icons/translation.svg';
-import { getRouteProfile } from '@/shared/constants/routePaths';
+import { routes } from '@/shared/constants/routePaths';
 import { getClassNames } from '@/shared/lib/classNames/getClassNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
@@ -57,7 +57,7 @@ export const Sidebar: FC<ISidebarProps> = memo(({ className }: ISidebarProps) =>
   ];
   const LogoutBtn = (
     <>
-      <AppLink to={getRouteProfile(userAuthData?.id ?? '')}>
+      <AppLink to={routes.profile(userAuthData?.id ?? '')}>
         <SidebarItem collapsed={collapsed} item={{ text: t('Profile'), Icon: ProfileSvg }} />
       </AppLink>
       <SidebarItem
