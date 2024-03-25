@@ -9,54 +9,62 @@ import { ArticlePage } from '@/pages/ArticlePage';
 import { ErrorPage } from '@/pages/ErrorPage';
 import { MainPage } from '@/pages/MainPage';
 import { ProfilePage } from '@/pages/ProfilePage';
-import { routePaths } from '@/shared/constants/routePaths';
-import { AppRoutes } from '@/shared/enums/appRoutes';
+import {
+  getRouteAbout,
+  getRouteAdminPanel,
+  getRouteArticle,
+  getRouteArticleCreate,
+  getRouteArticleEdit,
+  getRouteArticleList,
+  getRouteMain,
+  getRouteProfile,
+} from '@/shared/constants/routePaths';
 import { ErrorStatusCode } from '@/shared/enums/errorStatusCode';
 
 import { AppRouteProps } from '../types/appRouteProps';
 
 export const routeConfig: AppRouteProps[] = [
   {
-    path: routePaths[AppRoutes.Main],
+    path: getRouteMain(),
     element: <MainPage />,
   },
   {
-    path: routePaths[AppRoutes.About],
+    path: getRouteAbout(),
     element: <AboutPage />,
   },
   {
-    path: routePaths[AppRoutes.ArticleList],
+    path: getRouteArticleList(),
     element: <ArticleListPage />,
     authOnly: true,
   },
   {
-    path: `${routePaths[AppRoutes.Article]}:id`,
+    path: getRouteArticle(':id'),
     element: <ArticlePage />,
     authOnly: true,
   },
   {
-    path: `${routePaths[AppRoutes.ArticleEdit]}`,
+    path: getRouteArticleEdit(':id'),
     element: <ArticleEditPage />,
     authOnly: true,
   },
   {
-    path: routePaths[AppRoutes.ArticleCreate],
+    path: getRouteArticleCreate(),
     element: <ArticleEditPage />,
     authOnly: true,
   },
   {
-    path: routePaths[AppRoutes.NotFound],
-    element: <ErrorPage errorCode={ErrorStatusCode.NotFound} text="Page not found" />,
-  },
-  {
-    path: routePaths[AppRoutes.AdminPanel],
+    path: getRouteAdminPanel(),
     element: <AdminPage />,
     authOnly: true,
     roles: [UserRoles.Manager, UserRoles.Admin],
   },
   {
-    path: `${routePaths[AppRoutes.Profile]}:id`,
+    path: getRouteProfile(':id'),
     element: <ProfilePage />,
     authOnly: true,
+  },
+  {
+    path: '*',
+    element: <ErrorPage errorCode={ErrorStatusCode.NotFound} text="Page not found" />,
   },
 ];

@@ -1,13 +1,8 @@
-import { AppRoutes } from '@/shared/enums/appRoutes';
-
-export const routePaths: Record<AppRoutes, string> = {
-  [AppRoutes.Main]: '/',
-  [AppRoutes.About]: '/about',
-  [AppRoutes.Profile]: '/profile/', // + id
-  [AppRoutes.ArticleList]: '/article',
-  [AppRoutes.Article]: '/article/', // + id
-  [AppRoutes.ArticleCreate]: '/article/create',
-  [AppRoutes.ArticleEdit]: '/article/:id/edit',
-  [AppRoutes.AdminPanel]: '/admin',
-  [AppRoutes.NotFound]: '*',
-};
+export const getRouteMain = () => '/';
+export const getRouteAbout = () => '/about';
+export const getRouteProfile = (id: string) => `/profile/${id}`;
+export const getRouteArticleList = () => '/article';
+export const getRouteArticle = (id: string) => `/article/${id}`;
+export const getRouteArticleCreate = () => '/article/create';
+export const getRouteArticleEdit = (id: string) => `/article/${id}/edit`;
+export const getRouteAdminPanel = () => '/admin';

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import { selectUserAuthData, selectUserIsAdmin, selectUserIsManager, userActions } from '@/entities/User';
 import DefaultAvatar from '@/shared/assets/images/default-avatar.png';
-import { routePaths } from '@/shared/constants/routePaths';
+import { getRouteAdminPanel, getRouteArticleCreate, getRouteProfile } from '@/shared/constants/routePaths';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -28,17 +28,17 @@ export const UserMenu: FC<IUserMenuProps> = ({ className, onShowModal }) => {
       ? [
           {
             content: <li>{t('Admin panel')}</li>,
-            href: routePaths.admin_panel,
+            href: getRouteAdminPanel(),
           },
         ]
       : []),
     {
       content: <li>{t('Profile')}</li>,
-      href: `${routePaths.profile}${userData?.id}`,
+      href: getRouteProfile(userData?.id ?? ''),
     },
     {
       content: <li>{t('Create article')}</li>,
-      href: routePaths.article_create,
+      href: getRouteArticleCreate(),
     },
     { content: <li>{t('Logout')}</li>, onClick: onLogout },
   ];

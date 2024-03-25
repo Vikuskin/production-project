@@ -4,7 +4,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 
 import { UserRoles, selectUserAuthData, selectUserRoles } from '@/entities/User';
 import { ErrorPage } from '@/pages/ErrorPage';
-import { routePaths } from '@/shared/constants/routePaths';
+import { getRouteMain } from '@/shared/constants/routePaths';
 import { ErrorStatusCode } from '@/shared/enums/errorStatusCode';
 import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
 
@@ -23,7 +23,7 @@ export const RequireAuth: FC<PropsWithChildren<IRequireAuth>> = ({ children, rol
   );
 
   if (!userAuth) {
-    return <Navigate to={routePaths.main} state={{ from: location }} replace />;
+    return <Navigate to={getRouteMain()} state={{ from: location }} replace />;
   }
 
   if (!hasRequiredRole) {
