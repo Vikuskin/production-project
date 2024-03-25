@@ -10,12 +10,12 @@ import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Dropdown, IDropdownItem } from '@/shared/ui/Dropdown';
 
-interface IUserMenuProps {
+interface IDropdownUserMenuProps {
   onShowModal: () => void;
   className?: string;
 }
 
-export const UserMenu: FC<IUserMenuProps> = ({ className, onShowModal }) => {
+export const DropdownUserMenu: FC<IDropdownUserMenuProps> = ({ className, onShowModal }) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const userData = useAppSelector(selectUserAuthData);

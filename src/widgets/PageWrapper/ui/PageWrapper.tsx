@@ -1,12 +1,12 @@
 import React, { FC, PropsWithChildren, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { infiniteScrollActions, selectInfiniteScrollByPath } from '@/features/ScrollPosition';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle';
+import { infiniteScrollActions, selectInfiniteScrollByPath } from '@/shared/lib/store/ScrollPosition';
 
 import * as styles from './PageWrapper.module.scss';
 

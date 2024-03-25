@@ -1,10 +1,10 @@
-import { Reducer, ReducersMapObject, configureStore } from '@reduxjs/toolkit';
+import { Reducer, Reducer, ReducersMapObject, configureStore } from '@reduxjs/toolkit';
 
 import { userReducer } from '@/entities/User';
-import { infiniteScrollReducer } from '@/features/ScrollPosition';
 import { API } from '@/shared/api/api';
 import { RTKapi } from '@/shared/api/RTKapi';
 import { ReducersList } from '@/shared/lib/components/DynamicReducerLoader';
+import { infiniteScrollReducer } from '@/shared/lib/store/ScrollPosition';
 
 import { createReducerManager } from './createReducerManager';
 

@@ -5,9 +5,9 @@ import { IArticleComments } from '@/features/ArticleComments';
 import { IArticleFilters } from '@/features/ArticleFilters';
 import { ILoginForm } from '@/features/AuthByUserName';
 import { IProfile } from '@/features/EditableProfileCard';
-import { IInfiniteScroll } from '@/features/ScrollPosition';
 import { IArticleList } from '@/pages/ArticleListPage';
 import { RTKapi } from '@/shared/api/RTKapi';
+import { IInfiniteScroll } from '@/shared/lib/store/ScrollPosition';
 
 export interface IState {
   user: IUser;

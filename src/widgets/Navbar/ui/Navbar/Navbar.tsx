@@ -2,7 +2,6 @@ import React, { memo, useCallback, useMemo, useState } from 'react';
 
 import { LoginModal } from '@/features/AuthByUserName';
 import { OpenNotifications } from '@/features/OpenNotifications';
-import { UserMenu } from '@/features/UserMenu';
 import { getClassNames } from '@/shared/lib/classNames/getClassNames';
 import { useAppSelector } from '@/shared/lib/hooks/useAppSelector';
 import { HStack } from '@/shared/ui/Stack';
@@ -10,6 +9,7 @@ import { HStack } from '@/shared/ui/Stack';
 import * as styles from './Navbar.module.scss';
 
 import { selectNavbarLinks } from '../../model/selectors/selectNavbarLinks';
+import { DropdownUserMenu } from '../DropdownUserMenu/DropdownUserMenu';
 import { NavbarLink } from '../NavbarLink/NavbarLink';
 
 interface INavbarProps {
@@ -31,7 +31,7 @@ export const Navbar = memo(({ className }: INavbarProps) => {
       <HStack align="center" gap={15} className={styles.links} component="nav">
         {renderNavbarLinks}
         <OpenNotifications />
-        <UserMenu onShowModal={onShowModal} />
+        <DropdownUserMenu onShowModal={onShowModal} />
       </HStack>
       <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
     </header>
