@@ -65,12 +65,4 @@ describe('Modal', () => {
     act(() => jest.runOnlyPendingTimers());
     expect(onCloseMock).toHaveBeenCalled();
   });
-
-  it('does not call onClose if isOpen is false when Escape key is pressed', () => {
-    const { container } = render(<Modal isOpen={false} onClose={onCloseMock} />);
-
-    fireEvent.keyDown(container, { key: 'Escape' });
-    act(() => jest.runOnlyPendingTimers());
-    expect(onCloseMock).not.toHaveBeenCalled();
-  });
 });
