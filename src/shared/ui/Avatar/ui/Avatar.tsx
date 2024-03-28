@@ -1,9 +1,12 @@
 import React, { CSSProperties, FC, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import DefaultAvatar from '@/shared/assets/images/default-avatar.png';
+
 import * as styles from './Avatar.module.scss';
 
 import { getClassNames } from '../../../lib/classNames/getClassNames';
+import { AppLoadingImage } from '../../AppLoadingImage';
 
 interface AvatarProps {
   src: string;
@@ -20,5 +23,13 @@ export const Avatar: FC<AvatarProps> = memo(({ className, src, size }: AvatarPro
     };
   }, [size]);
 
-  return <img alt={t('Avatar')} style={style} className={getClassNames(styles.avatar, [className ?? ''])} src={src} />;
+  return (
+    <AppLoadingImage
+      alt={t('Avatar')}
+      style={style}
+      className={getClassNames(styles.avatar, [className ?? ''])}
+      src={src}
+      errorFallback={DefaultAvatar}
+    />
+  );
 });

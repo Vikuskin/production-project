@@ -7,6 +7,7 @@ import { routes } from '@/shared/constants/routePaths';
 import { getClassNames } from '@/shared/lib/classNames/getClassNames';
 import { AppButton, AppButtonVariants } from '@/shared/ui/AppButton';
 import { AppLink } from '@/shared/ui/AppLink';
+import { AppLoadingImage } from '@/shared/ui/AppLoadingImage';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Card } from '@/shared/ui/Card';
 import { HStack, VStack } from '@/shared/ui/Stack';
@@ -33,7 +34,7 @@ export const ArticleListItem: FC<IArticleListItemProps> = (props: IArticleListIt
       <EyeSvg className={styles.viewIcon} />
     </HStack>
   );
-  const image = <img src={article.img} className={styles.img} alt={article.title} />;
+  const image = <AppLoadingImage src={article.img} className={styles.img} alt={article.title} />;
 
   if (view === ArticleListView.List) {
     const textBlock = article.blocks.find(
