@@ -12,7 +12,7 @@ const ArticleEditPage: FC = () => {
 
   return (
     <PageWrapper>
-      <div>{isEdit ? <Text text={t('Edit the article')} /> : <Text text={t('Create the article')} />}</div>
+      <div>{isEdit ? <Text text={t('Edit the article')} /> : <Text text={t('Create article')} />}</div>
     </PageWrapper>
   );
 };

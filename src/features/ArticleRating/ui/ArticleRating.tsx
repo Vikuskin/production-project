@@ -47,8 +47,8 @@ const ArticleRating: FC<IArticleRatingProps> = ({ className, id }) => {
       className={getClassNames(styles.articleRating, [className ?? ''])}
       onAccept={onAccept}
       onCancel={onCancel}
-      title={t('Rate this article')}
-      feedbackTitle={t('Add feedback')}
+      title={t('Rate this article', { ns: 'article' })}
+      feedbackTitle={t('Add feedback', { ns: 'article' })}
     />
   );
 };

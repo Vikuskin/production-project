@@ -1,15 +1,27 @@
 {
+  "Add feedback": "Add feedback",
   "Article was not found": "Article wasn't found",
-  "Comments": "Comments",
-  "No comments": "No comments",
-  "Your comment": "Your comment",
-  "Send": "Send",
-  "Read more...": "Read more...",
-  "Search": "Search",
-  "Sort by": "Sort by",
-  "By": "By",
-  "results": "results",
-  "No articles": "No articles",
   "Back to list": "Back to list",
-  "Edit": "Edit"
+  "By": "By",
+  "Comments": "Comments",
+  "Edit": "Edit",
+  "No articles": "No articles",
+  "No comments": "No comments",
+  "Rate this article": "Rate this article",
+  "Read more": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
+  "Read more...": "Read more...",
+  "Recommends": "Recommends",
+  "Search": "Search",
+  "Send": "Send",
+  "Sort by": "Sort by",
+  "Thank you for rate!": "Thank you for rate!",
+  "Your comment": "Your comment",
+  "Yours feedback": "Yours feedback",
+  "results": "results"
 }

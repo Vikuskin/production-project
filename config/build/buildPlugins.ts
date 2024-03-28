@@ -19,17 +19,10 @@ export function buildPlugins(
       template: paths.html,
     }),
     new webpack.ProgressPlugin(),
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:8].css',
-      chunkFilename: 'css/[name].[contenthash:8].css',
-    }),
     new webpack.DefinePlugin({
       IS_DEV: JSON.stringify(isDev),
       API_URL: JSON.stringify(apiUrl),
       PROJECT: JSON.stringify(project),
-    }),
-    new CopyPlugin({
-      patterns: [{ from: paths.locales, to: paths.buildLocales }],
     }),
   ];
 
@@ -55,6 +48,16 @@ export function buildPlugins(
             syntactic: true,
           },
         },
+      }),
+    );
+  } else {
+    plugins.push(
+      new MiniCssExtractPlugin({
+        filename: 'css/[name].[contenthash:8].css',
+        chunkFilename: 'css/[name].[contenthash:8].css',
+      }),
+      new CopyPlugin({
+        patterns: [{ from: paths.locales, to: paths.buildLocales }],
       }),
     );
   }

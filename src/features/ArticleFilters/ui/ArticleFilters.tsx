@@ -52,20 +52,25 @@ export const ArticleFilters: FC<IArticleFiltersProps> = memo((props: IArticleFil
         <div className={styles.filters}>
           <ListBox<ArticleSort>
             className={styles.sortBy}
-            label={t('Sort by')}
+            label={t('Sort by', { ns: 'article' })}
             onChange={onChangeSort}
             enumOptions={ArticleSort}
             value={articleSort}
           />
           <ListBox<ArticleOrder>
             className={styles.sortBy}
-            label={t('By')}
+            label={t('By', { ns: 'article' })}
             onChange={onChangeOrder}
             enumOptions={ArticleOrder}
             value={articleOrder}
           />
         </div>
-        <AppInput className={styles.search} value={articleSearch} placeholder={t('Search')} onChange={onChangeSearch} />
+        <AppInput
+          className={styles.search}
+          value={articleSearch}
+          placeholder={t('Search', { ns: 'article' })}
+          onChange={onChangeSearch}
+        />
       </HStack>
       <Tabs
         className={styles.tabs}

@@ -1,4 +1,4 @@
-import { Reducer, Reducer, ReducersMapObject, configureStore } from '@reduxjs/toolkit';
+import { Reducer, ReducersMapObject, configureStore } from '@reduxjs/toolkit';
 
 import { userReducer } from '@/entities/User';
 import { API } from '@/shared/api/api';

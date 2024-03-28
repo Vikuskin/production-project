@@ -26,7 +26,8 @@
     "test:ui:report:json": "node scripts/generate-visual-json-report.js",
     "test:ui:report:html": "reg-cli --from reports/ui/report.json --report reports/ui/report.html",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "storybook:build": "storybook build -c ./config/storybook"
+    "storybook:build": "storybook build -c ./config/storybook",
+    "postinstall": "rimraf ./node_modules/.cache"
   },
   "keywords": [],
   "author": "",
@@ -101,6 +102,7 @@
     "react-refresh": "^0.14.0",
     "reg-cli": "^0.17.7",
     "regenerator-runtime": "^0.14.1",
+    "rimraf": "^5.0.5",
     "sass": "^1.69.7",
     "sass-loader": "^13.3.3",
     "storybook": "^7.6.9",

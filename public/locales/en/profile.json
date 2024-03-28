@@ -1,18 +1,19 @@
 {
-  "Profile": "Profile",
-  "Edit": "Edit",
-  "Save": "Save",
+  "Age": "Age",
+  "Avatar": "Avatar",
   "Cancel": "Cancel",
   "City": "City",
   "Country": "Country",
   "Currency": "Currency",
+  "Edit": "Edit",
   "First name": "First name",
-  "Last name": "Last name",
-  "Username": "Username",
-  "Age": "Age",
-  "No data from server": "No data from server",
-  "Incorrect user data": "Incorrect user data",
   "Incorrect age": "Incorrect age",
   "Incorrect city": "Incorrect city",
-  "No data": "No data"
+  "Incorrect user data": "Incorrect user data",
+  "Last name": "Last name",
+  "No data": "No data",
+  "No data from server": "No data from server",
+  "Profile": "Profile",
+  "Save": "Save",
+  "Username": "Username"
 }

@@ -2,11 +2,14 @@ import { Reducer } from '@reduxjs/toolkit';
 import React, { FC, PropsWithChildren, useEffect } from 'react';
 import { useStore } from 'react-redux';
 
-import { IState, IStoreWithManager, StateKey } from '@/app/providers/StoreProvider';
+import { IStoreWithManager, StateKey } from '@/app/providers/StoreProvider';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 
+// export type ReducersList = {
+//   [key in StateKey]?: Reducer<NonNullable<IState[key]>>;
+// };
 export type ReducersList = {
-  [key in StateKey]?: Reducer<NonNullable<IState[key]>>;
+  [key in StateKey]?: Reducer;
 };
 interface IDynamicReducerLoaderProps {
   reducers: ReducersList;

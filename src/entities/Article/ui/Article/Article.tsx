@@ -69,7 +69,7 @@ export const Article: FC<IArticleProps> = memo(({ className, id }: IArticleProps
       </>
     );
   } else if (articleError) {
-    content = <ErrorPage errorCode={ErrorStatusCode.BadRequest} text={t('Article was not found')} />;
+    content = <ErrorPage errorCode={ErrorStatusCode.BadRequest} text={t('Article was not found', { ns: 'article' })} />;
   } else if (articleData) {
     content = (
       <>

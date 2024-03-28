@@ -29,7 +29,7 @@ export const ArticleListItem: FC<IArticleListItemProps> = (props: IArticleListIt
   const types = <Text className={styles.types} text={article.type.join(', ')} />;
   const views = (
     <HStack gap={0}>
-      <Text className={styles.view} text={article.views} />
+      <Text className={styles.view} text={t(article.views, { ns: 'article' })} />
       <EyeSvg className={styles.viewIcon} />
     </HStack>
   );

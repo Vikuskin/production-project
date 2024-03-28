@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { ArticleList, ArticleListView } from '@/entities/ArticleList';
 import { getClassNames } from '@/shared/lib/classNames/getClassNames';
@@ -13,6 +14,7 @@ interface ArticleRecommendsProps {
 }
 
 export const ArticleRecommends: FC<ArticleRecommendsProps> = ({ className }) => {
+  const { t } = useTranslation();
   const { isLoading, data: articleRecommends, error } = useArticleRecommends(4);
 
   if (error || !articleRecommends) {
@@ -21,7 +23,7 @@ export const ArticleRecommends: FC<ArticleRecommendsProps> = ({ className }) => 
 
   return (
     <div className={getClassNames(styles.recommends, [className ?? ''])}>
-      <Text size={TextSizes.SizeL} title={'Recommends'} />
+      <Text size={TextSizes.SizeL} title={t('Recommends', { ns: 'article' })} />
       <ArticleList
         target={'_blank'}
         className={styles.content}

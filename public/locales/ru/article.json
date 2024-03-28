@@ -1,15 +1,27 @@
 {
+  "Add feedback": "Add feedback",
   "Article was not found": "Статья не найдена",
-  "Comments": "Комментарии",
-  "No comments": "Комментарии отсутствуют",
-  "Your comment": "Ваш комментарий",
-  "Send": "Отправить",
-  "Read more...": "Читать далее",
-  "Search": "Поиск",
-  "Sort by": "Сортировать по",
-  "By": "По",
-  "results": "результатов",
-  "No articles": "Статьи не найдены",
   "Back to list": "Назад к списку",
-  "Edit": "Редактировать"
+  "By": "По",
+  "Comments": "Комментарии",
+  "Edit": "Редактировать",
+  "No articles": "Статьи не найдены",
+  "No comments": "Комментарии отсутствуют",
+  "Rate this article": "Rate this article",
+  "Read more": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
+  "Read more...": "Читать далее",
+  "Recommends": "Recommends",
+  "Search": "Поиск",
+  "Send": "Отправить",
+  "Sort by": "Сортировать по",
+  "Thank you for rate!": "Thank you for rate!",
+  "Your comment": "Ваш комментарий",
+  "Yours feedback": "Yours feedback",
+  "results": "результатов"
 }

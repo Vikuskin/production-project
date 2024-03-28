@@ -89,7 +89,7 @@ export const ArticleListHeader: FC<IArticleListHeaderProps> = memo(
           onClearType={onClearType}
         />
         <HStack className={styles.bottom}>
-          <Text className={styles.results} text={`${resultCount} ${t('results')}`} />
+          <Text className={styles.results} text={`${resultCount} ${t('results', { ns: 'article' })}`} />
           <ArticleViewSwitcher view={articleListView} onViewClick={onChangeView} />
         </HStack>
       </div>

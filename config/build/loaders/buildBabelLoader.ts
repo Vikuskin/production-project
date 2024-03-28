@@ -12,13 +12,15 @@ export const buildBabelLoader = ({ isDev, isTsx }: IBuildBabelLoaderProps) => {
     use: {
       loader: 'babel-loader',
       options: {
+        cacheDirectory: true,
         presets: [['@babel/preset-env', { targets: 'defaults' }]],
         plugins: [
           [
             'i18next-extract',
             {
-              locales: ['en', 'ru'],
+              locales: ['ru', 'en'],
               keyAsDefaultValue: true,
+              outputPath: 'public/locales/{{locale}}/{{ns}}.json',
             },
           ],
           [

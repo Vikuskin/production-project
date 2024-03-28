@@ -48,7 +48,7 @@ export const Rating: FC<IRatingProps> = (props: IRatingProps) => {
   const modalContent = (
     <VStack gap={20}>
       <Text title={feedbackTitle} />
-      <AppInput value={feedback} onChange={onChangeFeedback} placeholder={t('Yours feedback')} />
+      <AppInput value={feedback} onChange={onChangeFeedback} placeholder={t('Yours feedback', { ns: 'article' })} />
       <HStack max justify="end">
         <AppButton variant={AppButtonVariants.OutlineDanger} onClick={onCancelHandler}>
           {t('Cancel')}
@@ -63,7 +63,7 @@ export const Rating: FC<IRatingProps> = (props: IRatingProps) => {
   return (
     <Card className={getClassNames('', [className ?? ''])}>
       <VStack align="center" gap={10}>
-        <Text title={starsCount ? t('Thank you for rate!') : title} />
+        <Text title={starsCount ? t('Thank you for rate!', { ns: 'article' }) : title} />
         <StarRating onSelect={onSelectStars} size={40} selectedStars={starsCount} />
       </VStack>
       {isMobile ? (
